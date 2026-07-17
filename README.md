@@ -19,10 +19,12 @@ re-checking the bytes.
 > the interpretation correct; it makes those judgements explicit and reviewable.
 
 Before citing a source you save its quotes to a ledger on disk
-(`literature/verified_claims/<key>.md`). A script re-reads the source, confirms each quote character
-for character, and stamps it with the SHA-256 of source, extract, and quotes. Only then does a
-citation pass — and a cite can name the claim it rests on, `(Smith 2020 #the-slug)`, so "right paper,
-wrong claim" fails too.
+(`literature/verified_claims/<key>.md`). A script extracts the source's text, confirms each quote
+character for character against it, and stamps the ledger with the SHA-256 of the source, the
+extract, the quotes, and the source bytes the extract was built from — so the quotation is tied to
+the paper itself, not merely to a text file sitting beside it. Only then does a citation pass — and
+a cite can name the claim it rests on, `(Smith 2020 #the-slug)`, so "right paper, wrong claim" fails
+too.
 
 You declare which prose this covers (`gated_paths`), and a configured project that gates none of its
 prose is blocked — a gate reading nothing reports success having checked nothing. Material you
