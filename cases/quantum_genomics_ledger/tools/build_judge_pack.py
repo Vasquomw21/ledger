@@ -571,7 +571,8 @@ def _trust_table(state: dict) -> str:
         ("Double-count / correlation", "Mechanical", "neu",
          "Derived from the declared correlated-with edges — flagged, not adjudicated."),
         ("Assessments / faithfulness", "Judged", "warn",
-         "A human's sealed, contestable judgement — shown, never claimed proven."),
+         "A human's tamper-evident, contestable judgement — shown, never claimed "
+         "proven, and its assessor recorded as claimed, not authenticated."),
     ]
     body = "".join(f'<tr><td>{_esc(what)}</td><td><span class="badge {cls}">{_esc(status)}'
                    f'</span></td><td>{_esc(meaning)}</td></tr>'
@@ -668,8 +669,8 @@ def _index(repo_root: Path, claims_dir: Path, keys: list[str], config: dict,
 <section id="overview"><h2>Overview</h2>
 <p>This is a navigable read of a contested question. Each claim below is a
 <strong>verbatim quote</strong> carrying the record of its proof against a primary source; the
-relationships between claims form an argument graph; and a human's sealed, contestable judgement
-sits on top. Start here, then follow <a href="#inputs">Inputs</a> →
+relationships between claims form an argument graph; and a human's tamper-evident, contestable
+judgement sits on top. Start here, then follow <a href="#inputs">Inputs</a> →
 <a href="#processes">Processes</a> → <a href="#outputs">Outputs</a>. This page <em>shows the trail
 and the trust boundary; it does not adjudicate the truth.</em></p>
 <p class="ceiling">{_esc(state["ceiling"])}{" " + _esc(state["build_note"]) if state["build_note"] else ""}</p>

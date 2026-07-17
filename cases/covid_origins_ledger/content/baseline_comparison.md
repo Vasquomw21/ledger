@@ -53,9 +53,11 @@ things.)
 
 ## D. The uplift, and why it survives the baseline being good
 
-The table's last row read with the first is the point: **none of the Ledger machinery requires
-trusting the model.** The quotes are verbatim on disk, the double-count is derived by code, the
-dispute is sealed and re-judgeable. The baseline asks a reader to trust its reading of twelve
-sources; the Ledger artefact asks a reader to trust nothing and check everything. For anyone who
+The table's last row read with the first is the point: **the Ledger artefact does not ask you to
+trust the model's reading of the sources.** The quotes are verbatim on disk; the correlation is a
+human's declaration, recorded where it can be addressed and disputed, and its consequences across
+the graph are derived by code; the dispute record is tamper-evident and re-judgeable. The baseline
+asks a reader to trust its reading of twelve sources; the Ledger artefact hands the reader the
+sources and marks where a judgement was made. For anyone who
 must *act* on the answer — weigh it, find its weakest joint, defend it to a sceptic — that is the
 uplift, shown against a strong baseline rather than asserted against a weak one.

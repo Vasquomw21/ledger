@@ -727,9 +727,10 @@ _RECORD_LABELS = {"faithfulness": "disputed", "faithfulness-pass": "reviewed —
 
 
 def recorded_judgements(repo_root: Path) -> list[dict]:
-    """Layer 2 — the sealed, attributable judgements, relevant-first. Integrity is
+    """Layer 2 — the tamper-evident judgements, relevant-first. Integrity is
     membership in the validated set (the coverage the gate blocks on), reported as a
-    fact about the record's grounding and seal — never that the judgement is correct.
+    fact about the record's grounding and seal — never that the judgement is correct
+    or that its assessor is authenticated (only `attestation` signs).
     The pair a Layer-1 warning names is 'relevant'; those records lead the list."""
     claims_dir = repo_root / "literature" / "verified_claims"
     content_dir = repo_root / "content"
@@ -795,9 +796,11 @@ LAYER1_NOTE = ("Computed from the committed ledgers and records — deterministi
                "fact keeping its provenance. A declared cause is the author’s "
                "classification, not a machine-established fact; a count is a count; "
                "nothing here reads the authored interpretation below.")
-LAYER2_BOUNDARY = ("These are sealed, attributable assessments supplied by people or "
-                   "agents. Ledger verifies their integrity, grounding and freshness; "
-                   "sealing does not establish that a judgement is correct.")
+LAYER2_BOUNDARY = ("These are tamper-evident assessments supplied by people or agents. "
+                   "Ledger verifies their integrity, grounding and freshness. The seal is "
+                   "an unkeyed digest: the assessor and date are recorded as claimed, not "
+                   "authenticated, and sealing does not establish that a judgement is "
+                   "correct.")
 LAYER3_BOUNDARY = ("Ledger validates the cited claim and record addresses. The "
                    "interpretation and conclusion remain the author’s judgement.")
 LAYER3_EMPTY = "No case-level interpretation has been authored."

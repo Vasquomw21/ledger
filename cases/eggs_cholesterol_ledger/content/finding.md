@@ -12,7 +12,9 @@ overlapping-pool pair on the null. The detector operates on cohort relationships
 study's methods, so it flags the harmful side's WHI pair [rec: whi-double-count] and six-US-cohort
 pair [rec: sixus-double-count] alongside the null side's overlapping pools. This does not overturn
 the answer. It turns "are these pooled studies independent?" from a step the reader must trust each
-author to have taken into a mechanical, reproducible graph operation.
+author to have taken into a declaration that is written down, addressable, and open to challenge.
+The dependence itself is read off each study's methods by a human and recorded in the ledger; what
+the machinery does is carry that declaration across the graph and show where it bites.
 
 **What this is.** The framing-agnostic read-out of applying the Ledger machinery to a 16-source
 egg/dietary-cholesterol–CVD corpus. We did not set out to prove eggs are safe or harmful; we
@@ -73,9 +75,9 @@ python3 tools/check_structure.py --structure required   # 11 edges resolve + gro
 
 - **The cohort-overlap problem is not novel science.** It is a known methodological hazard — indeed
   two sources here (`godos_2021:dedup-method`, `darooghegi_2022:overlap-excluded`) handle it
-  explicitly. The contribution is not the discovery; it is that the machinery makes the check
-  **mechanical, auditable, and reproducible** across a corpus, rather than a manual step a reader
-  must trust each author to have performed.
+  explicitly. The contribution is not the discovery; it is that the overlap each author found is
+  **written down, addressable, and auditable** across a corpus, instead of living in prose a reader
+  must trust each author to have written.
 - **The confident null is not simply an artefact of double-counting.** Drouin-Chartier handles its
   single biggest overlap *correctly*: it `drouin_2020:updates-hu-1999` by **replacing** the old NHS/HPFS
   data rather than pooling both, so we do not claim its conclusion collapses. The double-counts the
@@ -94,7 +96,9 @@ python3 tools/check_structure.py --structure required   # 11 edges resolve + gro
 ## Bottom line
 
 Applied without a thumb on the scale, the machinery turns "are these pooled studies independent?"
-from a manual, trust-the-author step into a mechanical, reproducible graph operation, and it catches
-possible-dependence warnings on both sides of a contested question, including two exact same-cohort
-reuse findings on the harmful side. It does **not** overturn the answer; it makes the evidence base's
-dependence on a few reused cohorts legible and contestable.
+from a manual, trust-the-author step into a declared relationship anyone can address and dispute,
+and the warnings it derives land on both sides of a contested question, including two exact
+same-cohort reuse findings on the harmful side. The overlap is read from each study's methods by a
+human, not discovered by the tool; the tool is what makes that reading carry, and fail loudly if it
+is wrong. It does **not** overturn the answer; it makes the evidence base's dependence on a few
+reused cohorts legible and contestable.

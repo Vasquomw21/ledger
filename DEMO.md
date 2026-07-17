@@ -153,10 +153,12 @@ models—so the trust boundary is visible on the page, not only in this table:
    not mean epistemically true** — a count is a count, and a correlation's *kind* (exact-cohort-reuse,
    overlapping-pools, shared-evidence, other-declared-dependence) is **author-declared** metadata in
    `content/correlation_kinds.md`, never a machine-established fact.
-2. **Recorded judgements** — sealed, attributable assessments. **Sealing proves record integrity,
-   freshness and resolvable grounding references—not that the grounding is apt or the judgement
-   correct**: a record is verified sealed, body-fresh and linked to resolvable grounding, never
-   verified right.
+2. **Recorded judgements** — tamper-evident assessments. **Sealing proves record integrity,
+   freshness and resolvable grounding references—not that the grounding is apt, the judgement
+   correct, or the assessor who they claim to be**: a record is verified sealed, body-fresh and
+   linked to resolvable grounding, never verified right. The seal is an unkeyed digest and the
+   `assessor` and date are recorded as stated, not authenticated; signatures are what the opt-in
+   `attestation` posture adds.
 3. **Authored interpretation** — the *optional* `content/finding.md`. Its references are validated,
    but the wording and conclusion are the author's. **A pack remains usable without it**: Layers 1 and
    2 still render, and the evidence trace derives from warnings and records independently of authored
