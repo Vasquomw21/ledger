@@ -12,7 +12,8 @@ extract_sha256: "2ea0b5ba7883bd0c476839a7a84240973219770dd93be9ca2da20be6c6c41b4
 body_sha256: "04856b5aa9a066916a626d728d99472e35d1f61e3b037e29f10b19a4357513bc"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260615"
+verified_date: "20260717"
+extract_source_sha256: "a4a53c75068d6354f096b76474d658b0629e126f807a4ba8fb87d7e4d276d075"
 ---
 
 # Verified Claims — Maurizio & Mazzola (2025), "Quantum computing for genomics: conceptual challenges and practical perspectives"

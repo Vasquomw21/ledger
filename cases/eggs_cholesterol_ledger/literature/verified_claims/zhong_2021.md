@@ -8,12 +8,13 @@ source_version: "published (Int J Epidemiol 2021)"
 file: "literature/zhong_2021.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "cf4b6d2b5091ae7274674099df08e1356ce89c924ee9a86d50e06c9ff701fc29"
+source_sha256: "28940f3ff2b23828a8f7ecc3becbe5adc716d36a1e8eaf121c4068c817fd1066"
 extract_sha256: "c0c72240710c19468d6120c16ecd04b2b825eeeb5b7763ed080390617739626c"
 body_sha256: "b39a88341420510f910c8c9c9dae93489909858889120b7d9d6190e2fdb1bd77"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "28940f3ff2b23828a8f7ecc3becbe5adc716d36a1e8eaf121c4068c817fd1066"
 ---
 
 # Verified Claims — Zhong et al. (2021)

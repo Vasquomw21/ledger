@@ -13,7 +13,8 @@ extract_sha256: "08d653c7323a6b31d44ec64033361245f8e202b6e99e7121b19cf990c747b54
 body_sha256: "80033a6ecdcf41e73557b9d819009fd70d8ade6210587f4afdaac1c2a1c54fd6"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "debf0de11f3b51f0c002108481b3a1a506c8e9e993bb6bf7e344ec65aaa393a8"
 ---
 
 # Verified Claims — Worobey et al. (2022)

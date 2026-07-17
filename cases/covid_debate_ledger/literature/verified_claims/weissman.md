@@ -6,12 +6,13 @@ source_version: "published"
 file: "literature/weissman.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "e25a8664a87408ac4a4a2da1fd5ac4bad649022546d8460d61e73f9f05ed3337"
-extract_sha256: "44671bdc79469f7364fe135e9e2d3a4e1349e8a6bbe94a0e37e2f84966efeee7"
+source_sha256: "f012610800dc69e462f6f4f134566869e5b8623c917598a15b0531045031cfe9"
+extract_sha256: "2f328367cb002436b127c811585fe84a8cde8cc51ca594d11e4f92a20d42a5d7"
 body_sha256: "a05c99c889fef99209a298601063ba3b76172ccfcd4ef4452ff69c13d4f04f00"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "f012610800dc69e462f6f4f134566869e5b8623c917598a15b0531045031cfe9"
 ---
 
 # Verified Claims — Weissman (2024)

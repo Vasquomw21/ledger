@@ -7,12 +7,13 @@ source_version: "published (BMJ 2020, open access)"
 file: "literature/drouin_2020.html"
 retrieved: "20260613"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "4d28e95dc178fd1c4fe674ea13cf3b52f928f6e846bd2ed199945f788857f3e2"
-extract_sha256: "06a9a7fd15e130b8c9a9ce1500263a82ba752d74ca29fa6a82b9730dfe27c81b"
+source_sha256: "a09b08350d42f20eaa1cf257b8c4937e7651a4a5ce3d83aec8a878daac26b075"
+extract_sha256: "fe83266b7c0f9ef133c835e1f673ecb28f0f51af7d630540e571a818e02ca843"
 body_sha256: "e4778810c5e898e7a578df1da3b16fc5b09507954eb7776d67cc66e9df73eab5"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "a09b08350d42f20eaa1cf257b8c4937e7651a4a5ce3d83aec8a878daac26b075"
 ---
 
 # Verified Claims — Drouin-Chartier et al. (2020)

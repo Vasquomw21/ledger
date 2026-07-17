@@ -7,11 +7,12 @@ file: "literature/plaga_2008.pdf"
 retrieved: "20260613"
 verified_by: "Ledger pipeline (Claude)"
 source_sha256: "0f41a2c1385df8e03d9d05bc23f011aeb03a888836cb02638875db5dfa88260a"
-extract_sha256: "ff86331ce9bc8a17f3315b8e4be5de759a0d4fa4d3b3b6ab23bd2e53d141d0ec"
+extract_sha256: "0c75c3fa525e38ffe1ee33f37e6de8191eaa40a46727284c5e58d3863c6070de"
 body_sha256: "94c4aca40169f4ec71ddc29bb45883a9a1e5eb79377df5a3f254ab3284e4c338"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "0f41a2c1385df8e03d9d05bc23f011aeb03a888836cb02638875db5dfa88260a"
 ---
 
 # Verified Claims — Plaga (2008)

@@ -8,12 +8,13 @@ source_version: "published (Front Nutr 2022, open access)"
 file: "literature/darooghegi_2022.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "96e1b1b07f4306a5c27c4bb8d009946e140a1c62146be96cc33f1a30c7f14deb"
+source_sha256: "1cc961ae04ecf4e7e6fa8a7ad24ff10f3a40f0a97ddbc70f60c7884770f94dc6"
 extract_sha256: "391327e110f7a602127387e79829f9a9fb2039869acf7b2d7e43888933a9f897"
 body_sha256: "2a60132ec43d1b67e841bd6cd966b960aa775207d1b38b46ea448e979806681f"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "1cc961ae04ecf4e7e6fa8a7ad24ff10f3a40f0a97ddbc70f60c7884770f94dc6"
 ---
 
 # Verified Claims — Darooghegi Mofrad et al. (2022)

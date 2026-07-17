@@ -6,12 +6,13 @@ source_version: "published"
 file: "literature/alexander_2024.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "1ad43d4178162b502095bbf4231b9327d01968a14617bfbb9895d41ccb99de0e"
-extract_sha256: "12507e956703249903005906059ca1056a1d5642150c0f357e82cd190e955d66"
+source_sha256: "eed1ab76ba9adac827a5718e12051299a0d032f43961996bbb43ea9d68e84a6d"
+extract_sha256: "eb05fedd14b326548cdf41ef416b582513e283cf589f6452dd080fbb686624c4"
 body_sha256: "4b70718cfb2b148e055e052e65b9dbe9f86692405c6b74b398d9043379db18a5"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "eed1ab76ba9adac827a5718e12051299a0d032f43961996bbb43ea9d68e84a6d"
 ---
 
 # Verified Claims — Alexander (2024)

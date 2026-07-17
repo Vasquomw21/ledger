@@ -12,7 +12,8 @@ extract_sha256: "492206662f8b7a64c29d92ce9d4bd31e8d87d25f793367538c7a136e3618db3
 body_sha256: "151e3333e135b2739c8095a72d8ec6d7385aeb2c97d1fc3936ffe703a425aa95"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260615"
+verified_date: "20260717"
+extract_source_sha256: "41459329be11c551d308e3de30ee335a690e9e334a0fcf6af49b2a4196a8058b"
 ---
 
 # Verified Claims — Babbush et al. (2021), "Focus beyond quadratic speedups for error-corrected quantum advantage"

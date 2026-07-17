@@ -8,12 +8,13 @@ source_version: "published (Am J Clin Nutr 2020; PMC author manuscript)"
 file: "literature/dehghan_2020.html"
 retrieved: "20260613"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "5b940feedc181db5aae5ff70e12d9408d4e466898a8a186630f373bd8acbb4a5"
+source_sha256: "064717cf0a1e4f2631fab4a759314c49870f906dfad0dc4ffd79ae3dfc34045b"
 extract_sha256: "90134cfe4b55709a75d9340012827ce3c0fb00bdaa71226797fc1c2205fac820"
 body_sha256: "2ffd39f8c61071d2c14ce2b74086095e6fbde7da97206d35f802fbf96ed91458"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "064717cf0a1e4f2631fab4a759314c49870f906dfad0dc4ffd79ae3dfc34045b"
 ---
 
 # Verified Claims — Dehghan et al. (2020), PURE study

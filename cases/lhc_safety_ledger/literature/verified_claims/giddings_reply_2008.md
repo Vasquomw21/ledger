@@ -7,11 +7,12 @@ file: "literature/giddings_reply_2008.pdf"
 retrieved: "20260613"
 verified_by: "Ledger pipeline (Claude)"
 source_sha256: "5a2d40abae63463b0a26f0ab02d0a9c475e2164a21e718b989a169012651f6c1"
-extract_sha256: "f8f4e958278ef6bf696906ea0b77b47e0fa13eb7aba598578104e46c4b878ef9"
+extract_sha256: "1f2343dc121f351380e8f8d34bd72df4aabe9e4eae60db2b430906ef8f0901db"
 body_sha256: "c368045a6e3b01a6f0f4bb99a1b97ee57ec86c776fbfa4521d0a7316522a7a1a"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "5a2d40abae63463b0a26f0ab02d0a9c475e2164a21e718b989a169012651f6c1"
 ---
 
 # Verified Claims — Giddings & Mangano reply (2008b)

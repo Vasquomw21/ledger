@@ -12,7 +12,8 @@ extract_sha256: "6cea503e70286dee981fef09b66631f19617847be6dc44869617eb61fc69fc5
 body_sha256: "e121eb08f2a6011da3d6d16a129889673f694e390c88a9f1356a5babc8dc8e61"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260615"
+verified_date: "20260717"
+extract_source_sha256: "97d2dd6528350d7c8c2d8222798ecc579f54f28d84316569a719f2f521cf382a"
 ---
 
 # Verified Claims — Arute et al. (2019), "Quantum supremacy using a programmable superconducting processor"

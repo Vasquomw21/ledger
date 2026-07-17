@@ -8,11 +8,12 @@ file: "literature/giddings_2008.pdf"
 retrieved: "20260613"
 verified_by: "Ledger pipeline (Claude)"
 source_sha256: "939f8daa4ce9a6e93712ddb4f21a3118fdc618dc4c7fd5eaea0171a74429e365"
-extract_sha256: "8c60dbc94ddfe47efb43341172ac0a8554f53ade4f302aa1deac5479b79e9bec"
+extract_sha256: "94a41db88957b9df75a8d8c3d58e766d9ce7e83134506eee37873a25cd873dee"
 body_sha256: "44f204a4f801fbca86c571d1bfddb9b96dc6bb4b904c84c8cbc84ae02318f852"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "939f8daa4ce9a6e93712ddb4f21a3118fdc618dc4c7fd5eaea0171a74429e365"
 ---
 
 # Verified Claims — Giddings & Mangano (2008)

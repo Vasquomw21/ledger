@@ -8,12 +8,13 @@ source_version: "published (Am J Clin Nutr 2008)"
 file: "literature/djousse_2008.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "211eba69f88b7acc3d07fcb6f684fe7037138a94bc8d0efd48c93180d08df01d"
+source_sha256: "1448697033fec00df229ecb7db6f6b549fda0cb17ef0c9c3b4cc6fd6bbf6e9bf"
 extract_sha256: "e8a0020caeac240a5debdf1b7f6b0ed58cc8fd8e5051179bcf012fd7e67560ee"
 body_sha256: "ff480162e8c1d7183aaae3529fb9099747e5fa2e40304c4a612d4c1c8826c6d2"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "1448697033fec00df229ecb7db6f6b549fda0cb17ef0c9c3b4cc6fd6bbf6e9bf"
 ---
 
 # Verified Claims — Djoussé & Gaziano (2008)

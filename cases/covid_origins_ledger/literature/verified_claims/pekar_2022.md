@@ -13,7 +13,8 @@ extract_sha256: "97910a3d6132b28a57fe57867c6eb9ea883f579be67e3c2993fb0a7d5fd1654
 body_sha256: "8edb212d646a16867df29842dbfb1356b74499d675ca616ce297e05bd0cebea1"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "b7904887109aade9205bd59a26896a214d90fda8b40639e92fad53dcfabe178e"
 ---
 
 # Verified Claims — Pekar et al. (2022)
