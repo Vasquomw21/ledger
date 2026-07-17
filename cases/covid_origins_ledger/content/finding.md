@@ -4,9 +4,9 @@ The most-targeted claim in this graph is (Andersen 2020 #no-lab-scenario) — th
 `supports` edges are aimed at it, more than at any other claim. Its verbatim text is "we do
 not believe that any type of laboratory-based scenario is plausible": a statement of belief,
 not a result. The stored quotation preserves that distinction for review. The verbatim gate
-proves what Andersen wrote; the faithfulness layer is what exposes a stronger paraphrase —
-"Andersen et al. ruled out a lab origin" reads as a faithful summary while promoting a
-belief into a demonstrated finding.
+(`verify_quotes.py`) proves what Andersen wrote; the faithfulness layer is what exposes a
+stronger paraphrase — "Andersen et al. ruled out a lab origin" reads as a faithful summary
+while promoting a belief into a demonstrated finding.
 
 ## The question
 
@@ -25,10 +25,9 @@ by sampled bat relatives, and its aptness was adversarially reviewed and held
 [rec: temmam-supports-nolab-apt-pass]. Of the three, one support edge is disputed and two
 form a marked correlated pair.
 
-Andersen's certainty language is flagged where it outruns its argument:
-[rec: andersen-irrefutably] marks "irrefutably show" on (Andersen 2020
-#not-from-known-backbone) as asserting a certainty that an absence-of-known-backbone
-argument cannot carry.
+Andersen's certainty language is flagged where it outruns its argument: [rec: andersen-irrefutably]
+marks "irrefutably show" on (Andersen 2020 #not-from-known-backbone) — see `ledger inspect
+assessments` — as asserting a certainty that an absence-of-known-backbone argument cannot carry.
 
 ## What this does not show
 

@@ -39,7 +39,7 @@ CONTENT = REPO_ROOT / "content"
 # The synthesis surface: where the author writes ABOUT the claims (not the ledgers themselves).
 def synthesis_files(content: Path) -> list[Path]:
     files: list[Path] = []
-    for name in ("baseline_comparison.md", "inquiry.md"):
+    for name in ("baseline_comparison.md", "inquiry.md", "finding.md"):
         p = content / name
         if p.is_file():
             files.append(p)
