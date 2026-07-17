@@ -10,8 +10,13 @@
 #          version would FAIL against the other. So for each key the source is
 #          chosen by the ledger's `file:` frontmatter extension; absent a
 #          ledger, .pdf is preferred, else .html.
+#
+#          Each extract carries a sidecar recording the sha256 of the bytes it
+#          was built from; verify_quotes.binding_problems compares it to the
+#          ledger's source_sha256. Writing the extract without it leaves the
+#          quotes tied to no source.
 # INPUTS : literature/<key>.{pdf,html} (keys passed as argv, or all on disk)
-# OUTPUTS: literature/extracted/<key>.txt ; stdout identity report
+# OUTPUTS: literature/extracted/<key>.txt + <key>.source.sha256 ; stdout identity report
 from __future__ import annotations  # PEP 604 `str | None` on the 3.9 intake interpreter
 
 import re
@@ -20,6 +25,11 @@ from pathlib import Path
 
 from pypdf import PdfReader
 from bs4 import BeautifulSoup
+
+# Share the verifier's hash: two implementations could disagree, and the binding
+# is only meaningful if the writer and the checker canonicalise identically.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from verify_quotes import EXTRACT_SOURCE_SUFFIX, sha256_file  # noqa: E402
 
 LIT = Path(__file__).resolve().parent
 OUT = LIT / "extracted"
@@ -98,8 +108,13 @@ def main() -> int:
             print(f"[ERROR] {key}: cannot parse {src.name} ({e})")
             continue
         (OUT / f"{key}.txt").write_text(full, encoding="utf-8")
+        # shasum-style `<hash>  <name>`: the name diagnoses WHICH version was
+        # extracted, the hash is what verify_quotes binds the ledger against.
+        src_hash = sha256_file(src)
+        (OUT / f"{key}{EXTRACT_SOURCE_SUFFIX}").write_text(
+            f"{src_hash}  {src.name}\n", encoding="utf-8")
         snippet = " ".join(full.split())[:600]
-        print(f"=== {key} | {src.name} | {ident} ===")
+        print(f"=== {key} | {src.name} | {ident} | src={src_hash[:12]}… ===")
         print(snippet)
         print()
         n_ok += 1
