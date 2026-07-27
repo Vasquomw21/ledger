@@ -51,6 +51,7 @@ node_modules/
 # Author working-copy of the 0.2 roadmap — the tracked copy is
 # docs/roadmap/researcher-workflow.md; this scratch original is never committed.
 /LEDGER_0_2_REDESIGN_ROADMAP.md
+/LEDGER_SUBMISSION_RELEASE_IMPLEMENTATION.md
 
 # Generated judge dashboards inside cases (regenerate via `ledger dashboard`)
 cases/**/*_dashboard.html

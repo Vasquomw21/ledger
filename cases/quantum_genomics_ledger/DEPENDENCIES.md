@@ -35,5 +35,5 @@ to the binary intake/publish deps. Update this file on any dependency change.
 
 | Dependency | Purpose |
 |---|---|
-| Obsidian | Browse `content/` and the vault-backed design docs (SPEC / BOOTSTRAP / HISTORY) with backlinks; desktop is the source of truth. |
+| Obsidian | Optional — the author's tool for browsing `content/` with backlinks. The design docs it references (SPEC / BOOTSTRAP / HISTORY) are git-ignored vault working-copies, not part of a clone; their published equivalents ship in `docs/` + `DEMO.md`. |
 | Unpaywall email | `fetch_paper.sh` API identity (set in `ledger.config.md`); only needed for the Unpaywall rung. |

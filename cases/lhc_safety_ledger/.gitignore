@@ -26,6 +26,11 @@
 # Python bytecode cache
 __pycache__/
 
+# pip editable-install / venv artefacts (the pip-first onboarding path)
+.venv/
+*.egg-info/
+build/
+
 # Quartz / Node build artefacts
 node_modules/
 /site/public/
@@ -36,3 +41,17 @@ node_modules/
 # OS cruft
 .DS_Store
 /flf/*
+
+# Local scratch / working dir — generated artefacts, never committed
+.tmp_scratch/
+
+# Author working-copy review notes — kept in the vault, never shipped to a clone
+/docs/LEDGER_AGNOSTIC_REVIEW_*.md
+
+# Author working-copy of the 0.2 roadmap — the tracked copy is
+# docs/roadmap/researcher-workflow.md; this scratch original is never committed.
+/LEDGER_0_2_REDESIGN_ROADMAP.md
+/LEDGER_SUBMISSION_RELEASE_IMPLEMENTATION.md
+
+# Generated judge dashboards inside cases (regenerate via `ledger dashboard`)
+cases/**/*_dashboard.html

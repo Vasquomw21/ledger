@@ -53,6 +53,11 @@ A ledger is a Markdown file whose claims are `## Claim` blocks. The minimum a co
 - `**ID:**` gives the stable slug. A claim with no `**ID:**` is addressable only by ordinal `cN`.
 - Frontmatter carries the provenance stamp (source/extract/body sha256, verdict, locator) — see the
   run-record schema for the same fields in JSON.
+- `extract_source_sha256` is OPTIONAL: the sha256 of the bytes the extract was built from. Present,
+  it must equal `source_sha256` — that is what ties the quoted text to the named source rather than
+  to the extract alone, and it is checkable without the corpus. Absent, the binding is simply
+  unproven; a consumer must not read its absence as a failure, since a ledger stamped before this
+  field existed cannot acquire one without its original source bytes.
 
 ## 3. Claim-graph edge grammar
 
@@ -116,10 +121,56 @@ attestation, not independent proof**.
 `content/graph.json` is the **derived** single view: `nodes`, typed `edges`, `sub_questions`,
 `addresses` (claim→sub-question references), `assessments`, and derived `findings`
 (`double_count`, `superseded`). It is never hand-edited and is git-ignored — a consumer regenerates
-it, or reads a committed copy as a snapshot. Derived `findings` are **heuristics, not proofs**
-(e.g. two correlated supporters of one claim → a possible double-count to review).
+it, or reads a committed copy as a snapshot. Derived `findings` are **heuristics, not proofs**.
+
+Each `double_count` entry is a typed object:
+
+```json
+{
+  "a": "chen_2021",
+  "b": "sun_2021",
+  "target": "zhao_2022:harmful-mortality",
+  "kind": "exact-cohort-reuse",
+  "basis": "both analyse the WHI cohort — not independent evidence",
+  "sealed_record": "whi-double-count"
+}
+```
+
+- **`a`, `b`** — the two correlated supporters, by ledger key (a canonical unordered pair).
+- **`target`** — the claim address both support.
+- **`kind`** — one of `exact-cohort-reuse` · `overlapping-pools` · `shared-evidence` ·
+  `other-declared-dependence`, read from `content/correlation_kinds.md` (below); a pair the file does
+  not classify falls back to `other-declared-dependence`. Author-declared, never inferred.
+- **`basis`** — the free text of the ledger's own `Correlated-with:` annotation: authored, not
+  source-verified (a surface labels it "Declared basis").
+- **`sealed_record`** — the id of a `kind: correlated-with` assessment record whose grounding names
+  both members of the pair (**sealed**); `null` means the dependence is **declared-only**.
 
 Example: `examples/graph.example.json` (the eggs / dietary-cholesterol case).
+
+### The author-declared correlation-kinds surface — `content/correlation_kinds.md`
+
+A correlation's `kind` is authored epistemic metadata, so it lives in a committed, validated,
+author-declared file — never in a stamped ledger body (a `kind:` edit there makes the existing stamp
+and bound records stale). Format:
+
+```markdown
+---
+authored_by: <identity>
+last_updated: YYYYMMDD
+status: active
+---
+## <keyA> ↔ <keyB>
+- kind: exact-cohort-reuse
+```
+
+- **Provenance fields** `authored_by` / `last_updated` / `status` are required.
+- **Pair canonicalisation**: `## a ↔ b` names the unordered pair `{a, b}`; `b ↔ a` is the same
+  entry, and a duplicate is rejected.
+- Each pair must resolve to a real declared `Correlated-with:` edge (no orphans); the kind must be
+  allowed; a missing classification defaults to `other-declared-dependence`.
+- The file **classifies; it never seals** — it cannot change a pair's sealed-vs-declared status.
+  Validated by the assessment gate.
 
 ## 7. Conformance
 
@@ -135,3 +186,8 @@ record is sealed and grounded; it is not therefore *correct*. A resolvable edge 
 *apt*. A faithfulness dispute is a recorded challenge, not a verdict; a faithfulness-pass record is
 a recorded review, not proof. The contract guarantees form and names the judgement it cannot
 mechanise (see `../docs/integrity_framework.md`).
+
+The three presentation layers a pack/dashboard stacks (derived summary · recorded judgements ·
+authored interpretation) are **derived views over this data, not part of the interchange contract**:
+a conformant consumer reads the ledgers, edges, records, `correlation_kinds.md` and `graph.json`
+above and renders them however it likes.
