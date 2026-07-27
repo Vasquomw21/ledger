@@ -75,6 +75,34 @@ def test_selection_agreement_is_naming_independent(tmp_path):
     assert m["coverage_match"] == 1.0
 
 
+def test_header_prose_is_not_a_locus(tmp_path):
+    """Only claim blocks carry addresses. A ledger header describing the convention
+    starts a line with the same **Locus:** tag, and it must not read as a claim."""
+    run = tmp_path / "a"
+    run.mkdir(parents=True, exist_ok=True)
+    (run / "goodjudgment.md").write_text(
+        "# goodjudgment\n\n"
+        "**Locus:** lines bind each claim to a unit in literature/units/.\n\n"
+        '## Claim 1: c1\n\n> "quote 1"\n\n'
+        "**ID:** p4\n**Locus:** p4\n**Addresses:** q1\n",
+        encoding="utf-8")
+    assert repro.run_loci(run) == {"goodjudgment:p4"}
+
+
+def test_locus_agreement_ignores_header_prose(tmp_path):
+    """Two runs sharing only the header must not score agreement on it."""
+    a, b = tmp_path / "a", tmp_path / "b"
+    header = "**Locus:** lines bind each claim to a unit in literature/units/.\n\n"
+    for run, locus in ((a, "p4"), (b, "p9")):
+        run.mkdir(parents=True, exist_ok=True)
+        (run / "goodjudgment.md").write_text(
+            header + f'## Claim 1: c1\n\n> "quote 1"\n\n'
+                     f"**ID:** {locus}\n**Locus:** {locus}\n**Addresses:** q1\n",
+            encoding="utf-8")
+    # Disjoint real loci, so the phantom is the only thing that could be shared.
+    assert repro.compare(a, b)["locus_agreement"] == 0.0
+
+
 def test_misattribution_is_caught(tmp_path):
     a, b = tmp_path / "a", tmp_path / "b"
     write_ledger(a, "wilf", [("t1-1", "prior")])

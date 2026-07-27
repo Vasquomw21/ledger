@@ -144,6 +144,14 @@ span to quote). The fix makes the address **mechanical** by giving each source a
   locus-keyed; the residual was a single kept/dropped unit plus sub-question attribution — genuine
   judgement, isolated from naming noise.
 
+  **That 0.98 is inflated, by an amount no longer recoverable.** `run_loci` scanned the whole ledger
+  file, so a header line beginning `**Locus:**` — prose describing the convention, not a claim — was
+  counted as an address. Being header prose it is identical in both runs, so it landed in the
+  intersection of every comparison. The scan is now scoped to claim blocks, but the run directories
+  0.98 was measured over were cleared, so the corrected figure cannot be computed; it is lower than
+  0.98 and no better bound is available. Treat the *direction* of the coordinate-addressing result
+  as evidenced and the magnitude as unestablished until a fresh pair of runs is measured.
+
 **Limits.** The coordinate system mechanises the *address* and *span*; **unit boundary** is
 mechanical only where the source is structurally parseable. Clean HTML enumerates fully; a
 collapsed-space PDF degrades to coarse `page-p` loci and sets `fully_enumerable: false`, which

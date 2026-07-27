@@ -93,8 +93,15 @@ def run_loci(run_dir: Path) -> set[str]:
     loci: set[str] = set()
     for led in _ledgers(run_dir):
         text = led.read_text(encoding="utf-8", errors="ignore")
-        for m in _LOCUS_LINE.finditer(text):
-            loci.add(f"{led.stem}:{m.group(1).lower()}")
+        # Claim blocks only. A ledger header may describe the convention on a line
+        # that itself begins with **Locus:**, and a whole-file scan reads that
+        # sentence as an address; being header prose it is identical across runs, so
+        # it lands in the intersection and inflates agreement. check_units.py scopes
+        # the same field the same way.
+        for block in re.split(r"(?m)^## ", text)[1:]:
+            m = _LOCUS_LINE.search(block)
+            if m:
+                loci.add(f"{led.stem}:{m.group(1).lower()}")
     return loci
 
 
