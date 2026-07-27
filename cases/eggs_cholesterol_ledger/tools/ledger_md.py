@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-# === SCRIPT: ledger_md — the one reader of a ledger's claim blocks ===
-# INPUTS : a ledger Markdown file (the grammar of spec/INTERCHANGE.md §2).
-# OUTPUT : ClaimBlock records; every marker parser in the kit resolves fields
+# === SCRIPT: ledger_md — the one reader of a document's marker blocks ===
+# INPUTS : a ledger Markdown file (the grammar of spec/INTERCHANGE.md §2), or any
+#          Markdown document declaring fields under `## ` headings (inquiry.md).
+# OUTPUT : MarkdownBlock records; every marker parser in the kit resolves fields
 #          through these rather than scanning the file itself.
 #
 # A ledger contains prose ABOUT its own markers as well as markers carrying data:
@@ -21,12 +22,14 @@ from pathlib import Path
 
 CLAIM_HEADER_RE = re.compile(r"^##\s+claim\b", re.IGNORECASE)
 CLAIM_NUMBER_RE = re.compile(r"^##\s+claim\s+(\d+)\b", re.IGNORECASE)
+# Exactly two hashes: a `###` sub-heading stays inside its parent's block.
+SECTION_HEADER_RE = re.compile(r"^##\s+\S")
 _FENCE_RE = re.compile(r"^\s*(```|~~~)")
 
 
 @dataclass(frozen=True)
-class ClaimBlock:
-    """One `## Claim` block. `text` keeps the block verbatim (quotes intact) for
+class MarkdownBlock:
+    """One `## ` section. `text` keeps the block verbatim (quotes intact) for
     quote extraction; `marker_lines` is the subset a field may be read from."""
 
     ordinal: int
@@ -64,12 +67,12 @@ def _strip_fences(lines: list[str]) -> list[bool]:
     return out
 
 
-def claim_blocks(source: Path | str) -> list[ClaimBlock]:
-    """Every `## Claim` block in a ledger, in header order (ordinals are 1-based).
+def _blocks(source: Path | str, header_re: re.Pattern[str]) -> list[MarkdownBlock]:
+    """Every section opened by `header_re`, in header order (ordinals are 1-based).
 
-    Accepts a path or the text itself. Text before the first claim header is a
-    ledger's preamble and is never returned, so documentation of a field cannot be
-    read as a use of it.
+    Accepts a path or the text itself. Text before the first header is the
+    document's preamble — where a file explains its own conventions — and is never
+    returned, so documentation of a field cannot be read as a use of it.
     """
     text = source.read_text(encoding="utf-8", errors="ignore") \
         if isinstance(source, Path) else source
@@ -77,8 +80,8 @@ def claim_blocks(source: Path | str) -> list[ClaimBlock]:
     fenced = _strip_fences(lines)
 
     starts = [i for i, line in enumerate(lines)
-              if not fenced[i] and CLAIM_HEADER_RE.match(line.strip())]
-    blocks: list[ClaimBlock] = []
+              if not fenced[i] and header_re.match(line.strip())]
+    blocks: list[MarkdownBlock] = []
     for n, start in enumerate(starts):
         end = starts[n + 1] if n + 1 < len(starts) else len(lines)
         body = lines[start:end]
@@ -88,10 +91,21 @@ def claim_blocks(source: Path | str) -> list[ClaimBlock]:
             # an example and the `>` line is the source's words, not the author's.
             if not fenced[i] and not line.lstrip().startswith(">")
         )
-        blocks.append(ClaimBlock(ordinal=n + 1, header=lines[start].strip(),
-                                 text="\n".join(body).rstrip() + "\n",
-                                 marker_lines=marker_lines))
+        blocks.append(MarkdownBlock(ordinal=n + 1, header=lines[start].strip(),
+                                    text="\n".join(body).rstrip() + "\n",
+                                    marker_lines=marker_lines))
     return blocks
+
+
+def claim_blocks(source: Path | str) -> list[MarkdownBlock]:
+    """Every `## Claim` block in a ledger, in header order."""
+    return _blocks(source, CLAIM_HEADER_RE)
+
+
+def heading_blocks(source: Path | str) -> list[MarkdownBlock]:
+    """Every `## ` section, for a document that carries fields without claim
+    blocks — content/inquiry.md declares a sub-question id under each heading."""
+    return _blocks(source, SECTION_HEADER_RE)
 
 
 def claim_numbers(source: Path | str) -> list[int]:

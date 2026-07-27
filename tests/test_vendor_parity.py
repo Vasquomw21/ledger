@@ -1,4 +1,6 @@
 # Full-kernel cases must match the root kernel; content-only cases must contain no kernel.
+# A case is a build output, so this checks the generator, not the author: the repair for
+# any failure here is `python3 dev/regen_cases.py`, never a hand-copy into cases/.
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -49,7 +51,7 @@ def test_full_kernel_cases_match_root():
                 drifted.append(f"{here}: the kit has no such tool")
             elif root.read_bytes() != tool.read_bytes():
                 drifted.append(f"{here}: differs from tools/{tool.name} — "
-                               f"`cp tools/{tool.name} {here}`")
+                               "run `python3 dev/regen_cases.py`")
     assert not drifted, drifted
 
 
@@ -67,10 +69,10 @@ def test_full_kernel_cases_match_root_literature():
             root, here = KIT_LITERATURE / name, CASES_DIR / case / "literature" / name
             rel = here.relative_to(REPO_ROOT)
             if not here.is_file():
-                drifted.append(f"{rel}: missing — `cp literature/{name} {rel}`")
+                drifted.append(f"{rel}: missing — run `python3 dev/regen_cases.py`")
             elif root.read_bytes() != here.read_bytes():
                 drifted.append(f"{rel}: differs from literature/{name} — "
-                               f"`cp literature/{name} {rel}`")
+                               "run `python3 dev/regen_cases.py`")
     assert not drifted, drifted
 
 

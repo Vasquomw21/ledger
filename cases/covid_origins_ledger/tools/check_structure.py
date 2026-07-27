@@ -27,7 +27,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from check_citations import parse_config
-from ledger_md import claim_blocks
+from ledger_md import claim_blocks, heading_blocks
 import claim_graph as cg
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -72,12 +72,18 @@ class QidRef:
 
 def parse_inquiry_qids(inquiry_path: Path) -> set[str]:
     """The set of sub-question ids declared in inquiry.md (empty if absent — then
-    any qid reference is dangling, which is the point)."""
+    any qid reference is dangling, which is the point).
+
+    A declaration is read from the `## ` sections only: an inquiry explaining its
+    own `**id:**` convention in its preamble, or showing one in a fenced example,
+    must not thereby declare a sub-question. Errs LOUD — an id the parser does not
+    see makes every claim addressing it dangle, where the opposite error lets a
+    DELETED sub-question keep resolving on the strength of a leftover mention.
+    """
     if not inquiry_path.is_file():
         return set()
-    text = inquiry_path.read_text(encoding="utf-8", errors="ignore")
-    return {m.group(1).lower() for line in text.splitlines()
-            if (m := QID_LINE_RE.match(line.strip()))}
+    return {m.group(1).lower() for block in heading_blocks(inquiry_path)
+            for m in block.fields(QID_LINE_RE)}
 
 
 def parse_qid_refs(claims_dir: Path) -> list[QidRef]:

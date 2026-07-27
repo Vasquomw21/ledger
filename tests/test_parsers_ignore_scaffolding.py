@@ -17,7 +17,7 @@ import check_units  # noqa: E402
 import claim_graph  # noqa: E402
 import repro  # noqa: E402
 from check_citations import claim_header_issues, ledger_claim_id_sets  # noqa: E402
-from ledger_md import claim_blocks  # noqa: E402
+from ledger_md import claim_blocks, heading_blocks  # noqa: E402
 
 LEGIT_SLUG = "p4"
 LEGIT_QID = "q-real"
@@ -52,6 +52,39 @@ markers they describe.
 **Locus:** decoy-in-block-fence
 ```
 """
+
+
+DECOY_INQUIRY = f"""# Inquiry — a subject
+
+Each sub-question declares a stable id, and the sentence describing that
+convention begins with the marker it describes.
+
+**id:** decoy-in-preamble
+
+```
+## Q0 — a fenced example that must not open a section
+**id:** decoy-in-preamble-fence
+```
+
+## Q1 — the only real sub-question
+
+**id:** {LEGIT_QID}
+**parent:** root
+
+> "a quoted span naming **id:** decoy-in-quote"
+
+### A sub-heading does not open a section
+
+```
+**id:** decoy-in-section-fence
+```
+"""
+
+
+def _inquiry(tmp_path: Path) -> Path:
+    path = tmp_path / "inquiry.md"
+    path.write_text(DECOY_INQUIRY, encoding="utf-8")
+    return path
 
 
 def _ledger(tmp_path: Path) -> Path:
@@ -108,3 +141,28 @@ def test_claim_body_excludes_the_preamble(tmp_path):
 def test_header_numbering_ignores_a_fenced_claim(tmp_path):
     """`## Claim 9` in an example must not read as a numbering error."""
     assert claim_header_issues(_ledger(tmp_path)) is None
+
+
+def test_inquiry_qids_ignore_decoys(tmp_path):
+    """A sub-question deleted from inquiry.md but still mentioned in prose or an
+    example would keep resolving, leaving every claim addressing it green."""
+    assert check_structure.parse_inquiry_qids(_inquiry(tmp_path)) == {LEGIT_QID}
+
+
+def test_inquiry_sections_exclude_the_preamble(tmp_path):
+    blocks = heading_blocks(_inquiry(tmp_path))
+    assert [b.ordinal for b in blocks] == [1]
+    assert blocks[0].header.startswith("## Q1")
+
+
+def test_a_deleted_subquestion_dangles(tmp_path):
+    """The gate's whole purpose: a qid no section declares must not resolve."""
+    claims = tmp_path / "verified_claims"
+    _ledger(claims.parent)
+    problems = check_structure.structure_problems(claims, _inquiry(tmp_path))
+    assert problems == []
+
+    orphaned = tmp_path / "no_sections.md"
+    orphaned.write_text(f"# Inquiry\n\n**id:** {LEGIT_QID}\n", encoding="utf-8")
+    problems = check_structure.structure_problems(claims, orphaned)
+    assert any(LEGIT_QID in p and "not a sub-question id" in p for p in problems)
