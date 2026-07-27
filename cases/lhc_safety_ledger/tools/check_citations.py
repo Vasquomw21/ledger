@@ -30,6 +30,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ledger_md import claim_blocks, claim_numbers  # noqa: E402
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 # Default gated prefixes when ledger.config.md has no usable gated_paths: value.
@@ -169,14 +172,9 @@ def ledger_claim_id_sets(ledger_path: Path) -> tuple[set[str], set[str]]:
     while still honouring a stable slug — even one literally named 'c1'."""
     ordinals: set[str] = set()
     slugs: set[str] = set()
-    ordinal = 0
-    for line in ledger_path.read_text(encoding="utf-8", errors="ignore").splitlines():
-        stripped = line.strip()
-        if re.match(r"^##\s+claim\b", stripped, re.IGNORECASE):
-            ordinal += 1
-            ordinals.add(f"c{ordinal}")
-        m = re.match(r"^\*\*ID:\*\*\s*([\w-]+)", stripped, re.IGNORECASE)
-        if m:
+    for block in claim_blocks(ledger_path):
+        ordinals.add(f"c{block.ordinal}")
+        for m in block.fields(_ID_RE):
             slugs.add(m.group(1).lower())
     return ordinals, slugs
 
@@ -188,17 +186,16 @@ def ledger_claim_ids(ledger_path: Path) -> set[str]:
     return ordinals | slugs
 
 
+_ID_RE = re.compile(r"^\*\*ID:\*\*\s*([\w-]+)", re.IGNORECASE)
+
+
 def claim_header_issues(ledger_path: Path) -> str | None:
     """Authored `## Claim N` numbers that are non-contiguous or out of order —
     the footgun behind positional #cN refs (insert/reorder a claim and later
     refs silently re-point). Returns a one-line description, or None if the
     numbers run 1, 2, 3, … in order. Unnumbered claims are ignored (they only
     resolve by **ID:**)."""
-    numbers: list[int] = []
-    for line in ledger_path.read_text(encoding="utf-8", errors="ignore").splitlines():
-        m = re.match(r"^##\s+claim\s+(\d+)\b", line.strip(), re.IGNORECASE)
-        if m:
-            numbers.append(int(m.group(1)))
+    numbers = claim_numbers(ledger_path)
     expected = list(range(1, len(numbers) + 1))
     if numbers and numbers != expected:
         return (f"{ledger_path.name}: ## Claim headers numbered {numbers} — "

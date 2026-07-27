@@ -27,6 +27,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from check_citations import parse_config
+from ledger_md import claim_blocks
 import claim_graph as cg
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -87,10 +88,13 @@ def parse_qid_refs(claims_dir: Path) -> list[QidRef]:
     for ledger in sorted(claims_dir.glob("*.md")):
         if ledger.stem == "TEMPLATE":
             continue
-        text = ledger.read_text(encoding="utf-8", errors="ignore")
-        for line_no, line in enumerate(text.splitlines(), start=1):
-            m = QID_FIELD_RE.match(line.strip())
-            if m:
+        lines = ledger.read_text(encoding="utf-8", errors="ignore").splitlines()
+        for block in claim_blocks(ledger):
+            for m in block.fields(QID_FIELD_RE):
+                # The author's coordinate, recovered from the block's own line, so a
+                # report still points at the file rather than at a block offset.
+                line_no = next((i for i, ln in enumerate(lines, start=1)
+                                if ln.strip() == m.string), 0)
                 refs.append(QidRef(m.group("field").lower(), m.group("qid").lower(),
                                    ledger.stem, line_no))
     return refs

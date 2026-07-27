@@ -19,6 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 from check_citations import ledger_claim_id_sets   # (ordinals, **ID:** slugs) per ledger
 from check_structure import parse_qid_refs          # **Addresses:**/**Crux-of:** qids
+from ledger_md import claim_blocks                  # the one reader of claim blocks
 
 
 def _ledgers(d: Path) -> list[Path]:
@@ -92,15 +93,8 @@ def run_loci(run_dir: Path) -> set[str]:
     no source on the grid yet."""
     loci: set[str] = set()
     for led in _ledgers(run_dir):
-        text = led.read_text(encoding="utf-8", errors="ignore")
-        # Claim blocks only. A ledger header may describe the convention on a line
-        # that itself begins with **Locus:**, and a whole-file scan reads that
-        # sentence as an address; being header prose it is identical across runs, so
-        # it lands in the intersection and inflates agreement. check_units.py scopes
-        # the same field the same way.
-        for block in re.split(r"(?m)^## ", text)[1:]:
-            m = _LOCUS_LINE.search(block)
-            if m:
+        for block in claim_blocks(led):
+            if (m := block.field(_LOCUS_LINE)):
                 loci.add(f"{led.stem}:{m.group(1).lower()}")
     return loci
 

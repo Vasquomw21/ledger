@@ -30,7 +30,9 @@ from enumerate_units import manifest_digest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "literature"))
+sys.path.insert(0, str(REPO_ROOT / "tools"))
 from verify_quotes import norm, read_frontmatter  # noqa: E402
+from ledger_md import claim_blocks  # noqa: E402
 
 CLAIMS_DIR = REPO_ROOT / "literature" / "verified_claims"
 UNITS_DIR = REPO_ROOT / "literature" / "units"
@@ -73,12 +75,10 @@ def _block_quote(block: str) -> str | None:
 
 def claim_loci(ledger_path: Path) -> list[tuple[str, str | None]]:
     """[(locus, quote)] for each claim block carrying a **Locus:**."""
-    text = ledger_path.read_text(encoding="utf-8", errors="ignore")
     out: list[tuple[str, str | None]] = []
-    for block in re.split(r"(?m)^## ", text)[1:]:
-        m = LOCUS_RE.search(block)
-        if m:
-            out.append((m.group(1).lower(), _block_quote(block)))
+    for block in claim_blocks(ledger_path):
+        if (m := block.field(LOCUS_RE)):
+            out.append((m.group(1).lower(), _block_quote(block.text)))
     return out
 
 
