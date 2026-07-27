@@ -1,0 +1,20 @@
+{
+  "body_sha256": "a05c99c889fef99209a298601063ba3b76172ccfcd4ef4452ff69c13d4f04f00",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "44671bdc79469f7364fe135e9e2d3a4e1349e8a6bbe94a0e37e2f84966efeee7",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/weissman.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "weissman",
+  "pmcid": "",
+  "record_sha256": "fd73a645b1708f8cf56056ad249684109874b0c348f8f54e497962e5a5296343",
+  "retrieved": "20260614",
+  "source_sha256": "e25a8664a87408ac4a4a2da1fd5ac4bad649022546d8460d61e73f9f05ed3337",
+  "transcript_sha256": "0bf8d653b5246017c53ed971ced3f7791c80ea7c3f52be415f29279c4db58951",
+  "url": "https://michaelweissman.substack.com/p/an-inconvenient-probability-v50",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

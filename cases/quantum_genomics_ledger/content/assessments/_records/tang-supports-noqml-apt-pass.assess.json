@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "29abeaff6b92042fef6ee880f0ec35dc6173c3603daebb569370f2fdfa05f799",
+  "disputes": [],
+  "grounding": [
+    "tang_2019:no-exponential-speedup"
+  ],
+  "id": "tang-supports-noqml-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "3e6926f1f245b318689cad8f157144871a5305752e2ef8c625efee499d766afe",
+  "reviews": [
+    "tang-supports-noqml-apt"
+  ],
+  "span": "",
+  "subject": "maurizio_2025:no-qml-real-world-speedup"
+}

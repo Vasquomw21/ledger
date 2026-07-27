@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "86c99ae3e655bba79d669ae8609d9ecde5a5efb0c0891eaa8dee12b94f333277",
+  "disputes": [],
+  "grounding": [
+    "koch_2009:independent-argument"
+  ],
+  "id": "koch-supports-norisk-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "594a6ab67c9b88ac2ce800d90eebce29cfc7a5de4d18a88ae7dbd875247a2018",
+  "reviews": [
+    "koch-supports-norisk-apt"
+  ],
+  "span": "",
+  "subject": "lsag_2008:no-associated-risks"
+}

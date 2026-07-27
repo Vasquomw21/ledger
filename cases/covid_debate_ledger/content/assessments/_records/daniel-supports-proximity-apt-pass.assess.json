@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "17c5d5c1096cca8becde6470f714ca9fe092f663a733d29ec808483d51c272e7",
+  "disputes": [],
+  "grounding": [
+    "daniel:market-hsm"
+  ],
+  "id": "daniel-supports-proximity-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "31f31573f810eac209f3468c796ce3845dc91882c9a425e35b2c1aebf6edc970",
+  "reviews": [
+    "daniel-supports-proximity-apt"
+  ],
+  "span": "",
+  "subject": "stansifer:proximity"
+}

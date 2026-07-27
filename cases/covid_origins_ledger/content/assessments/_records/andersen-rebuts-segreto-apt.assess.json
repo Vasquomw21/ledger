@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "7b2bf946b7d9931b626d4b6ed0c03aeb4514479ad92283ce7777a81c250910dd",
+  "disputes": [],
+  "grounding": [
+    "andersen_2020:fcs-natural-process"
+  ],
+  "id": "andersen-rebuts-segreto-apt",
+  "kind": "edge",
+  "record_sha256": "02cbf93e3736b813403568dd01d11ced672f4b4ee8c928246cc08dff83368983",
+  "span": "",
+  "subject": "segreto_2021:fcs-implies-engineering"
+}

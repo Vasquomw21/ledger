@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "df8ce1e046adb946297ddb9ccbe3501b3c6b8e0f3170e50604070da242b735d6",
+  "disputes": [],
+  "grounding": [
+    "pednault_2019:rebuttal-days-not-years"
+  ],
+  "id": "pednault-rebuts-supremacy-apt",
+  "kind": "edge",
+  "record_sha256": "09c9602a485cc6dd2c671a4d072a4a06b00e96160f14ea3c6c134e54fe88a36b",
+  "span": "",
+  "subject": "arute_2019:200s-vs-10000-years"
+}

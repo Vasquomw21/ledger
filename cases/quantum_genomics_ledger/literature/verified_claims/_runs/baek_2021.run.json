@@ -1,0 +1,20 @@
+{
+  "body_sha256": "fa73e18bac107951a63374a7d16a0edae0e0382545cffafc2433b4f3d7d52286",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1126/science.abj8754",
+  "extract_sha256": "7ffaf712170c06f1b18a4197c977054da4c0b796dd4d26a7ab67109df4b6d61a",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/baek_2021.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "baek_2021",
+  "pmcid": "",
+  "record_sha256": "bd3f819090ab23079b38650bc9a9b3acf6c46407a6959e4e6308c8a7d7ae26e5",
+  "retrieved": "20260603",
+  "source_sha256": "2163437874980b897c2ae213a2e27fa783de84edb9fdba4f04c8c188ca16278d",
+  "transcript_sha256": "dcc69a44f8923be038b7c31aaee69494c9919595ce8c2330481fcc4fedd660d1",
+  "url": "https://doi.org/10.1126/science.abj8754",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

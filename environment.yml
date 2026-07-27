@@ -1,0 +1,20 @@
+# Ledger — OPTIONAL full-toolchain conda env. Not the primary path: the demo needs zero
+# installs; tests + intake install via pip (requirements.txt). conda is kept only for the
+# binary intake/publish deps (node/gh/jq/curl) pip can't provide. conda-forge only.
+name: ledger_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - nodejs            # Quartz static-site publishing
+  - gh                # GitHub CLI (repo create / push)
+  - jq                # fetch_paper.sh — JSON parsing (Unpaywall / OpenAlex)
+  - curl              # fetch_paper.sh — the download ladder
+  # Minor-pinned: the verification chain depends on extraction output being
+  # stable; a silent major bump in pypdf/bs4 can change extracted text and
+  # flip quote checks on a fresh clone.
+  - beautifulsoup4=4.15  # build_register.py / extract_text.py — HTML parsing (import bs4)
+  - lxml=6.1             # extract_text.py — HTML parser backend
+  - pypdf=6.13           # extract_text.py — PDF text extraction
+  - pytest=9.0           # tests/ — enforcement-layer suite (also runs in CI)
+  - pip

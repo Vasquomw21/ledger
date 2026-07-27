@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260613",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "c17c48b4a0cea2e29bacffb20d89ed0568c3899e2df168baa3759ee22d03470f",
+  "disputes": [],
+  "grounding": [
+    "giddings_2008:no-risk-whatsoever"
+  ],
+  "id": "giddings-whatsoever",
+  "kind": "rhetorical",
+  "record_sha256": "8e2c9ada1a664e67db0811e49b5aa3bb7cf2dc0776de84d40125a918c200bd82",
+  "span": "no risk of any significance whatsoever",
+  "subject": "giddings_2008:no-risk-whatsoever"
+}

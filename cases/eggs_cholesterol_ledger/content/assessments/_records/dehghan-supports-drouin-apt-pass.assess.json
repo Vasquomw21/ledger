@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f9c72cf8e07ae7d105890da31d8ff15577e4f28842e02ea803a941e9cd9fac2a",
+  "disputes": [],
+  "grounding": [
+    "dehghan_2020:pure-no-association"
+  ],
+  "id": "dehghan-supports-drouin-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "2953e19f77878b6bce43bb3d56fabf2bb5c8ce419ff9965018a54638bbf6ab8e",
+  "reviews": [
+    "dehghan-supports-drouin-apt"
+  ],
+  "span": "",
+  "subject": "drouin_2020:no-association-overall"
+}

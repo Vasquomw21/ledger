@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "17c5d5c1096cca8becde6470f714ca9fe092f663a733d29ec808483d51c272e7",
+  "disputes": [],
+  "grounding": [
+    "daniel:market-hsm"
+  ],
+  "id": "daniel-supports-proximity-apt",
+  "kind": "edge",
+  "record_sha256": "9fbc38b13a511b0805635a4a7c64d6808a9c2e46ce4ae0b8605785ce6f821894",
+  "span": "",
+  "subject": "stansifer:proximity"
+}

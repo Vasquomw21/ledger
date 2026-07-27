@@ -1,0 +1,20 @@
+{
+  "body_sha256": "8edb212d646a16867df29842dbfb1356b74499d675ca616ce297e05bd0cebea1",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1126/science.abp8337",
+  "extract_sha256": "97910a3d6132b28a57fe57867c6eb9ea883f579be67e3c2993fb0a7d5fd1654d",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.13.2;beautifulsoup4=4.15.0;lxml=6.1.1",
+  "file": "literature/pekar_2022.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "pekar_2022",
+  "pmcid": "PMC9348752",
+  "record_sha256": "c75cc18fda35a1f2548af9c0eccaeaf21005e94c30356c030b403c6ed2604e76",
+  "retrieved": "20260614",
+  "source_sha256": "b7904887109aade9205bd59a26896a214d90fda8b40639e92fad53dcfabe178e",
+  "transcript_sha256": "6b171e3ca275ed7cf36b9c74d8b922912484804378a14d3188870f221b9ddb3f",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9348752/",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

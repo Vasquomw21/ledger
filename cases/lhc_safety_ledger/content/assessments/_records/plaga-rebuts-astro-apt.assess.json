@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "5f5d215356dccfc893ac71ec5cd4c93ba8b95e3a1236137e128dc399b5229f33",
+  "disputes": [],
+  "grounding": [
+    "plaga_2008:evades-exclusion"
+  ],
+  "id": "plaga-rebuts-astro-apt",
+  "kind": "edge",
+  "record_sha256": "8bb358017a17b998abfbc0cbb50d66d4c6f4629a2ac95f3c6ca797dae1c6a6e2",
+  "span": "",
+  "subject": "giddings_2008:astro-bound"
+}

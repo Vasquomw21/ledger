@@ -1,0 +1,307 @@
+{
+  "key": "daniel",
+  "source_type": "probabilistic-analysis",
+  "source_sha256": "1fc057ae3181e65c4496a2bfce69e4c379592f244e0220d688db3b975025ba36",
+  "enumerator_version": "1",
+  "enumerated_date": "20260614",
+  "addressing": "html-block",
+  "fully_enumerable": true,
+  "units": [
+    {
+      "locus": "p1",
+      "text": "Daniel’s Bayesian analysis of COVID origins",
+      "unit_sha256": "0e31a79d5c03bc84298cc020fc38c8a633aff94a0a56b3729338c7b773902eb9"
+    },
+    {
+      "locus": "p2",
+      "text": "tl;dr I get 96% zoonosis (not 98% as in an early tweet). I'm not actually that confident - people disagree with me and I could be wrong. The calculation is also a bit weird in that the genetic evidence points away from zoonosis somewhat strongly but the epidemiological data points towards zoonosis even more strongly - I don't think you should expect this sort of split.",
+      "unit_sha256": "752adce72cd09d0ad98c3431787735d9c134cf600e913e397597b19c0aaa526e"
+    },
+    {
+      "locus": "p3",
+      "text": "Note: all these numbers are sort of pulled out of my ass after watching the COVID origins debate. In particular, you should be aware that I haven’t actually read the primary literature here.",
+      "unit_sha256": "a0f6e66949b7739be64012afb2f00a9d2ea0d2861380d49c8f04fe2d5d43135d"
+    },
+    {
+      "locus": "p4",
+      "text": "All ratios will put lab leak first, then zoonosis. So a prior of 8:15 means zoonosis is more likely.",
+      "unit_sha256": "df3a191ecf88ca1ddd6bf43c0e60488797c4ff2b6e9f0ec268cb6659825f8965"
+    },
+    {
+      "locus": "p5",
+      "text": "Priors of zoonotic spillovers in Wuhan:",
+      "unit_sha256": "004fe80addc643c8118bc6686423fc62dcc92c5d4833f90092cc86e5306cfc55"
+    },
+    {
+      "locus": "p6",
+      "text": "Zoonotic spillover pandemic happens maybe once every 20 years, let’s say a 2% chance it happens in Wuhan given population size. That gives you p(zoonotic spillover in Wuhan in 2020) = (1/20) * (1/50) = 1/1,000.",
+      "unit_sha256": "8b4a9407b6edc8d1468c6e57ed95fe223bd1fd9a0b8f133284dee8741e82c994"
+    },
+    {
+      "locus": "p7",
+      "text": "Prior of LL in Wuhan given DEFUSE, WIV, no known backbone at WIV:",
+      "unit_sha256": "6d563d3bab2399480f7ab279816c1f2707dc402069e3e2c85148f8a72d94f1d2"
+    },
+    {
+      "locus": "p8",
+      "text": "P(WIV does sarbecovirus GoF research in 2020) = 1 / 4",
+      "unit_sha256": "2f3bc80656f5d85f334bd523968bb8b9e1c52fb52dfde00dd398537f8d1c43fd"
+    },
+    {
+      "locus": "p9",
+      "text": "P(they do it with a backbone of an unknown virus | they do it) = 1 / 6",
+      "unit_sha256": "89c8f15656b563a764adf672fe70108e68027b1ec56283b12bc100d8e920eacf"
+    },
+    {
+      "locus": "p10",
+      "text": "P(it starts a pandemic | it leaks) = 1 / 2",
+      "unit_sha256": "df7b3d840f56824427340c05e3e280b57bac148a67e391fd041628bef4255754"
+    },
+    {
+      "locus": "p11",
+      "text": "So p(lab leak in Wuhan in 2020) = 1 / (4 * 6 * 100 * 2) = 1 / 5,000",
+      "unit_sha256": "9a2cd5ca79d1222d2e829705e6b63b2d8d6b4fbe7496fc0d78295444d6664830"
+    },
+    {
+      "locus": "p12",
+      "text": "First known outbreak is centred at HSM (Huanan Seafood Market), not elsewhere in Wuhan",
+      "unit_sha256": "a99b43ee8d19154f0fc0c961a1378a8135cef3443387496945e8b8f3bb34d1e5"
+    },
+    {
+      "locus": "p13",
+      "text": "Under zoonosis, there are like 4 markets it could be at, but maybe HSM is the biggest, so I’ll give that 1 / 3.",
+      "unit_sha256": "a75e3f65cc2cd75db2d2f2785106e254199aa7e32ce7f43d3c7a78272d69debb"
+    },
+    {
+      "locus": "p14",
+      "text": "Under lab leak, I think it’s pretty unlikely to get to the HSM. Maybe not as unlikely as Peter says, but still pretty unlikely - I’ll give that 1 / 1,000. NB: this is by far my biggest disagreement with Rootclaim.",
+      "unit_sha256": "5d3c27199a8f97b9e0d9c2ec3be9fd98c7d561f3d1df00f8b1aee7349e367b2b"
+    },
+    {
+      "locus": "p15",
+      "text": "Gives a likelihood ratio of 3:1,000",
+      "unit_sha256": "647e086fbfb0a48ed409d813128be761a807e9c799bc3cc0a9befdcbc18f1e33"
+    },
+    {
+      "locus": "p16",
+      "text": "First known outbreak is centred at HSM, not some random farm / truck driver of wildlife",
+      "unit_sha256": "c3afc79d0c027f121dae17486e3283565a72e2d25796a66965cb7ef15fe50c5e"
+    },
+    {
+      "locus": "p17",
+      "text": "Makes total sense under lab leak",
+      "unit_sha256": "418aa76d11737b2aa14ac1c9fb349aea6d9b5e9fb0b0795054a80daaedd90f73"
+    },
+    {
+      "locus": "p18",
+      "text": "Under zoonosis it’s a bit weird but I think mostly expected - I’ll give that 3 / 4 chance.",
+      "unit_sha256": "a26251d0d9461ea21254866726040bf16cc95478c6ebbe77748c177551bbf59e"
+    },
+    {
+      "locus": "p19",
+      "text": "Also that one guy (Chen?) who got a case early",
+      "unit_sha256": "df6d91db48731df5f4a6c19d847387c1c6bedc0d1893b5d447eeb5b8340ce866"
+    },
+    {
+      "locus": "p20",
+      "text": "Pretty unreliable, you expect random shit, I’d give that as 1:1.",
+      "unit_sha256": "d033129877e65c5a41d887e6de56066522034279c06b088bbcd3c80c6ea1612f"
+    },
+    {
+      "locus": "p21",
+      "text": "Environmental samples at market where wild animals are being sold.",
+      "unit_sha256": "7d2228ad19171110c9217c1eefd68a3b4c8464cc9e79a98e405c3a9250e352e2"
+    },
+    {
+      "locus": "p22",
+      "text": "Right where you expect them to be under zoonosis.",
+      "unit_sha256": "8fd1f77dd21f9b647c8444d346a55fa322156f85c9357cee91f9d0fc3e4b5aed"
+    },
+    {
+      "locus": "p23",
+      "text": "Under lab leak, they could have been in any of the stalls. Peter says there are 10 wild animal stalls out of 680 total - but only a subset of the stalls are tested. This is because they think it’s a zoonotic spillover, but they think that because of evidence we’ve already updated on, so we don’t want to double-count that. I think this reduces the factor to 1/30 or so.",
+      "unit_sha256": "88ba0e5db3bf0073ee95dbdd7b7426f137f06772278fed5bd0835655df2e047d"
+    },
+    {
+      "locus": "p24",
+      "text": "But… IDK this still feels high. If it weren’t that exact pattern under zoonosis, you could explain it by saying some animals got other animals sick (e.g. with the drains as a vector). I think I want to mark it down by a factor of 2.",
+      "unit_sha256": "a6a0e13077b92e43c83441ce08de36dcef19ece9c150b48694332f3ff8d2ad79"
+    },
+    {
+      "locus": "p25",
+      "text": "No animal vendors testing positive",
+      "unit_sha256": "540fba78f6e9a364e65bf56ec3bd3d8cdf25d2fa069f48a7e865e749c74d2931"
+    },
+    {
+      "locus": "p26",
+      "text": "I think this is a bit weird for zoonosis. Peter says it’s sort of similar to what happened with SARS, but I think this is like a 2 to 1 penalty.",
+      "unit_sha256": "ac57ec8a7c2d026e95fd2dd3cabaa8f7f095c60f4cb85a5bd1d307a5e6cb8daa"
+    },
+    {
+      "locus": "p27",
+      "text": "Outbreak happens during winter",
+      "unit_sha256": "97a492a62584b9b18b0059cbd953850a6eb8bbf4dc6310ae9ff1742118894d45"
+    },
+    {
+      "locus": "p28",
+      "text": "OK seasonality but maybe lab leaks are more likely to spread person-to-person during winter? I think I don’t want to count this as evidence.",
+      "unit_sha256": "e38dadc1ff9b3ec94f9fa54cbbe0b22fc7573697ec162659a3f1dd40bfbfc01f"
+    },
+    {
+      "locus": "p29",
+      "text": "Lineage A/B (key thing: no sequenced cases at market are lineage A, but some swabs get lineage A virus)",
+      "unit_sha256": "f6b6e3380b0078e983bbca6699408dfa288e7bff8f2057b1897dae8c54fba491"
+    },
+    {
+      "locus": "p30",
+      "text": "If lineage A didn’t start at market, why are earliest cases so close?",
+      "unit_sha256": "b27cf8d8fdc8386c9ecbdb7774f1037915328ad5745d2770d673c6ae7597afea"
+    },
+    {
+      "locus": "p31",
+      "text": "If lineage A was widespread, why isn’t it more diverse?",
+      "unit_sha256": "633df38ed8b1d49296c34441e411be54c4950ea5b3e24393a9d455401aabb4df"
+    },
+    {
+      "locus": "p32",
+      "text": "If lineage A wasn’t widespread, why was the market the only superspreading event?",
+      "unit_sha256": "7bbf3171eda13b1a2dafcd708e33f3364ddef0a451dc1767054d9a10c0c91196"
+    },
+    {
+      "locus": "p33",
+      "text": "So I think this is weird under the zoonosis story. First 12 cases are B, not A - which is weird under 2 spillovers. There’s some correlation, so I think I want to treat that as four 50% coincidences.",
+      "unit_sha256": "aa767c26cdc4b8028fd237e969062d303cef0eaa755fe9325994a4f00e33fb0b"
+    },
+    {
+      "locus": "p34",
+      "text": "Likelihood ratio for no market-linked cases being B: 16:1",
+      "unit_sha256": "90d440dffee7dde86006e0ae01b1851fc8b286fc278d6349bd4289b4b7250d5a"
+    },
+    {
+      "locus": "p35",
+      "text": "Low initial genetic diversity",
+      "unit_sha256": "39183ff3651486884778b3b0214c6c05798d4289e17498d9a64d1c28fdbba527"
+    },
+    {
+      "locus": "p36",
+      "text": "I think there was some dispute about this that I don’t think really got resolved. My current take is that it isn’t a big deal - COVID can’t have been that pre-adapted to humans, given how impressive delta and omicron were. But I reserve my right to add a likelihood ratio here if there was something fishy.",
+      "unit_sha256": "76de2e7252fa2dae5ba84d61a88671926632bd8e3b6069ae67eaa6e4f6dce2d6"
+    },
+    {
+      "locus": "p37",
+      "text": "FCS is hard to spread via fecal-oral in bats",
+      "unit_sha256": "b994b752d310184b8d3293f55abe776897823c043487e1c96f96616bfebfb6a2"
+    },
+    {
+      "locus": "p38",
+      "text": "FCS is great: you do expect messing around with cleavage sites under DEFUSE. But you also could see this in nature. I say:",
+      "unit_sha256": "7775a8ad65471f74f2642031eff85f1942981c8b0c5341721af6aedcdb72fcc8"
+    },
+    {
+      "locus": "p39",
+      "text": "FCS is hard to spread via fecal-oral in bats, so it had to develop in the intermediate host. (at least, everyone seems to agree on that, it’s a bit confusing to me). Intuitively this feels like 2:1 if I imagine the intermediate host is half the pre-human lifetime of the virus. But maybe it’s not? Let’s go with this:",
+      "unit_sha256": "418db3cb021dc9980409f5146460402b18514562e4ca89373c12c971badb0fd7"
+    },
+    {
+      "locus": "p40",
+      "text": "12 nt insert is also kinda rare. Peter says it’s off-frame but I don’t quite buy that. But also, most published work talks about evolving FCSs rather than inserting them de novo - and you could get it from an animal host. I think this favours lab leak world, but not hugely.",
+      "unit_sha256": "af28e9f6b7fcb17be2a44353a81244a531202273d80a29c5cb1235b6d06999fc"
+    },
+    {
+      "locus": "p41",
+      "text": "CGG is a rare way to spell the arginine amino acid. I think in zoonosis world, we say that the first one is a 1 in 30 coincidence, and let’s say it was duplicated (which is a 1 / 2 coincidence). In lab leak world, it’s also weird, because we only use that codon maybe 1/10 of the time. If I take that seriously I’m going to give a 3x Bayes factor, but during the debate I thought it was more like 5-10x and Peter says it’s 5x, so let’s say it’s uh 7x",
+      "unit_sha256": "4312417675068fc92307384ed6358ae02cf15f7b0751a87c8047e9dd19c90f42"
+    },
+    {
+      "locus": "p42",
+      "text": "Alanine - got to be less than 1 in 5?",
+      "unit_sha256": "4434bb04c8b3c5065db45ce3b92afb4ac6bef46b0813d62d01b69fa1ca241883"
+    },
+    {
+      "locus": "p43",
+      "text": "Initial P - not sure what the factor is but it’s low.",
+      "unit_sha256": "7d6349c9fab40a9052fea863c41b5358be26e5cc8d5f4fa175c38e7a072656c9"
+    },
+    {
+      "locus": "p44",
+      "text": "It’s markedly worse than all the FCS’s Peter showed labs actually insert for GoF. Laplace law of succession says that that’s a 1/7 probability under lab leak, and I think I’ll go with that? Conversely this seems like exactly the sort of thing that evolution does.",
+      "unit_sha256": "5325887cdf01e3bcde5b4c6dfc5086afcb9d27c07aa4a0264849244685aa1b25"
+    },
+    {
+      "locus": "p45",
+      "text": "Likelihood ratio: 1:7 (so cancels out with CGG LR)",
+      "unit_sha256": "6a719ba1107c891d1e3a24fb15d8cc41866aa8b93c39b8acbf2cb7af829e9c69"
+    },
+    {
+      "locus": "p46",
+      "text": "No “smoking gun” that it’s a lab leak (e.g. backbone that WIV had, proof that the lab did FCS insertion, etc.) after 4 years",
+      "unit_sha256": "97ec5ea68df6dc6dcfdc15ed11ddd76e66000364e29e2f4234573d8ff24574ed"
+    },
+    {
+      "locus": "p47",
+      "text": "No intermediate host found after 4 years",
+      "unit_sha256": "3d1b36526d509881396eea5c17600fb44d89a2b66f102d5bd5baebefc6cb73b5"
+    },
+    {
+      "locus": "p48",
+      "text": "Let’s do other analyses. What if I didn’t think the centring at the HSM was evidence? Then I’d have a posterior ratio of 768:75 ~= 10:1. So it really matters whether you think that under lab leak it’s likely that the first outbreak would be at the HSM. I think it’s not, but I suppose I could be wrong.",
+      "unit_sha256": "d6a90da82ac823728bf0dfef59b47b413742625cb0a06a712753636375d918a8"
+    },
+    {
+      "locus": "p49",
+      "text": "Next analysis: what if I have a non-GoF lab leak theory? This would involve throwing out the genetic evidence which made the lab leak theory look better, but you get a better prior on lab leak:",
+      "unit_sha256": "e89bcfd173f1ec0634f7b32502e15a0798ecc2657feb99e670fd6884542611eb"
+    },
+    {
+      "locus": "p50",
+      "text": "P(WIV does sarbecovirus research 2020) = 1 / 1.5",
+      "unit_sha256": "e6578dc59b7d95143c065e26bef739a57b18bd5b56a6aaa3b61b09704b0571b8"
+    },
+    {
+      "locus": "p51",
+      "text": "P(they do it with an unknown virus | they do it) = 1 / 6",
+      "unit_sha256": "7b6b7866e1c83e78e44ab0b7032b5e6bb0f2902bf85be4c24bc0db00892ca0b6"
+    },
+    {
+      "locus": "p52",
+      "text": "P(it starts a pandemic | it leaks) = 1 / 2",
+      "unit_sha256": "df7b3d840f56824427340c05e3e280b57bac148a67e391fd041628bef4255754"
+    },
+    {
+      "locus": "p53",
+      "text": "So p(lab leak in Wuhan in 2020) = 1 / (1.5 * 6 * 100 * 2) = 1 / 2,000",
+      "unit_sha256": "6fc0820754065bafcccb43f3572c04cb46d73224a2209400e2aecde3bbb75dbe"
+    },
+    {
+      "locus": "p54",
+      "text": "This gives you a prior odds ratio of 1:2, and a posterior ratio of 384:90,000 ~= 1:225. So looks worse than the GoF theory.",
+      "unit_sha256": "8ffad60cff4767815d6d7aea8478d874a40ae4f4889717adc842d0417b48b2dc"
+    },
+    {
+      "locus": "p55",
+      "text": "Background beliefs informing this analysis:",
+      "unit_sha256": "7e7828d6a1f8e38bce7514945d5e3fb90ea673eec1e947b772d161dbce133bc3"
+    },
+    {
+      "locus": "p56",
+      "text": "China wanted to cover up COVID origins whether it was zoonosis or not.",
+      "unit_sha256": "b1f930a8a92b81739d65e25768a13519763264bcccde68e4aebd6576ca27eef6"
+    },
+    {
+      "locus": "p57",
+      "text": "The DEFUSE proposal is not actually a very close match to SARS-CoV-2, and it describes the GoF research happening at UNC.",
+      "unit_sha256": "42dad97c28119d9de355cee0dd142bc613f5e0ea4ea8048fb4abb09c4c99a4cc"
+    },
+    {
+      "locus": "p58",
+      "text": "Given what we know about superspreading events, there’s nothing special about the Huanan Seafood Market if COVID didn’t start from a zoonotic spillover there.",
+      "unit_sha256": "3a276ffdf490cc902d83c8baec39d973226837b4633c2c7baa17874568a4ae9e"
+    },
+    {
+      "locus": "p59",
+      "text": "You just don’t get a huge likelihood ratio from weird things about the SARS-CoV-2 virus that give it more pandemic potential, because we’re conditioning on the emergence of a pandemic.",
+      "unit_sha256": "f93ebc583842de25152ae8577e3c784165e0006dcde12c4ea2d77d1f6cd572c0"
+    }
+  ],
+  "manifest_sha256": "5bdd0020fba602aa2202f421f8ccddac7f1225d5c6efd7d02078a5c122361f37"
+}

@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "00f5708cf56c25032c729d1e1889d1d0d07c9efdd32b154e988becd842a8563a",
+  "disputes": [],
+  "grounding": [
+    "pekar_2022:multiple-introductions"
+  ],
+  "id": "pekar-supports-nolab-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "6d34e65916b22812c82ad2b87599f688a667937b75156dbbce0854fb6e942ad8",
+  "reviews": [
+    "pekar-supports-nolab-apt"
+  ],
+  "span": "",
+  "subject": "andersen_2020:no-lab-scenario"
+}

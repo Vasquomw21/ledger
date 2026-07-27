@@ -1,0 +1,43 @@
+# Vault-backed doc symlinks — edited in Obsidian (single source of truth), never committed.
+# Per the global rule: vault symlinks must never be tracked by git.
+/SPEC.md
+/BOOTSTRAP.md
+/HISTORY.md
+/CLAUDE.md
+/PROGRESS_LOG.md
+/CURRENT_STATE.md
+/FAILURE_MODES.md
+/LEDGER_MAP.md
+
+# Raw downloaded sources — copyright; the corpus is never committed (a fresh clone
+# rebuilds it via the fetch ladder). Only the verified_claims/ ledgers travel.
+/literature/*.pdf
+/literature/*.html
+/literature/*.xml
+/literature/extracted/
+/literature/REGISTER.tsv
+/literature/REGISTER_review.md
+
+# Derived graph artifacts — build_graph.py regenerates these from the in-band
+# edges / inquiry / records; never hand-edited, never committed.
+/content/graph.json
+/content/graph.mermaid
+
+# Python bytecode cache
+__pycache__/
+
+# pip editable-install / venv artefacts (the pip-first onboarding path)
+.venv/
+*.egg-info/
+build/
+
+# Quartz / Node build artefacts
+node_modules/
+/site/public/
+
+# Obsidian per-folder config
+.obsidian/
+
+# OS cruft
+.DS_Store
+/flf/*

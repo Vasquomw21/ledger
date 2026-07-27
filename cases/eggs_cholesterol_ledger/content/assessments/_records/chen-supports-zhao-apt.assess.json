@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "45b4515bc8a76f3bfa2daf533660acaa033cc16983cca0df99d0ad7257ec41f2",
+  "disputes": [],
+  "grounding": [
+    "chen_2021:eggs-cholesterol-elevated-risk"
+  ],
+  "id": "chen-supports-zhao-apt",
+  "kind": "edge",
+  "record_sha256": "96f494f14cd95ca2974e2c044143f9bcad281c76fdf4961c4ba45f81a303fc43",
+  "span": "",
+  "subject": "zhao_2022:harmful-mortality"
+}

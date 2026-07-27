@@ -1,0 +1,18 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "7f2f39bbef2b4b3f72e5bda0126448049c21c28399c7bbad4f95ebba8781d880",
+  "disputes": [
+    "giddings-supports-stable-apt"
+  ],
+  "grounding": [
+    "giddings_2008:astro-bound"
+  ],
+  "id": "astro-bound-faithfulness",
+  "kind": "faithfulness",
+  "record_sha256": "347d43381c2b6bccc4fa4d20b12e2bc333e8d0f031b981521b520c4c3cb8f3fe",
+  "span": "cosmic rays impinging on much denser white dwarfs and neutron stars",
+  "subject": "lsag_2008:stable-bh-no-danger"
+}

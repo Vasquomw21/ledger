@@ -1,0 +1,20 @@
+{
+  "body_sha256": "e4778810c5e898e7a578df1da3b16fc5b09507954eb7776d67cc66e9df73eab5",
+  "command": "cases/eggs_cholesterol_ledger/literature/verify_quotes.py --stamp --provenance required",
+  "doi": "10.1136/bmj.m513",
+  "extract_sha256": "06a9a7fd15e130b8c9a9ce1500263a82ba752d74ca29fa6a82b9730dfe27c81b",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.13.2;beautifulsoup4=4.15.0;lxml=6.1.1",
+  "file": "literature/drouin_2020.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "drouin_2020",
+  "pmcid": "",
+  "record_sha256": "5b6cd30f566ed1e76d0fe633097e93918c68f052c2f558189ee6337ac781ce4f",
+  "retrieved": "20260613",
+  "source_sha256": "4d28e95dc178fd1c4fe674ea13cf3b52f928f6e846bd2ed199945f788857f3e2",
+  "transcript_sha256": "863f8034ff80686bbb3d8a08328e726247cbad15b5df54cba08733bfa28ce784",
+  "url": "https://doi.org/10.1136/bmj.m513",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

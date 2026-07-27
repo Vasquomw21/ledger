@@ -1,0 +1,17 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "221e3904bd5a35a7570182952536f2d3ca760dd269571510fcd2b1e356e2d864",
+  "disputes": [],
+  "grounding": [
+    "zhong_2021:cohort-6us-pool",
+    "zhong_2019:cholesterol-eggs-harmful"
+  ],
+  "id": "sixus-double-count",
+  "kind": "correlated-with",
+  "record_sha256": "88f839f804b2892cd7901a5f21d58d5d74453cd3b657c7f45093121febc0c7a1",
+  "span": "",
+  "subject": "zhong_2021:eggs-less-healthy-substitution"
+}

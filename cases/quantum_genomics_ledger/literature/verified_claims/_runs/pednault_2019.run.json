@@ -1,0 +1,20 @@
+{
+  "body_sha256": "96ee2db24b29c1aa065e9e2e91dfc4302f4818225104b50a30924333d14f07cf",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.48550/arXiv.1910.09534",
+  "extract_sha256": "542ba52fb25a486b450c44990c471d046fe035b19e1a1e30850dedc1d2f8f170",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/pednault_2019.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "pednault_2019",
+  "pmcid": "",
+  "record_sha256": "9144693c7688763b46ca86e8703f541f9ea6f0e16e46eb4e09425b2eb9d5dd90",
+  "retrieved": "20260603",
+  "source_sha256": "1e173f6301fab652424a5b10c733aa336e0fbe41b91ef99a26dd35a86e2de1dc",
+  "transcript_sha256": "23a318c7b15ec542f54f3ac36138cfb2f8d72f58aea1d67fe4f9a6ce27d8c4ec",
+  "url": "https://doi.org/10.48550/arXiv.1910.09534",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

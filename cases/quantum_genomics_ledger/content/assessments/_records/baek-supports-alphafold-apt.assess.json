@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "276c20ac2c170f31db11b2dc085dc2581f374fbc3587d06566f3834a725fbb91",
+  "disputes": [],
+  "grounding": [
+    "baek_2021:rosettafold-approaches-alphafold"
+  ],
+  "id": "baek-supports-alphafold-apt",
+  "kind": "edge",
+  "record_sha256": "18da869dcb8a9e47d83d064d702d592fa45458dfab9e63f836fdb368a1b7cde3",
+  "span": "",
+  "subject": "jumper_2021:casp14-accuracy-lead"
+}

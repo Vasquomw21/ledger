@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "092f9d112dbce8fe7c1715d6efa9bbe88d640e53351fa67d3d8a853c1a5a7cc5",
+  "disputes": [],
+  "grounding": [
+    "giddings_reply_2008:scenario-inconsistent"
+  ],
+  "id": "reply-rebuts-plaga-apt",
+  "kind": "edge",
+  "record_sha256": "6fa1eeb5f3652f4edd2a833f70ec16b621c529a7bc6f221cc055834694061b80",
+  "span": "",
+  "subject": "plaga_2008:harmful-scenario"
+}

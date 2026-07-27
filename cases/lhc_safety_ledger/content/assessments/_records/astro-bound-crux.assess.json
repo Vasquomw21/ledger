@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "5f5d215356dccfc893ac71ec5cd4c93ba8b95e3a1236137e128dc399b5229f33",
+  "disputes": [],
+  "grounding": [
+    "giddings_2008:astro-bound"
+  ],
+  "id": "astro-bound-crux",
+  "kind": "crux-of",
+  "record_sha256": "c413d21a438d859ef7de91050054bbaaaf8a4ed7d17c3e0426c333ed117308cc",
+  "span": "",
+  "subject": "giddings_2008:astro-bound"
+}

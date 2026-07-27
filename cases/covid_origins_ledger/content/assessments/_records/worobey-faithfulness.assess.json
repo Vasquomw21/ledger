@@ -1,0 +1,18 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "00f5708cf56c25032c729d1e1889d1d0d07c9efdd32b154e988becd842a8563a",
+  "disputes": [
+    "worobey-supports-nolab-apt"
+  ],
+  "grounding": [
+    "worobey_2022:market-early-epicenter"
+  ],
+  "id": "worobey-faithfulness",
+  "kind": "faithfulness",
+  "record_sha256": "1a87c640c9b3742d9455bc653aa7c684651d5e048b019e999af884f7f95777c9",
+  "span": "the Huanan market was the early epicenter of the COVID-19 pandemic",
+  "subject": "andersen_2020:no-lab-scenario"
+}

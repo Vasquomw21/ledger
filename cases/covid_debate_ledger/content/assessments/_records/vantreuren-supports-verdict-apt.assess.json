@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "ef00876d93109bb83ad37007cef51d72772a337775427b74dce72bcd3e9ede6f",
+  "disputes": [],
+  "grounding": [
+    "van_treuren:superior-case"
+  ],
+  "id": "vantreuren-supports-verdict-apt",
+  "kind": "edge",
+  "record_sha256": "eaf9ee372d98aa6ad5bf06c22ba12e99439ddb71f7daf0da5ff3038c16f1703b",
+  "span": "",
+  "subject": "stansifer:verdict"
+}

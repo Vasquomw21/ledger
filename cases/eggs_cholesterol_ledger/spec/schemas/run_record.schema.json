@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ledger.tools/schemas/v0.1/run_record.schema.json",
+  "title": "Ledger verification run-record",
+  "description": "An auditable record of one local verification of a source ledger, written by verify_quotes.py --stamp to verified_claims/_runs/<key>.run.json. record_sha256 self-seals every other field; the three sha256 body/source/extract hashes let CI attest the committed stamp without the (git-ignored) corpus.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["key", "verified_date", "verified_verdict", "verifier_version", "source_sha256", "extract_sha256", "body_sha256", "extract_tool", "extract_tool_version", "file", "command", "transcript_sha256", "host_user", "record_sha256"],
+  "properties": {
+    "key": {"type": "string", "description": "Ledger stem (the source key)."},
+    "verified_date": {"type": "string", "pattern": "^[0-9]{8}$"},
+    "verified_verdict": {"type": "string", "enum": ["pass", "fail"]},
+    "verifier_version": {"type": "string"},
+    "source_sha256": {"type": "string", "description": "sha256 of the raw source bytes (local-only; not re-checkable in CI)."},
+    "extract_sha256": {"type": "string", "description": "sha256 of the greppable extract."},
+    "body_sha256": {"type": "string", "description": "sha256 of the ledger's own quoted body — recomputable in CI from the committed ledger."},
+    "extract_tool": {"type": "string"},
+    "extract_tool_version": {"type": "string"},
+    "file": {"type": "string", "description": "Path to the local source file."},
+    "doi": {"type": "string"},
+    "pmcid": {"type": "string"},
+    "url": {"type": "string"},
+    "retrieved": {"type": "string", "description": "YYYYMMDD or empty."},
+    "command": {"type": "string"},
+    "transcript_sha256": {"type": "string", "description": "sha256 of the verbatim verification transcript."},
+    "host_user": {"type": "string"},
+    "record_sha256": {"type": "string", "description": "sha256 over all other fields — the self-seal."}
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "addresses": [
+    {
+      "field": "addresses",
+      "ledger": "dehghan_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "drouin_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "crux-of",
+      "ledger": "drouin_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "rong_2013",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhong_2019",
+      "qid": "eggs-cvd"
+    }
+  ],
+  "assessments": [
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2019:cholesterol-eggs-harmful"
+      ],
+      "id": "zhong-rebuts-drouin-apt",
+      "kind": "edge",
+      "subject": "drouin_2020:no-association-overall"
+    }
+  ],
+  "edges": [
+    {
+      "from_ledger": "dehghan_2020",
+      "grounding": "pure-no-association",
+      "line": 33,
+      "rec": null,
+      "source": "dehghan_2020:pure-no-association",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "dehghan_2020",
+      "grounding": "pure-no-association",
+      "line": 34,
+      "rec": null,
+      "source": "dehghan_2020:pure-no-association",
+      "target": "zhong_2019:cholesterol-eggs-harmful",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "rong_2013",
+      "grounding": "rong-overall-null",
+      "line": 33,
+      "rec": null,
+      "source": "rong_2013:rong-overall-null",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "rong_2013",
+      "grounding": "rong-diabetic-harm",
+      "line": 45,
+      "rec": null,
+      "source": "rong_2013:rong-diabetic-harm",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "qualifies"
+    },
+    {
+      "from_ledger": "zhong_2019",
+      "grounding": "cholesterol-eggs-harmful",
+      "line": 33,
+      "rec": "zhong-rebuts-drouin-apt",
+      "source": "zhong_2019:cholesterol-eggs-harmful",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "rebuts"
+    }
+  ],
+  "findings": {
+    "double_count": [
+      "dehghan_2020 and rong_2013 both support drouin_2020:no-association-overall but are correlated-with each other (possible double-count)"
+    ],
+    "superseded": []
+  },
+  "nodes": [
+    "dehghan_2020:pure-no-association",
+    "drouin_2020:no-association-overall",
+    "rong_2013:rong-diabetic-harm",
+    "rong_2013:rong-overall-null",
+    "zhong_2019:cholesterol-eggs-harmful"
+  ],
+  "sub_questions": [
+    "eggs-cvd"
+  ]
+}

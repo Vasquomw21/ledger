@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "29abeaff6b92042fef6ee880f0ec35dc6173c3603daebb569370f2fdfa05f799",
+  "disputes": [],
+  "grounding": [
+    "cerezo_2021:vqa-unproven-scaling"
+  ],
+  "id": "cerezo-supports-noqml-apt",
+  "kind": "edge",
+  "record_sha256": "1f4b1c9e75bd0602c8bf2eda40e50b45794cb3c9b86a5420fd428c5459608338",
+  "span": "",
+  "subject": "maurizio_2025:no-qml-real-world-speedup"
+}

@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "c9aef0a925a3f3b29497a4cf19ec3f73f0aa1878b81b60248e060b59f3617580",
+  "disputes": [],
+  "grounding": [
+    "cern_faq:perfectly-safe"
+  ],
+  "id": "cern-perfectly-safe",
+  "kind": "rhetorical",
+  "record_sha256": "1aadd878680b4daa8c1a4ea3f690e9c82444941a1dde3bd4b947d9d5ceecb9ea",
+  "span": "would be perfectly safe",
+  "subject": "cern_faq:perfectly-safe"
+}

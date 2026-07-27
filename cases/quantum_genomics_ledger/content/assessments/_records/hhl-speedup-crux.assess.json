@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "44176064e3f36e39ae02792bd3a59afb6f16e58192276bfbab4caa7555a8140a",
+  "disputes": [],
+  "grounding": [
+    "aaronson_2015:hhl-engine"
+  ],
+  "id": "hhl-speedup-crux",
+  "kind": "crux-of",
+  "record_sha256": "76a2194dfa5232bdd5cdd6b6bcaa4593f2ad68ea9fc53775aae4494fd99b77b8",
+  "span": "",
+  "subject": "harrow_2009:exponential-speedup"
+}

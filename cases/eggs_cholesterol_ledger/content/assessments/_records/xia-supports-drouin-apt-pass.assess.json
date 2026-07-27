@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f9c72cf8e07ae7d105890da31d8ff15577e4f28842e02ea803a941e9cd9fac2a",
+  "disputes": [],
+  "grounding": [
+    "xia_2020:no-egg-mortality-link"
+  ],
+  "id": "xia-supports-drouin-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "180fa7b70ae1bee184884fb92980dd35e895be8c156239c85eadf401a2a6fc53",
+  "reviews": [
+    "xia-supports-drouin-apt"
+  ],
+  "span": "",
+  "subject": "drouin_2020:no-association-overall"
+}

@@ -1,0 +1,20 @@
+{
+  "body_sha256": "df7236e2f7194089dd50650fa6ab26f258fbadea3f9253c258738afa5b44ce03",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1038/s41591-020-0820-9",
+  "extract_sha256": "1cacda4735368fcd0ca655b8a3c5fc2e2875e180ce1529be9f4c756058a24839",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.13.2;beautifulsoup4=4.15.0;lxml=6.1.1",
+  "file": "literature/andersen_2020.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "andersen_2020",
+  "pmcid": "PMC7095063",
+  "record_sha256": "45248aa32292147c0b41b5b01a22981a5f42dcf35e9b2b5551fb5b497b7f60ba",
+  "retrieved": "20260613",
+  "source_sha256": "a916f055010de149f7b2945528c92ffb66e1d1e5f869727f93fe614588abc3c1",
+  "transcript_sha256": "8ae46b1941d7fd1770359cce62004728e27aecf753437574099abb0e40f2b7b4",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7095063/",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

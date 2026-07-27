@@ -1,0 +1,20 @@
+{
+  "body_sha256": "2a60132ec43d1b67e841bd6cd966b960aa775207d1b38b46ea448e979806681f",
+  "command": "cases/eggs_cholesterol_ledger/literature/verify_quotes.py --stamp --provenance required",
+  "doi": "10.3389/fnut.2022.878979",
+  "extract_sha256": "391327e110f7a602127387e79829f9a9fb2039869acf7b2d7e43888933a9f897",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.13.2;beautifulsoup4=4.15.0;lxml=6.1.1",
+  "file": "literature/darooghegi_2022.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "darooghegi_2022",
+  "pmcid": "PMC9195585",
+  "record_sha256": "57dc607619c972d5d5990bb2ed1ef93fbc3d6767e0c0dfde38d78aa9bff65abd",
+  "retrieved": "20260614",
+  "source_sha256": "96e1b1b07f4306a5c27c4bb8d009946e140a1c62146be96cc33f1a30c7f14deb",
+  "transcript_sha256": "e169578a3f5423fdebd11adff4d4844156e814ade18e8d43fe2740cb0adbef18",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9195585/",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

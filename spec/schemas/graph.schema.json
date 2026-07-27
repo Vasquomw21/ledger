@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ledger.tools/schemas/v0.1/graph.schema.json",
+  "title": "Ledger claim graph (derived)",
+  "description": "The single interrogable view of an argument, emitted by build_graph.py from the in-band edges, the inquiry question tree, and the judgement records. Derived (never hand-edited, git-ignored); a fresh clone rebuilds it. An empty project yields empty arrays.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nodes", "edges", "sub_questions", "addresses", "assessments", "findings"],
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Every claim address (<ledger_key>:<slug>) that appears as an edge endpoint or an assessment subject."
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "source", "target", "grounding", "target_resolved", "rec", "from_ledger", "line"],
+        "properties": {
+          "type": {"type": "string", "enum": ["supports", "rebuts", "depends-on", "refines", "qualifies", "restates", "duplicate-of", "supersedes"]},
+          "source": {"type": ["string", "null"], "description": "<from_ledger>:<grounding> — the grounding claim is the natural source endpoint; null if no grounding clause."},
+          "target": {"type": "string", "description": "The claim the edge points at, as <ledger_key>:<slug>."},
+          "grounding": {"type": ["string", "null"], "description": "The grounding claim slug in from_ledger (the quote where the relationship is asserted)."},
+          "target_resolved": {"type": "boolean", "description": "Whether target names a real claim in a present ledger."},
+          "rec": {"type": ["string", "null"], "description": "An assessment record id judging this edge apt (edge_assessments), or null."},
+          "from_ledger": {"type": "string"},
+          "line": {"type": "integer", "description": "Line number of the edge in its ledger."}
+        }
+      }
+    },
+    "sub_questions": {"type": "array", "items": {"type": "string"}, "description": "Sub-question ids declared in content/inquiry.md."},
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ledger", "field", "qid"],
+        "properties": {
+          "ledger": {"type": "string"},
+          "field": {"type": "string", "description": "The in-band field that referenced the sub-question (addresses / crux-of)."},
+          "qid": {"type": "string"}
+        }
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "subject", "grounding", "disputes"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"type": "string", "enum": ["rhetorical", "correlated-with", "crux-of", "calibration", "status", "edge", "faithfulness", "faithfulness-pass"]},
+          "subject": {"type": "string"},
+          "grounding": {"type": "array", "items": {"type": "string"}},
+          "disputes": {"type": "array", "items": {"type": "string"}},
+          "reviews": {"type": "array", "items": {"type": "string"}, "description": "Edge-record ids this record positively reviews (faithfulness-pass)."}
+        }
+      }
+    },
+    "findings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["double_count", "superseded"],
+      "description": "DERIVED heuristics, not proofs: correlated supporters of one claim (possible double-count) and claims a supersedes edge overtook.",
+      "properties": {
+        "double_count": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["a", "b", "target", "kind", "basis", "sealed_record"],
+            "properties": {
+              "a": {"type": "string", "description": "One correlated supporter, by ledger key (a canonical unordered pair with b)."},
+              "b": {"type": "string", "description": "The other correlated supporter, by ledger key."},
+              "target": {"type": "string", "description": "The claim address both supporters point at."},
+              "kind": {"type": "string", "enum": ["exact-cohort-reuse", "overlapping-pools", "shared-evidence", "other-declared-dependence"], "description": "Author-declared dependence kind from content/correlation_kinds.md; a pair the file does not classify falls back to other-declared-dependence."},
+              "basis": {"type": "string", "description": "The ledger's own Correlated-with annotation text (authored, not source-verified)."},
+              "sealed_record": {"type": ["string", "null"], "description": "Id of a sealed correlated-with assessment record grounding both members of the pair; null means the dependence is declared-only."}
+            }
+          }
+        },
+        "superseded": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

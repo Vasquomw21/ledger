@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f7879ad1fa3313bf6f6dfa164b5045488f357126ac9454923191c43c2b4809b2",
+  "disputes": [],
+  "grounding": [
+    "tang_2019:no-exponential-speedup"
+  ],
+  "id": "tang-rebuts-hhl-apt",
+  "kind": "edge",
+  "record_sha256": "5d29f90d884e36b635f6850a4d42afa853d55dc47185cdbe0a78fea4f35fab01",
+  "span": "",
+  "subject": "harrow_2009:exponential-over-classical"
+}

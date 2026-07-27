@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "29abeaff6b92042fef6ee880f0ec35dc6173c3603daebb569370f2fdfa05f799",
+  "disputes": [],
+  "grounding": [
+    "tang_2019:no-exponential-speedup"
+  ],
+  "id": "tang-supports-noqml-apt",
+  "kind": "edge",
+  "record_sha256": "58f4e403aeaf257e4f7c5325c6e45bf886772fdd0ad6910e7ffd822a562ff30d",
+  "span": "",
+  "subject": "maurizio_2025:no-qml-real-world-speedup"
+}

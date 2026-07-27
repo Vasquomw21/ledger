@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "b2cb54be2213aba540b3b1bfdbab6ce4e1e3fdff193f83e5eb50402f7456af48",
+  "disputes": [],
+  "grounding": [
+    "reiher_2017:resource-estimate-feasible"
+  ],
+  "id": "chemistry-advantage-calibration",
+  "kind": "calibration",
+  "record_sha256": "f807b6b67f225fef60efcf7a8e8752c90eded16f53bf3b393a8adfb05a7e7192",
+  "span": "",
+  "subject": "reiher_2017:classically-intractable-projected"
+}

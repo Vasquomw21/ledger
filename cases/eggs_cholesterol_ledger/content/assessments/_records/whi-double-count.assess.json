@@ -1,0 +1,17 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "040d9aef479d373ac06756766118a26364460776c4e70ff9e8635711897bb57f",
+  "disputes": [],
+  "grounding": [
+    "sun_2021:cohort-whi",
+    "chen_2021:cohort-whi"
+  ],
+  "id": "whi-double-count",
+  "kind": "correlated-with",
+  "record_sha256": "d42301a810ce95db7ea77418c265a491b4339d1b832af8ba4334d9b4e241337a",
+  "span": "",
+  "subject": "sun_2021:eggs-higher-cvd-mortality"
+}

@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "c88f9ec0de8f5eb5fe3225bef6e2db918cfe8f7fa974eb9605f87a956c6698ed",
+  "disputes": [],
+  "grounding": [
+    "dehghan_2020:pure-no-association"
+  ],
+  "id": "dehghan-rebuts-zhong-apt",
+  "kind": "edge",
+  "record_sha256": "25f8c036705f129786bfe81e96f950811248dc4eb9a07f5ee24e523f54490b9b",
+  "span": "",
+  "subject": "zhong_2019:cholesterol-eggs-harmful"
+}

@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "df8ce1e046adb946297ddb9ccbe3501b3c6b8e0f3170e50604070da242b735d6",
+  "disputes": [],
+  "grounding": [
+    "pednault_2019:rebuttal-days-not-years"
+  ],
+  "id": "pednault-rebuts-supremacy-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "4842d27777f3a03071bb640c74b8a4704916017b125ba6b99ae680e649e94236",
+  "reviews": [
+    "pednault-rebuts-supremacy-apt"
+  ],
+  "span": "",
+  "subject": "arute_2019:200s-vs-10000-years"
+}

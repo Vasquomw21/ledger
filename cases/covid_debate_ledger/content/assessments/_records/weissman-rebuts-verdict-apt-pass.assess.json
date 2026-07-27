@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "ef00876d93109bb83ad37007cef51d72772a337775427b74dce72bcd3e9ede6f",
+  "disputes": [],
+  "grounding": [
+    "weissman:odds-favor-ll"
+  ],
+  "id": "weissman-rebuts-verdict-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "70ac2aaf0ead6aee86a39da791448556c1fd36b953aff3e4bbeae6cb7926315e",
+  "reviews": [
+    "weissman-rebuts-verdict-apt"
+  ],
+  "span": "",
+  "subject": "stansifer:verdict"
+}

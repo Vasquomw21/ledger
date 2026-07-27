@@ -1,0 +1,137 @@
+{
+  "key": "goodjudgment",
+  "source_type": "probabilistic-analysis",
+  "source_sha256": "af61e1301f9aa7a22c3032902a22577ef30fb9e728c077ccb6a96ccfb8f31b7c",
+  "enumerator_version": "1",
+  "enumerated_date": "20260614",
+  "addressing": "html-block",
+  "fully_enumerable": true,
+  "units": [
+    {
+      "locus": "p1",
+      "text": "Good Judgment News and Insights",
+      "unit_sha256": "779e1bc1cf453690ec5873010268d02009cbd39501fe67ec8f1fbfd47e860a0e"
+    },
+    {
+      "locus": "p2",
+      "text": "Superforecasting the Origins of the Covid-19 Pandemic",
+      "unit_sha256": "a7499a58ce2a9e0965a5be2e69816a665a04f18260ab526c1e5413369763c729"
+    },
+    {
+      "locus": "p3",
+      "text": "A Survey of Good Judgment’s Superforecasters",
+      "unit_sha256": "c48b498084ccaaf3698e6deeaafffab2e2c06bf08f4806f11109f10b4de75a92"
+    },
+    {
+      "locus": "p4",
+      "text": "Superforecasters assess that natural zoonosis is three times more likely to be the cause of the Covid-19 pandemic than either a biomedical research-related accident or some other process or mechanism. Asked to assign a probability to what caused the emergence of SARS-CoV-2 in human populations, more than 50 Superforecasters engaged in extensive online discussions starting on December 1, 2023.",
+      "unit_sha256": "5f9fcaab0451ca8fa2008edc5b4628213e492d5ec011f1e3da75f8efbb5bd918"
+    },
+    {
+      "locus": "p5",
+      "text": "In aggregate, they assessed that the pandemic was:",
+      "unit_sha256": "2e888e5e638bc2b898dfa9372bd725385d8b1936cb6ab25c2d899c2f8f111cb8"
+    },
+    {
+      "locus": "p6",
+      "text": "74% likely to have been caused by natural zoonosis (meaning that SARS-CoV-2 emerged in human populations as the result of the infection of a person with coronavirus directly from a naturally infected non-human animal);",
+      "unit_sha256": "0ce60e626376552f480ab5727a52d589d729c52af7bba4d2ffeab98c76cf1863"
+    },
+    {
+      "locus": "p7",
+      "text": "25% likely to have been caused by a biomedical research-related accident",
+      "unit_sha256": "ff68447b1941f8a9c6c2e1b44e351129a5e5de6cb50b56e8045da340104736b9"
+    },
+    {
+      "locus": "p8",
+      "text": "(meaning that SARS-CoV-2 emerged in human populations as the result of the",
+      "unit_sha256": "e068abd6780a03a62d9cdf48865b8138a6f3475eb5293cc9b685e26cba01b590"
+    },
+    {
+      "locus": "p9",
+      "text": "accidental infection of a laboratory worker with a natural coronavirus; or the",
+      "unit_sha256": "9b8b1563444965af8d6ef46809a98c79cf353f2caf819e3f666f876412cc6e41"
+    },
+    {
+      "locus": "p10",
+      "text": "accidental infection of researchers with a natural coronavirus during biomedical",
+      "unit_sha256": "1f34edea5d89ea4432af5963e25e6e9e7e2d187bfe7668b418180b4623987836"
+    },
+    {
+      "locus": "p11",
+      "text": "fieldwork; or the accidental infection of a laboratory worker with an engineered",
+      "unit_sha256": "fb92d9930d4278e2d678371eb8e2af8b95cef57138235189184f9313eab0c0b2"
+    },
+    {
+      "locus": "p12",
+      "text": "coronavirus; “research” includes civilian biomedical, biodefense, and bioweapons",
+      "unit_sha256": "ae8be15adf8804a96090335fa88634de53b1f156472ea6e6bd0289b586188aba"
+    },
+    {
+      "locus": "p13",
+      "text": "1% likely to have been caused by some other process or mechanism (to include",
+      "unit_sha256": "c0dc0939ed3c52388f4d31ad1ccdb001445a0c0727da645fb48b381dd3e2d2ee"
+    },
+    {
+      "locus": "p14",
+      "text": "possibilities like the deliberate release of the virus into human populations,",
+      "unit_sha256": "8fb44310ed85defaa52ab16c09b3eec2a0889890e6b1993895a9bb2fbf671741"
+    },
+    {
+      "locus": "p15",
+      "text": "irrespective of whether it was an act in accordance with state policy, or the",
+      "unit_sha256": "a38eee326c2f9c063d3059bdf4c9cf8a29fd6ce4a25badf3483b899af56699f4"
+    },
+    {
+      "locus": "p16",
+      "text": "development of the virus due to drug resistance in humans).",
+      "unit_sha256": "6fbfa516d3cc3089e1d85e3191de061dacdb69996a5bc4cf5a499e8637dd1199"
+    },
+    {
+      "locus": "p17",
+      "text": "The Superforecasters made more than 750 comments when developing their assessments. This survey was conducted in the period from December 2023 to February 2024.",
+      "unit_sha256": "676870653f44e82db11b5eeb39bfb896d68b566ac56d4153199adc2b5d17b4a1"
+    },
+    {
+      "locus": "p18",
+      "text": "In their extensive discussions, Good Judgment’s Superforecasters assessed base rates and historical patterns, existing evidence and scientific analysis, geopolitical context and transparency concerns, trust in intelligence communities, and methodological constraints. These themes are explored in the full report .",
+      "unit_sha256": "55a09d0230ae4c291f67efee35fdf1f5e680abee9ad77e27c9348fc7cf235380"
+    },
+    {
+      "locus": "p19",
+      "text": "Good Judgment’s Superforecasters stated they would be willing to change their minds in the event that new evidence emerged, such as identification of an ancestor virus or definitive animal host. Alternatively, new evidence suggesting a lab leak, such as records showing that Chinese researchers were ordering DNA sequences that unequivocally corresponded to SARS-CoV-2 from commercial suppliers, would cause the Superforecasters to update their projections that a laboratory leak was the origin of Covid-19.",
+      "unit_sha256": "c0f51fb14e5d9c45b8d9cf22613e0195fa9bbd6c31f0eac13a8efab9a36e7d8b"
+    },
+    {
+      "locus": "p20",
+      "text": "Of note is that among this group of Superforecasters were multiple scientists and medical professionals with expert knowledge of epidemiology and virology. Their interpretations of published studies helped the crowd reach a better common understanding of the complex scientific issues being discussed. In the end, most Superforecasters were in rough agreement on issues like the base rates of zoonotic spillover. Where they most often disagreed was on the interpretation of actions by Chinese officials and whether their actions reflected how an authoritarian government would react in any crisis over which it did not have full control, or whether those actions were indicative of attempts to cover up a biomedical research-related accident that allowed the SARS-CoV-2 virus to enter circulation in China and, ultimately, the entire globe.",
+      "unit_sha256": "d5ec3dc1b76aa9e6278c2e9fd7088cbcf8d2800ba7c9409d7ec66ba7a95b0ba3"
+    },
+    {
+      "locus": "p21",
+      "text": "You can access the full report from our Case Studies page here or using the direct link .",
+      "unit_sha256": "788c45573d0acdb14bb6a5c4dec69eab73753b3a78390dfba464f4a132320d1d"
+    },
+    {
+      "locus": "p22",
+      "text": "In 2011, IARPA—the US intelligence community’s equivalent to DARPA—launched a massive competition to identify cutting-edge methods to forecast geopolitical events. Four years, 500 questions, and over a million forecasts later, the Good Judgment Project (GJP)—led by Philip Tetlock and Barbara Mellers at the University of Pennsylvania—emerged as the undisputed victor in the tournament. GJP’s forecasts were so accurate that they even outperformed intelligence analysts with access to classified data.",
+      "unit_sha256": "b472f0b7c8f98e0430edbef06f681342a7e639f71df6be42353a4b4912467083"
+    },
+    {
+      "locus": "p23",
+      "text": "Good Judgment Inc is now making this winning approach to harnessing the wisdom of the crowd available for commercial use. Our clients benefit from the externally validated forecasting methodology that made the Good Judgment Project so successful.",
+      "unit_sha256": "df88c4a1e4f9c7b0e8867886cd8545cf939ceb12f616e98a91aa2abbca8d97f2"
+    },
+    {
+      "locus": "p24",
+      "text": "Today, Good Judgment’s professional Superforecasters deliver unparalleled accuracy on forecasting questions across the political, economic and social spectrum. And, we train others to apply this evidence-based methodology within their own teams.",
+      "unit_sha256": "9965949cc2ec029d7ed10246875cb5b1541a9bd2bd121561913c1a3f4af7f8ef"
+    },
+    {
+      "locus": "p25",
+      "text": "Thanks for reading Good Judgment News and Insights! Subscribe for free to receive new posts and support my work.",
+      "unit_sha256": "d645d84bdc6d1c7752dc0a27b745a03028617e8a49a78fc21848ae7121cbec63"
+    }
+  ],
+  "manifest_sha256": "5335bbc645d50c490fbac3f25815fc64bd76c407c3d891038674222aa67e90e5"
+}

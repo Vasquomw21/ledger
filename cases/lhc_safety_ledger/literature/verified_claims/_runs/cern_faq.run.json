@@ -1,0 +1,20 @@
+{
+  "body_sha256": "2135d100de11b3098547e04ed2fbaad352a788e23614b41417acf3cabd16d90d",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "3e9509610e1a86c260e1644d309c7fa79b53b545b2603812b12a1a057faf6e53",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/cern_faq.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "cern_faq",
+  "pmcid": "",
+  "record_sha256": "f61f231e7be2013bb356d304297e99a6aaba47badbb77b355527cb4edbf9d159",
+  "retrieved": "20260614",
+  "source_sha256": "1db53ce37a016b1902dac2748f76c69f77b58d51163fb5a7d97a73ef9d49d5b3",
+  "transcript_sha256": "f49c59e8fc2884ed3b906822b77ab0b518ff6fd3eecb43c960db748c60cffce8",
+  "url": "https://home.cern/resources/faqs/will-cern-generate-black-hole",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

@@ -1,0 +1,23 @@
+# Ledger toolchain — recreate with:  conda env create -f environment.yml
+# then:  conda activate ledger_env
+#
+# The intake pipeline and publishing step depend on these; a fresh project's
+# system python/node will NOT have them (this gap was caught by the first
+# bootstrap dry-run, 2026-06-09). conda-forge only.
+name: ledger_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - nodejs            # Quartz static-site publishing
+  - gh                # GitHub CLI (repo create / push)
+  - jq                # fetch_paper.sh — JSON parsing (Unpaywall / OpenAlex)
+  - curl              # fetch_paper.sh — the download ladder
+  # Minor-pinned: the verification chain depends on extraction output being
+  # stable; a silent major bump in pypdf/bs4 can change extracted text and
+  # flip quote checks on a fresh clone.
+  - beautifulsoup4=4.15  # build_register.py / extract_text.py — HTML parsing (import bs4)
+  - lxml=6.1             # extract_text.py — HTML parser backend
+  - pypdf=6.13           # extract_text.py — PDF text extraction
+  - pytest=9.0           # tests/ — enforcement-layer suite (also runs in CI)
+  - pip

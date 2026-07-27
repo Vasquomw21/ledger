@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f9c72cf8e07ae7d105890da31d8ff15577e4f28842e02ea803a941e9cd9fac2a",
+  "disputes": [],
+  "grounding": [
+    "zhong_2019:cholesterol-eggs-harmful"
+  ],
+  "id": "zhong-rebuts-drouin-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "e2b6dbf6c6be6fc1ea332e94d5d738bdee8492226502793d0599b368e0475edf",
+  "reviews": [
+    "zhong-rebuts-drouin-apt"
+  ],
+  "span": "",
+  "subject": "drouin_2020:no-association-overall"
+}

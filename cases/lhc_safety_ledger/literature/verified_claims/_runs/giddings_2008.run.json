@@ -1,0 +1,20 @@
+{
+  "body_sha256": "44f204a4f801fbca86c571d1bfddb9b96dc6bb4b904c84c8cbc84ae02318f852",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1103/PhysRevD.78.035009",
+  "extract_sha256": "8c60dbc94ddfe47efb43341172ac0a8554f53ade4f302aa1deac5479b79e9bec",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/giddings_2008.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "giddings_2008",
+  "pmcid": "",
+  "record_sha256": "1e6cdc57a0edc8a00bc1a864e8051d9e92dc4562484d6b61ef78cc4876179189",
+  "retrieved": "20260613",
+  "source_sha256": "939f8daa4ce9a6e93712ddb4f21a3118fdc618dc4c7fd5eaea0171a74429e365",
+  "transcript_sha256": "82dace1a2581c95adf0e1b332b17feed5450272838fe2e772678eb57522ae69a",
+  "url": "https://arxiv.org/abs/0806.3381",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

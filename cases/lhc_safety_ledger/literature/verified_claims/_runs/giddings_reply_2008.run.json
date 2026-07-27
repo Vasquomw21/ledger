@@ -1,0 +1,20 @@
+{
+  "body_sha256": "c368045a6e3b01a6f0f4bb99a1b97ee57ec86c776fbfa4521d0a7316522a7a1a",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "f8f4e958278ef6bf696906ea0b77b47e0fa13eb7aba598578104e46c4b878ef9",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/giddings_reply_2008.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "giddings_reply_2008",
+  "pmcid": "",
+  "record_sha256": "dafbb311058220281b865802686ee740415a95f9ff681d86e3afd2cd3104f24d",
+  "retrieved": "20260613",
+  "source_sha256": "5a2d40abae63463b0a26f0ab02d0a9c475e2164a21e718b989a169012651f6c1",
+  "transcript_sha256": "04f15be2254e1cf1243cdfbcd55780b7f5051760920431b969abbd4c18af528a",
+  "url": "https://arxiv.org/abs/0808.4087",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

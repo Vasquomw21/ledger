@@ -1,0 +1,20 @@
+{
+  "body_sha256": "35736daa81bd819c3aaffa76cadcf5e21fa0ad7aeb0e819262dfbe2cd5a48f26",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "38c3f995fab7dfdfa48ec49b65c97825b03cad08b71e230f37398d41fb02b483",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/goodjudgment.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "goodjudgment",
+  "pmcid": "",
+  "record_sha256": "5c55ba75ebb38e48af5de2a9b8a0b815031b57a233a6bbdb0a77e74f7c20e4cf",
+  "retrieved": "20260614",
+  "source_sha256": "af61e1301f9aa7a22c3032902a22577ef30fb9e728c077ccb6a96ccfb8f31b7c",
+  "transcript_sha256": "b0b95b2a0bfe19507f92edeef7f2e24cd279f16825fc0e34a1bb279be988438e",
+  "url": "https://goodjudgment.substack.com/p/superforecasting-the-origins-of-the",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

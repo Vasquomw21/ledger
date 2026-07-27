@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f9c72cf8e07ae7d105890da31d8ff15577e4f28842e02ea803a941e9cd9fac2a",
+  "disputes": [],
+  "grounding": [
+    "xia_2020:no-egg-mortality-link"
+  ],
+  "id": "xia-supports-drouin-apt",
+  "kind": "edge",
+  "record_sha256": "2159f4abd56043d9be39a6c549bb0fa09d11567076db015a006636680b8f010a",
+  "span": "",
+  "subject": "drouin_2020:no-association-overall"
+}

@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "29abeaff6b92042fef6ee880f0ec35dc6173c3603daebb569370f2fdfa05f799",
+  "disputes": [],
+  "grounding": [
+    "chia_2020:svt-no-exponential-speedup"
+  ],
+  "id": "chia-supports-noqml-apt",
+  "kind": "edge",
+  "record_sha256": "c209ef364e04c9c149d835277089ac672895504460be5c6c69503e68e1c52f46",
+  "span": "",
+  "subject": "maurizio_2025:no-qml-real-world-speedup"
+}

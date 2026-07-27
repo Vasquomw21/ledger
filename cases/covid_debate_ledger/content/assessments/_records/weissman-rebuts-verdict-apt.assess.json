@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "ef00876d93109bb83ad37007cef51d72772a337775427b74dce72bcd3e9ede6f",
+  "disputes": [],
+  "grounding": [
+    "weissman:odds-favor-ll"
+  ],
+  "id": "weissman-rebuts-verdict-apt",
+  "kind": "edge",
+  "record_sha256": "1ceee646fe9955fca9bfa5217bd18ea2100f10f9fcd16d1381f14c2b62e1252c",
+  "span": "",
+  "subject": "stansifer:verdict"
+}

@@ -1,0 +1,20 @@
+{
+  "body_sha256": "e121eb08f2a6011da3d6d16a129889673f694e390c88a9f1356a5babc8dc8e61",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1038/s41586-019-1666-5",
+  "extract_sha256": "6cea503e70286dee981fef09b66631f19617847be6dc44869617eb61fc69fc5d",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/arute_2019.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "arute_2019",
+  "pmcid": "",
+  "record_sha256": "ceec40ffd3a98c2bd2d642e38230a35dbc72debc20666c81edb70f11e54bb645",
+  "retrieved": "20260603",
+  "source_sha256": "97d2dd6528350d7c8c2d8222798ecc579f54f28d84316569a719f2f521cf382a",
+  "transcript_sha256": "540c6e6ed45fd690678c3ab00c9e991d4cc9bb94817f5f936fa1ca38977b3c0f",
+  "url": "https://doi.org/10.1038/s41586-019-1666-5",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

@@ -1,0 +1,20 @@
+{
+  "body_sha256": "95540b9a00e3fa81bd96d3afcfdbebb792c22dd96661270917bc200f577b18a2",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1038/nphys3272",
+  "extract_sha256": "90af5864b81faee6518664a39d0c711dc04bcb6e4843f795a90c4dd79a7598ff",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/aaronson_2015.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "aaronson_2015",
+  "pmcid": "",
+  "record_sha256": "44e103821e44c92a5d8b64b7c1fcd77c5d74d655d5db450e3b8a524277435f98",
+  "retrieved": "20260603",
+  "source_sha256": "871734c175d555199e8314311c295a2bfbe7030b2afa293aee04bd0d6c639fba",
+  "transcript_sha256": "24c04616ab80f213421a9b47b0b99ee4181b06b52eee83d711d690477201fe9d",
+  "url": "https://doi.org/10.1038/nphys3272",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

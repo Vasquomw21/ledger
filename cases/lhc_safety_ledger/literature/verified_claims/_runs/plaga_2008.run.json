@@ -1,0 +1,20 @@
+{
+  "body_sha256": "94c4aca40169f4ec71ddc29bb45883a9a1e5eb79377df5a3f254ab3284e4c338",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "ff86331ce9bc8a17f3315b8e4be5de759a0d4fa4d3b3b6ab23bd2e53d141d0ec",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/plaga_2008.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "plaga_2008",
+  "pmcid": "",
+  "record_sha256": "201d150dad67790a59904dfbce6e9f4277d354e20172eba37e7101fe46ec4542",
+  "retrieved": "20260613",
+  "source_sha256": "0f41a2c1385df8e03d9d05bc23f011aeb03a888836cb02638875db5dfa88260a",
+  "transcript_sha256": "ca6b81f191227a135cb2c9b1050303af46a2ce7044e07014c45af12e15bc5af1",
+  "url": "https://arxiv.org/abs/0808.1415",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

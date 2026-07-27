@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "7f2f39bbef2b4b3f72e5bda0126448049c21c28399c7bbad4f95ebba8781d880",
+  "disputes": [],
+  "grounding": [
+    "giddings_2008:astro-bound"
+  ],
+  "id": "giddings-supports-stable-apt",
+  "kind": "edge",
+  "record_sha256": "f44964ce27fca76bfc984d60eb17a8c18447388413e089c365672f6d3bd3d3fe",
+  "span": "",
+  "subject": "lsag_2008:stable-bh-no-danger"
+}

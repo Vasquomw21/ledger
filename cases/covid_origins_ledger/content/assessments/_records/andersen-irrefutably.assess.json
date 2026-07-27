@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260613",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "25fcb7f25111540f5f19c2db660943a3acfd1bd0b86313df4c7c2e21143b4faf",
+  "disputes": [],
+  "grounding": [
+    "andersen_2020:not-from-known-backbone"
+  ],
+  "id": "andersen-irrefutably",
+  "kind": "rhetorical",
+  "record_sha256": "8ab3cf011b778390d4152aa43679dc4d29d204161e4d168d9c512b3d70189ea6",
+  "span": "irrefutably show",
+  "subject": "andersen_2020:not-from-known-backbone"
+}

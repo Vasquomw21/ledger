@@ -1,0 +1,20 @@
+{
+  "body_sha256": "151e3333e135b2739c8095a72d8ec6d7385aeb2c97d1fc3936ffe703a425aa95",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1103/PRXQuantum.2.010103",
+  "extract_sha256": "492206662f8b7a64c29d92ce9d4bd31e8d87d25f793367538c7a136e3618db30",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/babbush_2021.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "babbush_2021",
+  "pmcid": "",
+  "record_sha256": "6d907b380ff19fa377a0770efe7247e4c927d55e0f0c5b1adcf1d120463c7911",
+  "retrieved": "20260603",
+  "source_sha256": "41459329be11c551d308e3de30ee335a690e9e334a0fcf6af49b2a4196a8058b",
+  "transcript_sha256": "82d5fb427d60be9311bbe0992bc3230d8e1a0f54e01669a930079e451e3a7316",
+  "url": "https://doi.org/10.1103/PRXQuantum.2.010103",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

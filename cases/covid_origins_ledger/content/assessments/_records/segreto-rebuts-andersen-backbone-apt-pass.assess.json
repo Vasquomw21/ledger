@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "25fcb7f25111540f5f19c2db660943a3acfd1bd0b86313df4c7c2e21143b4faf",
+  "disputes": [],
+  "grounding": [
+    "segreto_2021:mutagenesis-no-trace"
+  ],
+  "id": "segreto-rebuts-andersen-backbone-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "66da818f009e90bca410af936af8ddd7eb2e28b99a76eaf652c57632a24acf31",
+  "reviews": [
+    "segreto-rebuts-andersen-backbone-apt"
+  ],
+  "span": "",
+  "subject": "andersen_2020:not-from-known-backbone"
+}

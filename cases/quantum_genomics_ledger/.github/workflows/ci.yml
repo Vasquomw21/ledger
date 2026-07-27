@@ -1,0 +1,124 @@
+name: ledger-ci
+
+# Fresh-clone contract: runs on every push/PR with NO paper corpus (it is
+# git-ignored), so it checks only what is safe and possible without the raw
+# sources. The verbatim quote verification (verify_quotes.py) needs the corpus
+# and runs LOCALLY via the .githooks/pre-commit hook, not here.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fresh-clone-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Pristine kit and finished project both pass; only a half-bootstrapped
+      # project (some config filled, some still <placeholder>) fails.
+      - name: Project health (config + skin)
+        run: python3 tools/ledger_doctor.py
+
+      - name: Wiki health (dead links / orphans / uncatalogued)
+        run: python3 tools/lint_wiki.py content --strict
+
+      # Layer 2 of the quote-first gate runs here because verified_claims/
+      # ledgers ARE committed; Layer 1 (paper on disk) needs the git-ignored
+      # corpus, hence --no-corpus. The verbatim check stays local (pre-commit).
+      - name: Citation coverage (every prose cite has a ledger)
+        run: python3 tools/check_citations.py content --no-corpus
+
+      # Corpus-less attestation: every committed ledger carries a well-formed
+      # provenance stamp with a pass verdict. The bytes are re-bound locally by
+      # verify_quotes.py (pre-commit); CI checks shape, trusting that bind.
+      - name: Provenance attestation (every ledger carries a valid stamp)
+        run: python3 tools/check_manifest.py
+
+      # Structure layer: every in-band claim-graph edge resolves cross-ledger and
+      # is grounded; qid references hit a real sub-question. Corpus-less — it reads
+      # only the committed ledgers + content/inquiry.md. An empty graph passes.
+      - name: Claim-graph structure (edges resolve + are grounded)
+        run: python3 tools/check_structure.py
+
+      # Assessment layer: every committed judgement record is well-formed, sealed
+      # (record_sha256), grounded in claims that resolve, and bound to its subject
+      # claim's current body. Corpus-less — reads only committed records + ledgers.
+      # An empty layer passes.
+      - name: Assessment records (sealed + grounded + fresh)
+        run: python3 tools/check_assessment.py
+
+      # Claim coverage (opt-in, graph_coverage:): every claim cited with a #ref has
+      # a role in the argument graph. No-op when off (the default).
+      - name: Claim coverage (cited claims are situated)
+        run: python3 tools/check_coverage.py
+
+      # Run-record attestation (opt-in, attestation:): every committed run-record
+      # carries a valid allowed-signer SSH signature (ssh-keygen -Y verify). No-op
+      # when off (the default). Proves WHO attested the committed bytes remotely.
+      - name: Run-record attestation (allowed-signer signatures)
+        run: python3 tools/check_attestation.py
+
+      # Selection audit (opt-in, selection_audit:): the corpus is registered in
+      # content/source_register.md and no declared position is left empty. No-op when
+      # off (the default). Layer 2 — enforces no silent empty side, not completeness.
+      - name: Selection audit (corpus registered, no empty side)
+        run: python3 tools/check_selection.py
+
+      # Source-flow audit (opt-in, source_flow:): every included source has a
+      # declared discovery/screening trail and resolves to a committed ledger.
+      # No-op when off (the default). Layer 2 — route into the corpus, not
+      # representativeness proof.
+      - name: Source flow (search/screening trail)
+        run: python3 tools/check_source_flow.py
+
+      # Unit-manifest attestation (units_layer). When on, every located claim's quote
+      # must be a verbatim span within its addressed unit in the committed manifest.
+      # Corpus-free (the manifest carries the unit text); no-op when off (the default).
+      - name: Unit manifests (quote-within-unit; units_layer)
+        run: python3 tools/check_units.py
+
+      # Synthesis-claim gate (synthesis_claims). When on, every significance/superiority
+      # claim in the synthesis prose must carry an evidence anchor or a hedge — form, not
+      # truth (aptness stays the adversarial assist). Corpus-free; no-op when off (default).
+      - name: Synthesis claims anchored (synthesis_claims)
+        run: python3 tools/check_synthesis.py
+
+      - name: Install test extra
+        run: pip install -e ".[test]"
+
+      - name: Unit tests (enforcement layer; corpus-free fixtures)
+        run: python -m pytest -q
+
+      - name: No raw sources committed (corpus must stay git-ignored)
+        run: |
+          offenders=$(git ls-files \
+            'literature/*.pdf' 'literature/*.html' 'literature/*.xml' \
+            'literature/extracted/*' 'literature/REGISTER.tsv')
+          if [ -n "$offenders" ]; then
+            echo "::error::raw sources / derived corpus are tracked but must be git-ignored:"
+            echo "$offenders"
+            exit 1
+          fi
+          echo "ok — no raw sources tracked."
+
+      - name: Ledger shape (every verified_claims ledger is non-trivial)
+        run: |
+          status=0
+          for f in literature/verified_claims/*.md; do
+            [ -e "$f" ] || continue
+            case "$f" in */TEMPLATE.md) continue ;; esac
+            chars=$(tr -d '[:space:]' < "$f" | wc -c | tr -d ' ')
+            # 200 = fresh-clone floor: a committed ledger may be terse (frontmatter
+            # + a quote or two) and the corpus is absent in CI, so the bar is
+            # lower than the 500-char write-time floor in the Claude Code hook.
+            if [ "$chars" -lt 200 ]; then
+              echo "::error::$f is only ${chars} non-whitespace chars (min 200) — looks like a stub."
+              status=1
+            fi
+          done
+          exit $status

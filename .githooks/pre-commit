@@ -1,0 +1,204 @@
+#!/bin/bash
+# === Ledger pre-commit gate — agent-neutral mechanical enforcement ===
+# Runs the same quote-first + wiki-health checks as the Claude Code hook, but at
+# COMMIT time — so the guarantee holds whatever drives the edits (Claude Code,
+# Codex via AGENTS.md, Cursor, or hand-editing) and for every collaborator who
+# clones the repo, not just inside one agent.
+#
+# Activate once per clone:   git config core.hooksPath .githooks
+#
+# Thirteen checks, all blocking (a non-zero exit aborts the commit):
+#   1. verify_quotes.py      — every quote in a verified_claims/ ledger is verbatim
+#      in its extracted source text, AND re-binds the provenance stamp (recompute
+#      source/extract sha256, compare). LOCAL only: needs the git-ignored corpus.
+#      Skipped (with a warning) when no extracted texts exist yet.
+#   2. check_citations.py    — every citation in gated prose has a paper on disk
+#      (corpus permitting) AND a verified_claims/ ledger. Same checker as the
+#      write-time hook and CI, so the gate cannot drift between agents.
+#   3. check_manifest.py     — every committed ledger carries a valid provenance
+#      stamp (corpus-less; the half CI also runs).
+#   4. ledger_doctor.py     — the project is pristine or fully configured, not
+#      left half-bootstrapped (a mix of filled fields and placeholders).
+#   5. check_structure.py    — every in-band claim-graph edge resolves cross-ledger
+#      and carries a resolvable (grounded by #slug) clause; no contradictory pair;
+#      qid references hit a real sub-question (corpus-less; empty graph passes).
+#   6. check_assessment.py   — every judgement record is sealed, grounded, and bound
+#      to its claim's current body; [rec:] refs and calibration shape hold
+#      (corpus-less; empty layer passes).
+#   7. check_coverage.py      — (opt-in, graph_coverage:) every cited claim has a role
+#      in the argument graph. No-op when off (the default).
+#   8. check_attestation.py   — (opt-in, attestation:) every run-record carries a valid
+#      allowed-signer signature. No-op when off (the default).
+#   9. check_selection.py    — (opt-in, selection_audit:) every stamped ledger is
+#      registered and no declared position is silently empty. No-op when off.
+#  10. check_source_flow.py  — (opt-in, source_flow:) every stamped ledger has a
+#      declared discovery/screening route in content/source_flow.md. No-op when off.
+#  11. check_units.py        — (opt-in, units_layer:) each located claim's quote is
+#      verbatim within its addressed source unit. No-op when off.
+#  12. check_synthesis.py    — (opt-in, synthesis_claims:) significance/superiority
+#      claims in synthesis prose are anchored or hedged (form, not truth). No-op when off.
+#  13. lint_wiki.py --strict — no dead wikilinks / orphan / uncatalogued notes.
+# (Same gate set as CI, except verify_quotes is local-only — it needs the corpus.)
+#
+# Bypass (git commit --no-verify) exists but defeats the purpose; CI is the
+# un-bypassable backstop on the GitHub remote.
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+fail=0
+
+# --- 1. Quote verification (local; needs the git-ignored corpus) ---
+# A pristine kit and a 'warn' project may legitimately have no corpus yet, so
+# the absent-extracts case warns and skips. But a CONFIGURED (strict) project
+# with committed ledgers must have its corpus present — otherwise its quotes go
+# unverified. ledger_doctor reports strictness; we verify when extracts exist OR
+# when a strict project has real ledgers (verify_quotes --strict then fails on
+# the missing corpus rather than silently passing).
+strict="$(python3 tools/ledger_doctor.py --print-strict 2>/dev/null || echo lenient)"
+real_ledger=0
+for f in literature/verified_claims/*.md; do
+  [ -e "$f" ] || continue
+  case "$f" in */TEMPLATE.md) continue ;; esac
+  real_ledger=1; break
+done
+
+if ls literature/extracted/*.txt >/dev/null 2>&1 \
+   || { [ "$strict" = "strict" ] && [ "$real_ledger" -eq 1 ]; }; then
+  echo "[pre-commit] verifying ledger quotes against extracted sources..."
+  vq_flags=""
+  [ "$strict" = "strict" ] && vq_flags="--strict"
+  if ! python3 literature/verify_quotes.py $vq_flags; then
+    echo "[pre-commit] BLOCKED: a quote is not verbatim, or a configured project's corpus is absent." >&2
+    echo "             Fix the ledger quote (do not reword to dodge the check), or rebuild the corpus." >&2
+    fail=1
+  fi
+else
+  echo "[pre-commit] WARNING: no literature/extracted/*.txt — skipping quote verification." >&2
+  echo "             Rebuild the corpus (fetch_paper.sh + extract_text.py) so quotes can be checked." >&2
+fi
+
+# --- 2. Citation coverage (paper + ledger per prose cite; Layer 1 auto-skips
+#        with a warning when the git-ignored corpus is absent) ---
+if [ -d content ]; then
+  echo "[pre-commit] checking citation coverage (paper + ledger per cite)..."
+  if ! python3 tools/check_citations.py content; then
+    echo "[pre-commit] BLOCKED: a prose citation has no paper/ledger (see above)." >&2
+    echo "             Quote-first: fetch the paper, write the verified_claims ledger, then cite." >&2
+    fail=1
+  fi
+fi
+
+# --- 3. Provenance attestation (corpus-less complement to step 1: every
+#        committed ledger carries a valid stamp; verify_quotes binds it above) ---
+echo "[pre-commit] attesting ledger provenance stamps..."
+if ! python3 tools/check_manifest.py; then
+  echo "[pre-commit] BLOCKED: a ledger is missing or has an invalid provenance stamp." >&2
+  echo "             Run: python3 literature/verify_quotes.py --stamp" >&2
+  fail=1
+fi
+
+# --- 4. Project health (pristine kit and finished project both pass; only a
+#        half-bootstrapped project fails) ---
+echo "[pre-commit] checking project health (config + skin)..."
+if ! python3 tools/ledger_doctor.py; then
+  echo "[pre-commit] BLOCKED: project is half-configured (see above)." >&2
+  fail=1
+fi
+
+# --- 5. Structure layer (claim-graph edges resolve + are grounded; corpus-less,
+#        empty graph passes under every posture) ---
+echo "[pre-commit] checking claim-graph structure (edges resolve + grounded)..."
+if ! python3 tools/check_structure.py; then
+  echo "[pre-commit] BLOCKED: a claim-graph edge is unresolved/ungrounded, a pair is" >&2
+  echo "             contradictory, or a qid is bad (see above). Fix the edge or its grounding." >&2
+  fail=1
+fi
+
+# --- 6. Assessment layer (judgement records sealed/grounded/fresh; corpus-less,
+#        empty layer passes under every posture) ---
+echo "[pre-commit] checking assessment records (sealed + grounded + fresh)..."
+if ! python3 tools/check_assessment.py; then
+  echo "[pre-commit] BLOCKED: a judgement record is unsealed, ungrounded, or stale, or" >&2
+  echo "             a [rec:]/calibration check failed (see above). Reseal or fix the record." >&2
+  fail=1
+fi
+
+# --- 7. Claim coverage (opt-in; off by default → no-op) ---
+echo "[pre-commit] checking claim coverage (graph_coverage)..."
+if ! python3 tools/check_coverage.py; then
+  echo "[pre-commit] BLOCKED: a cited claim has no role in the argument graph (see above)." >&2
+  fail=1
+fi
+
+# --- 8. Run-record attestation (opt-in; off by default → no-op) ---
+echo "[pre-commit] checking run-record attestation (attestation)..."
+if ! python3 tools/check_attestation.py; then
+  echo "[pre-commit] BLOCKED: a run-record is missing a valid allowed-signer signature." >&2
+  echo "             Run: python3 tools/sign_records.py --key <ssh-key>" >&2
+  fail=1
+fi
+
+# --- 9. Selection audit (opt-in; off by default → no-op) ---
+echo "[pre-commit] checking selection audit (corpus registered, no empty side)..."
+if ! python3 tools/check_selection.py; then
+  echo "[pre-commit] BLOCKED: a source is unregistered, or a declared position has no" >&2
+  echo "             source and no known-gap entry (see above). Update content/source_register.md." >&2
+  fail=1
+fi
+
+# --- 10. Source-flow audit (opt-in, source_flow; off by default → no-op) ---
+echo "[pre-commit] checking source flow (discovery/screening route per ledger)..."
+if ! python3 tools/check_source_flow.py; then
+  echo "[pre-commit] BLOCKED: a stamped ledger has no declared route into the corpus" >&2
+  echo "             (see above). Add its entry to content/source_flow.md." >&2
+  fail=1
+fi
+
+# --- 11. Unit-manifest / coordinate gate (opt-in, units_layer; off by default → no-op) ---
+echo "[pre-commit] checking unit manifests (quote-within-unit; units_layer)..."
+if ! python3 tools/check_units.py; then
+  echo "[pre-commit] BLOCKED: a located claim's quote is not within its addressed unit," >&2
+  echo "             or a manifest is missing/stale (see above). Re-run enumerate_units.py." >&2
+  fail=1
+fi
+
+# --- 12. Synthesis-claim gate (opt-in, synthesis_claims; off by default → no-op) ---
+echo "[pre-commit] checking synthesis claims are anchored (synthesis_claims)..."
+if ! python3 tools/check_synthesis.py; then
+  echo "[pre-commit] BLOCKED: a significance/superiority claim in the synthesis prose is" >&2
+  echo "             unanchored — pin it to a key:slug / [[link]] / \`tool\` ref, or hedge it." >&2
+  fail=1
+fi
+
+# --- 13. Wiki health (no corpus needed) ---
+if [ -d content ]; then
+  echo "[pre-commit] linting wiki (dead links / orphans / uncatalogued)..."
+  if ! python3 tools/lint_wiki.py content --strict; then
+    echo "[pre-commit] BLOCKED: wiki health-check failed (see above)." >&2
+    fail=1
+  fi
+fi
+
+# --- Repo hygiene (not an integrity gate: it reads this repo's own source, not a claim) ---
+# Staged files only, so an unrelated pre-existing comment never blocks somebody else's commit.
+if [ -f dev/check_comments.py ]; then
+  staged=$(git diff --cached --name-only --diff-filter=ACM -- '*.py' '*.sh')
+  if [ -n "$staged" ]; then
+    echo "[pre-commit] checking comments carry contracts, not plans..."
+    if ! python3 dev/check_comments.py $staged; then
+      echo "[pre-commit] BLOCKED: comment discipline (see above)." >&2
+      fail=1
+    fi
+  fi
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo "[pre-commit] commit aborted." >&2
+  exit 1
+fi
+
+echo "[pre-commit] ok."
+exit 0

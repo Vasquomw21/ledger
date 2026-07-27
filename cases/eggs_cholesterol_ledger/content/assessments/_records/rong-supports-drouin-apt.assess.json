@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f9c72cf8e07ae7d105890da31d8ff15577e4f28842e02ea803a941e9cd9fac2a",
+  "disputes": [],
+  "grounding": [
+    "rong_2013:rong-overall-null"
+  ],
+  "id": "rong-supports-drouin-apt",
+  "kind": "edge",
+  "record_sha256": "4451bb274f80bb69c5a32e2a056f0c899e4f35723bb93dffabaf30c3007d0e94",
+  "span": "",
+  "subject": "drouin_2020:no-association-overall"
+}

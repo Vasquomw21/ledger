@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "45b4515bc8a76f3bfa2daf533660acaa033cc16983cca0df99d0ad7257ec41f2",
+  "disputes": [],
+  "grounding": [
+    "sun_2021:eggs-higher-cvd-mortality"
+  ],
+  "id": "sun-supports-zhao-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "db6af150f08da58fdef15fe80bf7dc1a3e0cfc97f4d93fd577f38d4b4ac55370",
+  "reviews": [
+    "sun-supports-zhao-apt"
+  ],
+  "span": "",
+  "subject": "zhao_2022:harmful-mortality"
+}

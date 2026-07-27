@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "45b4515bc8a76f3bfa2daf533660acaa033cc16983cca0df99d0ad7257ec41f2",
+  "disputes": [],
+  "grounding": [
+    "zhuang_2021:egg-cholesterol-higher-mortality"
+  ],
+  "id": "zhuang-supports-zhao-apt",
+  "kind": "edge",
+  "record_sha256": "a1b1fa13f83d9dfe8c892cbb9f44ff75f3b0e12b930731ab3701e59fad9b6b6b",
+  "span": "",
+  "subject": "zhao_2022:harmful-mortality"
+}

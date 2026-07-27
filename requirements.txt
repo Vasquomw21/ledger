@@ -1,0 +1,3 @@
+# Tests + intake deps (delegates to the pyproject extras so it can't drift).
+# The read-only demo needs NONE of this — just: python3 ledger_cli.py demo cases/<case>
+-e .[intake,test]

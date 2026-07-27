@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "45b4515bc8a76f3bfa2daf533660acaa033cc16983cca0df99d0ad7257ec41f2",
+  "disputes": [],
+  "grounding": [
+    "zhong_2019:cholesterol-eggs-harmful"
+  ],
+  "id": "zhong-supports-zhao-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "a7b9695fe2208308f3131d84fc45163e8a058789b8d7623192215106f758efc4",
+  "reviews": [
+    "zhong-supports-zhao-apt"
+  ],
+  "span": "",
+  "subject": "zhao_2022:harmful-mortality"
+}

@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "ef00876d93109bb83ad37007cef51d72772a337775427b74dce72bcd3e9ede6f",
+  "disputes": [],
+  "grounding": [
+    "van_treuren:superior-case"
+  ],
+  "id": "vantreuren-supports-verdict-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "77de0947f104ea61481f27d7ab71efbbbe3464cdc570d167b2f31272e8933644",
+  "reviews": [
+    "vantreuren-supports-verdict-apt"
+  ],
+  "span": "",
+  "subject": "stansifer:verdict"
+}

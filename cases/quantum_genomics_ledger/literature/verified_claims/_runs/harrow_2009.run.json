@@ -1,0 +1,20 @@
+{
+  "body_sha256": "9f2610d065b20e1d4960c271b52c1783f5a7b730bfd74cfedaaf9b3297fd7925",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.1103/PhysRevLett.103.150502",
+  "extract_sha256": "87c6688919d18d86b713ee14c7c89806838fcc368de4a6ed637e4fdee5eeb821",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/harrow_2009.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "harrow_2009",
+  "pmcid": "",
+  "record_sha256": "dbb5c77aaff53eee5d77604b3b26de4aad20a3f597251e913667a4f12f762514",
+  "retrieved": "20260603",
+  "source_sha256": "a15b70b8123984a650cc3f3df2476edb7d381c29d8406297ba3d048ae5915c24",
+  "transcript_sha256": "22381eb863ee9558c5a358a07ec567892bc070ae43310b3817c1ae15db109142",
+  "url": "https://doi.org/10.1103/PhysRevLett.103.150502",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

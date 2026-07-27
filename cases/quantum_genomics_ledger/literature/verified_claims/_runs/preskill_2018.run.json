@@ -1,0 +1,20 @@
+{
+  "body_sha256": "dbcf293171057fde8db352a85e47bfbd0e96b8f6e44af4562f7a0bfe9cbe56da",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "10.22331/q-2018-08-06-79",
+  "extract_sha256": "e7518c36cf0ad6f64eb39638547413b32c92814da5ffae256246a246fff4e82d",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/preskill_2018.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "preskill_2018",
+  "pmcid": "",
+  "record_sha256": "91012f3aadab19bb16921d76c55c4955c3cc0e9e53ceb41fdd85a24454370452",
+  "retrieved": "20260603",
+  "source_sha256": "cf64a00c519e800c0753b89c243b59013a6cd777187910912e029b068e17de69",
+  "transcript_sha256": "e9d2750d067090086404e51fbcaa0798613bc53e9edce33d855138e7da4a043a",
+  "url": "https://doi.org/10.22331/q-2018-08-06-79",
+  "verified_date": "20260615",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

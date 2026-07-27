@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "7b2bf946b7d9931b626d4b6ed0c03aeb4514479ad92283ce7777a81c250910dd",
+  "disputes": [],
+  "grounding": [
+    "andersen_2020:fcs-natural-process"
+  ],
+  "id": "andersen-rebuts-segreto-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "932c791ae7127fe1e7265176a8106ba99fa0036d52b13c500d07d0addeca3f41",
+  "reviews": [
+    "andersen-rebuts-segreto-apt"
+  ],
+  "span": "",
+  "subject": "segreto_2021:fcs-implies-engineering"
+}

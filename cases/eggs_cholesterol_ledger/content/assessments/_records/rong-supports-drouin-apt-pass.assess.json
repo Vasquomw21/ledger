@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f9c72cf8e07ae7d105890da31d8ff15577e4f28842e02ea803a941e9cd9fac2a",
+  "disputes": [],
+  "grounding": [
+    "rong_2013:rong-overall-null"
+  ],
+  "id": "rong-supports-drouin-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "4bb075af08f785f1c2e3804176dda88f09db9aec7a3c8055e805589f92b11b4e",
+  "reviews": [
+    "rong-supports-drouin-apt"
+  ],
+  "span": "",
+  "subject": "drouin_2020:no-association-overall"
+}

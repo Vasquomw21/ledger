@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "86c99ae3e655bba79d669ae8609d9ecde5a5efb0c0891eaa8dee12b94f333277",
+  "disputes": [],
+  "grounding": [
+    "giddings_2008:no-basis-concern"
+  ],
+  "id": "giddings-supports-norisk-apt",
+  "kind": "edge",
+  "record_sha256": "d5e4356ef4dadc42dbd9b234d39b6fa12ab901a6a2e8ad7a9e2cff261592e702",
+  "span": "",
+  "subject": "lsag_2008:no-associated-risks"
+}

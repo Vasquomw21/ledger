@@ -1,0 +1,17 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "72b1e4b7e732c5560526b8f48ff2720f95cd4cb28b6ba4e0e7a4c9c83ee21800",
+  "disputes": [],
+  "grounding": [
+    "koch_2009:independent-argument",
+    "giddings_2008:astro-bound"
+  ],
+  "id": "koch-giddings-correlated",
+  "kind": "correlated-with",
+  "record_sha256": "2cd4d04e76649a08cdb9893515846c79409875dd36db947eb2316510309c6014",
+  "span": "",
+  "subject": "koch_2009:independent-argument"
+}

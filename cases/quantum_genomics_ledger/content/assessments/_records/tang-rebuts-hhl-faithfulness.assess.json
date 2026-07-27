@@ -1,0 +1,18 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "f7879ad1fa3313bf6f6dfa164b5045488f357126ac9454923191c43c2b4809b2",
+  "disputes": [
+    "tang-rebuts-hhl-apt"
+  ],
+  "grounding": [
+    "tang_2019:no-exponential-speedup"
+  ],
+  "id": "tang-rebuts-hhl-faithfulness",
+  "kind": "faithfulness",
+  "record_sha256": "404207e9c5a09ef101f230144d7ce3683322b4dd5279ad6a9d9668e80e900559",
+  "span": "Kerenidis and Prakash's algorithm does not in fact give an exponential speedup",
+  "subject": "harrow_2009:exponential-over-classical"
+}

@@ -1,0 +1,20 @@
+{
+  "body_sha256": "2ffd39f8c61071d2c14ce2b74086095e6fbde7da97206d35f802fbf96ed91458",
+  "command": "cases/eggs_cholesterol_ledger/literature/verify_quotes.py --stamp --provenance required",
+  "doi": "10.1093/ajcn/nqz348",
+  "extract_sha256": "90134cfe4b55709a75d9340012827ce3c0fb00bdaa71226797fc1c2205fac820",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.13.2;beautifulsoup4=4.15.0;lxml=6.1.1",
+  "file": "literature/dehghan_2020.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "dehghan_2020",
+  "pmcid": "PMC7138651",
+  "record_sha256": "bc56a756793364d14d75205bda4d9061142f6667fee9545cc36b026660253f44",
+  "retrieved": "20260613",
+  "source_sha256": "5b940feedc181db5aae5ff70e12d9408d4e466898a8a186630f373bd8acbb4a5",
+  "transcript_sha256": "37ec7110ec3121db55214552b6513da748be3391653b39f3c7c082b556874e90",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7138651/",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

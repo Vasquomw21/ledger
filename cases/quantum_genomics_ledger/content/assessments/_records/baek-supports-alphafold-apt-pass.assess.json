@@ -1,0 +1,19 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "276c20ac2c170f31db11b2dc085dc2581f374fbc3587d06566f3834a725fbb91",
+  "disputes": [],
+  "grounding": [
+    "baek_2021:rosettafold-approaches-alphafold"
+  ],
+  "id": "baek-supports-alphafold-apt-pass",
+  "kind": "faithfulness-pass",
+  "record_sha256": "4b856a7bbad44f0d729cd5e2880840cd982fa2b60a0e241b281a6b9512b28d7e",
+  "reviews": [
+    "baek-supports-alphafold-apt"
+  ],
+  "span": "",
+  "subject": "jumper_2021:casp14-accuracy-lead"
+}

@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260615",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "45b4515bc8a76f3bfa2daf533660acaa033cc16983cca0df99d0ad7257ec41f2",
+  "disputes": [],
+  "grounding": [
+    "sun_2021:eggs-higher-cvd-mortality"
+  ],
+  "id": "sun-supports-zhao-apt",
+  "kind": "edge",
+  "record_sha256": "d7cfc258395eaae8f103ac49fc73630af8a5e40b741b625010513039b51f5b3d",
+  "span": "",
+  "subject": "zhao_2022:harmful-mortality"
+}

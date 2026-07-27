@@ -1,0 +1,20 @@
+{
+  "body_sha256": "b9c4eeec8eed56d0b0a9a8eed0b1e338c75f54007234613820b2ad4508815608",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "089df72e43c4067f92ff8a3585fb624ffb52ccca96487d0bcfedb409a883167d",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/daniel.html",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "daniel",
+  "pmcid": "",
+  "record_sha256": "d51c8b3e8d672b65dfe9c0b2dfaf104f6cf0adb1bf025f639bbaed7ea9101c2d",
+  "retrieved": "20260614",
+  "source_sha256": "1fc057ae3181e65c4496a2bfce69e4c379592f244e0220d688db3b975025ba36",
+  "transcript_sha256": "d807f6299431ce6a58942c8e246dae3ce4031dc29a3857f559052cc1bf9c3c77",
+  "url": "https://docs.google.com/document/d/1qzLC55jRfdS55oSqXJZTFItsvFsawWgNlgLxWqhCuyo/edit",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

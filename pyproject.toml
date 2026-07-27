@@ -1,0 +1,32 @@
+# pip-first packaging. The demo needs zero installs (pure-stdlib tools); extras are tiered
+# (test/intake). conda (environment.yml) is one optional full-toolchain route.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ledger-kit"
+version = "0.1.0"
+description = "Ledger — a research toolkit for people and AI working together (CLI shim)"
+requires-python = ">=3.10"
+readme = "README.md"
+
+# Tiered extras, minor-pinned like environment.yml (a major bump in pypdf/bs4 can shift
+# extracted text and flip quote checks). The demo needs none.
+[project.optional-dependencies]
+test   = ["pytest>=9,<10"]
+intake = ["beautifulsoup4>=4.15,<5", "lxml>=6.1,<7", "pypdf>=6.13,<7"]
+dev    = ["ledger-kit[test,intake]"]
+
+[project.scripts]
+ledger = "ledger_cli:main"
+
+[tool.setuptools]
+py-modules = ["ledger_cli"]
+
+# Scope test collection to the kit's own suite. The vendored projects under cases/
+# carry their own tests/ (identical module names), which would otherwise collide
+# during collection — each case is tested in its own repo, not by the kit's run.
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["cases", ".git", "*.egg-info"]

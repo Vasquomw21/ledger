@@ -1,0 +1,20 @@
+{
+  "body_sha256": "f42b80522f1c4ea4115eba4ad73b86dc7a9ec0a09d2f9fd69223b4f8e2dde13f",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "427b1abc2a7a53ca115e7ad948175d8244c6805b6598e10980ae3f4dcd0cdd3b",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/van_treuren.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "van_treuren",
+  "pmcid": "",
+  "record_sha256": "2613e2e7bba1507eb10eadb1224158815674af91901aaa0f1923a9a8458ac950",
+  "retrieved": "20260614",
+  "source_sha256": "a3840e689ba567bfc44f6cbc0533f48bd7c52e60506dff295e752eb3edbdff31",
+  "transcript_sha256": "45e4b34e123c303be51fa3b74b50d88b4a4816d99ccb39cef60ad3f8705c33f8",
+  "url": "https://drive.google.com/file/d/1YhmkYB32RpGsXvQTsX4xZ0Yul1wiwh8Z/view",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}

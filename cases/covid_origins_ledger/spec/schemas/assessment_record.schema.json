@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ledger.tools/schemas/v0.1/assessment_record.schema.json",
+  "title": "Ledger assessment record",
+  "description": "A sealed, quote-grounded judgement about a claim. Written by assess_record.py, validated by check_assessment.py. record_sha256 self-seals every other field (canonical JSON, sorted keys, UTF-8); body_sha256 binds the judgement to the subject claim's current text.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "id", "subject", "grounding", "assessed_date", "assessor", "assessor_tool", "assess_version", "body_sha256", "record_sha256"],
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": ["rhetorical", "correlated-with", "crux-of", "calibration", "status", "edge", "faithfulness", "faithfulness-pass"],
+      "description": "The judgement dimension. 'faithfulness' is an adversarial contest of an inference's faithful use and must carry a non-empty 'disputes'; 'faithfulness-pass' records an adversarial read with no dispute filed and must carry a non-empty 'reviews'."
+    },
+    "id": {"type": "string", "description": "Stable record id; the file is <id>.assess.json."},
+    "subject": {"type": "string", "description": "The assessed claim, as a global address <ledger_key>:<slug>."},
+    "grounding": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Claim addresses (<ledger_key>:<slug>, or a bare slug in the subject's ledger) the judgement rests on. For kind=edge, grounding[0] is the assessed edge's source claim (subject is its target), so (subject, grounding[0]) identifies the edge."
+    },
+    "span": {"type": "string", "description": "For kind rhetorical/faithfulness: the verbatim substring of the grounding quote being flagged (quote-pinned)."},
+    "disputes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Record ids this judgement contests. Each must assess the same subject. Required non-empty for kind=faithfulness."
+    },
+    "reviews": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Record ids this judgement positively reviews. Required non-empty for kind=faithfulness-pass; each reviewed id should name an edge record on the same subject."
+    },
+    "assessed_date": {"type": "string", "pattern": "^[0-9]{8}$", "description": "YYYYMMDD."},
+    "assessor": {"type": "string", "description": "Committer identity (git user.email) — attribution."},
+    "assessor_tool": {"type": "string"},
+    "assess_version": {"type": "string"},
+    "body_sha256": {"type": "string", "description": "sha256 of the subject claim's current body; empty string if unresolved."},
+    "record_sha256": {"type": "string", "description": "sha256 over all other fields (canonical, sorted-key JSON) — the self-seal."}
+  }
+}

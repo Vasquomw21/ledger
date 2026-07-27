@@ -1,0 +1,16 @@
+{
+  "assess_version": "1",
+  "assessed_date": "20260614",
+  "assessor": "56687218+Vasquomw21@users.noreply.github.com",
+  "assessor_tool": "assess_record.py",
+  "body_sha256": "86c99ae3e655bba79d669ae8609d9ecde5a5efb0c0891eaa8dee12b94f333277",
+  "disputes": [],
+  "grounding": [
+    "koch_2009:independent-argument"
+  ],
+  "id": "koch-supports-norisk-apt",
+  "kind": "edge",
+  "record_sha256": "39a9ded7449874735e4cc24c6f2728f8047ef53b26e9747241562aa78ec7238e",
+  "span": "",
+  "subject": "lsag_2008:no-associated-risks"
+}

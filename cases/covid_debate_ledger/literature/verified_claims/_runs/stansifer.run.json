@@ -1,0 +1,20 @@
+{
+  "body_sha256": "a9cc82bd01153345fe6a41edf894fa27de77c80c385f0388c18d99f26111494c",
+  "command": "literature/verify_quotes.py --stamp",
+  "doi": "",
+  "extract_sha256": "7a6b224bc4ea851305c26fd3942b46f539c5c43c47fe51901d96ca7e71f9b709",
+  "extract_tool": "extract_text.py",
+  "extract_tool_version": "pypdf=6.9.2;beautifulsoup4=4.14.3;lxml=6.0.2",
+  "file": "literature/stansifer.pdf",
+  "host_user": "56687218+Vasquomw21@users.noreply.github.com",
+  "key": "stansifer",
+  "pmcid": "",
+  "record_sha256": "b829a645b89492df97f60491ff6aa6d64ba7b3bc141986174fcf32368d504798",
+  "retrieved": "20260614",
+  "source_sha256": "e456a0aa49790d6bdf26fd714b3d8141a0b5fc9177994e199fa20bef370ae3a1",
+  "transcript_sha256": "feaa680429115977e04112b60302a2d14d256dc098ea14601f635e10dab36655",
+  "url": "https://drive.google.com/file/d/1aHlhPd-16EOabzXhiajT5PBm3uVCAG3T/view",
+  "verified_date": "20260614",
+  "verified_verdict": "pass",
+  "verifier_version": "2"
+}
