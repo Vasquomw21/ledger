@@ -31,6 +31,7 @@ import corpus_manifest
 import judge_dashboard
 import ledger_cli
 import ledger_doctor
+import md_render
 
 # Bundle order is showcase-first; the rest follow the guide's ordering.
 SHOWCASE = "covid_origins"
@@ -56,6 +57,7 @@ CASE_META = {
 }
 
 GUIDE = "EVALUATOR_GUIDE.md"
+GUIDE_HTML = "EVALUATOR_GUIDE.html"
 MANIFEST = "release-manifest.json"
 CHECKSUMS = "checksums.sha256"
 
@@ -73,6 +75,7 @@ _REMOTE_ASSET_RE = re.compile(
 
 _ATTR_URL_RE = re.compile(r'(?:href|src)\s*=\s*["\']([^"\']+)["\']', re.I)
 _MD_LINK_RE = re.compile(r'\[[^\]]*\]\(([^)]+)\)')
+_MD_LINK_PARTS_RE = re.compile(r'\[([^\]]*)\]\(([^)\s]+)\)')
 _SCHEME_RE = re.compile(r'^[a-z][a-z0-9+.-]*:', re.I)
 
 
@@ -82,6 +85,10 @@ class SubmissionError(Exception):
 
 class DestinationExists(SubmissionError):
     pass
+
+
+class UnpublishableRef(SubmissionError):
+    """A --from-ref that cannot honestly back a published bundle."""
 
 
 class GateFailure(SubmissionError):
@@ -95,10 +102,69 @@ def _case_root(repo_root: Path, name: str) -> Path:
     return repo_root / "cases" / f"{name}_ledger"
 
 
+def _git(repo_root: Path, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(["git", *args], cwd=str(repo_root),
+                          capture_output=True, text=True)
+
+
 def _git_commit(repo_root: Path) -> str:
-    out = subprocess.run(["git", "rev-parse", "HEAD"], cwd=str(repo_root),
-                         capture_output=True, text=True)
-    return out.stdout.strip() if out.returncode == 0 else "unknown"
+    """The commit the bundle claims, suffixed `-dirty` when the tree carries
+    uncommitted work.
+
+    The builder reads a working TREE while the manifest names a COMMIT, so on an
+    unclean tree a bare sha would assert provenance for content that never
+    shipped. The suffix keeps the claim honest without blocking a local build;
+    --from-ref removes the gap entirely by building from an export.
+    """
+    out = _git(repo_root, "rev-parse", "HEAD")
+    if out.returncode != 0:
+        return "unknown"
+    commit = out.stdout.strip()
+    status = _git(repo_root, "status", "--porcelain")
+    dirty = status.returncode == 0 and status.stdout.strip()
+    return f"{commit}-dirty" if dirty else commit
+
+
+def _resolve_publishable_ref(repo_root: Path, ref: str) -> str:
+    """The commit `ref` names, once it is established a reader could fetch it.
+
+    A published bundle stamps a commit the reader is invited to check, so a ref
+    that exists only in this clone would name an unreachable object. Reachability
+    is read from the remote-tracking refs, which is as far as a local check can
+    honestly go: it proves the commit was pushed at last fetch, not that the
+    remote still carries it.
+    """
+    out = _git(repo_root, "rev-parse", f"{ref}^{{commit}}")
+    if out.returncode != 0:
+        raise UnpublishableRef(f"unknown ref: {ref}")
+    commit = out.stdout.strip()
+    remotes = _git(repo_root, "branch", "-r", "--contains", commit)
+    if remotes.returncode != 0 or not remotes.stdout.strip():
+        raise UnpublishableRef(
+            f"{ref} ({commit[:12]}) is on no remote-tracking branch — a reader "
+            f"could not fetch the commit the bundle would claim; push it first")
+    return commit
+
+
+def _export_ref(repo_root: Path, ref: str, dest: Path) -> None:
+    """Extract `ref` into `dest` via git archive.
+
+    The working tree is never read, so uncommitted or stashed work cannot reach a
+    published bundle — the same reason build_pristine.sh exports rather than
+    clones.
+    """
+    dest.mkdir(parents=True, exist_ok=True)
+    archive = subprocess.run(["git", "archive", "--format=tar", ref],
+                             cwd=str(repo_root), capture_output=True)
+    if archive.returncode != 0:
+        raise UnpublishableRef(
+            f"could not export {ref}: {archive.stderr.decode(errors='ignore').strip()}")
+    unpack = subprocess.run(["tar", "-x", "-C", str(dest)], input=archive.stdout,
+                            capture_output=True)
+    if unpack.returncode != 0:
+        raise UnpublishableRef(
+            f"could not unpack the export of {ref}: "
+            f"{unpack.stderr.decode(errors='ignore').strip()}")
 
 
 def _stage_packs(repo_root: Path, staging: Path) -> dict:
@@ -137,6 +203,64 @@ def _stage_guide(repo_root: Path, staging: Path) -> None:
 
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", _keep_or_unlink, text)
     (staging / GUIDE).write_text(text, encoding="utf-8")
+    # No browser renders Markdown, so a link straight at the .md shows a reader
+    # its source. The rendered page is built from the SAME rewritten text, so the
+    # two carry identical links and the unlinking above applies to both.
+    html = md_render.render_markdown(text, frontmatter="drop")
+    (staging / GUIDE_HTML).write_text(
+        _GUIDE_TEMPLATE.format(body=_link_bundle_targets(html, staging)),
+        encoding="utf-8")
+
+
+def _link_bundle_targets(html: str, staging: Path) -> str:
+    """Anchor the relative links md_render leaves as literal `[label](target)`.
+
+    md_render linkifies absolute URLs only, so a pack page can never grow a
+    dangling cross-link. The bundle is the one place that knows which relative
+    targets it contains, so it resolves them here — and only when the file is
+    present, which keeps the internal-link gate satisfied by construction.
+    """
+    def _anchor(m: re.Match) -> str:
+        label, target = m.group(1), m.group(2)
+        rel = target.split("#", 1)[0].split("?", 1)[0]
+        if _is_external(target) or not (staging / rel).exists():
+            return label
+        return f'<a href="{target}">{label}</a>'
+
+    return _MD_LINK_PARTS_RE.sub(_anchor, html)
+
+
+_GUIDE_TEMPLATE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledger — evaluator guide</title>
+<style>
+  :root {{ color-scheme: light dark; }}
+  body {{ font: 16px/1.65 system-ui, -apple-system, sans-serif;
+         max-width: 46rem; margin: 3rem auto; padding: 0 1.2rem; }}
+  h1 {{ font-size: 1.6rem; }}
+  h2 {{ font-size: 1.25rem; margin-top: 2.4rem; }}
+  h3 {{ font-size: 1.05rem; }}
+  pre {{ overflow-x: auto; padding: 0.8rem; border-radius: 4px; background: #f4f4f4; }}
+  table {{ border-collapse: collapse; display: block; overflow-x: auto; }}
+  th, td {{ border: 1px solid #ccc; padding: 0.35rem 0.6rem; text-align: left; }}
+  blockquote {{ margin: 1rem 0; padding: 0 0 0 1rem; border-left: 3px solid #ccc;
+                color: #555; }}
+  a.back {{ display: inline-block; margin-bottom: 1.5rem; }}
+  @media (prefers-color-scheme: dark) {{
+    pre {{ background: #222; }}
+    th, td {{ border-color: #444; }}
+    blockquote {{ border-color: #444; color: #aaa; }} }}
+</style>
+</head>
+<body>
+<p><a class="back" href="index.html">&larr; Bundle index</a></p>
+{body}
+</body>
+</html>
+"""
 
 
 _INDEX_TEMPLATE = """<!doctype html>
@@ -168,7 +292,7 @@ recommended case, then read the guide.</p>
 <ul class="cases">
 {cards}
 </ul>
-<p><a class="guide" href="EVALUATOR_GUIDE.md">Read the evaluator guide &rarr;</a></p>
+<p><a class="guide" href="EVALUATOR_GUIDE.html">Read the evaluator guide &rarr;</a></p>
 </body>
 </html>
 """
@@ -298,7 +422,7 @@ def _verify_checksums(bundle: Path) -> list:
     return problems
 
 
-def build_submission(repo_root, dest) -> dict:
+def build_submission(repo_root, dest, from_ref: str | None = None) -> dict:
     repo_root = Path(repo_root).resolve()
     dest = Path(dest).resolve()
     if dest.exists():
@@ -306,6 +430,25 @@ def build_submission(repo_root, dest) -> dict:
             f"destination exists: {dest} — remove it yourself; this tool never "
             f"overwrites or clears a destination")
     dest.parent.mkdir(parents=True, exist_ok=True)
+
+    export: tempfile.TemporaryDirectory | None = None
+    if from_ref is not None:
+        commit = _resolve_publishable_ref(repo_root, from_ref)
+        export = tempfile.TemporaryDirectory(prefix="ledger-export-")
+        _export_ref(repo_root, from_ref, Path(export.name))
+        source_root = Path(export.name)
+    else:
+        commit = _git_commit(repo_root)
+        source_root = repo_root
+
+    try:
+        return _build(source_root, dest, commit)
+    finally:
+        if export is not None:
+            export.cleanup()
+
+
+def _build(repo_root: Path, dest: Path, commit: str) -> dict:
     staging = Path(tempfile.mkdtemp(dir=str(dest.parent),
                                     prefix=f".{dest.name}.staging-"))
 
@@ -320,7 +463,6 @@ def build_submission(repo_root, dest) -> dict:
     if problems:
         raise GateFailure(problems, staging=staging)
 
-    commit = _git_commit(repo_root)
     _write_manifest(staging, commit, levels, _profiles(repo_root))
     _write_checksums(staging)
 
@@ -338,10 +480,18 @@ def main(argv=None) -> int:
     ap.add_argument("repo_root", nargs="?", default=str(REPO))
     ap.add_argument("--out", required=True, help="destination bundle directory "
                     "(must not already exist)")
+    ap.add_argument("--from-ref", default=None, metavar="REF",
+                    help="build from an export of REF (a tag or branch) instead "
+                         "of the working tree — required for a bundle you "
+                         "publish, since it is what stops uncommitted work "
+                         "reaching it")
     args = ap.parse_args(argv)
     try:
-        summary = build_submission(args.repo_root, args.out)
+        summary = build_submission(args.repo_root, args.out, args.from_ref)
     except DestinationExists as e:
+        print(f"[ERROR] {e}", file=sys.stderr)
+        return 2
+    except UnpublishableRef as e:
         print(f"[ERROR] {e}", file=sys.stderr)
         return 2
     except GateFailure as e:
@@ -354,7 +504,16 @@ def main(argv=None) -> int:
                   file=sys.stderr)
         return 1
     print(f"[INFO] bundle published: {summary['dest']}")
-    print(f"[INFO] {summary['files']} files, commit {summary['commit'][:12]}")
+    source = args.from_ref or "working tree"
+    # Abbreviate the sha, never the `-dirty` marker: it is the one part of the
+    # line a reader must not lose.
+    sha, _, mark = summary["commit"].partition("-")
+    shown = f"{sha[:12]}-{mark}" if mark else sha[:12]
+    print(f"[INFO] {summary['files']} files, commit {shown} (from {source})")
+    if summary["commit"].endswith("-dirty"):
+        print("[WARNING] built from a tree with uncommitted changes — the "
+              "manifest records this and the bundle must not be published; "
+              "rebuild with --from-ref", file=sys.stderr)
     print(f"[INFO] ceilings: {summary['levels']}")
     return 0
 

@@ -66,7 +66,22 @@
       "required": ["double_count", "superseded"],
       "description": "DERIVED heuristics, not proofs: correlated supporters of one claim (possible double-count) and claims a supersedes edge overtook.",
       "properties": {
-        "double_count": {"type": "array", "items": {"type": "string"}},
+        "double_count": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["a", "b", "target", "kind", "basis", "sealed_record"],
+            "properties": {
+              "a": {"type": "string", "description": "One correlated supporter, by ledger key (a canonical unordered pair with b)."},
+              "b": {"type": "string", "description": "The other correlated supporter, by ledger key."},
+              "target": {"type": "string", "description": "The claim address both supporters point at."},
+              "kind": {"type": "string", "enum": ["exact-cohort-reuse", "overlapping-pools", "shared-evidence", "other-declared-dependence"], "description": "Author-declared dependence kind from content/correlation_kinds.md; a pair the file does not classify falls back to other-declared-dependence."},
+              "basis": {"type": "string", "description": "The ledger's own Correlated-with annotation text (authored, not source-verified)."},
+              "sealed_record": {"type": ["string", "null"], "description": "Id of a sealed correlated-with assessment record grounding both members of the pair; null means the dependence is declared-only."}
+            }
+          }
+        },
         "superseded": {"type": "array", "items": {"type": "string"}}
       }
     }

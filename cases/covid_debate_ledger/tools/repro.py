@@ -19,6 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 from check_citations import ledger_claim_id_sets   # (ordinals, **ID:** slugs) per ledger
 from check_structure import parse_qid_refs          # **Addresses:**/**Crux-of:** qids
+from ledger_md import claim_blocks                  # the one reader of claim blocks
 
 
 def _ledgers(d: Path) -> list[Path]:
@@ -92,9 +93,9 @@ def run_loci(run_dir: Path) -> set[str]:
     no source on the grid yet."""
     loci: set[str] = set()
     for led in _ledgers(run_dir):
-        text = led.read_text(encoding="utf-8", errors="ignore")
-        for m in _LOCUS_LINE.finditer(text):
-            loci.add(f"{led.stem}:{m.group(1).lower()}")
+        for block in claim_blocks(led):
+            if (m := block.field(_LOCUS_LINE)):
+                loci.add(f"{led.stem}:{m.group(1).lower()}")
     return loci
 
 

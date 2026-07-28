@@ -182,6 +182,19 @@ if [ -d content ]; then
   fi
 fi
 
+# --- Repo hygiene (not an integrity gate: it reads this repo's own source, not a claim) ---
+# Staged files only, so an unrelated pre-existing comment never blocks somebody else's commit.
+if [ -f dev/check_comments.py ]; then
+  staged=$(git diff --cached --name-only --diff-filter=ACM -- '*.py' '*.sh')
+  if [ -n "$staged" ]; then
+    echo "[pre-commit] checking comments carry contracts, not plans..."
+    if ! python3 dev/check_comments.py $staged; then
+      echo "[pre-commit] BLOCKED: comment discipline (see above)." >&2
+      fail=1
+    fi
+  fi
+fi
+
 if [ "$fail" -ne 0 ]; then
   echo "[pre-commit] commit aborted." >&2
   exit 1

@@ -27,6 +27,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from check_citations import parse_config
+from ledger_md import claim_blocks, heading_blocks
 import claim_graph as cg
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -71,12 +72,18 @@ class QidRef:
 
 def parse_inquiry_qids(inquiry_path: Path) -> set[str]:
     """The set of sub-question ids declared in inquiry.md (empty if absent — then
-    any qid reference is dangling, which is the point)."""
+    any qid reference is dangling, which is the point).
+
+    A declaration is read from the `## ` sections only: an inquiry explaining its
+    own `**id:**` convention in its preamble, or showing one in a fenced example,
+    must not thereby declare a sub-question. Errs LOUD — an id the parser does not
+    see makes every claim addressing it dangle, where the opposite error lets a
+    DELETED sub-question keep resolving on the strength of a leftover mention.
+    """
     if not inquiry_path.is_file():
         return set()
-    text = inquiry_path.read_text(encoding="utf-8", errors="ignore")
-    return {m.group(1).lower() for line in text.splitlines()
-            if (m := QID_LINE_RE.match(line.strip()))}
+    return {m.group(1).lower() for block in heading_blocks(inquiry_path)
+            for m in block.fields(QID_LINE_RE)}
 
 
 def parse_qid_refs(claims_dir: Path) -> list[QidRef]:
@@ -87,10 +94,13 @@ def parse_qid_refs(claims_dir: Path) -> list[QidRef]:
     for ledger in sorted(claims_dir.glob("*.md")):
         if ledger.stem == "TEMPLATE":
             continue
-        text = ledger.read_text(encoding="utf-8", errors="ignore")
-        for line_no, line in enumerate(text.splitlines(), start=1):
-            m = QID_FIELD_RE.match(line.strip())
-            if m:
+        lines = ledger.read_text(encoding="utf-8", errors="ignore").splitlines()
+        for block in claim_blocks(ledger):
+            for m in block.fields(QID_FIELD_RE):
+                # The author's coordinate, recovered from the block's own line, so a
+                # report still points at the file rather than at a block offset.
+                line_no = next((i for i, ln in enumerate(lines, start=1)
+                                if ln.strip() == m.string), 0)
                 refs.append(QidRef(m.group("field").lower(), m.group("qid").lower(),
                                    ledger.stem, line_no))
     return refs

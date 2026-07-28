@@ -92,8 +92,86 @@ def test_guide_nav_rewritten_prose_intact(bundle):
     guide = (dest / bs.GUIDE).read_text()
     assert "](packs/covid_origins/index.html)" in guide   # case link -> pack page
     assert "](cases/" not in guide                         # no repo-only case links
-    # a sentence of prose survives verbatim
-    assert "the claimed speed-up turns on a single contested result" in guide
+
+
+def test_index_links_to_a_rendered_guide(bundle):
+    """A link straight at the .md shows a reader Markdown source: no browser
+    renders it, and GitHub Pages serves it as text."""
+    dest, _ = bundle
+    index = (dest / "index.html").read_text()
+    assert f'href="{bs.GUIDE_HTML}"' in index
+    assert f'href="{bs.GUIDE}"' not in index
+
+
+def test_rendered_guide_is_html_and_carries_the_guides_links(bundle):
+    dest, _ = bundle
+    html = (dest / bs.GUIDE_HTML).read_text()
+    assert html.startswith("<!doctype html>")
+    assert "<h1>" in html and "# Ledger" not in html      # rendered, not escaped source
+    assert 'href="packs/covid_origins/index.html"' in html
+    assert 'href="index.html"' in html                    # a way back to the bundle
+    # a sentence of prose survives rendering verbatim
+    assert "the claimed speed-up turns on a single contested result" in html
+
+
+def _tiny_repo(tmp_path, run):
+    """A throwaway git repo, so the source-provenance tests never depend on the
+    state of the repo they are running inside."""
+    repo = tmp_path / "src"
+    (repo / "tools").mkdir(parents=True)
+    (repo / "a.txt").write_text("one\n")
+    run("git", "init", "-q", "-b", "main", cwd=repo)
+    run("git", "config", "user.email", "t@example.invalid", cwd=repo)
+    run("git", "config", "user.name", "T", cwd=repo)
+    run("git", "add", "-A", cwd=repo)
+    run("git", "commit", "-q", "-m", "one", cwd=repo)
+    return repo
+
+
+@pytest.fixture
+def run():
+    import subprocess
+
+    def _run(*args, cwd):
+        out = subprocess.run(args, cwd=str(cwd), capture_output=True, text=True)
+        assert out.returncode == 0, out.stderr
+        return out.stdout.strip()
+    return _run
+
+
+def test_dirty_tree_never_claims_a_bare_commit(tmp_path, run):
+    """The builder reads a TREE but the manifest names a COMMIT: on an unclean
+    tree a bare sha would assert provenance for content that never shipped."""
+    repo = _tiny_repo(tmp_path, run)
+    assert "-dirty" not in bs._git_commit(repo)
+
+    (repo / "a.txt").write_text("edited, uncommitted\n")
+    dirty = bs._git_commit(repo)
+    assert dirty.endswith("-dirty")
+    assert dirty[:-len("-dirty")] == run("git", "rev-parse", "HEAD", cwd=repo)
+
+
+def test_from_ref_refuses_a_commit_no_reader_could_fetch(tmp_path, run):
+    """A published bundle stamps a commit the reader is invited to check."""
+    repo = _tiny_repo(tmp_path, run)
+    with pytest.raises(bs.UnpublishableRef) as e:
+        bs._resolve_publishable_ref(repo, "main")
+    assert "remote-tracking" in str(e.value)
+
+    with pytest.raises(bs.UnpublishableRef):
+        bs._resolve_publishable_ref(repo, "no-such-ref")
+
+
+def test_export_ignores_the_working_tree(tmp_path, run):
+    """The point of --from-ref: uncommitted work cannot reach the bundle."""
+    repo = _tiny_repo(tmp_path, run)
+    (repo / "a.txt").write_text("edited, uncommitted\n")
+    (repo / "untracked.txt").write_text("never committed\n")
+
+    out = tmp_path / "export"
+    bs._export_ref(repo, "main", out)
+    assert (out / "a.txt").read_text() == "one\n"      # the commit, not the edit
+    assert not (out / "untracked.txt").exists()
 
 
 def test_audit_pack_and_untracked_work_untouched(bundle):

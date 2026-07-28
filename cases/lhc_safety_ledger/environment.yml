@@ -1,9 +1,6 @@
-# Ledger toolchain — recreate with:  conda env create -f environment.yml
-# then:  conda activate ledger_env
-#
-# The intake pipeline and publishing step depend on these; a fresh project's
-# system python/node will NOT have them (this gap was caught by the first
-# bootstrap dry-run, 2026-06-09). conda-forge only.
+# Ledger — OPTIONAL full-toolchain conda env. Not the primary path: the demo needs zero
+# installs; tests + intake install via pip (requirements.txt). conda is kept only for the
+# binary intake/publish deps (node/gh/jq/curl) pip can't provide. conda-forge only.
 name: ledger_env
 channels:
   - conda-forge

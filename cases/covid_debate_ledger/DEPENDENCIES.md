@@ -1,24 +1,20 @@
 # Dependencies — Ledger
 
-Every dependency of the Ledger starter kit, with its **purpose** (not just name/version).
-The toolchain is pinned in `environment.yml` (conda-forge only) — recreate with
-`conda env create -f environment.yml && conda activate ledger_env`. Update this file whenever
-a dependency is added, removed, upgraded, or found to be optional/platform-specific.
+Every dependency, with its **purpose**, by tier. Deps are tiered so the **demo** needs none.
+pip is primary (`pip install -r requirements.txt`); conda (`environment.yml`) is the optional route
+to the binary intake/publish deps. Update this file on any dependency change.
 
-## Runtime — conda env `ledger_env` (conda-forge)
+## By tier
 
-| Dependency | Purpose |
-|---|---|
-| `python=3.12` | Runs the intake pipeline (`build_register.py`, `extract_text.py`, `verify_quotes.py` incl. `--stamp` provenance binding), `tools/lint_wiki.py`, `tools/check_citations.py`, `tools/check_manifest.py`, and `tools/ledger_doctor.py`. NB: the `.githooks/pre-commit` gate invokes the system `python3` (may be 3.9) — the scripts carry `from __future__ import annotations` so 3.10+ syntax (`X | None`) works there. |
-| `nodejs` | Quartz static-site publishing of `content/`. |
-| `gh` | GitHub CLI — repo create / push for the shareable layer. |
-| `jq` | `fetch_paper.sh` — JSON parsing of Unpaywall / OpenAlex responses. |
-| `curl` | `fetch_paper.sh` — the download ladder (PMC / DOI / Unpaywall / OpenAlex / web). |
-| `beautifulsoup4=4.15` (import `bs4`) | `build_register.py` / `extract_text.py` — HTML parsing. Minor-pinned: extraction output must stay stable or quote checks flip on a fresh clone. |
-| `lxml=6.1` | `extract_text.py` — HTML parser backend for bs4. Minor-pinned (see above). |
-| `pypdf=6.13` | `extract_text.py` — PDF text extraction. Minor-pinned (see above). |
-| `pytest=9.0` | Runs `tests/` — the enforcement-layer suite (`verify_quotes.py` + `check_citations.py`), also run in CI. |
-| `pip` | Fallback installer inside the env. |
+| Tier | Dependency | Purpose |
+|---|---|---|
+| **Demo** | `python3` ≥3.10 | Runs the read-only demo + gates — pure stdlib, **zero installs**. (The `.githooks/pre-commit` invokes system `python3`, maybe 3.9; scripts carry `from __future__ import annotations` so `X \| None` works.) |
+| **Test** (pip `test`) | `pytest>=9,<10` | Runs `tests/` — the enforcement-layer suite; also in CI. |
+| **Intake** (pip `intake`) | `beautifulsoup4>=4.15,<5` (`bs4`) | `build_register.py` / `extract_text.py` — HTML parsing. Pinned: extraction output must stay stable or quote checks flip. |
+| **Intake** | `lxml>=6.1,<7` | `extract_text.py` — bs4's HTML backend. |
+| **Intake** | `pypdf>=6.13,<7` | `extract_text.py` — PDF text extraction. |
+| **Intake** (binaries, conda) | `jq`, `curl` | `fetch_paper.sh` — JSON parsing + the download ladder. |
+| **Publish** (binaries, conda) | `nodejs`, `gh` | Quartz static-site publishing; GitHub CLI for repo create/push. |
 
 ## System-level
 
@@ -39,5 +35,5 @@ a dependency is added, removed, upgraded, or found to be optional/platform-speci
 
 | Dependency | Purpose |
 |---|---|
-| Obsidian | Browse `content/` and the vault-backed design docs (SPEC / BOOTSTRAP / HISTORY) with backlinks; desktop is the source of truth. |
+| Obsidian | Optional — the author's tool for browsing `content/` with backlinks. The design docs it references (SPEC / BOOTSTRAP / HISTORY) are git-ignored vault working-copies, not part of a clone; their published equivalents ship in `docs/` + `DEMO.md`. |
 | Unpaywall email | `fetch_paper.sh` API identity (set in `ledger.config.md`); only needed for the Unpaywall rung. |

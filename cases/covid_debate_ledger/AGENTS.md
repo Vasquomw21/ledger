@@ -1,7 +1,7 @@
 # AGENTS.md — authoring discipline for this Ledger project
 
 This file is the **agent-neutral schema** for a Ledger project: it turns any capable agent 
-into the project's disciplined writer and curator. It is the portable equivalent of
+into the project's writer and curator. It is the portable equivalent of
 the Claude Code skills `skill-ledger-write` and `skill-ledger-curate`: the same discipline, with no
 tool dependency. Codex reads this file natively; other agents can be pointed at it; a person can
 follow it by hand.
@@ -87,6 +87,40 @@ Voice is set by the project (sole-author first person, a defined collective "we"
 named in `ledger.config.md` or the skin; never an undefined "we". In Markdown projects,
 cross-references are `[[wikilinks]]`; dead links are forbidden (verify the target exists first).
 
+## Code comments — contracts, not history
+
+Editing the kit's own tools rather than its prose? The same economy applies:
+
+> A comment may explain a non-obvious invariant, external constraint, dangerous edge case or
+> necessary implementation choice. It must not preserve development history, roadmap sequencing,
+> test-construction history, or prose already expressed by names and control flow.
+
+Keep: why a foreign kernel must not be imported; why regex ordering prevents an author-list tail
+match; why `os.replace` needs its temp file on the same filesystem; why a write is bound to a
+digest. Cut: milestone labels (`# --- C1: ... ---`), phase markers, "the point of C2…", "mutation
+arrives in C5…", **any reference to a plan item by name** ("M5.3 de-vendors four cases", "C6b builds
+the plan", "the roadmap defers this", "deferred to the next milestone"), the retelling of a bug a
+test was written after, and any comment restating the function or test name below it. Docstrings obey
+the rule too — a long one arguing a decision to a reviewer is the same defect in a different shape.
+Rationale a maintainer will not need at the call site belongs in the project's progress log, where
+the history already lives.
+
+The test: a comment stating a *plan* is telling the reader something that will be false soon and is
+not theirs to act on; a comment stating a *constraint* stays true and changes what they do. "M5.3
+de-vendors four cases" is the first. "Byte parity holds only while every case vendors a full kernel"
+is the second, and it is the same fact with the sequencing removed — which is usually the repair,
+rather than deleting the comment.
+
+Treat a comment as exceptional: **if deleting it does not make the code harder to use safely, delete
+it.** Prefer structure — a named constant, a split function, a test name — which stays true because
+it is executed. `FULL_KERNEL_CASES` / `CONTENT_ONLY_CASES` with a test apiece says what a paragraph
+of comment was saying, and cannot rot.
+
+`dev/check_comments.py` enforces the mechanically detectable part: run it on any `.py`/`.sh`, or let
+pre-commit run it over what you staged. It parses comments and docstrings (`tokenize` + `ast`) rather
+than raw text, so a `roadmap` identifier or a quoted source is not a finding. It cannot see padding
+or a comment that merely restates its function's name — that judgement is yours.
+
 ## Writing loop — one section per invocation
 
 1. **Locate** — read the named section from the source-of-truth; report its heading + paragraph count.
@@ -104,7 +138,7 @@ cross-references are `[[wikilinks]]`; dead links are forbidden (verify the targe
    explicit approval. Edit nothing yet.
 6. **Apply** — after approval: edit the source-of-truth; update any stale note in the same pass;
    add/refresh the `crosswalk.md` row; append a `content/log.md` entry.
-7. **Log** — append a milestone to the project history (and `CURRENT_STATE.md` if the project uses one).
+7. **Log** — append a milestone to the project's history log (and its resume/state note, if it keeps one).
 8. **Stop** — return control. Do not propose the next section.
 
 ## Curating the knowledge base — one operation per invocation
@@ -113,8 +147,12 @@ Bookkeeping (`crosswalk.md`, `content/log.md`, the `literature/` pipeline) is do
 prose edits to notes go through the writing loop above**, so ingested or saved material meets the
 same bar as authored prose. Nothing compounds that has not been verified.
 
-- **Ingest a source.** Acquire + verify (`check.sh` → `fetch_paper.sh` → write the ledger →
-  `build_register.py` → `extract_text.py` → `verify_quotes.py`). Locate the notes it bears on
+- **Ingest a source.** Acquire (`check.sh` → `fetch_paper.sh` → `extract_text.py`), then **extract
+  claims per `spec/EXTRACTION.md`**: pick the source-type row, enumerate the source's own structural
+  units, keep those bearing on an `inquiry.md` sub-question, and lift each verbatim span into a `> "…"`
+  with a locus-derived `**ID:**`, `**Location:**`, and `**Addresses:**` — one ledger per voice. Verify
+  (`build_register.py` → `verify_quotes.py`); a non-verbatim span is dropped, never paraphrased. Two
+  runs should converge (`ledger repro`). Locate the notes it bears on
   (grep `crosswalk.md` + `content/`). Propose propagation, citing only verified quotes and flagging
   contradictions explicitly — never silently overwrite. Apply prose via the writing loop. Bookkeep:
   `crosswalk.md` rows, a `content/log.md` ingest entry, and `python3 tools/lint_wiki.py content`.
@@ -125,6 +163,15 @@ same bar as authored prose. Nothing compounds that has not been verified.
   orphans, uncatalogued notes), then a semantic pass (contradictions between notes, claims a newer
   source overturned, concepts mentioned but lacking a note, missing cross-references). Report; never
   auto-edit. Each fix is a separate approved pass.
+- **Adversarial-faithfulness pass.** `python3 tools/faithfulness_probe.py` lists every
+  supports/rebuts edge with its grounding quote. For each, read the quote against the inference and
+  argue the *other* side: does the quote actually warrant this support/rebut, or is it read out of
+  context / as stronger than the source means (possibility used as proof, a hedge dropped, a
+  subgroup result generalised)? Where the use is genuinely unfaithful, file the challenge as a
+  first-class record (`assess_record.py --kind faithfulness … --disputes <edge-rec-id> --span
+  "<verbatim substring>"`); the probe prints the exact command. This does not *settle* faithful use
+  (still judgement) — it makes the challenge sealed, attributable, and re-judgeable. Default to
+  filing a dispute when the link is not airtight; report, never auto-apply.
 
 ## Hard gates
 
@@ -147,8 +194,8 @@ web) · `verified_claims/<key>.md` (the quote ledger) · `build_register.py` (in
 
 ## Why this file exists
 
-Ledger's authoring discipline is portable by design: the principles, the loop, and the gates are
-agent-neutral, and the verification guarantee is enforced by plain code (`verify_quotes.py`) at
-commit and push. This file ships that discipline in the repo, so anyone who clones it — on Codex,
-another agent, or by hand — gets the whole system, not just the guarantee. The author additionally
+Ledger's authoring discipline is agent-neutral: the principles, the loop, and the gates do not
+depend on any tool, and the verification guarantee is enforced by plain code (`verify_quotes.py`) at
+commit and push. This file ships that discipline in the repo, so a clone on Codex, another agent, or
+by hand can follow it. The author additionally
 uses the Claude Code skills as a personal frontend; this file does not change or depend on that.

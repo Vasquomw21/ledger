@@ -31,6 +31,7 @@ from typing import Iterator
 # tools/ is on sys.path[0] when run as a script (and conftest adds it for tests),
 # so the sibling kernel checker is importable without a package layout.
 from check_citations import ledger_claim_id_sets
+from ledger_md import claim_blocks
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CLAIMS_DIR = REPO_ROOT / "literature" / "verified_claims"
@@ -177,16 +178,10 @@ def claim_body(ledger_path: Path, slug: str) -> str | None:
     edit to an unrelated claim does not stale the judgement; an edit to the
     assessed claim does. Block = from its `## Claim` header to the next one (or EOF)."""
     slug = slug.lower()
-    lines = ledger_path.read_text(encoding="utf-8", errors="ignore").splitlines()
-    headers = [i for i, ln in enumerate(lines) if CLAIM_HEADER_RE.match(ln.strip())]
-    for n, start in enumerate(headers):
-        end = headers[n + 1] if n + 1 < len(headers) else len(lines)
-        block = lines[start:end]
-        ordinal = f"c{n + 1}"
-        slugs = {m.group(1).lower() for ln in block
-                 if (m := _ID_LINE_RE.match(ln.strip()))}
-        if slug == ordinal or slug in slugs:
-            return "\n".join(block).rstrip() + "\n"
+    for block in claim_blocks(ledger_path):
+        slugs = {m.group(1).lower() for m in block.fields(_ID_LINE_RE)}
+        if slug == f"c{block.ordinal}" or slug in slugs:
+            return block.text
     return None
 
 
@@ -195,14 +190,9 @@ def claim_aliases(ledger_path: Path, slug: str) -> set[str]:
     `**ID:**` slugs in the same block ({} if none matches). Lets a consumer treat a
     `#c1` ordinal cite and the claim's slug as the same node (coverage)."""
     slug = slug.lower()
-    lines = ledger_path.read_text(encoding="utf-8", errors="ignore").splitlines()
-    headers = [i for i, ln in enumerate(lines) if CLAIM_HEADER_RE.match(ln.strip())]
-    for n, start in enumerate(headers):
-        end = headers[n + 1] if n + 1 < len(headers) else len(lines)
-        block = lines[start:end]
-        ordinal = f"c{n + 1}"
-        slugs = {m.group(1).lower() for ln in block
-                 if (m := _ID_LINE_RE.match(ln.strip()))}
+    for block in claim_blocks(ledger_path):
+        ordinal = f"c{block.ordinal}"
+        slugs = {m.group(1).lower() for m in block.fields(_ID_LINE_RE)}
         if slug == ordinal or slug in slugs:
             return {ordinal} | slugs
     return set()
