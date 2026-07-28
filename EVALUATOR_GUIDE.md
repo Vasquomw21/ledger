@@ -80,8 +80,13 @@ A separate record flags overstated certainty. Ledger marks Andersen's phrase "ir
 claiming more than an argument from the absence of a known backbone can support.
 
 One gate underwrites all of this. Where the source corpus is present — on your machine, as you write
-and before each commit — the verbatim-quote check re-reads each source and confirms every quotation,
-so a citation whose quotation does not match cannot pass. In a clone without the sources, including
+and before each commit — the verbatim-quote check reads each source's extracted text and confirms
+every quotation, so a citation whose quotation does not match cannot pass. The extract records the
+SHA-256 of the bytes it was built from, and the ledger's stamp must agree with it, which is what ties
+a quotation to the paper rather than to a text file beside it; 47 of this bundle's 51 ledgers carry
+that binding. The four that do not are living web documents — an archived FAQ, a shared document, two
+blog posts — whose sources mutate, and they are reported as unbound rather than assumed sound. In a
+clone without the sources, including
 CI, the same shared checker attests the stored proof rather than re-reading the bytes. That gate is
 the guarantee in the first section, doing its work on this case.
 
@@ -139,9 +144,14 @@ they are git-ignored — so a fresh clone re-proves nothing until you supply the
 holds the sources the quotes are re-proved; everywhere else the stored proof is attested. A pack that
 does not travel with its sources says "Attested", never "reproduced".
 
-Four limits are worth stating plainly. The comparison baselines in the cases were written by the same
+Six limits are worth stating plainly. The comparison baselines in the cases were written by the same
 author, not by an independent evaluator. The citation parser cannot yet tell apart two papers by the
 same author in the same year (a "Smith 2008a" versus "Smith 2008b"). The source-coverage checks prove
 that each source has a declared route into the corpus and that no side of a question is silently empty
-— not that the corpus is complete or representative. And whether any inference is apt stays a human
+— not that the corpus is complete or representative. Where two sources are marked as possibly
+dependent, that dependence was read from each study's methods by a person and written into the
+ledger: the machinery carries the declaration across the graph and shows where it bites, but it does
+not discover cohort overlap on its own. An assessment record is tamper-evident and self-consistent,
+and its assessor and date are recorded as claimed — signing them is what the opt-in `attestation`
+posture adds, and it is off in these cases. And whether any inference is apt stays a human
 judgement, assisted but not decided by the machinery.

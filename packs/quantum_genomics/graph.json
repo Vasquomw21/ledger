@@ -514,7 +514,7 @@
     {
       "from_ledger": "aaronson_2015",
       "grounding": "four-caveats-thesis",
-      "line": 80,
+      "line": 81,
       "rec": null,
       "source": "aaronson_2015:four-caveats-thesis",
       "target": "harrow_2009:exponential-speedup",
@@ -524,7 +524,7 @@
     {
       "from_ledger": "baek_2021",
       "grounding": "rosettafold-approaches-alphafold",
-      "line": 31,
+      "line": 32,
       "rec": "baek-supports-alphafold-apt",
       "source": "baek_2021:rosettafold-approaches-alphafold",
       "target": "jumper_2021:casp14-accuracy-lead",
@@ -534,7 +534,7 @@
     {
       "from_ledger": "cerezo_2021",
       "grounding": "vqa-unproven-scaling",
-      "line": 31,
+      "line": 32,
       "rec": "cerezo-supports-noqml-apt",
       "source": "cerezo_2021:vqa-unproven-scaling",
       "target": "maurizio_2025:no-qml-real-world-speedup",
@@ -544,7 +544,7 @@
     {
       "from_ledger": "chia_2020",
       "grounding": "svt-no-exponential-speedup",
-      "line": 31,
+      "line": 32,
       "rec": "chia-supports-noqml-apt",
       "source": "chia_2020:svt-no-exponential-speedup",
       "target": "maurizio_2025:no-qml-real-world-speedup",
@@ -554,7 +554,7 @@
     {
       "from_ledger": "pednault_2019",
       "grounding": "rebuttal-days-not-years",
-      "line": 32,
+      "line": 33,
       "rec": "pednault-rebuts-supremacy-apt",
       "source": "pednault_2019:rebuttal-days-not-years",
       "target": "arute_2019:200s-vs-10000-years",
@@ -564,7 +564,7 @@
     {
       "from_ledger": "tang_2019",
       "grounding": "no-exponential-speedup",
-      "line": 42,
+      "line": 43,
       "rec": "tang-rebuts-hhl-apt",
       "source": "tang_2019:no-exponential-speedup",
       "target": "harrow_2009:exponential-over-classical",
@@ -574,7 +574,7 @@
     {
       "from_ledger": "tang_2019",
       "grounding": "no-exponential-speedup",
-      "line": 43,
+      "line": 44,
       "rec": "tang-supports-noqml-apt",
       "source": "tang_2019:no-exponential-speedup",
       "target": "maurizio_2025:no-qml-real-world-speedup",

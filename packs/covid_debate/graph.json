@@ -233,7 +233,7 @@
     {
       "from_ledger": "weissman",
       "grounding": "odds-favor-ll",
-      "line": 42,
+      "line": 43,
       "rec": null,
       "source": "weissman:odds-favor-ll",
       "target": "stansifer:verdict",

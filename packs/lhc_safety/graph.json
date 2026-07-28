@@ -213,7 +213,7 @@
     {
       "from_ledger": "giddings_2008",
       "grounding": "astro-bound",
-      "line": 32,
+      "line": 33,
       "rec": "giddings-supports-stable-apt",
       "source": "giddings_2008:astro-bound",
       "target": "lsag_2008:stable-bh-no-danger",
@@ -223,7 +223,7 @@
     {
       "from_ledger": "giddings_2008",
       "grounding": "no-basis-concern",
-      "line": 45,
+      "line": 46,
       "rec": "giddings-supports-norisk-apt",
       "source": "giddings_2008:no-basis-concern",
       "target": "lsag_2008:no-associated-risks",
@@ -233,7 +233,7 @@
     {
       "from_ledger": "giddings_reply_2008",
       "grounding": "scenario-inconsistent",
-      "line": 30,
+      "line": 31,
       "rec": "reply-rebuts-plaga-apt",
       "source": "giddings_reply_2008:scenario-inconsistent",
       "target": "plaga_2008:harmful-scenario",
@@ -243,7 +243,7 @@
     {
       "from_ledger": "koch_2009",
       "grounding": "independent-argument",
-      "line": 34,
+      "line": 35,
       "rec": "koch-supports-norisk-apt",
       "source": "koch_2009:independent-argument",
       "target": "lsag_2008:no-associated-risks",
@@ -253,7 +253,7 @@
     {
       "from_ledger": "plaga_2008",
       "grounding": "evades-exclusion",
-      "line": 41,
+      "line": 42,
       "rec": "plaga-rebuts-astro-apt",
       "source": "plaga_2008:evades-exclusion",
       "target": "giddings_2008:astro-bound",

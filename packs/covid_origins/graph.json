@@ -177,7 +177,7 @@
     {
       "from_ledger": "andersen_2020",
       "grounding": "fcs-natural-process",
-      "line": 56,
+      "line": 57,
       "rec": null,
       "source": "andersen_2020:fcs-natural-process",
       "target": "segreto_2021:fcs-implies-engineering",
@@ -187,7 +187,7 @@
     {
       "from_ledger": "pekar_2022",
       "grounding": "multiple-introductions",
-      "line": 44,
+      "line": 45,
       "rec": "pekar-supports-nolab-apt",
       "source": "pekar_2022:multiple-introductions",
       "target": "andersen_2020:no-lab-scenario",
@@ -197,7 +197,7 @@
     {
       "from_ledger": "segreto_2021",
       "grounding": "mutagenesis-no-trace",
-      "line": 64,
+      "line": 65,
       "rec": null,
       "source": "segreto_2021:mutagenesis-no-trace",
       "target": "andersen_2020:not-from-known-backbone",
@@ -207,7 +207,7 @@
     {
       "from_ledger": "temmam_2022",
       "grounding": "no-fcs-in-relatives",
-      "line": 33,
+      "line": 34,
       "rec": null,
       "source": "temmam_2022:no-fcs-in-relatives",
       "target": "andersen_2020:fcs-natural-process",
@@ -217,7 +217,7 @@
     {
       "from_ledger": "temmam_2022",
       "grounding": "banal-infectious-humans",
-      "line": 45,
+      "line": 46,
       "rec": null,
       "source": "temmam_2022:banal-infectious-humans",
       "target": "andersen_2020:no-lab-scenario",
@@ -227,7 +227,7 @@
     {
       "from_ledger": "worobey_2022",
       "grounding": "market-early-epicenter",
-      "line": 33,
+      "line": 34,
       "rec": "worobey-supports-nolab-apt",
       "source": "worobey_2022:market-early-epicenter",
       "target": "andersen_2020:no-lab-scenario",

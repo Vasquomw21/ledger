@@ -4,6 +4,7 @@
     "note": "no source bytes ship; quotations are attested, not re-proved"
   },
   "files": [
+    "EVALUATOR_GUIDE.html",
     "EVALUATOR_GUIDE.md",
     "corpus-manifest.tsv",
     "corpus/README.txt",
@@ -234,5 +235,5 @@
   ],
   "recommended_showcase": "covid_origins",
   "schema": "ledger-submission/v0",
-  "source_commit": "b016577c046ca0cbc1a57e0d1b7222a48c0f95d9"
+  "source_commit": "6d3c063388ccbc0994a5240081f523fed9359334"
 }

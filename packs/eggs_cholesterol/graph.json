@@ -404,7 +404,7 @@
     {
       "from_ledger": "chen_2021",
       "grounding": "eggs-cholesterol-elevated-risk",
-      "line": 36,
+      "line": 37,
       "rec": null,
       "source": "chen_2021:eggs-cholesterol-elevated-risk",
       "target": "zhao_2022:harmful-mortality",
@@ -414,7 +414,7 @@
     {
       "from_ledger": "dehghan_2020",
       "grounding": "pure-no-association",
-      "line": 33,
+      "line": 34,
       "rec": null,
       "source": "dehghan_2020:pure-no-association",
       "target": "drouin_2020:no-association-overall",
@@ -424,7 +424,7 @@
     {
       "from_ledger": "dehghan_2020",
       "grounding": "pure-no-association",
-      "line": 34,
+      "line": 35,
       "rec": null,
       "source": "dehghan_2020:pure-no-association",
       "target": "zhong_2019:cholesterol-eggs-harmful",
@@ -434,7 +434,7 @@
     {
       "from_ledger": "rong_2013",
       "grounding": "rong-overall-null",
-      "line": 33,
+      "line": 34,
       "rec": null,
       "source": "rong_2013:rong-overall-null",
       "target": "drouin_2020:no-association-overall",
@@ -444,7 +444,7 @@
     {
       "from_ledger": "rong_2013",
       "grounding": "rong-diabetic-harm",
-      "line": 45,
+      "line": 46,
       "rec": null,
       "source": "rong_2013:rong-diabetic-harm",
       "target": "drouin_2020:no-association-overall",
@@ -454,7 +454,7 @@
     {
       "from_ledger": "sun_2021",
       "grounding": "eggs-higher-cvd-mortality",
-      "line": 36,
+      "line": 37,
       "rec": null,
       "source": "sun_2021:eggs-higher-cvd-mortality",
       "target": "zhao_2022:harmful-mortality",
@@ -464,7 +464,7 @@
     {
       "from_ledger": "xia_2020",
       "grounding": "no-egg-mortality-link",
-      "line": 36,
+      "line": 37,
       "rec": null,
       "source": "xia_2020:no-egg-mortality-link",
       "target": "drouin_2020:no-association-overall",
@@ -474,7 +474,7 @@
     {
       "from_ledger": "zhong_2019",
       "grounding": "cholesterol-eggs-harmful",
-      "line": 34,
+      "line": 35,
       "rec": null,
       "source": "zhong_2019:cholesterol-eggs-harmful",
       "target": "zhao_2022:harmful-mortality",
@@ -484,7 +484,7 @@
     {
       "from_ledger": "zhong_2019",
       "grounding": "cholesterol-eggs-harmful",
-      "line": 35,
+      "line": 36,
       "rec": "zhong-rebuts-drouin-apt",
       "source": "zhong_2019:cholesterol-eggs-harmful",
       "target": "drouin_2020:no-association-overall",
@@ -494,7 +494,7 @@
     {
       "from_ledger": "zhong_2021",
       "grounding": "eggs-less-healthy-substitution",
-      "line": 36,
+      "line": 37,
       "rec": null,
       "source": "zhong_2021:eggs-less-healthy-substitution",
       "target": "zhao_2022:harmful-mortality",
@@ -504,7 +504,7 @@
     {
       "from_ledger": "zhuang_2021",
       "grounding": "egg-cholesterol-higher-mortality",
-      "line": 36,
+      "line": 37,
       "rec": null,
       "source": "zhuang_2021:egg-cholesterol-higher-mortality",
       "target": "zhao_2022:harmful-mortality",
