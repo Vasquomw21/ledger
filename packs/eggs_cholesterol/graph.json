@@ -1,0 +1,561 @@
+{
+  "addresses": [
+    {
+      "field": "addresses",
+      "ledger": "chen_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "chen_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "darooghegi_2022",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "darooghegi_2022",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "dehghan_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "djousse_2008",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "djousse_2008",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "drouin_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "crux-of",
+      "ledger": "drouin_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "drouin_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "drouin_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "godos_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "godos_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goldberg_2014",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goldberg_2014",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "key_2019",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "key_2019",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "qin_2018",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "qin_2018",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "rong_2013",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "sun_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "sun_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "xia_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "xia_2020",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhao_2022",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhao_2022",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhong_2019",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhong_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhong_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhuang_2021",
+      "qid": "eggs-cvd"
+    },
+    {
+      "field": "addresses",
+      "ledger": "zhuang_2021",
+      "qid": "eggs-cvd"
+    }
+  ],
+  "assessments": [
+    {
+      "disputes": [],
+      "grounding": [
+        "chen_2021:eggs-cholesterol-elevated-risk"
+      ],
+      "id": "chen-supports-zhao-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "chen-supports-zhao-apt"
+      ],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "chen_2021:eggs-cholesterol-elevated-risk"
+      ],
+      "id": "chen-supports-zhao-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "dehghan_2020:pure-no-association"
+      ],
+      "id": "dehghan-rebuts-zhong-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "dehghan-rebuts-zhong-apt"
+      ],
+      "subject": "zhong_2019:cholesterol-eggs-harmful"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "dehghan_2020:pure-no-association"
+      ],
+      "id": "dehghan-rebuts-zhong-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "zhong_2019:cholesterol-eggs-harmful"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "dehghan_2020:pure-no-association"
+      ],
+      "id": "dehghan-supports-drouin-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "dehghan-supports-drouin-apt"
+      ],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "dehghan_2020:pure-no-association"
+      ],
+      "id": "dehghan-supports-drouin-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "rong_2013:rong-overall-null"
+      ],
+      "id": "rong-supports-drouin-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "rong-supports-drouin-apt"
+      ],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "rong_2013:rong-overall-null"
+      ],
+      "id": "rong-supports-drouin-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2021:cohort-6us-pool",
+        "zhong_2019:cholesterol-eggs-harmful"
+      ],
+      "id": "sixus-double-count",
+      "kind": "correlated-with",
+      "reviews": [],
+      "subject": "zhong_2021:eggs-less-healthy-substitution"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "sun_2021:eggs-higher-cvd-mortality"
+      ],
+      "id": "sun-supports-zhao-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "sun-supports-zhao-apt"
+      ],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "sun_2021:eggs-higher-cvd-mortality"
+      ],
+      "id": "sun-supports-zhao-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "sun_2021:cohort-whi",
+        "chen_2021:cohort-whi"
+      ],
+      "id": "whi-double-count",
+      "kind": "correlated-with",
+      "reviews": [],
+      "subject": "sun_2021:eggs-higher-cvd-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "xia_2020:no-egg-mortality-link"
+      ],
+      "id": "xia-supports-drouin-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "xia-supports-drouin-apt"
+      ],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "xia_2020:no-egg-mortality-link"
+      ],
+      "id": "xia-supports-drouin-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2019:cholesterol-eggs-harmful"
+      ],
+      "id": "zhong-rebuts-drouin-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "zhong-rebuts-drouin-apt"
+      ],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2019:cholesterol-eggs-harmful"
+      ],
+      "id": "zhong-rebuts-drouin-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "drouin_2020:no-association-overall"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2019:cholesterol-eggs-harmful"
+      ],
+      "id": "zhong-supports-zhao-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "zhong-supports-zhao-apt"
+      ],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2019:cholesterol-eggs-harmful"
+      ],
+      "id": "zhong-supports-zhao-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2021:eggs-less-healthy-substitution"
+      ],
+      "id": "zhong2021-supports-zhao-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "zhong2021-supports-zhao-apt"
+      ],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhong_2021:eggs-less-healthy-substitution"
+      ],
+      "id": "zhong2021-supports-zhao-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhuang_2021:egg-cholesterol-higher-mortality"
+      ],
+      "id": "zhuang-supports-zhao-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "zhuang-supports-zhao-apt"
+      ],
+      "subject": "zhao_2022:harmful-mortality"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "zhuang_2021:egg-cholesterol-higher-mortality"
+      ],
+      "id": "zhuang-supports-zhao-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "zhao_2022:harmful-mortality"
+    }
+  ],
+  "edges": [
+    {
+      "from_ledger": "chen_2021",
+      "grounding": "eggs-cholesterol-elevated-risk",
+      "line": 36,
+      "rec": null,
+      "source": "chen_2021:eggs-cholesterol-elevated-risk",
+      "target": "zhao_2022:harmful-mortality",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "dehghan_2020",
+      "grounding": "pure-no-association",
+      "line": 33,
+      "rec": null,
+      "source": "dehghan_2020:pure-no-association",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "dehghan_2020",
+      "grounding": "pure-no-association",
+      "line": 34,
+      "rec": null,
+      "source": "dehghan_2020:pure-no-association",
+      "target": "zhong_2019:cholesterol-eggs-harmful",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "rong_2013",
+      "grounding": "rong-overall-null",
+      "line": 33,
+      "rec": null,
+      "source": "rong_2013:rong-overall-null",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "rong_2013",
+      "grounding": "rong-diabetic-harm",
+      "line": 45,
+      "rec": null,
+      "source": "rong_2013:rong-diabetic-harm",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "qualifies"
+    },
+    {
+      "from_ledger": "sun_2021",
+      "grounding": "eggs-higher-cvd-mortality",
+      "line": 36,
+      "rec": null,
+      "source": "sun_2021:eggs-higher-cvd-mortality",
+      "target": "zhao_2022:harmful-mortality",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "xia_2020",
+      "grounding": "no-egg-mortality-link",
+      "line": 36,
+      "rec": null,
+      "source": "xia_2020:no-egg-mortality-link",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "zhong_2019",
+      "grounding": "cholesterol-eggs-harmful",
+      "line": 34,
+      "rec": null,
+      "source": "zhong_2019:cholesterol-eggs-harmful",
+      "target": "zhao_2022:harmful-mortality",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "zhong_2019",
+      "grounding": "cholesterol-eggs-harmful",
+      "line": 35,
+      "rec": "zhong-rebuts-drouin-apt",
+      "source": "zhong_2019:cholesterol-eggs-harmful",
+      "target": "drouin_2020:no-association-overall",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "zhong_2021",
+      "grounding": "eggs-less-healthy-substitution",
+      "line": 36,
+      "rec": null,
+      "source": "zhong_2021:eggs-less-healthy-substitution",
+      "target": "zhao_2022:harmful-mortality",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "zhuang_2021",
+      "grounding": "egg-cholesterol-higher-mortality",
+      "line": 36,
+      "rec": null,
+      "source": "zhuang_2021:egg-cholesterol-higher-mortality",
+      "target": "zhao_2022:harmful-mortality",
+      "target_resolved": true,
+      "type": "supports"
+    }
+  ],
+  "findings": {
+    "double_count": [
+      {
+        "a": "dehghan_2020",
+        "b": "rong_2013",
+        "basis": "shared: both pool overlapping observational cohorts of the same design — agreement is not two independent confirmations of the null",
+        "kind": "overlapping-pools",
+        "sealed_record": null,
+        "target": "drouin_2020:no-association-overall"
+      },
+      {
+        "a": "chen_2021",
+        "b": "sun_2021",
+        "basis": "shared: both analyse the Women's Health Initiative (WHI) cohort — not independent evidence",
+        "kind": "exact-cohort-reuse",
+        "sealed_record": "whi-double-count",
+        "target": "zhao_2022:harmful-mortality"
+      },
+      {
+        "a": "zhong_2019",
+        "b": "zhong_2021",
+        "basis": "shared: re-analyses the same six pooled US cohorts as Zhong 2019 — not an independent confirmation",
+        "kind": "exact-cohort-reuse",
+        "sealed_record": "sixus-double-count",
+        "target": "zhao_2022:harmful-mortality"
+      }
+    ],
+    "superseded": []
+  },
+  "nodes": [
+    "chen_2021:eggs-cholesterol-elevated-risk",
+    "dehghan_2020:pure-no-association",
+    "drouin_2020:no-association-overall",
+    "rong_2013:rong-diabetic-harm",
+    "rong_2013:rong-overall-null",
+    "sun_2021:eggs-higher-cvd-mortality",
+    "xia_2020:no-egg-mortality-link",
+    "zhao_2022:harmful-mortality",
+    "zhong_2019:cholesterol-eggs-harmful",
+    "zhong_2021:eggs-less-healthy-substitution",
+    "zhuang_2021:egg-cholesterol-higher-mortality"
+  ],
+  "sub_questions": [
+    "eggs-cvd",
+    "meta-independence"
+  ]
+}

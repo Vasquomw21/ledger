@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plaga (2008) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Plaga (2008)</h1><table class="fm"><tr><th>Paper</th><td>Plaga (2008)</td></tr><tr><th>Title</th><td>On the potential catastrophic risk from metastable quantum-black holes produced at particle colliders</td></tr><tr><th>Version</th><td>arXiv:0808.1415v3</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://arxiv.org/abs/0808.1415" target="_blank" rel="noopener">source</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 94c4aca40169…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Plaga (2008)</h1>
+<p>Each quote was read from the arXiv PDF and grep-verified against the extracted text. This is<br>the risk-raising counter-position: it argues a scenario exists that the Giddings &amp; Mangano<br>exclusion does not cover.</p>
+<h2>Claim 1: a plausible scenario yields Hawking radiation harmful to Earth</h2>
+<blockquote>&quot;these black holes accrete ambient matter at the Eddington limit shortly after their production, thereby emitting Hawking radiation that would be harmful to Earth and/or CERN and its surroundings&quot;</blockquote>
+<p><strong>ID:</strong> harmful-scenario<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;harmful to Earth&quot; extracted/plaga_2008.txt</code><br><strong>Addresses:</strong> lhc-bh-risk</p>
+<p>---</p>
+<h2>Claim 2: the scenario evades the Giddings &amp; Mangano exclusion</h2>
+<blockquote>&quot;Such black holes are shown to remain undetectable in existing astrophysical observations and thus evade a recent exclusion of risks from subnuclear black holes by Giddings &amp; Mangano&quot;</blockquote>
+<p><strong>ID:</strong> evades-exclusion<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;evade a recent exclusion&quot; extracted/plaga_2008.txt</code><br><strong>Rebuts:</strong> <a href="giddings_2008.html">giddings_2008:astro-bound</a> (grounded by #evades-exclusion) <a class="recref" href="../assessments.html#rec-plaga-rebuts-astro-apt">plaga-rebuts-astro-apt</a></p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

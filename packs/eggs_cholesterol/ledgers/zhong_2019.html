@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhong et al. (2019) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Zhong et al. (2019)</h1><table class="fm"><tr><th>Paper</th><td>Zhong et al. (2019)</td></tr><tr><th>Title</th><td>Associations of Dietary Cholesterol or Egg Consumption With Incident Cardiovascular Disease and Mortality</td></tr><tr><th>Version</th><td>published (JAMA 2019; PMC author manuscript)</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1001/jama.2019.1572" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 1cae3e0f7354…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Zhong et al. (2019)</h1>
+<p>Each quote was read from the PMC HTML and grep-verified against the extracted text. This is the<br>positive-association (harmful) position — a pooled US-cohort analysis finding a dose-response<br>association between dietary cholesterol / egg consumption and CVD. It pools the same six harmonised<br>US cohorts later re-analysed by Zhong 2021 (ARIC, CARDIA, CHS, FHS, FOS, MESA).</p>
+<h2>Claim 1: dietary cholesterol / egg consumption is associated with higher CVD risk</h2>
+<blockquote>&quot;Among US adults, higher consumption of dietary cholesterol or eggs was significantly associated with higher risk of incident CVD and all-cause mortality in a dose-response manner.&quot;</blockquote>
+<p><strong>ID:</strong> cholesterol-eggs-harmful<br><strong>Location:</strong> Abstract (Conclusions)<br><strong>Grep command used:</strong> <code>grep &quot;in a dose-response manner&quot; extracted/zhong_2019.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Supports:</strong> <a href="zhao_2022.html">zhao_2022:harmful-mortality</a> (grounded by #cholesterol-eggs-harmful)<br><strong>Rebuts:</strong> <a href="drouin_2020.html">drouin_2020:no-association-overall</a> (grounded by #cholesterol-eggs-harmful) <a class="recref" href="../assessments.html#rec-zhong-rebuts-drouin-apt">zhong-rebuts-drouin-apt</a></p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

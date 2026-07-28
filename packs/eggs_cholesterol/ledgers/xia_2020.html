@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xia et al. (2020) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Xia et al. (2020)</h1><table class="fm"><tr><th>Paper</th><td>Xia et al. (2020)</td></tr><tr><th>Title</th><td>Egg consumption and risk of all-cause and cause-specific mortality: NHANES</td></tr><tr><th>Version</th><td>published (J Am Heart Assoc 2020, open access)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1161/JAHA.119.015743" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body f81d4aef7feb…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Xia et al. (2020)</h1>
+<p>Prospective cohort analysis of the US NHANES survey examining dietary egg and cholesterol intake against all-cause and heart-disease mortality. An independent US national-survey cohort (distinct from the NIH-AARP, WHI, and 6-cohort pools).</p>
+<h2>Claim 1: study population / data source</h2>
+<blockquote>&quot;All data were obtained from the NHANES, a complex, multistage, probability sampling designed survey to assess the health and nutritional status of adults and children in the United States.&quot;</blockquote>
+<p><strong>ID:</strong> cohort-nhanes<br><strong>Location:</strong> Methods<br><strong>Grep command used:</strong> <code>grep &quot;All data were obtained from the NHANES&quot; extracted/xia_2020.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<h2>Claim 2: no significant egg–mortality association in US adults</h2>
+<blockquote>&quot;No significant association was found between egg consumption and mortality in US adults.&quot;</blockquote>
+<p><strong>ID:</strong> no-egg-mortality-link<br><strong>Location:</strong> Abstract (Conclusions)<br><strong>Grep command used:</strong> <code>grep &quot;No significant association was found between egg consumption and mortality in US adults&quot; extracted/xia_2020.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Supports:</strong> <a href="drouin_2020.html">drouin_2020:no-association-overall</a> (grounded by #no-egg-mortality-link)</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

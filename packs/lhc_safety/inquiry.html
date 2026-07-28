@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inquiry — sub-questions &amp; cruxes — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="index.html">← index</a></p><h1>Inquiry — sub-questions &amp; cruxes</h1><table class="fm"><tr><th>authored_by</th><td>ai</td></tr><tr><th>generated_by</th><td>claude</td></tr><tr><th>generated_date</th><td>20260614</td></tr><tr><th>reviewed_by</th><td></td></tr><tr><th>status</th><td>draft</td></tr></table>
+<h1>Inquiry — LHC collision safety</h1>
+<p>The question tree this knowledge base is organised around. Each sub-question declares a<br>stable <code><strong>id:</strong></code>; claims opt in with <code><strong>Addresses:</strong> &lt;id&gt;</code>, and an assessment may mark one<br>claim as the <code><strong>Crux-of:</strong></code> a sub-question.</p>
+<h2>Q1 — Could LHC collisions produce a dangerous (stable) microscopic black hole?</h2>
+<p><strong>id:</strong> lhc-bh-risk<br><strong>parent:</strong> lhc-safety</p>
+<p>High-energy proton collisions at the LHC could, in some TeV-scale gravity scenarios, produce<br>microscopic black holes. The safety question turns on a disjunction: either such black holes<br>evaporate harmlessly by Hawking radiation, or — in the extremely hypothetical case that they<br>are stable — they could in principle be trapped in the Earth and accrete matter. The official<br>review (LSAG 2008 #no-associated-risks) concludes there is no associated risk; the detailed<br>stable-case argument (Giddings &amp; Mangano 2008 #astro-bound) bounds accretion using astrophysical<br>observations.</p>
+<p><strong>Sources by emphasis.</strong> Mainstream-safe: LSAG (2008 #no-associated-risks), &quot;Review of the Safety<br>of LHC Collisions&quot; (performs the settling); Giddings &amp; Mangano (2008 #astro-bound), &quot;Astrophysical<br>implications of hypothetical stable TeV-scale black holes&quot; (the crux bound) and their reply (2008b)<br>to Plaga. Risk-raised: Plaga (2008 #evades-exclusion), &quot;On the potential catastrophic risk from<br>metastable quantum-black holes…&quot; — argues a scenario exists that the exclusion does not cover.</p>
+<p><strong>The crux.</strong> Whether a hypothetically stable TeV black hole could accrete dangerously before<br>the Earth&#x27;s natural lifetime. Giddings &amp; Mangano&#x27;s bound — that cosmic-ray-produced black<br>holes impinging on white dwarfs and neutron stars would have catalysed their decay if such<br>accretion were possible — is marked the crux of this sub-question: if it holds, the stable<br>case is ruled out and the safety conclusion follows.</p>
+<h2>Q2 — How is the existential-safety argument structured, and what does it depend on?</h2>
+<p><strong>id:</strong> arg-structure<br><strong>parent:</strong> lhc-safety</p>
+<p>A separate question from &quot;is it safe?&quot;: *what does the safety conclusion actually rest on, and<br>which of its arms is load-bearing?* The conclusion is not one claim but a <strong>disjunction</strong>. Either<br>any micro black hole evaporates by Hawking radiation (the popularly-cited mechanism), or — in the<br>hypothetical case that it is stable — the astrophysical-survival bound rules out dangerous<br>accretion. The two arms are not equally secure: Hawking radiation is theoretical and has never been<br>observed, so it cannot be <em>assumed</em>; that is precisely why Giddings &amp; Mangano devote a detailed<br>paper to the stable case. The worst-case arm therefore leans entirely on the conditional<br>astrophysical bound — the crux of Q1 and exactly the assumption Plaga<br>(2008 #evades-exclusion) contests.</p>
+<p><strong>Public vs load-bearing.</strong> The public CERN FAQ asserts the collisions &quot;would be perfectly safe&quot;<br>and gives <em>no</em> mechanism, deferring the basis to a linked report. So the communicated argument<br>(bare assurance), the popularly-cited mechanism (Hawking evaporation, unobserved), and the actually<br>load-bearing argument (the conditional astrophysical bound) are three different things — a gap this<br>sub-question makes explicit.</p>
+<p><strong>The methodological mirror.</strong> LA-602 — the 1946 Los Alamos report by Konopinski, Marvin and<br>Teller — asked the structurally identical question for a prior experiment: could a nuclear<br>detonation ignite the atmosphere? It reached a reassuring bottom line<br>(LA-602 1946 #ignition-unreasonable) yet explicitly flagged &quot;the absence of satisfactory<br>experimental foundations&quot; and called for further work (LA-602 1946 #further-work-desirable). It is<br>ingested as a <em>calibration precedent</em> — how categorically an existential-safety conclusion ought to<br>be stated — not as evidence about the LHC.</p>
+<p>See <code>safety_calibration</code> for the calibrated-confidence note (with the LA-602 parallel).</p>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

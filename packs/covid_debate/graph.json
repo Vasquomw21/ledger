@@ -1,0 +1,262 @@
+{
+  "addresses": [
+    {
+      "field": "addresses",
+      "ledger": "alexander_2024",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "alexander_2024",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "alexander_2024",
+      "qid": "market-evidence"
+    },
+    {
+      "field": "addresses",
+      "ledger": "alexander_2024",
+      "qid": "market-evidence"
+    },
+    {
+      "field": "addresses",
+      "ledger": "alexander_2024",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "alexander_2024",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "daniel",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "daniel",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "daniel",
+      "qid": "market-evidence"
+    },
+    {
+      "field": "addresses",
+      "ledger": "daniel",
+      "qid": "genomic-engineering"
+    },
+    {
+      "field": "addresses",
+      "ledger": "daniel",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goodjudgment",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goodjudgment",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goodjudgment",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goodjudgment",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "goodjudgment",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "stansifer",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "stansifer",
+      "qid": "market-evidence"
+    },
+    {
+      "field": "addresses",
+      "ledger": "stansifer",
+      "qid": "genomic-engineering"
+    },
+    {
+      "field": "addresses",
+      "ledger": "stansifer",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "stansifer",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "van_treuren",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "van_treuren",
+      "qid": "verdict"
+    },
+    {
+      "field": "addresses",
+      "ledger": "van_treuren",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "van_treuren",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "weissman",
+      "qid": "prior-odds"
+    },
+    {
+      "field": "addresses",
+      "ledger": "weissman",
+      "qid": "methodology"
+    },
+    {
+      "field": "addresses",
+      "ledger": "weissman",
+      "qid": "prior-odds"
+    }
+  ],
+  "assessments": [
+    {
+      "disputes": [],
+      "grounding": [
+        "daniel:market-hsm"
+      ],
+      "id": "daniel-supports-proximity-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "daniel-supports-proximity-apt"
+      ],
+      "subject": "stansifer:proximity"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "daniel:market-hsm"
+      ],
+      "id": "daniel-supports-proximity-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "stansifer:proximity"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "van_treuren:superior-case"
+      ],
+      "id": "vantreuren-supports-verdict-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "vantreuren-supports-verdict-apt"
+      ],
+      "subject": "stansifer:verdict"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "van_treuren:superior-case"
+      ],
+      "id": "vantreuren-supports-verdict-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "stansifer:verdict"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "weissman:odds-favor-ll"
+      ],
+      "id": "weissman-rebuts-verdict-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "weissman-rebuts-verdict-apt"
+      ],
+      "subject": "stansifer:verdict"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "weissman:odds-favor-ll"
+      ],
+      "id": "weissman-rebuts-verdict-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "stansifer:verdict"
+    }
+  ],
+  "edges": [
+    {
+      "from_ledger": "daniel",
+      "grounding": "market-hsm",
+      "line": 61,
+      "rec": null,
+      "source": "daniel:market-hsm",
+      "target": "stansifer:proximity",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "van_treuren",
+      "grounding": "superior-case",
+      "line": 43,
+      "rec": null,
+      "source": "van_treuren:superior-case",
+      "target": "stansifer:verdict",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "weissman",
+      "grounding": "odds-favor-ll",
+      "line": 42,
+      "rec": null,
+      "source": "weissman:odds-favor-ll",
+      "target": "stansifer:verdict",
+      "target_resolved": true,
+      "type": "rebuts"
+    }
+  ],
+  "findings": {
+    "double_count": [],
+    "superseded": []
+  },
+  "nodes": [
+    "daniel:market-hsm",
+    "stansifer:proximity",
+    "stansifer:verdict",
+    "van_treuren:superior-case",
+    "weissman:odds-favor-ll"
+  ],
+  "sub_questions": [
+    "genomic-engineering",
+    "market-evidence",
+    "methodology",
+    "prior-odds",
+    "verdict"
+  ]
+}

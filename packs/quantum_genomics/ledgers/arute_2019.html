@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frank Arute et al. (Google AI Quantum) (2019) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Frank Arute et al. (Google AI Quantum) (2019)</h1><table class="fm"><tr><th>Paper</th><td>Frank Arute et al. (Google AI Quantum) (2019)</td></tr><tr><th>Title</th><td>Quantum supremacy using a programmable superconducting processor</td></tr><tr><th>Version</th><td>Nature 574, 505–510</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1038/s41586-019-1666-5" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body e121eb08f2a6…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Arute et al. (2019), &quot;Quantum supremacy using a programmable superconducting processor&quot;</h1>
+<p>Quotes read from the downloaded full text (OSTI accepted-manuscript record 1607005,<br>the <em>Nature</em> article) and confirmed verbatim against<br><code>literature/extracted/arute_2019.txt</code>. This is the first claimed experimental<br>demonstration of quantum supremacy — to be reported alongside its contestation<br>(see note at the foot).</p>
+<h2>Claim 1: 53 qubits, a computational state-space of ~2⁵³ ≈ 10¹⁶</h2>
+<blockquote>&quot;Here, we report using a processor with programmable superconducting qubits to create quantum states on 53 qubits, corresponding to a computational state-space of dimension 2⁵³ ∼ 10¹⁶.&quot;</blockquote>
+<p><strong>ID:</strong> 53-qubit-state-space<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 2: ~200 seconds vs ~10,000 years — the headline speedup claim</h2>
+<blockquote>&quot;While our processor takes about 200 seconds to sample one instance of a quantum circuit 1 million times, our benchmarks currently indicate the equivalent task for a state-of-the-art supercomputer takes approximately 10,000 years.&quot;</blockquote>
+<p><strong>ID:</strong> 200s-vs-10000-years<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 3: The explicit claim of &quot;an experimental realization of quantum supremacy&quot;</h2>
+<blockquote>&quot;This dramatic speedup relative to all known classical algorithms provides an experimental realization of quantum supremacy on a computational task and heralds the advent of a much-anticipated computing paradigm.&quot;</blockquote>
+<p><strong>ID:</strong> experimental-supremacy-realization<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 4: The task is random circuit sampling — NOT a useful application</h2>
+<blockquote>&quot;To demonstrate quantum supremacy, we compare our quantum processor against state-of-the-art classical computers in the task of sampling the output of a pseudo-random quantum circuit.&quot;</blockquote>
+<p><strong>ID:</strong> task-is-random-circuit-sampling<br><strong>Location:</strong> §&quot;A computational task to demonstrate quantum supremacy&quot;<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 5: Fidelity is small but statistically resolved (the result lives at low fidelity)</h2>
+<blockquote>&quot;For the largest elided data (n = 53, m = 20, total Ns = 30 M), we find an average F_XEB &gt; 0.1% with 5σ confidence, where σ includes both systematic and statistical uncertainties.&quot;</blockquote>
+<p><strong>ID:</strong> low-fidelity-5sigma<br><strong>Location:</strong> §&quot;Fidelity estimation in the supremacy regime&quot;<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 6: Forward-looking — error correction is required for useful algorithms</h2>
+<blockquote>&quot;To sustain the double exponential growth rate and to eventually offer the computational volume needed to run well-known quantum algorithms, such as the Shor or Grover algorithms, the engineering of quantum error correction will have to become a focus of attention.&quot;</blockquote>
+<blockquote>&quot;We are only one creative algorithm away from valuable near-term applications.&quot;</blockquote>
+<p><strong>ID:</strong> error-correction-required-future<br><strong>Location:</strong> §&quot;What does the future hold?&quot;<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<blockquote><strong>Contestation note (for the review, needs its own ledger before citing):</strong> IBM<br>researchers (Pednault et al., 2019, arXiv:1910.09534) argued the classical estimate<br>of 10,000 years was far too high — that an optimized classical simulation could<br>perform the task in ~2.5 days. This contestation must be fetched and quote-logged<br>separately before the white paper states it; it is recorded here only as a pointer,<br>not as a verified claim.</blockquote></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

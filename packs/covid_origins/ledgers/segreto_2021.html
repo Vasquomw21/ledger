@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segreto &amp; Deigin (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Segreto &amp; Deigin (2021)</h1><table class="fm"><tr><th>Paper</th><td>Segreto &amp; Deigin (2021)</td></tr><tr><th>Title</th><td>The genetic structure of SARS-CoV-2 does not rule out a laboratory origin</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1002/bies.202000240" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 3ed6a633fe97…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Segreto &amp; Deigin (2021)</h1>
+<p>Each quote was read from the downloaded PMC HTML and grep-verified against the<br>extracted text. This is the engineering-leaning side of the FCS sub-question; it<br>explicitly engages Andersen et al. (2020).</p>
+<h2>Claim 1: a laboratory origin cannot be excluded</h2>
+<blockquote>&quot;a possible synthetic origin by laboratory engineering of SARS‐CoV‐2 cannot be excluded.&quot;</blockquote>
+<p><strong>ID:</strong> lab-origin-not-excluded<br><strong>Location:</strong> Discussion<br><strong>Grep command used:</strong> <code>grep &quot;cannot be excluded&quot; extracted/segreto_2021.txt</code></p>
+<p>---</p>
+<h2>Claim 2: the FCS might derive from genetic manipulation</h2>
+<blockquote>&quot;The perfect binding ability of SARS‐CoV‐2 to human cells and the presence of the furin cleavage site, which is new for SARS‐like coronaviruses, might derive from genetic manipulation performed during evolutionary studies.&quot;</blockquote>
+<p><strong>ID:</strong> fcs-implies-engineering<br><strong>Location:</strong> Abstract / Introduction<br><strong>Grep command used:</strong> <code>grep &quot;might derive from genetic manipulation&quot; extracted/segreto_2021.txt</code><br><strong>Addresses:</strong> fcs-engineering</p>
+<p>---</p>
+<h2>Claim 3: the FCS was previously unseen in other SARS-like CoVs</h2>
+<blockquote>&quot;The furin cleavage site in the spike protein of SARS‐CoV‐2 confers to the virus the ability to cross species and tissue barriers, but was previously unseen in other SARS‐like CoVs.&quot;</blockquote>
+<p><strong>ID:</strong> fcs-previously-unseen<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;previously unseen&quot; extracted/segreto_2021.txt</code><br><strong>Correlated-with:</strong> <a href="andersen_2020.html">andersen_2020:fcs-unique-to-sars2</a> (grounded by #fcs-previously-unseen) [shared premise: the FCS is unseen in related CoVs — both sides lean on the same rarity observation]</p>
+<p>---</p>
+<h2>Claim 4: site-directed mutagenesis would leave no trace</h2>
+<blockquote>&quot;Both cleavage site and specific RBD could result from site‐directed mutagenesis, a procedure that does not leave a trace.&quot;</blockquote>
+<p><strong>ID:</strong> mutagenesis-no-trace<br><strong>Location:</strong> Introduction<br><strong>Grep command used:</strong> <code>grep &quot;does not leave a trace&quot; extracted/segreto_2021.txt</code><br><strong>Rebuts:</strong> <a href="andersen_2020.html">andersen_2020:not-from-known-backbone</a> (grounded by #mutagenesis-no-trace)</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

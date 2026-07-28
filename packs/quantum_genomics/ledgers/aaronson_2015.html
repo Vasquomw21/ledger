@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scott Aaronson (2015) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Scott Aaronson (2015)</h1><table class="fm"><tr><th>Paper</th><td>Scott Aaronson (2015)</td></tr><tr><th>Title</th><td>Quantum Machine Learning Algorithms: Read the Fine Print</td></tr><tr><th>Version</th><td>Nature Physics 11, 291–293 (2015)</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1038/nphys3272" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 95540b9a00e3…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Aaronson (2015), &quot;Read the Fine Print&quot;</h1>
+<p>Quotes read from the downloaded author-hosted full text (scottaaronson.com/papers/qml.pdf,<br>the expanded version of the <em>Nature Physics</em> commentary) and confirmed verbatim against<br><code>literature/extracted/aaronson_2015.txt</code>. Ligature/symbol glyphs are rendered as their<br>true characters below.</p>
+<h2>Claim 1: HHL is the engine behind the quantum-machine-learning speedup claims</h2>
+<blockquote>&quot;The algorithm at the center of the &#x27;quantum machine learning&#x27; mini-revolution is called HHL [9], after my colleagues Aram Harrow, Avinatan Hassidim, and Seth Lloyd, who invented it in 2008. Many of the subsequent quantum learning algorithms extend HHL or use it as a subroutine, so it&#x27;s important to understand HHL first.&quot;</blockquote>
+<blockquote>&quot;Given an n × n real matrix A and a vector b, the goal of HHL is to (approximately) solve the system Ax = b for x, and to do so in an amount of time that scales only logarithmically with n, the number of equations and unknowns.&quot;</blockquote>
+<p><strong>ID:</strong> hhl-engine<br><strong>Location:</strong> Opening (the HHL algorithm)<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 2: Caveat 1 — data loading / state preparation can negate the speedup</h2>
+<blockquote>&quot;The vector b = (b1, . . . , bn) somehow needs to be loaded quickly into the quantum computer&#x27;s memory, so that we can prepare a quantum state |b⟩ ... At least in theory, this can be done using a &#x27;quantum RAM&#x27;&quot;.</blockquote>
+<blockquote>&quot;if preparing |b⟩ already takes nᶜ steps for some constant c, then the exponential speedup of HHL vanishes in the very first step.&quot;</blockquote>
+<p><strong>ID:</strong> caveat-state-preparation<br><strong>Location:</strong> &quot;Caveats&quot; (caveat 1, state preparation)<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 3: Caveat 2 — readout: the output is a quantum state; you cannot read out all of x</h2>
+<blockquote>&quot;When HHL is finished, its output is not x itself, but rather a quantum state |x⟩ of log₂ n qubits, which (approximately) encodes the entries of x in its amplitudes.&quot;</blockquote>
+<blockquote>&quot;learning the value of any specific entry xi will, in general, require repeating the algorithm roughly n times, which would once again kill the exponential speedup.&quot;</blockquote>
+<p><strong>ID:</strong> caveat-readout<br><strong>Location:</strong> &quot;Caveats&quot; (readout caveat)<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 4: Caveat 3 — condition number κ and sparsity assumptions are required</h2>
+<blockquote>&quot;let κ = |λmax/λmin| be the ratio in magnitude between A&#x27;s largest and smallest eigenvalues. Then the amount of time needed by HHL grows nearly linearly with κ. If κ grows like nᶜ, then the exponential speedup is gone.&quot;</blockquote>
+<p><strong>ID:</strong> caveat-condition-number<br><strong>Location:</strong> &quot;Caveats&quot; (condition-number caveat)<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 5: The thesis — the speedup holds only under all four caveats simultaneously</h2>
+<blockquote>&quot;Briefly, the HHL algorithm &#x27;solves Ax = b in logarithmic time,&#x27; but it does so only with the following four caveats, each of which can be crucial in practice.&quot;</blockquote>
+<blockquote>&quot;To summarize, HHL is not exactly an algorithm for solving a system of linear equations in logarithmic time.&quot;</blockquote>
+<p><strong>ID:</strong> four-caveats-thesis<br><strong>Location:</strong> Introduction to the caveats; summary<br><strong>Addresses:</strong> speedup-robustness<br><strong>Qualifies:</strong> <a href="harrow_2009.html">harrow_2009:exponential-speedup</a> (grounded by #four-caveats-thesis) [why: Aaronson does not deny the HHL speedup — he conditions it on four caveats (state preparation, readout, condition number, comparison to the best classical algorithm), each of which can erase it in practice]</p>
+<p>---</p>
+<h2>Claim 6: Honest comparison must be against the best classical algorithm for the same restricted task</h2>
+<blockquote>&quot;in quantum algorithms research, we always want to compare against the fastest possible classical algorithm that performs the same task.&quot;</blockquote>
+<blockquote>&quot;The most they could say was that they couldn&#x27;t find such a classical algorithm.&quot;</blockquote>
+<p><strong>ID:</strong> honest-classical-comparison<br><strong>Location:</strong> Discussion of dequantization risk / Clader et al.<br><strong>Addresses:</strong> speedup-robustness</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

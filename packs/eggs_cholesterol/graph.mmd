@@ -1,0 +1,23 @@
+graph TD
+  n_chen_2021_eggs_cholesterol_elevated_risk["chen_2021:eggs-cholesterol-elevated-risk"]
+  n_dehghan_2020_pure_no_association["dehghan_2020:pure-no-association"]
+  n_drouin_2020_no_association_overall["drouin_2020:no-association-overall"]
+  n_rong_2013_rong_diabetic_harm["rong_2013:rong-diabetic-harm"]
+  n_rong_2013_rong_overall_null["rong_2013:rong-overall-null"]
+  n_sun_2021_eggs_higher_cvd_mortality["sun_2021:eggs-higher-cvd-mortality"]
+  n_xia_2020_no_egg_mortality_link["xia_2020:no-egg-mortality-link"]
+  n_zhao_2022_harmful_mortality["zhao_2022:harmful-mortality"]
+  n_zhong_2019_cholesterol_eggs_harmful["zhong_2019:cholesterol-eggs-harmful"]
+  n_zhong_2021_eggs_less_healthy_substitution["zhong_2021:eggs-less-healthy-substitution"]
+  n_zhuang_2021_egg_cholesterol_higher_mortality["zhuang_2021:egg-cholesterol-higher-mortality"]
+  n_chen_2021_eggs_cholesterol_elevated_risk -->|supports| n_zhao_2022_harmful_mortality
+  n_dehghan_2020_pure_no_association -->|supports| n_drouin_2020_no_association_overall
+  n_dehghan_2020_pure_no_association -.->|rebuts| n_zhong_2019_cholesterol_eggs_harmful
+  n_rong_2013_rong_overall_null -->|supports| n_drouin_2020_no_association_overall
+  n_rong_2013_rong_diabetic_harm -->|qualifies| n_drouin_2020_no_association_overall
+  n_sun_2021_eggs_higher_cvd_mortality -->|supports| n_zhao_2022_harmful_mortality
+  n_xia_2020_no_egg_mortality_link -->|supports| n_drouin_2020_no_association_overall
+  n_zhong_2019_cholesterol_eggs_harmful -->|supports| n_zhao_2022_harmful_mortality
+  n_zhong_2019_cholesterol_eggs_harmful -.->|rebuts| n_drouin_2020_no_association_overall
+  n_zhong_2021_eggs_less_healthy_substitution -->|supports| n_zhao_2022_harmful_mortality
+  n_zhuang_2021_egg_cholesterol_higher_mortality -->|supports| n_zhao_2022_harmful_mortality

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M. Cerezo, Akira Sone, Tyler Volkoff, Lukasz Cincio &amp; Patrick J. Coles (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>M. Cerezo, Akira Sone, Tyler Volkoff, Lukasz Cincio &amp; Patrick J. Coles (2021)</h1><table class="fm"><tr><th>Paper</th><td>M. Cerezo, Akira Sone, Tyler Volkoff, Lukasz Cincio &amp; Patrick J. Coles (2021)</td></tr><tr><th>Title</th><td>Cost Function Dependent Barren Plateaus in Shallow Parametrized Quantum Circuits</td></tr><tr><th>Version</th><td>Nature Communications 12, 1791 (2021); arXiv:2001.00550</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1038/s41467-021-21728-w" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 9f260430ec17…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Cerezo et al. (2021), &quot;Cost Function Dependent Barren Plateaus in Shallow Parametrized Quantum Circuits&quot;</h1>
+<p>Extends the barren-plateau obstruction to shallow circuits and ties trainability to cost-function<br>locality. Quotes read from the downloaded full text (arXiv:2001.00550) and confirmed verbatim<br>against <code>literature/extracted/cerezo_2021.txt</code>.</p>
+<h2>Claim 1: Variational quantum algorithms are heuristics with unproven scaling</h2>
+<blockquote>&quot;While VQAs may enable practical applications of noisy quantum computers, they are nevertheless heuristic methods with unproven scaling.&quot;</blockquote>
+<p><strong>ID:</strong> vqa-unproven-scaling<br><strong>Location:</strong> Abstract. The direct, citable statement that VQE/QAOA have no proven quantum speed-up.<br><strong>Addresses:</strong> speedup-robustness<br><strong>Supports:</strong> <a href="maurizio_2025.html">maurizio_2025:no-qml-real-world-speedup</a> (grounded by #vqa-unproven-scaling) <a class="recref" href="../assessments.html#rec-cerezo-supports-noqml-apt">cerezo-supports-noqml-apt</a></p>
+<p>---</p>
+<h2>Claim 2: Global cost functions give barren plateaus even for shallow circuits; local costs are trainable only to logarithmic depth</h2>
+<blockquote>&quot;Our first result states that defining C in terms of global observables leads to exponentially vanishing gradients (i.e., barren plateaus) even when V(θ) is shallow.&quot;</blockquote>
+<blockquote>&quot;our second result states that defining C with local observables leads to at worst a polynomially vanishing gradient, so long as the depth of V(θ) is O(log n).&quot;</blockquote>
+<p><strong>ID:</strong> barren-plateaus<br><strong>Location:</strong> Abstract. Establishes that trainability survives only in a narrow (shallow, local-cost) regime.<br><strong>Addresses:</strong> speedup-robustness</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

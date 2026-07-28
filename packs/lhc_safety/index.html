@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lhc_safety_ledger — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+
+<header class="hero"><h1>Ledger — Judge Pack</h1>
+<div class="case">lhc_safety_ledger</div></header>
+
+<section id="overview"><h2>Overview</h2>
+<p>This is a navigable read of a contested question. Each claim below is a
+<strong>verbatim quote</strong> carrying the record of its proof against a primary source; the
+relationships between claims form an argument graph; and a human's sealed, contestable judgement
+sits on top. Start here, then follow <a href="#inputs">Inputs</a> →
+<a href="#processes">Processes</a> → <a href="#outputs">Outputs</a>. This page <em>shows the trail
+and the trust boundary; it does not adjudicate the truth.</em></p>
+<p class="ceiling">Quote verification: attested by 7 committed verification record(s). The source corpus is not included, so this pack cannot re-prove quotations against source bytes.</p>
+<table class="trust"><thead><tr><th>What</th><th>Status</th><th>Meaning</th></tr></thead><tbody><tr><td>Graph structure</td><td><span class="badge ok">Enforced here</span></td><td>Every edge resolves to a real claim cross-ledger and carries its grounding quote — checkable from the graph.json in this folder.</td></tr><tr><td>Ledger body integrity</td><td><span class="badge ok">Enforced here</span></td><td>Each ledger&#x27;s body hash is bound into its stamp, so a quote edited after stamping is caught without the corpus.</td></tr><tr><td>Verbatim quotes</td><td><span class="badge neu">Attested</span></td><td>Each quote was proved verbatim against its source when the ledger was stamped. That record travels; the source bytes do not.</td></tr><tr><td>Source provenance</td><td><span class="badge neu">Attested</span></td><td>Source and extract hashes were bound when the ledger was stamped; re-binding them to bytes needs the raw corpus.</td></tr><tr><td>Double-count / correlation</td><td><span class="badge neu">Mechanical</span></td><td>Derived from the declared correlated-with edges — flagged, not adjudicated.</td></tr><tr><td>Assessments / faithfulness</td><td><span class="badge warn">Judged</span></td><td>A human&#x27;s sealed, contestable judgement — shown, never claimed proven.</td></tr></tbody></table></section>
+
+<section id="derived"><h2>What Ledger derived from committed records</h2>
+<p class="layer-note">Computed from the committed ledgers and records — deterministic, each fact keeping its provenance. A declared cause is the author’s classification, not a machine-established fact; a count is a count; nothing here reads the authored interpretation below.</p><h4>Dependence warnings</h4><div class="warn-card"><div class="warn-h">Dependence warning detected<span class="prov">mechanically derived</span></div><div class="row"><span class="k">Pair</span><span class="v"><code>giddings_2008</code> ↔ <code>koch_2009</code></span></div><div class="row"><span class="k">Target</span><span class="v"><code>lsag_2008:no-associated-risks</code></span></div><div class="row"><span class="k">Declared cause</span><span class="v">shared evidence</span><span class="prov">author-declared</span></div><div class="row"><span class="k">Declared basis</span><span class="v">Koch claims independence, and the *mechanism* differs (accretion thermodynamics + escape velocity, not cosmic-ray-catalysed stellar decay), but it cites Giddings and rests on the SAME white-dwarf / neutron-star survival evidence — so it is not a fully independent confirmation; the degree is judged in an assessment record</span><span class="prov">author-declared</span></div><div class="row"><span class="k">Judgement status</span><span class="v">sealed assessment present</span><span class="prov">record available</span></div><a class="action" href="trace.html#lsag-2008-no-associated-risks">Inspect basis and grounding</a></div><h4>Claim targeting</h4><p class="muted">Conclusions targeted by two or more edges — a structural in-degree count, not a measure of how well-supported a claim is.</p><table class="layer-tbl"><thead><tr><th>Conclusion</th><th class="num">Incoming edges</th></tr></thead><tbody><tr><td><code>lsag_2008:no-associated-risks</code></td><td class="num">2</td></tr></tbody></table><h4>Review coverage</h4><p>5 of 5 supports/rebuts edges carry a sealed assessment.</p></section>
+
+<section id="judgements"><h2>Recorded judgements</h2>
+<p class="boundary">These are sealed, attributable assessments supplied by people or agents. Ledger verifies their integrity, grounding and freshness; sealing does not establish that a judgement is correct.</p><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>giddings-whatsoever</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">rhetorical</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260613</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>giddings_2008:no-risk-whatsoever</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_2008:no-risk-whatsoever</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#giddings-2008-no-risk-whatsoever">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>astro-bound-crux</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">crux-of</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#giddings-2008-astro-bound">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">disputed</span> <code>astro-bound-faithfulness</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>lsag_2008:stable-bh-no-danger</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Disputes</span><span class="v"><code>giddings-supports-stable-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#lsag-2008-stable-bh-no-danger">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>giddings-supports-norisk-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>lsag_2008:no-associated-risks</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_2008:no-basis-concern</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#lsag-2008-no-associated-risks">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>giddings-supports-stable-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>lsag_2008:stable-bh-no-danger</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#lsag-2008-stable-bh-no-danger">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>koch-giddings-correlated</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">correlated-with</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>koch_2009:independent-argument</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>koch_2009:independent-argument</code>, <code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#koch-2009-independent-argument">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>koch-supports-norisk-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>lsag_2008:no-associated-risks</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>koch_2009:independent-argument</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#lsag-2008-no-associated-risks">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>plaga-rebuts-astro-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>plaga_2008:evades-exclusion</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#giddings-2008-astro-bound">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>giddings-supports-norisk-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>lsag_2008:no-associated-risks</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_2008:no-basis-concern</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>giddings-supports-norisk-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#lsag-2008-no-associated-risks">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>koch-supports-norisk-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>lsag_2008:no-associated-risks</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>koch_2009:independent-argument</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>koch-supports-norisk-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#lsag-2008-no-associated-risks">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>plaga-rebuts-astro-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>giddings_2008:astro-bound</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>plaga_2008:evades-exclusion</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>plaga-rebuts-astro-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#giddings-2008-astro-bound">Inspect judgement evidence</a></div><details class="more-recs"><summary>3 further sealed record(s)</summary><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>cern-perfectly-safe</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">rhetorical</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>cern_faq:perfectly-safe</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>cern_faq:perfectly-safe</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#cern-faq-perfectly-safe">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>reply-rebuts-plaga-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260614</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>plaga_2008:harmful-scenario</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_reply_2008:scenario-inconsistent</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#plaga-2008-harmful-scenario">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>reply-rebuts-plaga-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>plaga_2008:harmful-scenario</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>giddings_reply_2008:scenario-inconsistent</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>reply-rebuts-plaga-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#plaga-2008-harmful-scenario">Inspect judgement evidence</a></div></details></section>
+
+<section id="interpretation"><h2>Authored interpretation</h2>
+<div class="prov-strip"><span class="prov">authored interpretation</span> Authorship not recorded · Status: references mechanically validated</div><p class="boundary">Ledger validates the cited claim and record addresses. The interpretation and conclusion remain the author’s judgement.</p><p>The public assurance states no mechanism: CERN&#x27;s page says the collisions &quot;would be perfectly safe&quot; and defers the basis to a linked report. The technical safety case has two branches — either any microscopic black hole evaporates by Hawking radiation, or, if one were stable, it could not accrete dangerously. Under the stable-black-hole assumption the conclusion rests on the astrophysical bound rather than on Hawking evaporation, and that bound is marked the crux of the question. Ledger exposes that conditional crux and the recorded challenge and reply around it, without disputing the settled conclusion.</p>
+<p class="muted">Read it in full: <a href="finding.html">the finding</a>.</p></section>
+
+<section id="how"><h2>How the Ledger works</h2><svg class="infographic" viewBox="0 0 1010 180" role="img" aria-label="how the ledger works"><defs><marker id="ig-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa6b2"/></marker></defs><path d="M190 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><path d="M392 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><path d="M594 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><path d="M796 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><g><rect x="12" y="30" rx="8" width="184" height="116" fill="#eef1f6" stroke="#7a8794" stroke-width="1.4"/><text x="24" y="56" class="ig-t">Primary sources</text><text x="24" y="76" class="ig-s">papers, reports, debates</text><text x="24" y="118" class="ig-tag">the corpus a curator selects</text></g><g><rect x="214" y="30" rx="8" width="184" height="116" fill="#eef6ef" stroke="#2e7d32" stroke-width="1.4"/><text x="226" y="56" class="ig-t">Ingestion</text><text x="226" y="76" class="ig-s">fetch · verbatim-quote gate · stamp</text><text x="226" y="118" class="ig-tag">verified upstream</text><rect x="226" y="124" rx="7" width="78" height="16" fill="#2e7d32"/><text x="232" y="136" class="ig-chip">attested</text></g><g><rect x="416" y="30" rx="8" width="184" height="116" fill="#eef6ef" stroke="#2e7d32" stroke-width="1.4"/><text x="428" y="56" class="ig-t">Structure</text><text x="428" y="76" class="ig-s">typed claim graph (edges)</text><text x="428" y="118" class="ig-tag">machine-resolved, human-authored</text><rect x="428" y="124" rx="7" width="78" height="16" fill="#2e7d32"/><text x="434" y="136" class="ig-chip">guaranteed</text></g><g><rect x="618" y="30" rx="8" width="184" height="116" fill="#fbf4e6" stroke="#b8860b" stroke-width="1.4"/><text x="630" y="56" class="ig-t">Assessment</text><text x="630" y="76" class="ig-s">rhetorical · double-count · faithfulness · calibration</text><text x="630" y="118" class="ig-tag">human-in-the-loop judgement</text><rect x="630" y="124" rx="7" width="78" height="16" fill="#b8860b"/><text x="636" y="136" class="ig-chip">judged</text></g><g><rect x="820" y="30" rx="8" width="184" height="116" fill="#eef1f6" stroke="#7a8794" stroke-width="1.4"/><text x="832" y="56" class="ig-t">Outputs</text><text x="832" y="76" class="ig-s">navigable finding + graph</text><text x="832" y="118" class="ig-tag">what a judge reads</text></g><text x="12" y="166" class="ig-note">The machine guarantees the facts where the pipeline runs (verbatim quotes, content stamps, structural resolution); the human supplies the contestable judgement — and others with different beliefs can pick up where one left off.</text></svg></section>
+
+<section id="inputs"><h2>Inputs — the corpus</h2>
+<p class="muted">The primary sources ingested for this question. Each row opens the rendered ledger:
+its provenance, stamps, and every verbatim claim. Positions and the search/known-gaps trail are in the <a href="source_register.html">source register</a> and <a href="source_flow.html">source flow</a>.</p>
+<table class="docs"><thead><tr><th>Document</th><th>Year</th><th>Type</th><th>Position</th><th class="num">Claims</th><th>Verified</th><th>Source</th></tr></thead><tbody><tr><td><a href="ledgers/cern_faq.html">CERN — Frequently Asked Questions</a></td><td></td><td>home.cern FAQ, archived 2026-03-13 (Wayback id_ snapshot 20260313145713)</td><td>mainstream-safe</td><td class="num">2</td><td><span class="badge ok">pass</span></td><td><a href="https://home.cern/resources/faqs/will-cern-generate-black-hole" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/giddings_2008.html">Giddings &amp; Mangano (2008)</a></td><td>2008</td><td>arXiv:0806.3381v2 (Phys. Rev. D 78, 035009)</td><td>mainstream-safe</td><td class="num">3</td><td><span class="badge ok">pass</span></td><td><a href="https://doi.org/10.1103/PhysRevD.78.035009" target="_blank" rel="noopener">doi</a></td></tr><tr><td><a href="ledgers/giddings_reply_2008.html">Giddings &amp; Mangano (2008b)</a></td><td></td><td>arXiv:0808.4087v1 (CERN-PH-TH/2008-184)</td><td>mainstream-safe</td><td class="num">1</td><td><span class="badge ok">pass</span></td><td><a href="https://arxiv.org/abs/0808.4087" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/koch_2009.html">Koch, Bleicher &amp; Stöcker (2009)</a></td><td>2009</td><td>arXiv:0807.3349 (Phys. Lett. B 672, 71)</td><td>mainstream-safe</td><td class="num">2</td><td><span class="badge ok">pass</span></td><td><a href="https://doi.org/10.1016/j.physletb.2008.11.057" target="_blank" rel="noopener">doi</a></td></tr><tr><td><a href="ledgers/la602_1946.html">Konopinski, Marvin &amp; Teller (1946)</a></td><td>1946</td><td>LA-602 (1946), declassified Los Alamos report; scanned typescript</td><td>methodological-precedent</td><td class="num">2</td><td><span class="badge ok">pass</span></td><td><a href="https://blog.nuclearsecrecy.com/wp-content/uploads/2018/06/1946-LA-602-Konopinski-Marvin-Teller-Ignition-fo-the-Atmsophere.pdf" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/lsag_2008.html">LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev &amp; Wiedemann, 2008)</a></td><td>2008</td><td>arXiv:0806.3414 (J. Phys. G 35, 115004)</td><td>mainstream-safe</td><td class="num">4</td><td><span class="badge ok">pass</span></td><td><a href="https://doi.org/10.1088/0954-3899/35/11/115004" target="_blank" rel="noopener">doi</a></td></tr><tr><td><a href="ledgers/plaga_2008.html">Plaga (2008)</a></td><td>2008</td><td>arXiv:0808.1415v3</td><td>risk-raised</td><td class="num">2</td><td><span class="badge ok">pass</span></td><td><a href="https://arxiv.org/abs/0808.1415" target="_blank" rel="noopener">source</a></td></tr></tbody></table></section>
+
+<section id="processes"><h2>Processes — how it is built</h2>
+<p>Each source travels one pipeline: <strong>check</strong> (already on disk?) →
+<strong>fetch</strong> → <strong>verify</strong> (every quote proved byte-for-byte against the
+fetched source) → <strong>stamp</strong> (hashes bound) → <strong>structure</strong> (typed edges
+resolve cross-ledger) → <strong>assess</strong> (human judgement, sealed). The verify step runs
+where the corpus lives — in the project, at every commit.</p>
+<p>That pipeline is one instrument in a <strong>five-layer integrity stack</strong> — the distinct
+ways knowledge work fails, ordered foundation → delivery, crossed with how strongly Ledger catches a
+failure in each. Enforcement strength falls as you climb: the foundation is a mechanical guarantee,
+the top is disciplined judgement. This is the map behind the
+<a href="#overview">guaranteed-vs-judged boundary</a>.</p>
+<table class="trust"><thead><tr><th>Integrity layer</th><th>Failure it targets</th><th>How strongly it is caught</th></tr></thead><tbody><tr><td>1 · Fidelity</td><td>fabricated quote · wrong paper · quote out of context</td><td><span class="badge ok">Guarantee</span> Fabrication is blocked mechanically; wrong-paper is structural; out-of-context use is measured + assisted (a detection rate on a labelled benchmark).</td></tr><tr><td>2 · Completeness</td><td>selection bias · missing source</td><td><span class="badge neu">Structural</span> Structural + assisted — a floor against a silent empty position, not a representativeness proof.</td></tr><tr><td>3 · Coherence</td><td>broken or absent links · contradiction · stale claim</td><td><span class="badge neu">Structural</span> Structural (every edge resolves + is grounded) plus an assisted semantic pass for meaning.</td></tr><tr><td>4 · Validity</td><td>the conclusion doesn&#x27;t follow · cherry-picking</td><td><span class="badge warn">Judged</span> Judged — ledger analyze assists (load-bearing claims, dependency closure, double-counts). This is the frontier.</td></tr><tr><td>5 · Clarity</td><td>opacity · undefined jargon</td><td><span class="badge warn">Judged</span> Judged — enforced in the writing loop by the bored-reader test.</td></tr></tbody></table>
+<p>The gates below are what <em>this</em> project actually enforces:</p>
+<ul class="gates"><li class="on"><span class="mark">✓</span> Stable claim IDs <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Numeric-citation gate <span class="mono">block</span></li><li class="on"><span class="mark">✓</span> Source provenance + stamps <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Claim-graph structure <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Judgement records <span class="mono">required</span></li><li class="off"><span class="mark">·</span> Claim-graph coverage <span class="mono">off</span></li><li class="on"><span class="mark">✓</span> Edge-aptness coverage <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Selection audit (Layer 2) <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Source-flow trail (Layer 2) <span class="mono">required</span></li><li class="off"><span class="mark">·</span> Unit-manifest binding <span class="mono">off</span></li><li class="on"><span class="mark">✓</span> Synthesis-claim anchoring <span class="mono">required</span></li><li class="off"><span class="mark">·</span> Semantic-health review <span class="mono">warn</span></li><li class="off"><span class="mark">·</span> Signed run-records <span class="mono">off</span></li></ul>
+<p class="muted">Where humans judge, comment, and build — every touchpoint with its exact command:
+see <a href="#hitl">Human-in-the-loop</a>.</p>
+<p class="muted"><a href="log.html">Activity log</a> · <a href="semantic_health.html">Semantic-health review</a> (contradictions / missing perspectives).</p></section>
+
+<section id="hitl"><h2>Human-in-the-loop — the collaboration</h2>
+<p>The machine guarantees the <em>facts</em> (verbatim quotes, content stamps, structural resolution). A human supplies the <em>judgement</em> — which sources matter, which inferences are apt, which moves are rhetorical — sealed and contestable. <strong>Sealed so far by:</strong> <span class="mono">56687218+Vasquomw21@users.noreply.github.com</span>.</p><h3>Where a human judges, comments, and builds</h3><table class="hitl-map"><thead><tr><th>Layer</th><th>What the human does</th><th>Direct access</th><th>This project</th></tr></thead><tbody><tr><td><span class="badge neu">L1</span></td><td><strong>Write a verified-claim quote</strong><br><span class="muted">author reads + greps the source, writes the &gt; &quot;…&quot; quote into literature/verified_claims/&lt;key&gt;.md, then stamps it</span></td><td><pre class="cmd">literature/check.sh &lt;author&gt; &lt;year&gt;  →  literature/fetch_paper.sh --out … --pmcid …  →  python3 literature/extract_text.py &lt;key&gt;  →  edit ledger  →  python3 literature/verify_quotes.py --stamp</pre></td><td class="mono">7 documents</td></tr><tr><td><span class="badge neu">L1</span></td><td><strong>Contest a quote&#x27;s faithful use</strong><br><span class="muted">argue a grounding quote does not warrant its inference; file a sealed faithfulness dispute</span></td><td><pre class="cmd">python3 tools/assess_record.py --write --kind faithfulness --disputes giddings-supports-stable-apt --subject lsag_2008:stable-bh-no-danger --grounding giddings_2008:astro-bound --span &#x27;black holes produced by cosmic rays impinging on much denser white dwarfs and neutron stars would then catalyze their decay on timescales in&#x27; --date YYYYMMDD</pre></td><td class="mono">1 filed</td></tr><tr><td><span class="badge neu">L2</span></td><td><strong>Declare source rationale &amp; known gaps</strong><br><span class="muted">record why each source is in, and name viewpoints not yet covered</span></td><td><pre class="cmd">edit content/source_register.md</pre></td><td class="mono">0 open gaps</td></tr><tr><td><span class="badge neu">L3</span></td><td><strong>Draw a claim-graph edge</strong><br><span class="muted">assert a typed, quote-grounded relationship between two claims</span></td><td><pre class="cmd">edit the ledger:  **Supports:** key:slug (grounded by #slug)</pre></td><td class="mono">5 supports/rebuts</td></tr><tr><td><span class="badge neu">L4</span></td><td><strong>Assess edge / rhetorical / crux / double-count</strong><br><span class="muted">seal a judgement about a claim or an inference</span></td><td><pre class="cmd">python3 tools/assess_record.py --write --kind &lt;kind&gt; --subject key:slug --grounding key:slug --span &#x27;…&#x27; --date YYYYMMDD</pre></td><td class="mono">14 records (1 correlated-with, 1 crux-of, 5 edge, 1 faithfulness, 4 faithfulness-pass, 2 rhetorical)</td></tr><tr><td><span class="badge neu">L5</span></td><td><strong>Write &amp; refine the prose</strong><br><span class="muted">draft the synthesis one section at a time; the bored-reader test gates readability</span></td><td><pre class="cmd">the writing loop — AGENTS.md / skill-ledger-write → content/*.md</pre></td><td class="mono">—</td></tr><tr><td><span class="badge neu">—</span></td><td><strong>Curate the base</strong><br><span class="muted">ingest a source, save a good answer as a note, run a health-check</span></td><td><pre class="cmd">AGENTS.md / skill-ledger-curate</pre></td><td class="mono">—</td></tr></tbody></table><h3>Awaiting judgement</h3><p class="empty muted">Every supports/rebuts edge in this project carries a sealed judgement — nothing is awaiting review.</p><div class="hitl-note"><h4>Presentation vs production</h4><p>This export is static. Every action above shows the command to run (fill in the &lt;placeholders&gt;), which runs against the repository and the CLI and persists there — nothing typed on this page is captured. A production reviewer server would instead take a dispute or assessment through a form, seal it with <code>assess_record.py</code>, re-run the gates and CI, update the graph live, and manage signer identity and attestation.</p></div></section>
+
+<section id="outputs"><h2>Outputs — what it produces</h2>
+<div class="metrics"><div class="metric"><strong>7</strong><label>Documents</label></div><div class="metric"><strong>5</strong><label>Graph edges</label></div><div class="metric"><strong>0</strong><label>Unassessed edges</label></div><div class="metric"><strong>14</strong><label>Judgement records</label></div><div class="metric"><strong>1</strong><label>Faithfulness disputes</label></div><div class="metric"><strong>1</strong><label>Double-count findings</label></div></div>
+<section class="graph-section">
+      <p class="hint">Nodes are claims (fill colour = source). Edges are typed relations. Click a claim for its verbatim quote, the reviewer comments on it, and its provenance. A red ring marks a faithfulness-disputed claim; an amber ring marks a possible double-count; a dashed edge is an unassessed support/rebuttal. Drag to reposition, scroll to zoom, drag the background to pan.</p>
+      <div class="graph-controls">
+        <input id="search" type="search" placeholder="filter claims by text…" autocomplete="off" spellcheck="false">
+        <span id="qfilters" class="qfilters"></span>
+        <span class="legend" id="legend"></span>
+      </div>
+      <div class="graph-wrap">
+        <svg id="graph" role="img" aria-label="argument graph"></svg>
+        <aside id="detail" class="detail"><p class="empty">Click a claim to inspect its verbatim quote, the comments on it, and its provenance.</p></aside>
+      </div>
+    </section>
+<script id="ledger-data" type="application/json">{"nodes": [{"id": "cern_faq:perfectly-safe", "ledger": "cern_faq", "slug": "perfectly-safe", "quote": "The observation of such an event would be thrilling in terms of our understanding of the Universe; and would be perfectly safe.", "location": "FAQ answer body", "locator": {"doi": "", "pmcid": "", "url": "https://home.cern/resources/faqs/will-cern-generate-black-hole"}, "source": "CERN — Frequently Asked Questions", "qids": ["lhc-bh-risk"], "kinds": ["rhetorical"], "contested": false, "double_count": false, "resolved": true, "records": [{"id": "cern-perfectly-safe", "kind": "rhetorical", "subject": "cern_faq:perfectly-safe", "span": "would be perfectly safe", "grounding": ["cern_faq:perfectly-safe"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}], "annotations": [{"type": "correlated", "target": "lsag_2008:no-associated-risks", "note": "the public FAQ restates the LSAG conclusion as a bare assurance and defers the entire basis to a linked \"More information\" report — it shares LSAG's conclusion node, it is not independent evidence for it", "rec": ""}, {"type": "rhetorical", "span": "would be perfectly safe", "note": "a categorical public assurance that states *no* mechanism (not Hawking evaporation, not the astrophysical bound) and routes the reader to a linked report; it performs reassurance while the load-bearing argument lives elsewhere", "rec": "cern-perfectly-safe"}]}, {"id": "giddings_2008:astro-bound", "ledger": "giddings_2008", "slug": "astro-bound", "quote": "black holes produced by cosmic rays impinging on much denser white dwarfs and neutron stars would then catalyze their decay on timescales incompatible with their known lifetimes", "location": "Abstract", "locator": {"doi": "10.1103/PhysRevD.78.035009", "pmcid": "", "url": "https://arxiv.org/abs/0806.3381"}, "source": "Giddings & Mangano (2008)", "qids": ["lhc-bh-risk"], "kinds": ["crux-of", "edge", "faithfulness-pass"], "contested": false, "double_count": true, "resolved": true, "records": [{"id": "astro-bound-crux", "kind": "crux-of", "subject": "giddings_2008:astro-bound", "span": "", "grounding": ["giddings_2008:astro-bound"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, {"id": "plaga-rebuts-astro-apt-pass", "kind": "faithfulness-pass", "subject": "giddings_2008:astro-bound", "span": "", "grounding": ["plaga_2008:evades-exclusion"], "disputes": [], "reviews": ["plaga-rebuts-astro-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "plaga-rebuts-astro-apt", "kind": "edge", "subject": "giddings_2008:astro-bound", "span": "", "grounding": ["plaga_2008:evades-exclusion"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}], "annotations": [{"type": "crux", "target": "lhc-bh-risk", "note": "if-resolved: whether a hypothetically stable TeV black hole could accrete dangerously before the Earth's natural lifetime", "rec": ""}, {"type": "correlated", "target": "lsag_2008:cosmic-ray-safety", "note": "shared premise: the stability of dense astronomical bodies under cosmic-ray bombardment — LSAG's review rests on this same analysis", "rec": ""}]}, {"id": "giddings_2008:no-basis-concern", "ledger": "giddings_2008", "slug": "no-basis-concern", "quote": "this study finds no basis for concerns that TeV-scale black holes from the LHC could pose a risk to Earth on time scales shorter than the Earth's natural lifetime", "location": "Abstract", "locator": {"doi": "10.1103/PhysRevD.78.035009", "pmcid": "", "url": "https://arxiv.org/abs/0806.3381"}, "source": "Giddings & Mangano (2008)", "qids": ["lhc-bh-risk"], "kinds": [], "contested": false, "double_count": true, "resolved": true, "records": [], "annotations": []}, {"id": "giddings_2008:no-risk-whatsoever", "ledger": "giddings_2008", "slug": "no-risk-whatsoever", "quote": "there is no risk of any significance whatsoever from such black holes", "location": "Abstract", "locator": {"doi": "10.1103/PhysRevD.78.035009", "pmcid": "", "url": "https://arxiv.org/abs/0806.3381"}, "source": "Giddings & Mangano (2008)", "qids": ["lhc-bh-risk"], "kinds": ["rhetorical"], "contested": false, "double_count": true, "resolved": true, "records": [{"id": "giddings-whatsoever", "kind": "rhetorical", "subject": "giddings_2008:no-risk-whatsoever", "span": "no risk of any significance whatsoever", "grounding": ["giddings_2008:no-risk-whatsoever"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260613"}], "annotations": [{"type": "rhetorical", "span": "no risk of any significance whatsoever", "note": "asserts a categorical certainty that an accretion bound, conditional on specific TeV-gravity models, cannot strictly carry; the paper's own load-bearing finding is the weaker \"no basis for concerns\"", "rec": "giddings-whatsoever"}]}, {"id": "giddings_reply_2008:scenario-inconsistent", "ledger": "giddings_reply_2008", "slug": "scenario-inconsistent", "quote": "We comment on inconsistency of this proposed scenario.", "location": "Abstract", "locator": {"doi": "", "pmcid": "", "url": "https://arxiv.org/abs/0808.4087"}, "source": "Giddings & Mangano (2008b)", "qids": [], "kinds": [], "contested": false, "double_count": false, "resolved": true, "records": [], "annotations": []}, {"id": "koch_2009:independent-argument", "ledger": "koch_2009", "slug": "independent-argument", "quote": "In this paper we independently present a short coherent argument why there is no risk due to mini black holes from TeV particle collisions", "location": "§1 Introduction", "locator": {"doi": "10.1016/j.physletb.2008.11.057", "pmcid": "", "url": "https://arxiv.org/abs/0807.3349"}, "source": "Koch, Bleicher & Stöcker (2009)", "qids": ["arg-structure", "lhc-bh-risk"], "kinds": ["correlated-with"], "contested": false, "double_count": true, "resolved": true, "records": [{"id": "koch-giddings-correlated", "kind": "correlated-with", "subject": "koch_2009:independent-argument", "span": "", "grounding": ["koch_2009:independent-argument", "giddings_2008:astro-bound"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}], "annotations": [{"type": "correlated", "target": "giddings_2008:astro-bound", "note": "Koch claims independence, and the *mechanism* differs (accretion thermodynamics + escape velocity, not cosmic-ray-catalysed stellar decay), but it cites Giddings and rests on the SAME white-dwarf / neutron-star survival evidence — so it is not a fully independent confirmation; the degree is judged in an assessment record", "rec": ""}]}, {"id": "lsag_2008:no-associated-risks", "ledger": "lsag_2008", "slug": "no-associated-risks", "quote": "we study the possible production at the LHC of hypothetical objects such as vacuum bubbles, magnetic monopoles, microscopic black holes and strangelets, and find no associated risks.", "location": "Abstract", "locator": {"doi": "10.1088/0954-3899/35/11/115004", "pmcid": "", "url": "https://arxiv.org/abs/0806.3414"}, "source": "LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev & Wiedemann, 2008)", "qids": ["lhc-bh-risk"], "kinds": ["edge", "faithfulness-pass"], "contested": false, "double_count": false, "resolved": true, "records": [{"id": "giddings-supports-norisk-apt-pass", "kind": "faithfulness-pass", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["giddings_2008:no-basis-concern"], "disputes": [], "reviews": ["giddings-supports-norisk-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "giddings-supports-norisk-apt", "kind": "edge", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["giddings_2008:no-basis-concern"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, {"id": "koch-supports-norisk-apt-pass", "kind": "faithfulness-pass", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["koch_2009:independent-argument"], "disputes": [], "reviews": ["koch-supports-norisk-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "koch-supports-norisk-apt", "kind": "edge", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["koch_2009:independent-argument"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}], "annotations": [{"type": "status", "note": "performed-settling", "rec": ""}]}, {"id": "lsag_2008:stable-bh-no-danger", "ledger": "lsag_2008", "slug": "stable-bh-no-danger", "quote": "The stability of astronomical bodies constrains strongly the possible rate of accretion by any such microscopic black holes, so that they present no conceivable danger.", "location": "Abstract", "locator": {"doi": "10.1088/0954-3899/35/11/115004", "pmcid": "", "url": "https://arxiv.org/abs/0806.3414"}, "source": "LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev & Wiedemann, 2008)", "qids": ["lhc-bh-risk"], "kinds": ["edge", "faithfulness"], "contested": true, "double_count": false, "resolved": true, "records": [{"id": "astro-bound-faithfulness", "kind": "faithfulness", "subject": "lsag_2008:stable-bh-no-danger", "span": "cosmic rays impinging on much denser white dwarfs and neutron stars", "grounding": ["giddings_2008:astro-bound"], "disputes": ["giddings-supports-stable-apt"], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, {"id": "giddings-supports-stable-apt", "kind": "edge", "subject": "lsag_2008:stable-bh-no-danger", "span": "", "grounding": ["giddings_2008:astro-bound"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}], "annotations": [{"type": "crux", "target": "lhc-bh-risk", "note": "the LSAG review's settling hinges here: the stable-black-hole accretion bound is the open crux its safety conclusion rests on", "rec": ""}]}, {"id": "plaga_2008:evades-exclusion", "ledger": "plaga_2008", "slug": "evades-exclusion", "quote": "Such black holes are shown to remain undetectable in existing astrophysical observations and thus evade a recent exclusion of risks from subnuclear black holes by Giddings & Mangano", "location": "Abstract", "locator": {"doi": "", "pmcid": "", "url": "https://arxiv.org/abs/0808.1415"}, "source": "Plaga (2008)", "qids": ["lhc-bh-risk"], "kinds": [], "contested": false, "double_count": false, "resolved": true, "records": [], "annotations": []}, {"id": "plaga_2008:harmful-scenario", "ledger": "plaga_2008", "slug": "harmful-scenario", "quote": "these black holes accrete ambient matter at the Eddington limit shortly after their production, thereby emitting Hawking radiation that would be harmful to Earth and/or CERN and its surroundings", "location": "Abstract", "locator": {"doi": "", "pmcid": "", "url": "https://arxiv.org/abs/0808.1415"}, "source": "Plaga (2008)", "qids": ["lhc-bh-risk"], "kinds": ["edge", "faithfulness-pass"], "contested": false, "double_count": false, "resolved": true, "records": [{"id": "reply-rebuts-plaga-apt-pass", "kind": "faithfulness-pass", "subject": "plaga_2008:harmful-scenario", "span": "", "grounding": ["giddings_reply_2008:scenario-inconsistent"], "disputes": [], "reviews": ["reply-rebuts-plaga-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "reply-rebuts-plaga-apt", "kind": "edge", "subject": "plaga_2008:harmful-scenario", "span": "", "grounding": ["giddings_reply_2008:scenario-inconsistent"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}], "annotations": []}], "edges": [{"source": "giddings_2008:astro-bound", "target": "lsag_2008:stable-bh-no-danger", "type": "supports", "assessed": true, "grounding": "astro-bound", "rec": "giddings-supports-stable-apt", "edge_record_id": "giddings-supports-stable-apt", "from_ledger": "giddings_2008", "line": 32, "target_resolved": true}, {"source": "giddings_2008:no-basis-concern", "target": "lsag_2008:no-associated-risks", "type": "supports", "assessed": true, "grounding": "no-basis-concern", "rec": "giddings-supports-norisk-apt", "edge_record_id": "giddings-supports-norisk-apt", "from_ledger": "giddings_2008", "line": 45, "target_resolved": true}, {"source": "giddings_reply_2008:scenario-inconsistent", "target": "plaga_2008:harmful-scenario", "type": "rebuts", "assessed": true, "grounding": "scenario-inconsistent", "rec": "reply-rebuts-plaga-apt", "edge_record_id": "reply-rebuts-plaga-apt", "from_ledger": "giddings_reply_2008", "line": 30, "target_resolved": true}, {"source": "koch_2009:independent-argument", "target": "lsag_2008:no-associated-risks", "type": "supports", "assessed": true, "grounding": "independent-argument", "rec": "koch-supports-norisk-apt", "edge_record_id": "koch-supports-norisk-apt", "from_ledger": "koch_2009", "line": 34, "target_resolved": true}, {"source": "plaga_2008:evades-exclusion", "target": "giddings_2008:astro-bound", "type": "rebuts", "assessed": true, "grounding": "evades-exclusion", "rec": "plaga-rebuts-astro-apt", "edge_record_id": "plaga-rebuts-astro-apt", "from_ledger": "plaga_2008", "line": 41, "target_resolved": true}], "sub_questions": ["arg-structure", "lhc-bh-risk"], "double_count": [{"a": "giddings_2008", "b": "koch_2009", "target": "lsag_2008:no-associated-risks", "kind": "shared-evidence", "basis": "Koch claims independence, and the *mechanism* differs (accretion thermodynamics + escape velocity, not cosmic-ray-catalysed stellar decay), but it cites Giddings and rests on the SAME white-dwarf / neutron-star survival evidence — so it is not a fully independent confirmation; the degree is judged in an assessment record", "sealed_record": "koch-giddings-correlated"}], "ledgers": ["cern_faq", "giddings_2008", "giddings_reply_2008", "koch_2009", "lsag_2008", "plaga_2008"], "sources": [{"key": "cern_faq", "paper": "CERN — Frequently Asked Questions", "title": "Will CERN generate a black hole?", "doi": "", "pmcid": "", "url": "https://home.cern/resources/faqs/will-cern-generate-black-hole", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "2135d100de11b3098547e04ed2fbaad352a788e23614b41417acf3cabd16d90d", "source_version": "home.cern FAQ, archived 2026-03-13 (Wayback id_ snapshot 20260313145713)"}, {"key": "giddings_2008", "paper": "Giddings & Mangano (2008)", "title": "Astrophysical implications of hypothetical stable TeV-scale black holes", "doi": "10.1103/PhysRevD.78.035009", "pmcid": "", "url": "https://arxiv.org/abs/0806.3381", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "44f204a4f801fbca86c571d1bfddb9b96dc6bb4b904c84c8cbc84ae02318f852", "source_version": "arXiv:0806.3381v2 (Phys. Rev. D 78, 035009)"}, {"key": "giddings_reply_2008", "paper": "Giddings & Mangano (2008b)", "title": "Comments on claimed risk from metastable black holes", "doi": "", "pmcid": "", "url": "https://arxiv.org/abs/0808.4087", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "c368045a6e3b01a6f0f4bb99a1b97ee57ec86c776fbfa4521d0a7316522a7a1a", "source_version": "arXiv:0808.4087v1 (CERN-PH-TH/2008-184)"}, {"key": "koch_2009", "paper": "Koch, Bleicher & Stöcker (2009)", "title": "Exclusion of black hole disaster scenarios at the LHC", "doi": "10.1016/j.physletb.2008.11.057", "pmcid": "", "url": "https://arxiv.org/abs/0807.3349", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "8f1cb2a639b01f07c424eac601636daf4b93e7f6ff8a6b89abcfa9cbfd371a7d", "source_version": "arXiv:0807.3349 (Phys. Lett. B 672, 71)"}, {"key": "lsag_2008", "paper": "LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev & Wiedemann, 2008)", "title": "Review of the Safety of LHC Collisions", "doi": "10.1088/0954-3899/35/11/115004", "pmcid": "", "url": "https://arxiv.org/abs/0806.3414", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "e35652ec1fdba8103cb38658ac17ddc40c389caedc8c9942eae7c3b2b9e7a047", "source_version": "arXiv:0806.3414 (J. Phys. G 35, 115004)"}, {"key": "plaga_2008", "paper": "Plaga (2008)", "title": "On the potential catastrophic risk from metastable quantum-black holes produced at particle colliders", "doi": "", "pmcid": "", "url": "https://arxiv.org/abs/0808.1415", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "94c4aca40169f4ec71ddc29bb45883a9a1e5eb79377df5a3f254ab3284e4c338", "source_version": "arXiv:0808.1415v3"}], "records_index": {"astro-bound-crux": {"id": "astro-bound-crux", "kind": "crux-of", "subject": "giddings_2008:astro-bound", "span": "", "grounding": ["giddings_2008:astro-bound"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "astro-bound-faithfulness": {"id": "astro-bound-faithfulness", "kind": "faithfulness", "subject": "lsag_2008:stable-bh-no-danger", "span": "cosmic rays impinging on much denser white dwarfs and neutron stars", "grounding": ["giddings_2008:astro-bound"], "disputes": ["giddings-supports-stable-apt"], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "cern-perfectly-safe": {"id": "cern-perfectly-safe", "kind": "rhetorical", "subject": "cern_faq:perfectly-safe", "span": "would be perfectly safe", "grounding": ["cern_faq:perfectly-safe"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "giddings-supports-norisk-apt-pass": {"id": "giddings-supports-norisk-apt-pass", "kind": "faithfulness-pass", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["giddings_2008:no-basis-concern"], "disputes": [], "reviews": ["giddings-supports-norisk-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "giddings-supports-norisk-apt": {"id": "giddings-supports-norisk-apt", "kind": "edge", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["giddings_2008:no-basis-concern"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "giddings-supports-stable-apt": {"id": "giddings-supports-stable-apt", "kind": "edge", "subject": "lsag_2008:stable-bh-no-danger", "span": "", "grounding": ["giddings_2008:astro-bound"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "giddings-whatsoever": {"id": "giddings-whatsoever", "kind": "rhetorical", "subject": "giddings_2008:no-risk-whatsoever", "span": "no risk of any significance whatsoever", "grounding": ["giddings_2008:no-risk-whatsoever"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260613"}, "koch-giddings-correlated": {"id": "koch-giddings-correlated", "kind": "correlated-with", "subject": "koch_2009:independent-argument", "span": "", "grounding": ["koch_2009:independent-argument", "giddings_2008:astro-bound"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "koch-supports-norisk-apt-pass": {"id": "koch-supports-norisk-apt-pass", "kind": "faithfulness-pass", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["koch_2009:independent-argument"], "disputes": [], "reviews": ["koch-supports-norisk-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "koch-supports-norisk-apt": {"id": "koch-supports-norisk-apt", "kind": "edge", "subject": "lsag_2008:no-associated-risks", "span": "", "grounding": ["koch_2009:independent-argument"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "plaga-rebuts-astro-apt-pass": {"id": "plaga-rebuts-astro-apt-pass", "kind": "faithfulness-pass", "subject": "giddings_2008:astro-bound", "span": "", "grounding": ["plaga_2008:evades-exclusion"], "disputes": [], "reviews": ["plaga-rebuts-astro-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "plaga-rebuts-astro-apt": {"id": "plaga-rebuts-astro-apt", "kind": "edge", "subject": "giddings_2008:astro-bound", "span": "", "grounding": ["plaga_2008:evades-exclusion"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}, "reply-rebuts-plaga-apt-pass": {"id": "reply-rebuts-plaga-apt-pass", "kind": "faithfulness-pass", "subject": "plaga_2008:harmful-scenario", "span": "", "grounding": ["giddings_reply_2008:scenario-inconsistent"], "disputes": [], "reviews": ["reply-rebuts-plaga-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "reply-rebuts-plaga-apt": {"id": "reply-rebuts-plaga-apt", "kind": "edge", "subject": "plaga_2008:harmful-scenario", "span": "", "grounding": ["giddings_reply_2008:scenario-inconsistent"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260614"}}, "awaiting": [], "case": {"title": "LHC collision safety", "questions": [{"qid": "lhc-bh-risk", "text": "Could LHC collisions produce a dangerous (stable) microscopic black hole?"}, {"qid": "arg-structure", "text": "How is the existential-safety argument structured, and what does it depend on?"}], "verdict": "The public assurance states no mechanism: CERN's page says the collisions \"would be perfectly safe\" and defers the basis to a linked report. The technical safety case has two branches — either any microscopic black hole evaporates by Hawking radiation, or, if one were stable, it could not accrete dangerously. Under the"}}</script>
+<script>
+
+(function () {
+  var data = JSON.parse(document.getElementById('ledger-data').textContent);
+  var svg = document.getElementById('graph');
+  if (!svg) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = 1000, H = 580;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function cssVar(name, fallback) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+  var EDGE_VARS = { supports: '--e-supports', rebuts: '--e-rebuts', qualifies: '--e-qualifies',
+    'depends-on': '--e-depends', refines: '--e-neutral', restates: '--e-neutral',
+    'duplicate-of': '--e-neutral', supersedes: '--e-supersedes' };
+  function edgeColour(t) { return cssVar(EDGE_VARS[t] || '--e-neutral', '#6b7785'); }
+  function ledgerHue(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360; return h; }
+  function ledgerColour(l) { return 'hsl(' + ledgerHue(l) + ', 55%, 55%)'; }
+
+  var recIndex = data.records_index || {};
+
+  // --- model ---
+  var nodes = data.nodes.map(function (n, i) {
+    var a = 2 * Math.PI * i / Math.max(1, data.nodes.length);
+    var R = Math.min(W, H) * 0.34;
+    return Object.assign({}, n, { x: W / 2 + R * Math.cos(a), y: H / 2 + R * Math.sin(a),
+      vx: 0, vy: 0, fixed: false });
+  });
+  var byId = {}; nodes.forEach(function (n) { byId[n.id] = n; });
+  var links = data.edges.filter(function (e) { return byId[e.source] && byId[e.target]; })
+    .map(function (e) { return Object.assign({}, e, { s: byId[e.source], t: byId[e.target] }); });
+  var adj = {}; nodes.forEach(function (n) { adj[n.id] = {}; });
+  links.forEach(function (l) { adj[l.s.id][l.t.id] = 1; adj[l.t.id][l.s.id] = 1; });
+
+  // --- defs: one arrowhead marker per edge colour ---
+  var defs = document.createElementNS(NS, 'defs');
+  var colours = {}; links.forEach(function (l) { colours[edgeColour(l.type)] = 1; });
+  Object.keys(colours).forEach(function (col) {
+    var m = document.createElementNS(NS, 'marker');
+    m.setAttribute('id', 'arw-' + col.replace(/[^a-z0-9]/gi, ''));
+    m.setAttribute('viewBox', '0 0 10 10'); m.setAttribute('refX', '9'); m.setAttribute('refY', '5');
+    m.setAttribute('markerWidth', '7'); m.setAttribute('markerHeight', '7'); m.setAttribute('orient', 'auto-start-reverse');
+    var p = document.createElementNS(NS, 'path'); p.setAttribute('d', 'M0,0 L10,5 L0,10 z'); p.setAttribute('fill', col);
+    m.appendChild(p); defs.appendChild(m);
+  });
+  svg.appendChild(defs);
+
+  var scene = document.createElementNS(NS, 'g'); svg.appendChild(scene);
+  var linkLayer = document.createElementNS(NS, 'g'); scene.appendChild(linkLayer);
+  var nodeLayer = document.createElementNS(NS, 'g'); scene.appendChild(nodeLayer);
+
+  // --- elements ---
+  links.forEach(function (l) {
+    var col = edgeColour(l.type);
+    l.el = document.createElementNS(NS, 'line');
+    l.el.setAttribute('stroke', col);
+    l.el.setAttribute('stroke-width', '1.7');
+    l.el.setAttribute('marker-end', 'url(#arw-' + col.replace(/[^a-z0-9]/gi, '') + ')');
+    if (l.type === 'rebuts') l.el.setAttribute('stroke-dasharray', '6 4');
+    if (l.assessed === false) { l.el.setAttribute('stroke-dasharray', '2 4'); l.el.setAttribute('opacity', '0.7'); }
+    var ttl = document.createElementNS(NS, 'title');
+    ttl.textContent = l.type + (l.assessed === false ? ' (unassessed)' : '');
+    l.el.appendChild(ttl);
+    linkLayer.appendChild(l.el);
+  });
+  nodes.forEach(function (n) {
+    n.g = document.createElementNS(NS, 'g'); n.g.setAttribute('class', 'node'); n.g.style.cursor = 'pointer';
+    n.c = document.createElementNS(NS, 'circle');
+    n.c.setAttribute('r', '10');
+    n.c.setAttribute('fill', n.resolved ? ledgerColour(n.ledger) : '#cfd6de');
+    n.c.setAttribute('stroke', n.contested ? cssVar('--bad', '#c0392b') : (n.double_count ? cssVar('--warn', '#b8860b') : cssVar('--line', '#33414d')));
+    n.c.setAttribute('stroke-width', (n.contested || n.double_count) ? '3' : '1.2');
+    var ttl = document.createElementNS(NS, 'title'); ttl.textContent = n.id; n.c.appendChild(ttl);
+    n.t = document.createElementNS(NS, 'text'); n.t.setAttribute('class', 'node-label');
+    n.t.setAttribute('x', '13'); n.t.setAttribute('y', '4'); n.t.textContent = n.slug || n.id;
+    n.g.appendChild(n.c); n.g.appendChild(n.t); nodeLayer.appendChild(n.g);
+    n.g.addEventListener('pointerdown', function (ev) { startDrag(ev, n); });
+  });
+
+  // --- force simulation ---
+  var alpha = 1.0;
+  function step() {
+    var i, j, a, b, dx, dy, d2, d, f;
+    for (i = 0; i < nodes.length; i++) {
+      a = nodes[i];
+      for (j = i + 1; j < nodes.length; j++) {
+        b = nodes[j];
+        dx = a.x - b.x; dy = a.y - b.y; d2 = dx * dx + dy * dy || 0.01; d = Math.sqrt(d2);
+        f = 9000 / d2; var ux = dx / d, uy = dy / d;
+        a.vx += ux * f; a.vy += uy * f; b.vx -= ux * f; b.vy -= uy * f;
+      }
+    }
+    links.forEach(function (l) {
+      dx = l.t.x - l.s.x; dy = l.t.y - l.s.y; d = Math.sqrt(dx * dx + dy * dy) || 0.01;
+      f = (d - 150) * 0.05; var ux = dx / d, uy = dy / d;
+      l.s.vx += ux * f; l.s.vy += uy * f; l.t.vx -= ux * f; l.t.vy -= uy * f;
+    });
+    nodes.forEach(function (n) {
+      n.vx += (W / 2 - n.x) * 0.004; n.vy += (H / 2 - n.y) * 0.004;
+      if (n.fixed) { n.vx = 0; n.vy = 0; return; }
+      n.vx *= 0.86; n.vy *= 0.86;
+      n.x += n.vx * alpha; n.y += n.vy * alpha;
+      n.x = Math.max(16, Math.min(W - 16, n.x)); n.y = Math.max(16, Math.min(H - 16, n.y));
+    });
+    render();
+  }
+  function render() {
+    links.forEach(function (l) {
+      l.el.setAttribute('x1', l.s.x); l.el.setAttribute('y1', l.s.y);
+      l.el.setAttribute('x2', l.t.x); l.el.setAttribute('y2', l.t.y);
+    });
+    nodes.forEach(function (n) { n.g.setAttribute('transform', 'translate(' + n.x + ',' + n.y + ')'); });
+  }
+  var ticks = 0, fitted = false, LIMIT = reduce ? 120 : 600;
+  function loop() {
+    step(); ticks++;
+    alpha = Math.max(0.02, alpha * 0.992);
+    if (ticks < LIMIT) requestAnimationFrame(loop);
+    else if (!fitted) { fitView(); fitted = true; }
+  }
+  loop();
+
+  // --- pan / zoom (transform on the scene group) ---
+  var tx = 0, ty = 0, k = 1;
+  function applyTransform() { scene.setAttribute('transform', 'translate(' + tx + ',' + ty + ') scale(' + k + ')'); }
+  function fitView() {
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    nodes.forEach(function (n) { minX = Math.min(minX, n.x); maxX = Math.max(maxX, n.x); minY = Math.min(minY, n.y); maxY = Math.max(maxY, n.y); });
+    if (!isFinite(minX)) return;
+    var pad = 70, gw = Math.max(1, maxX - minX + pad * 2), gh = Math.max(1, maxY - minY + pad * 2);
+    k = Math.max(0.3, Math.min(1.4, Math.min(W / gw, H / gh)));
+    tx = (W - (minX + maxX) * k) / 2; ty = (H - (minY + maxY) * k) / 2; applyTransform();
+  }
+  function ptr(ev) { var r = svg.getBoundingClientRect(); return { x: (ev.clientX - r.left) * W / r.width, y: (ev.clientY - r.top) * H / r.height }; }
+  svg.addEventListener('wheel', function (ev) {
+    ev.preventDefault();
+    var p = ptr(ev), s = ev.deltaY < 0 ? 1.1 : 1 / 1.1, nk = Math.max(0.3, Math.min(4, k * s));
+    tx = p.x - (p.x - tx) * (nk / k); ty = p.y - (p.y - ty) * (nk / k); k = nk; applyTransform();
+  }, { passive: false });
+
+  // Click-vs-drag is decided here, in the pointer handlers, NOT via the derived
+  // `click` event: setting pointer capture for the drag makes some browsers route
+  // click to the SVG, so a node click would otherwise deselect. A pointerup that
+  // never moved past the threshold IS a click → select; a moved one is a drag.
+  var drag = null, pan = null, MOVE = 4;
+  function startDrag(ev, n) { ev.preventDefault(); ev.stopPropagation(); drag = { n: n, x0: ev.clientX, y0: ev.clientY, moved: false }; svg.setPointerCapture(ev.pointerId); }
+  svg.addEventListener('pointerdown', function (ev) { if (!drag) { pan = { x: ev.clientX, y: ev.clientY, tx: tx, ty: ty, moved: false }; svg.setPointerCapture(ev.pointerId); } });
+  svg.addEventListener('pointermove', function (ev) {
+    if (drag) {
+      if (!drag.moved && Math.abs(ev.clientX - drag.x0) + Math.abs(ev.clientY - drag.y0) > MOVE) { drag.moved = true; drag.n.fixed = true; }
+      if (drag.moved) { var p = ptr(ev); drag.n.x = (p.x - tx) / k; drag.n.y = (p.y - ty) / k; render(); alpha = Math.max(alpha, 0.25); }
+    } else if (pan) {
+      if (Math.abs(ev.clientX - pan.x) + Math.abs(ev.clientY - pan.y) > MOVE) pan.moved = true;
+      var r = svg.getBoundingClientRect(); tx = pan.tx + (ev.clientX - pan.x) * W / r.width; ty = pan.ty + (ev.clientY - pan.y) * H / r.height; applyTransform();
+    }
+  });
+  function endPtr() {
+    if (drag) {
+      if (!drag.moved) select(drag.n);                 // a click → inspect the claim
+      else if (ticks >= LIMIT) { ticks = Math.max(0, LIMIT - 200); loop(); }
+    } else if (pan && !pan.moved) { select(null); }    // a background click → deselect
+    drag = null; pan = null;
+  }
+  svg.addEventListener('pointerup', endPtr);
+  svg.addEventListener('pointercancel', endPtr);
+
+  // --- detail panel (the annotated exhibit) ---
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function locatorHtml(loc) {
+    if (!loc) return '';
+    if (loc.doi) return '<a href="https://doi.org/' + esc(loc.doi) + '" target="_blank" rel="noopener" class="mono">doi:' + esc(loc.doi) + '</a>';
+    if (loc.pmcid) { var id = String(loc.pmcid).replace(/^PMC/i, ''); return '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC' + esc(id) + '/" target="_blank" rel="noopener" class="mono">PMC' + esc(id) + '</a>'; }
+    if (loc.url) return '<a href="' + esc(loc.url) + '" target="_blank" rel="noopener" class="mono">source</a>';
+    return '';
+  }
+  function highlightQuote(q, anns) {
+    var out = esc(q);
+    (anns || []).forEach(function (a) {
+      if (a.type === 'rhetorical' && a.span) {
+        var s = esc(a.span);
+        out = out.split(s).join('<mark class="flagged">' + s + '</mark>');
+      }
+    });
+    return out;
+  }
+  var detail = document.getElementById('detail');
+  function focusNeighborhood(n) {
+    nodes.forEach(function (m) {
+      var near = !n || m === n || adj[n.id][m.id];
+      m.g.setAttribute('opacity', near ? '1' : '0.15');
+    });
+    links.forEach(function (l) {
+      var on = !n || l.s.id === n.id || l.t.id === n.id;
+      l.el.setAttribute('opacity', on ? (l.assessed === false ? '0.7' : '1') : '0.08');
+    });
+  }
+  function select(n) {
+    nodes.forEach(function (m) { m.c.setAttribute('stroke-width', (m === n) ? '4' : ((m.contested || m.double_count) ? '3' : '1.2')); });
+    focusNeighborhood(n);
+    if (!n) { detail.innerHTML = '<p class="empty">Click a claim to inspect its verbatim quote, the comments on it, and its provenance.</p>'; return; }
+    var h = '<h3>' + esc(n.slug) + '</h3>';
+    h += '<div class="sub">' + esc(n.source || n.ledger) + '</div>';
+    h += n.quote ? '<blockquote>&ldquo;' + highlightQuote(n.quote, n.annotations) + '&rdquo;</blockquote>'
+                 : '<p class="empty">No verbatim quote resolved for this node.</p>';
+    if (n.location) h += '<div class="loc">Location: ' + esc(n.location) + '</div>';
+    var lh = locatorHtml(n.locator); if (lh) h += '<div class="loc">Source: ' + lh + '</div>';
+    var badges = '';
+    if (n.contested) badges += '<span class="badge bad">faithfulness-disputed</span>';
+    if (n.double_count) badges += '<span class="badge warn">possible double-count</span>';
+    if (badges) h += '<div>' + badges + '</div>';
+    // reviewer comments (the in-band prose)
+    (n.annotations || []).forEach(function (a) {
+      if (!a.note && !a.span) return;
+      var cls = a.type === 'rhetorical' ? 'comment rhetorical' : 'comment';
+      var label = { rhetorical: 'Rhetorical', correlated: 'Shared premise', crux: 'Crux', status: 'Status' }[a.type] || a.type;
+      var span = a.span ? '&ldquo;' + esc(a.span) + '&rdquo; — ' : '';
+      var rec = a.rec ? ' <a class="rec" data-rec="' + esc(a.rec) + '">[' + esc(a.rec) + ']</a>' : '';
+      h += '<div class="' + cls + '"><strong>' + esc(label) + '.</strong> ' + span + esc(a.note) + rec + '</div>';
+    });
+    // sealed judgement records on this claim
+    (n.records || []).forEach(function (r) {
+      var thread = '';
+      if (r.disputes && r.disputes.length) thread = ' disputes ' + r.disputes.map(function (d) { return '<a class="rec" data-rec="' + esc(d) + '">' + esc(d) + '</a>'; }).join(', ');
+      else if (r.reviews && r.reviews.length) thread = ' reviews ' + r.reviews.map(function (d) { return '<a class="rec" data-rec="' + esc(d) + '">' + esc(d) + '</a>'; }).join(', ');
+      h += '<div class="comment"><span class="badge ok">' + esc(r.kind) + '</span> <span class="rec">' + esc(r.id) + '</span>' + thread + '</div>';
+    });
+    var touch = links.filter(function (l) { return l.s.id === n.id || l.t.id === n.id; });
+    if (touch.length) {
+      h += '<p style="margin:12px 0 4px;font-weight:650;">Relations</p><ul class="edges">';
+      touch.forEach(function (l) {
+        var other = (l.s.id === n.id) ? l.t : l.s;
+        var dir = (l.s.id === n.id) ? '&rarr;' : '&larr;';
+        var grd = l.grounding ? ' <span class="rec">(grounded by #' + esc(l.grounding) + ')</span>' : '';
+        h += '<li><span class="etag ' + esc(l.type) + '">' + esc(l.type) + '</span> ' + dir +
+             ' <a data-goto="' + esc(other.id) + '">' + esc(other.slug) + '</a>' +
+             (l.assessed === false ? ' <em class="muted">(unassessed)</em>' : '') + grd + '</li>';
+      });
+      h += '</ul>';
+    }
+    detail.innerHTML = h;
+  }
+  // expose Board navigation so a jump-link anywhere (Metrics, Docs, the exhibit
+  // itself) can select a claim here. The delegated click handler lives in the app
+  // chrome; these just do the selection and report whether the id resolved.
+  window.__ledgerGoto = function (id) { if (byId[id]) { select(byId[id]); return true; } return false; };
+  window.__ledgerRec = function (rec) {
+    if (rec && recIndex[rec] && byId[recIndex[rec].subject]) { select(byId[recIndex[rec].subject]); return true; }
+    return false;
+  };
+
+  // --- sub-question filters + search ---
+  var activeQ = null, searchTerm = '';
+  function dimmed(n) {
+    if (activeQ && (n.qids || []).indexOf(activeQ) < 0) return true;
+    if (searchTerm && (n.id + ' ' + (n.quote || '')).toLowerCase().indexOf(searchTerm) < 0) return true;
+    return false;
+  }
+  function applyFilter() {
+    nodes.forEach(function (n) { n.g.setAttribute('opacity', dimmed(n) ? '0.12' : '1'); });
+    links.forEach(function (l) { l.el.setAttribute('opacity', (dimmed(l.s) || dimmed(l.t)) ? '0.06' : (l.assessed === false ? '0.7' : '1')); });
+  }
+  var qbox = document.getElementById('qfilters');
+  function mkChip(label, q) {
+    var el = document.createElement('span'); el.className = 'chip' + (q === activeQ ? ' active' : ''); el.textContent = label;
+    el.addEventListener('click', function () { activeQ = (activeQ === q) ? null : q; Array.prototype.forEach.call(qbox.children, function (ch, i) { ch.className = 'chip' + ((i === 0 ? null : data.sub_questions[i - 1]) === activeQ ? ' active' : ''); }); applyFilter(); });
+    return el;
+  }
+  if (data.sub_questions.length) {
+    qbox.appendChild(mkChip('all', null));
+    data.sub_questions.forEach(function (q) { qbox.appendChild(mkChip(q, q)); });
+  }
+  var searchBox = document.getElementById('search');
+  if (searchBox) searchBox.addEventListener('input', function (ev) { searchTerm = ev.target.value.trim().toLowerCase(); applyFilter(); });
+
+  // --- legend (edge types + ring meanings) ---
+  var legend = document.getElementById('legend');
+  [['supports', 'supports'], ['rebuts', 'rebuts'], ['qualifies', 'qualifies'], ['depends-on', 'depends-on']].forEach(function (p) {
+    var s = document.createElement('span'); s.innerHTML = '<i style="border-top-color:' + edgeColour(p[0]) + (p[0] === 'rebuts' ? ';border-top-style:dashed' : '') + '"></i>' + p[1]; legend.appendChild(s);
+  });
+  var r1 = document.createElement('span'); r1.innerHTML = '<span class="ring" style="border-color:' + cssVar('--bad', '#c0392b') + '"></span>disputed'; legend.appendChild(r1);
+  var r2 = document.createElement('span'); r2.innerHTML = '<span class="ring" style="border-color:' + cssVar('--warn', '#b8860b') + '"></span>double-count'; legend.appendChild(r2);
+})();
+
+</script>
+<ul class="outlinks"><li><a href="finding.html">Headline finding</a></li><li><a href="inquiry.html">Inquiry — sub-questions &amp; cruxes</a></li><li><a href="assessments.html">Assessment records</a></li><li><a href="baseline.html">Baseline comparison</a></li></ul></section>
+
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

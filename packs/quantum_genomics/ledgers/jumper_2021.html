@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Jumper, Richard Evans, Alexander Pritzel, et al. (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>John Jumper, Richard Evans, Alexander Pritzel, et al. (2021)</h1><table class="fm"><tr><th>Paper</th><td>John Jumper, Richard Evans, Alexander Pritzel, et al. (2021)</td></tr><tr><th>Title</th><td>Highly accurate protein structure prediction with AlphaFold</td></tr><tr><th>Version</th><td>Nature 596, 583–589; PMC8371605</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1038/s41586-021-03819-2" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body a6f131bea778…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Jumper et al. (2021), &quot;Highly accurate protein structure prediction with AlphaFold&quot;</h1>
+<p>The classical deep-learning breakthrough that substantially solved practical protein structure<br>prediction — essential context for the honest protein-folding verdict. Quotes read from the<br>downloaded full text (Europe PMC PDF, PMC8371605) and confirmed verbatim against<br><code>literature/extracted/jumper_2021.txt</code>.</p>
+<h2>Claim 1: A classical method predicts structure with atomic accuracy, even without a homologous template</h2>
+<blockquote>&quot;Here we provide the first computational method that can regularly predict protein structures with atomic accuracy even in cases in which no similar structure is known.&quot;</blockquote>
+<p><strong>ID:</strong> alphafold-atomic-accuracy<br><strong>Location:</strong> Abstract.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 2: The accuracy is near-experimental and far ahead of competitors (CASP14)</h2>
+<blockquote>&quot;AlphaFold structures had a median backbone accuracy of 0.96 Å r.m.s.d.95 ... whereas the next best performing method had a median backbone accuracy of 2.8 Å r.m.s.d.95&quot;</blockquote>
+<p><strong>ID:</strong> casp14-accuracy-lead<br><strong>Location:</strong> Results (p. 584).<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 3: The motivation — experimental structure determination is a slow bottleneck</h2>
+<blockquote>&quot;Structural coverage is bottlenecked by the months to years of painstaking effort required to determine a single protein structure.&quot;</blockquote>
+<p><strong>ID:</strong> experimental-bottleneck<br><strong>Location:</strong> Abstract.<br><strong>Addresses:</strong> qc-genomics-advantage</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

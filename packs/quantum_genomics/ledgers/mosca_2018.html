@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michele Mosca (2018) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Michele Mosca (2018)</h1><table class="fm"><tr><th>Paper</th><td>Michele Mosca (2018)</td></tr><tr><th>Title</th><td>Cybersecurity in an era with quantum computers: will we be ready?</td></tr><tr><th>Version</th><td>IEEE Security &amp; Privacy 16(5); author version IACR ePrint 2015/1075</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1109/MSP.2018.3761723" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body f74347de1d11…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Mosca (2018), &quot;Cybersecurity in an era with quantum computers&quot;</h1>
+<p>Quotes read from the downloaded author version (IACR ePrint 2015/1075) and<br>confirmed verbatim against <code>literature/extracted/mosca_2018.txt</code>. Ligature glyphs<br>in the PDF (e.g. &quot;scientific&quot;, &quot;five&quot;) are rendered as their true words below.<br>This is the canonical statement of the harvest-now-decrypt-later problem.</p>
+<h2>Claim 1: Quantum computing breaks essentially all deployed public-key cryptography</h2>
+<blockquote>&quot;Two decades ago, we learned that the quantum paradigm implies that essentially all the deployed public key cryptography will be completely broken by a quantum computer&quot;</blockquote>
+<p><strong>ID:</strong> breaks-deployed-pubkey<br><strong>Location:</strong> §1 &quot;The Problem&quot;<br><strong>Addresses:</strong> crypto-threat</p>
+<p>---</p>
+<h2>Claim 2: Mosca&#x27;s inequality — the harvest-now-decrypt-later theorem (x + y &gt; z)</h2>
+<p>The threat is framed by three durations: the security shelf-life <strong>x</strong>, the<br>migration time <strong>y</strong>, and the collapse time <strong>z</strong> (when a quantum computer breaks<br>today&#x27;s public-key cryptography).</p>
+<blockquote>&quot;Denote this number by x, the security shelf-life&quot;</blockquote>
+<blockquote>&quot;Denote this number by y, the migration time&quot;</blockquote>
+<blockquote>&quot;Let z denote this number, the collapse time&quot;</blockquote>
+<blockquote>&quot;If x + y &gt; z , we have a serious problem today&quot;</blockquote>
+<p><strong>ID:</strong> harvest-now-decrypt-later<br><strong>Location:</strong> §1 &quot;The Problem&quot; (the three questions and the inequality)<br><strong>Addresses:</strong> crypto-threat</p>
+<p>---</p>
+<h2>Claim 3: A dated, quantified estimate of the collapse time for RSA-2048</h2>
+<blockquote>&quot;I estimate a 1/7 chance of breaking RSA-2048 by 2026 and a 1/2 chance by 2031.&quot;</blockquote>
+<p><strong>ID:</strong> collapse-time-estimate<br><strong>Location:</strong> §1 (author&#x27;s projection; rendered &quot;1=7&quot;/&quot;1=2&quot; in the PDF fractions)<br><strong>Addresses:</strong> crypto-threat</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

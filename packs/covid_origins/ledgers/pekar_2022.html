@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pekar et al. (2022) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Pekar et al. (2022)</h1><table class="fm"><tr><th>Paper</th><td>Pekar et al. (2022)</td></tr><tr><th>Title</th><td>The molecular epidemiology of multiple zoonotic origins of SARS-CoV-2</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1126/science.abp8337" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 8edb212d646a…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Pekar et al. (2022)</h1>
+<p>Each quote was read from the downloaded PMC HTML and grepped against the extracted<br>text. This is the <strong>molecular-epidemiology</strong> anchor for the origin-locus<br>sub-question: the early genomic diversity implies more than one introduction.</p>
+<h2>Claim 1: pre-February-2020 diversity comprised two distinct lineages A and B</h2>
+<blockquote>&quot;We show that SARS-CoV-2 genomic diversity before February 2020 likely comprised only two distinct viral lineages, denoted A and B.&quot;</blockquote>
+<p><strong>ID:</strong> two-lineages<br><strong>Location:</strong> Abstract / Results summary<br><strong>Grep command used:</strong> <code>grep &quot;two distinct viral lineages&quot; extracted/pekar_2022.txt</code><br><strong>Addresses:</strong> origin-locus</p>
+<p>---</p>
+<h2>Claim 2: the pandemic most likely began with at least two separate zoonotic transmissions</h2>
+<blockquote>&quot;the pandemic most likely began with at least two separate zoonotic transmissions starting in November 2019.&quot;</blockquote>
+<p><strong>ID:</strong> multiple-introductions<br><strong>Location:</strong> Discussion<br><strong>Grep command used:</strong> <code>grep &quot;two separate zoonotic transmissions&quot; extracted/pekar_2022.txt</code><br><strong>Addresses:</strong> origin-locus<br><strong>Supports:</strong> <a href="andersen_2020.html">andersen_2020:no-lab-scenario</a> (grounded by #multiple-introductions) <a class="recref" href="../assessments.html#rec-pekar-supports-nolab-apt">pekar-supports-nolab-apt</a></p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

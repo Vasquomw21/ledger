@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drouin-Chartier et al. (2020) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Drouin-Chartier et al. (2020)</h1><table class="fm"><tr><th>Paper</th><td>Drouin-Chartier et al. (2020)</td></tr><tr><th>Title</th><td>Egg consumption and risk of cardiovascular disease: three large prospective US cohort studies, systematic review, and updated meta-analysis</td></tr><tr><th>Version</th><td>published (BMJ 2020, open access)</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1136/bmj.m513" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body e4778810c5e8…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Drouin-Chartier et al. (2020)</h1>
+<p>Each quote was read from the BMJ HTML and grep-verified against the extracted text. This is the<br>no-association position and the most recent large meta-analysis — it <em>performs the settling</em> of<br>the question (claims it resolved to a null), which the dissenting cohort (Zhong 2019) contests.</p>
+<h2>Claim 1: moderate egg consumption is not associated with CVD risk overall</h2>
+<blockquote>&quot;moderate egg consumption (up to one egg per day) is not associated with cardiovascular disease risk overall&quot;</blockquote>
+<p><strong>ID:</strong> no-association-overall<br><strong>Location:</strong> Abstract (Conclusions) / Discussion<br><strong>Grep command used:</strong> <code>grep &quot;not associated with cardiovascular disease risk overall&quot; extracted/drouin_2020.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Crux-of:</strong> eggs-cvd (grounded by #no-association-overall) [if-resolved: whether the positive cohort associations survive adjustment for dietary confounding and study quality]<br><strong>Status:</strong> performed-settling</p>
+<p>---</p>
+<h2>Claim 2: the meta-analysis pooled 27 prior studies plus the current study</h2>
+<blockquote>&quot;27 studies (28 including the current study) met inclusion criteria&quot;</blockquote>
+<p><strong>ID:</strong> pooled-28-studies<br><strong>Location:</strong> Results — systematic review / meta-analysis<br><strong>Grep command used:</strong> <code>grep &quot;met inclusion criteria&quot; extracted/drouin_2020.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<p>---</p>
+<h2>Claim 3: the analysis re-pools the same Harvard cohorts and updates Hu et al. 1999</h2>
+<blockquote>&quot;Our analyses included men and women from three large US cohorts: the Nurses&#x27; Health Study (NHS), NHS II, and the Health Professionals&#x27; Follow-Up Study (HPFS).&quot;</blockquote>
+<blockquote>&quot;Our study is an updated analysis of the study published in 1999 by Hu and colleagues&quot;</blockquote>
+<p><strong>ID:</strong> updates-hu-1999<br><strong>Location:</strong> Introduction / Methods<br><strong>Grep command used:</strong> <code>grep &quot;updated analysis of the study published in 1999&quot; extracted/drouin_2020.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Correlated-with:</strong> <a href="dehghan_2020.html">dehghan_2020:pure-no-association</a> (grounded by #updates-hu-1999) [shared: the no-association meta-analyses re-pool overlapping observational cohorts — Drouin&#x27;s own NHS/NHS II/HPFS analysis plus the Hu 1999 update of the same cohorts are counted as separate inputs, with no de-duplication stated]</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

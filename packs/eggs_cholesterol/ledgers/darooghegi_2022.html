@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darooghegi Mofrad et al. (2022) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Darooghegi Mofrad et al. (2022)</h1><table class="fm"><tr><th>Paper</th><td>Darooghegi Mofrad et al. (2022)</td></tr><tr><th>Title</th><td>Egg and Dietary Cholesterol Intake and Risk of All-Cause, Cardiovascular, and Cancer Mortality: A Systematic Review and Dose-Response Meta-Analysis of Prospective Cohort Studies</td></tr><tr><th>Version</th><td>published (Front Nutr 2022, open access)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.3389/fnut.2022.878979" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 2a60132ec43d…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Darooghegi Mofrad et al. (2022)</h1>
+<p>Each quote was read from the PMC HTML and grep-verified against the extracted text. A dose–response<br>meta-analysis that <strong>explicitly identifies and removes overlapping-cohort duplicate publications</strong><br>(naming HPFS, NHANES, CHNS) — the second, sharper methodological control: it de-duplicates the very<br>HPFS family that Drouin (2020) re-pools, and reaches a non-null conclusion.</p>
+<h2>Claim 1: overlapping-cohort duplicate publications were identified and excluded</h2>
+<blockquote>&quot;we found studies with significant participant overlap&quot;</blockquote>
+<blockquote>&quot;the Health Professionals Follow-Up Study (HPFS)&quot;</blockquote>
+<blockquote>&quot;Since these studies reported risk estimates for similar exposure and outcome variables, we included only the one with higher quality or with the highest number of cases and excluded the duplicate publications&quot;</blockquote>
+<p><strong>ID:</strong> overlap-excluded<br><strong>Location:</strong> Results — study selection (PRISMA narrative)<br><strong>Grep command used:</strong> <code>grep &quot;participant overlap&quot; extracted/darooghegi_2022.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<p>---</p>
+<h2>Claim 2: high egg/cholesterol intake associated with all-cause and cancer mortality (above thresholds)</h2>
+<blockquote>&quot;High-dietary intake of eggs and cholesterol was associated with all-cause and cancer mortality. Little evidence for elevated risks was seen for intakes below 0.5 egg/day or 250 mg/day of dietary cholesterol.&quot;</blockquote>
+<p><strong>ID:</strong> harmful-above-threshold<br><strong>Location:</strong> Abstract (Conclusions and Relevance)<br><strong>Grep command used:</strong> <code>grep &quot;all-cause and cancer mortality&quot; extracted/darooghegi_2022.txt</code><br><strong>Addresses:</strong> eggs-cvd</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

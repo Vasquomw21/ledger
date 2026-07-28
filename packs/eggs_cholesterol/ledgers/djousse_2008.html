@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Djoussé &amp; Gaziano (2008) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Djoussé &amp; Gaziano (2008)</h1><table class="fm"><tr><th>Paper</th><td>Djoussé &amp; Gaziano (2008)</td></tr><tr><th>Title</th><td>Egg consumption and risk of heart failure in the Physicians&#x27; Health Study</td></tr><tr><th>Version</th><td>published (Am J Clin Nutr 2008)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1093/ajcn/87.4.964" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body ff480162e8c1…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Djoussé &amp; Gaziano (2008)</h1>
+<p>A single independent cohort (the Physicians&#x27; Health Study I, US male physicians) reporting that<br>infrequent egg consumption does not influence CVD risk while frequent consumption confers a modest<br>mortality increase.</p>
+<h2>Claim 1: study cohort / population</h2>
+<blockquote>&quot;The current project used data from the Physicians&#x27; Health Study (PHS) I, which was a randomized, double-blind, placebo-controlled trial using a 2×2 factorial design to study low-dose aspirin and beta-carotene for the primary prevention of cardiovascular disease and cancer among US male physicians.&quot;</blockquote>
+<p><strong>ID:</strong> cohort-phs<br><strong>Location:</strong> Methods<br><strong>Grep command used:</strong> <code>grep &quot;which was a randomized, double-blind, placebo-controlled trial using a&quot; extracted/djousse_2008.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<h2>Claim 2: infrequent eggs do not influence CVD; only a modest mortality increase</h2>
+<blockquote>&quot;Our data suggest that infrequent egg consumption does not influence the risk of CVD and only confers a modest increased risk for total mortality in male physicians.&quot;</blockquote>
+<p><strong>ID:</strong> eggs-modest-mortality-phs<br><strong>Location:</strong> Abstract (Conclusions)<br><strong>Grep command used:</strong> <code>grep &quot;Our data suggest that infrequent egg consumption does not influence&quot; extracted/djousse_2008.txt</code><br><strong>Addresses:</strong> eggs-cvd</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

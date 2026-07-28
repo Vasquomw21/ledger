@@ -1,0 +1,16 @@
+graph TD
+  n_andersen_2020_fcs_natural_process["andersen_2020:fcs-natural-process"]
+  n_andersen_2020_no_lab_scenario["andersen_2020:no-lab-scenario"]
+  n_andersen_2020_not_from_known_backbone["andersen_2020:not-from-known-backbone"]
+  n_pekar_2022_multiple_introductions["pekar_2022:multiple-introductions"]
+  n_segreto_2021_fcs_implies_engineering["segreto_2021:fcs-implies-engineering"]
+  n_segreto_2021_mutagenesis_no_trace["segreto_2021:mutagenesis-no-trace"]
+  n_temmam_2022_banal_infectious_humans["temmam_2022:banal-infectious-humans"]
+  n_temmam_2022_no_fcs_in_relatives["temmam_2022:no-fcs-in-relatives"]
+  n_worobey_2022_market_early_epicenter["worobey_2022:market-early-epicenter"]
+  n_andersen_2020_fcs_natural_process -.->|rebuts| n_segreto_2021_fcs_implies_engineering
+  n_pekar_2022_multiple_introductions -->|supports| n_andersen_2020_no_lab_scenario
+  n_segreto_2021_mutagenesis_no_trace -.->|rebuts| n_andersen_2020_not_from_known_backbone
+  n_temmam_2022_no_fcs_in_relatives -->|qualifies| n_andersen_2020_fcs_natural_process
+  n_temmam_2022_banal_infectious_humans -->|supports| n_andersen_2020_no_lab_scenario
+  n_worobey_2022_market_early_epicenter -->|supports| n_andersen_2020_no_lab_scenario

@@ -1,0 +1,617 @@
+{
+  "addresses": [
+    {
+      "field": "addresses",
+      "ledger": "aaronson_2015",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "aaronson_2015",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "aaronson_2015",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "aaronson_2015",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "aaronson_2015",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "aaronson_2015",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "arute_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "arute_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "arute_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "arute_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "arute_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "arute_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "babbush_2021",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "babbush_2021",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "baek_2021",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "cerezo_2021",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "cerezo_2021",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "chia_2020",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "chia_2020",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "gidney_2021",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "gidney_2021",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "harrow_2009",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "crux-of",
+      "ledger": "harrow_2009",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "harrow_2009",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "harrow_2009",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "harrow_2009",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "jumper_2021",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "jumper_2021",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "jumper_2021",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "maurizio_2025",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "mosca_2018",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "mosca_2018",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "mosca_2018",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "nist_2024",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "nist_2024",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "pednault_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "pednault_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "pednault_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "preskill_2018",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "preskill_2018",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "preskill_2018",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "preskill_2018",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "preskill_2018",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "preskill_2018",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "reiher_2017",
+      "qid": "qc-genomics-advantage"
+    },
+    {
+      "field": "addresses",
+      "ledger": "shor_1997",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "shor_1997",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "shor_1997",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "shor_1997",
+      "qid": "crypto-threat"
+    },
+    {
+      "field": "addresses",
+      "ledger": "tang_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "tang_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "tang_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "tang_2019",
+      "qid": "speedup-robustness"
+    },
+    {
+      "field": "addresses",
+      "ledger": "tang_2019",
+      "qid": "speedup-robustness"
+    }
+  ],
+  "assessments": [
+    {
+      "disputes": [],
+      "grounding": [
+        "baek_2021:rosettafold-approaches-alphafold"
+      ],
+      "id": "baek-supports-alphafold-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "baek-supports-alphafold-apt"
+      ],
+      "subject": "jumper_2021:casp14-accuracy-lead"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "baek_2021:rosettafold-approaches-alphafold"
+      ],
+      "id": "baek-supports-alphafold-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "jumper_2021:casp14-accuracy-lead"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "cerezo_2021:vqa-unproven-scaling"
+      ],
+      "id": "cerezo-supports-noqml-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "cerezo-supports-noqml-apt"
+      ],
+      "subject": "maurizio_2025:no-qml-real-world-speedup"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "cerezo_2021:vqa-unproven-scaling"
+      ],
+      "id": "cerezo-supports-noqml-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "maurizio_2025:no-qml-real-world-speedup"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "reiher_2017:resource-estimate-feasible"
+      ],
+      "id": "chemistry-advantage-calibration",
+      "kind": "calibration",
+      "reviews": [],
+      "subject": "reiher_2017:classically-intractable-projected"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "chia_2020:svt-no-exponential-speedup"
+      ],
+      "id": "chia-supports-noqml-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "chia-supports-noqml-apt"
+      ],
+      "subject": "maurizio_2025:no-qml-real-world-speedup"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "chia_2020:svt-no-exponential-speedup"
+      ],
+      "id": "chia-supports-noqml-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "maurizio_2025:no-qml-real-world-speedup"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "aaronson_2015:hhl-engine"
+      ],
+      "id": "hhl-speedup-crux",
+      "kind": "crux-of",
+      "reviews": [],
+      "subject": "harrow_2009:exponential-speedup"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "pednault_2019:rebuttal-days-not-years"
+      ],
+      "id": "pednault-rebuts-supremacy-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "pednault-rebuts-supremacy-apt"
+      ],
+      "subject": "arute_2019:200s-vs-10000-years"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "pednault_2019:rebuttal-days-not-years"
+      ],
+      "id": "pednault-rebuts-supremacy-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "arute_2019:200s-vs-10000-years"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "tang_2019:no-exponential-speedup"
+      ],
+      "id": "tang-rebuts-hhl-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "harrow_2009:exponential-over-classical"
+    },
+    {
+      "disputes": [
+        "tang-rebuts-hhl-apt"
+      ],
+      "grounding": [
+        "tang_2019:no-exponential-speedup"
+      ],
+      "id": "tang-rebuts-hhl-faithfulness",
+      "kind": "faithfulness",
+      "reviews": [],
+      "subject": "harrow_2009:exponential-over-classical"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "tang_2019:no-exponential-speedup"
+      ],
+      "id": "tang-supports-noqml-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "tang-supports-noqml-apt"
+      ],
+      "subject": "maurizio_2025:no-qml-real-world-speedup"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "tang_2019:no-exponential-speedup"
+      ],
+      "id": "tang-supports-noqml-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "maurizio_2025:no-qml-real-world-speedup"
+    }
+  ],
+  "edges": [
+    {
+      "from_ledger": "aaronson_2015",
+      "grounding": "four-caveats-thesis",
+      "line": 80,
+      "rec": null,
+      "source": "aaronson_2015:four-caveats-thesis",
+      "target": "harrow_2009:exponential-speedup",
+      "target_resolved": true,
+      "type": "qualifies"
+    },
+    {
+      "from_ledger": "baek_2021",
+      "grounding": "rosettafold-approaches-alphafold",
+      "line": 31,
+      "rec": "baek-supports-alphafold-apt",
+      "source": "baek_2021:rosettafold-approaches-alphafold",
+      "target": "jumper_2021:casp14-accuracy-lead",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "cerezo_2021",
+      "grounding": "vqa-unproven-scaling",
+      "line": 31,
+      "rec": "cerezo-supports-noqml-apt",
+      "source": "cerezo_2021:vqa-unproven-scaling",
+      "target": "maurizio_2025:no-qml-real-world-speedup",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "chia_2020",
+      "grounding": "svt-no-exponential-speedup",
+      "line": 31,
+      "rec": "chia-supports-noqml-apt",
+      "source": "chia_2020:svt-no-exponential-speedup",
+      "target": "maurizio_2025:no-qml-real-world-speedup",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "pednault_2019",
+      "grounding": "rebuttal-days-not-years",
+      "line": 32,
+      "rec": "pednault-rebuts-supremacy-apt",
+      "source": "pednault_2019:rebuttal-days-not-years",
+      "target": "arute_2019:200s-vs-10000-years",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "tang_2019",
+      "grounding": "no-exponential-speedup",
+      "line": 42,
+      "rec": "tang-rebuts-hhl-apt",
+      "source": "tang_2019:no-exponential-speedup",
+      "target": "harrow_2009:exponential-over-classical",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "tang_2019",
+      "grounding": "no-exponential-speedup",
+      "line": 43,
+      "rec": "tang-supports-noqml-apt",
+      "source": "tang_2019:no-exponential-speedup",
+      "target": "maurizio_2025:no-qml-real-world-speedup",
+      "target_resolved": true,
+      "type": "supports"
+    }
+  ],
+  "findings": {
+    "double_count": [
+      {
+        "a": "chia_2020",
+        "b": "tang_2019",
+        "basis": "shared: Chia et al. generalise Tang's sampling-based dequantisation to quantum singular-value transformation — the same method family, so their agreement is not two independent results",
+        "kind": "other-declared-dependence",
+        "sealed_record": null,
+        "target": "maurizio_2025:no-qml-real-world-speedup"
+      }
+    ],
+    "superseded": []
+  },
+  "nodes": [
+    "aaronson_2015:four-caveats-thesis",
+    "arute_2019:200s-vs-10000-years",
+    "baek_2021:rosettafold-approaches-alphafold",
+    "cerezo_2021:vqa-unproven-scaling",
+    "chia_2020:svt-no-exponential-speedup",
+    "harrow_2009:exponential-over-classical",
+    "harrow_2009:exponential-speedup",
+    "jumper_2021:casp14-accuracy-lead",
+    "maurizio_2025:no-qml-real-world-speedup",
+    "pednault_2019:rebuttal-days-not-years",
+    "reiher_2017:classically-intractable-projected",
+    "tang_2019:no-exponential-speedup"
+  ],
+  "sub_questions": [
+    "crypto-threat",
+    "qc-genomics-advantage",
+    "speedup-robustness"
+  ]
+}

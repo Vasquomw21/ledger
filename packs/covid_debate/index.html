@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>covid_debate — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+
+<header class="hero"><h1>Ledger — Judge Pack</h1>
+<div class="case">covid_debate</div></header>
+
+<section id="overview"><h2>Overview</h2>
+<p>This is a navigable read of a contested question. Each claim below is a
+<strong>verbatim quote</strong> carrying the record of its proof against a primary source; the
+relationships between claims form an argument graph; and a human's sealed, contestable judgement
+sits on top. Start here, then follow <a href="#inputs">Inputs</a> →
+<a href="#processes">Processes</a> → <a href="#outputs">Outputs</a>. This page <em>shows the trail
+and the trust boundary; it does not adjudicate the truth.</em></p>
+<p class="ceiling">Quote verification: attested by 6 committed verification record(s). The source corpus is not included, so this pack cannot re-prove quotations against source bytes.</p>
+<table class="trust"><thead><tr><th>What</th><th>Status</th><th>Meaning</th></tr></thead><tbody><tr><td>Graph structure</td><td><span class="badge ok">Enforced here</span></td><td>Every edge resolves to a real claim cross-ledger and carries its grounding quote — checkable from the graph.json in this folder.</td></tr><tr><td>Ledger body integrity</td><td><span class="badge ok">Enforced here</span></td><td>Each ledger&#x27;s body hash is bound into its stamp, so a quote edited after stamping is caught without the corpus.</td></tr><tr><td>Verbatim quotes</td><td><span class="badge neu">Attested</span></td><td>Each quote was proved verbatim against its source when the ledger was stamped. That record travels; the source bytes do not.</td></tr><tr><td>Source provenance</td><td><span class="badge neu">Attested</span></td><td>Source and extract hashes were bound when the ledger was stamped; re-binding them to bytes needs the raw corpus.</td></tr><tr><td>Double-count / correlation</td><td><span class="badge neu">Mechanical</span></td><td>Derived from the declared correlated-with edges — flagged, not adjudicated.</td></tr><tr><td>Assessments / faithfulness</td><td><span class="badge warn">Judged</span></td><td>A human&#x27;s sealed, contestable judgement — shown, never claimed proven.</td></tr></tbody></table></section>
+
+<section id="derived"><h2>What Ledger derived from committed records</h2>
+<p class="layer-note">Computed from the committed ledgers and records — deterministic, each fact keeping its provenance. A declared cause is the author’s classification, not a machine-established fact; a count is a count; nothing here reads the authored interpretation below.</p><h4>Dependence warnings</h4><p class="muted">None: no two supporters of one claim are declared correlated with each other.</p><h4>Claim targeting</h4><p class="muted">Conclusions targeted by two or more edges — a structural in-degree count, not a measure of how well-supported a claim is.</p><table class="layer-tbl"><thead><tr><th>Conclusion</th><th class="num">Incoming edges</th></tr></thead><tbody><tr><td><code>stansifer:verdict</code></td><td class="num">2</td></tr></tbody></table><h4>Review coverage</h4><p>3 of 3 supports/rebuts edges carry a sealed assessment.</p></section>
+
+<section id="judgements"><h2>Recorded judgements</h2>
+<p class="boundary">These are sealed, attributable assessments supplied by people or agents. Ledger verifies their integrity, grounding and freshness; sealing does not establish that a judgement is correct.</p><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>daniel-supports-proximity-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>stansifer:proximity</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>daniel:market-hsm</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#stansifer-proximity">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>daniel-supports-proximity-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>stansifer:proximity</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>daniel:market-hsm</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>daniel-supports-proximity-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#stansifer-proximity">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>vantreuren-supports-verdict-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>stansifer:verdict</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>van_treuren:superior-case</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#stansifer-verdict">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>vantreuren-supports-verdict-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>stansifer:verdict</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>van_treuren:superior-case</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>vantreuren-supports-verdict-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#stansifer-verdict">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">sealed record</span> <code>weissman-rebuts-verdict-apt</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">edge</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>stansifer:verdict</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>weissman:odds-favor-ll</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#stansifer-verdict">Inspect judgement evidence</a></div><div class="rec-card"><div class="rec-h"><span class="badge neu">reviewed — held</span> <code>weissman-rebuts-verdict-apt-pass</code><span class="prov">sealed judgement</span></div><div class="row"><span class="k">Kind</span><span class="v">faithfulness-pass</span></div><div class="row"><span class="k">Assessor</span><span class="v">56687218+Vasquomw21 · 20260615</span></div><div class="row"><span class="k">Subject</span><span class="v"><code>stansifer:verdict</code></span></div><div class="row"><span class="k">Grounding</span><span class="v"><code>weissman:odds-favor-ll</code></span></div><div class="row"><span class="k">Reviews</span><span class="v"><code>weissman-rebuts-verdict-apt</code></span></div><div class="row"><span class="k">Integrity</span><span class="v">verified — grounding and seal checked; this does not establish the judgement is correct</span></div><a class="action" href="trace.html#stansifer-verdict">Inspect judgement evidence</a></div></section>
+
+<section id="interpretation"><h2>Authored interpretation</h2>
+<div class="no-finding"><span class="prov">authored interpretation</span> <strong>No case-level interpretation has been authored.</strong> The derived results and recorded judgements above stand on their own.</div>
+</section>
+
+<section id="how"><h2>How the Ledger works</h2><svg class="infographic" viewBox="0 0 1010 180" role="img" aria-label="how the ledger works"><defs><marker id="ig-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa6b2"/></marker></defs><path d="M190 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><path d="M392 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><path d="M594 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><path d="M796 88.0 l24 0" stroke="#9aa6b2" stroke-width="1.6" marker-end="url(#ig-arw)"/><g><rect x="12" y="30" rx="8" width="184" height="116" fill="#eef1f6" stroke="#7a8794" stroke-width="1.4"/><text x="24" y="56" class="ig-t">Primary sources</text><text x="24" y="76" class="ig-s">papers, reports, debates</text><text x="24" y="118" class="ig-tag">the corpus a curator selects</text></g><g><rect x="214" y="30" rx="8" width="184" height="116" fill="#eef6ef" stroke="#2e7d32" stroke-width="1.4"/><text x="226" y="56" class="ig-t">Ingestion</text><text x="226" y="76" class="ig-s">fetch · verbatim-quote gate · stamp</text><text x="226" y="118" class="ig-tag">verified upstream</text><rect x="226" y="124" rx="7" width="78" height="16" fill="#2e7d32"/><text x="232" y="136" class="ig-chip">attested</text></g><g><rect x="416" y="30" rx="8" width="184" height="116" fill="#eef6ef" stroke="#2e7d32" stroke-width="1.4"/><text x="428" y="56" class="ig-t">Structure</text><text x="428" y="76" class="ig-s">typed claim graph (edges)</text><text x="428" y="118" class="ig-tag">machine-resolved, human-authored</text><rect x="428" y="124" rx="7" width="78" height="16" fill="#2e7d32"/><text x="434" y="136" class="ig-chip">guaranteed</text></g><g><rect x="618" y="30" rx="8" width="184" height="116" fill="#fbf4e6" stroke="#b8860b" stroke-width="1.4"/><text x="630" y="56" class="ig-t">Assessment</text><text x="630" y="76" class="ig-s">rhetorical · double-count · faithfulness · calibration</text><text x="630" y="118" class="ig-tag">human-in-the-loop judgement</text><rect x="630" y="124" rx="7" width="78" height="16" fill="#b8860b"/><text x="636" y="136" class="ig-chip">judged</text></g><g><rect x="820" y="30" rx="8" width="184" height="116" fill="#eef1f6" stroke="#7a8794" stroke-width="1.4"/><text x="832" y="56" class="ig-t">Outputs</text><text x="832" y="76" class="ig-s">navigable finding + graph</text><text x="832" y="118" class="ig-tag">what a judge reads</text></g><text x="12" y="166" class="ig-note">The machine guarantees the facts where the pipeline runs (verbatim quotes, content stamps, structural resolution); the human supplies the contestable judgement — and others with different beliefs can pick up where one left off.</text></svg></section>
+
+<section id="inputs"><h2>Inputs — the corpus</h2>
+<p class="muted">The primary sources ingested for this question. Each row opens the rendered ledger:
+its provenance, stamps, and every verbatim claim. Positions and the search/known-gaps trail are in the <a href="source_register.html">source register</a> and <a href="source_flow.html">source flow</a>.</p>
+<table class="docs"><thead><tr><th>Document</th><th>Year</th><th>Type</th><th>Position</th><th class="num">Claims</th><th>Verified</th><th>Source</th></tr></thead><tbody><tr><td><a href="ledgers/alexander_2024.html">Alexander (2024)</a></td><td>2024</td><td>published</td><td>zoonosis</td><td class="num">6</td><td><span class="badge ok">pass</span></td><td><a href="https://www.astralcodexten.com/p/practically-a-book-review-rootclaim" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/daniel.html">Daniel (2024)</a></td><td>2024</td><td>published</td><td>zoonosis</td><td class="num">5</td><td><span class="badge ok">pass</span></td><td><a href="https://docs.google.com/document/d/1qzLC55jRfdS55oSqXJZTFItsvFsawWgNlgLxWqhCuyo/edit" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/goodjudgment.html">Good Judgment (2024)</a></td><td>2024</td><td>published</td><td>zoonosis</td><td class="num">5</td><td><span class="badge ok">pass</span></td><td><a href="https://goodjudgment.substack.com/p/superforecasting-the-origins-of-the" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/stansifer.html">Stansifer (2023)</a></td><td>2023</td><td>published</td><td>zoonosis</td><td class="num">5</td><td><span class="badge ok">pass</span></td><td><a href="https://drive.google.com/file/d/1aHlhPd-16EOabzXhiajT5PBm3uVCAG3T/view" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/van_treuren.html">van Treuren (2024)</a></td><td>2024</td><td>published</td><td>zoonosis</td><td class="num">4</td><td><span class="badge ok">pass</span></td><td><a href="https://drive.google.com/file/d/1YhmkYB32RpGsXvQTsX4xZ0Yul1wiwh8Z/view" target="_blank" rel="noopener">source</a></td></tr><tr><td><a href="ledgers/weissman.html">Weissman (2024)</a></td><td>2024</td><td>published</td><td>lab-leak</td><td class="num">3</td><td><span class="badge ok">pass</span></td><td><a href="https://michaelweissman.substack.com/p/an-inconvenient-probability-v50" target="_blank" rel="noopener">source</a></td></tr></tbody></table></section>
+
+<section id="processes"><h2>Processes — how it is built</h2>
+<p>Each source travels one pipeline: <strong>check</strong> (already on disk?) →
+<strong>fetch</strong> → <strong>verify</strong> (every quote proved byte-for-byte against the
+fetched source) → <strong>stamp</strong> (hashes bound) → <strong>structure</strong> (typed edges
+resolve cross-ledger) → <strong>assess</strong> (human judgement, sealed). The verify step runs
+where the corpus lives — in the project, at every commit.</p>
+<p>That pipeline is one instrument in a <strong>five-layer integrity stack</strong> — the distinct
+ways knowledge work fails, ordered foundation → delivery, crossed with how strongly Ledger catches a
+failure in each. Enforcement strength falls as you climb: the foundation is a mechanical guarantee,
+the top is disciplined judgement. This is the map behind the
+<a href="#overview">guaranteed-vs-judged boundary</a>.</p>
+<table class="trust"><thead><tr><th>Integrity layer</th><th>Failure it targets</th><th>How strongly it is caught</th></tr></thead><tbody><tr><td>1 · Fidelity</td><td>fabricated quote · wrong paper · quote out of context</td><td><span class="badge ok">Guarantee</span> Fabrication is blocked mechanically; wrong-paper is structural; out-of-context use is measured + assisted (a detection rate on a labelled benchmark).</td></tr><tr><td>2 · Completeness</td><td>selection bias · missing source</td><td><span class="badge neu">Structural</span> Structural + assisted — a floor against a silent empty position, not a representativeness proof.</td></tr><tr><td>3 · Coherence</td><td>broken or absent links · contradiction · stale claim</td><td><span class="badge neu">Structural</span> Structural (every edge resolves + is grounded) plus an assisted semantic pass for meaning.</td></tr><tr><td>4 · Validity</td><td>the conclusion doesn&#x27;t follow · cherry-picking</td><td><span class="badge warn">Judged</span> Judged — ledger analyze assists (load-bearing claims, dependency closure, double-counts). This is the frontier.</td></tr><tr><td>5 · Clarity</td><td>opacity · undefined jargon</td><td><span class="badge warn">Judged</span> Judged — enforced in the writing loop by the bored-reader test.</td></tr></tbody></table>
+<p>The gates below are what <em>this</em> project actually enforces:</p>
+<ul class="gates"><li class="on"><span class="mark">✓</span> Stable claim IDs <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Numeric-citation gate <span class="mono">block</span></li><li class="on"><span class="mark">✓</span> Source provenance + stamps <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Claim-graph structure <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Judgement records <span class="mono">required</span></li><li class="off"><span class="mark">·</span> Claim-graph coverage <span class="mono">warn</span></li><li class="on"><span class="mark">✓</span> Edge-aptness coverage <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Selection audit (Layer 2) <span class="mono">required</span></li><li class="on"><span class="mark">✓</span> Source-flow trail (Layer 2) <span class="mono">required</span></li><li class="off"><span class="mark">·</span> Unit-manifest binding <span class="mono">warn</span></li><li class="off"><span class="mark">·</span> Synthesis-claim anchoring <span class="mono">off</span></li><li class="off"><span class="mark">·</span> Semantic-health review <span class="mono">warn</span></li><li class="off"><span class="mark">·</span> Signed run-records <span class="mono">off</span></li></ul>
+<p class="muted">Where humans judge, comment, and build — every touchpoint with its exact command:
+see <a href="#hitl">Human-in-the-loop</a>.</p>
+<p class="muted"><a href="semantic_health.html">Semantic-health review</a> (contradictions / missing perspectives).</p></section>
+
+<section id="hitl"><h2>Human-in-the-loop — the collaboration</h2>
+<p>The machine guarantees the <em>facts</em> (verbatim quotes, content stamps, structural resolution). A human supplies the <em>judgement</em> — which sources matter, which inferences are apt, which moves are rhetorical — sealed and contestable. <strong>Sealed so far by:</strong> <span class="mono">56687218+Vasquomw21@users.noreply.github.com</span>.</p><h3>Where a human judges, comments, and builds</h3><table class="hitl-map"><thead><tr><th>Layer</th><th>What the human does</th><th>Direct access</th><th>This project</th></tr></thead><tbody><tr><td><span class="badge neu">L1</span></td><td><strong>Write a verified-claim quote</strong><br><span class="muted">author reads + greps the source, writes the &gt; &quot;…&quot; quote into literature/verified_claims/&lt;key&gt;.md, then stamps it</span></td><td><pre class="cmd">literature/check.sh &lt;author&gt; &lt;year&gt;  →  literature/fetch_paper.sh --out … --pmcid …  →  python3 literature/extract_text.py &lt;key&gt;  →  edit ledger  →  python3 literature/verify_quotes.py --stamp</pre></td><td class="mono">6 documents</td></tr><tr><td><span class="badge neu">L1</span></td><td><strong>Contest a quote&#x27;s faithful use</strong><br><span class="muted">argue a grounding quote does not warrant its inference; file a sealed faithfulness dispute</span></td><td><pre class="cmd">python3 tools/assess_record.py --write --kind faithfulness --disputes daniel-supports-proximity-apt --subject stansifer:proximity --grounding daniel:market-hsm --span &#x27;NB: this is by far my biggest disagreement with Rootclaim.&#x27; --date YYYYMMDD</pre></td><td class="mono">0 filed</td></tr><tr><td><span class="badge neu">L2</span></td><td><strong>Declare source rationale &amp; known gaps</strong><br><span class="muted">record why each source is in, and name viewpoints not yet covered</span></td><td><pre class="cmd">edit content/source_register.md</pre></td><td class="mono">0 open gaps</td></tr><tr><td><span class="badge neu">L3</span></td><td><strong>Draw a claim-graph edge</strong><br><span class="muted">assert a typed, quote-grounded relationship between two claims</span></td><td><pre class="cmd">edit the ledger:  **Supports:** key:slug (grounded by #slug)</pre></td><td class="mono">3 supports/rebuts</td></tr><tr><td><span class="badge neu">L4</span></td><td><strong>Assess edge / rhetorical / crux / double-count</strong><br><span class="muted">seal a judgement about a claim or an inference</span></td><td><pre class="cmd">python3 tools/assess_record.py --write --kind &lt;kind&gt; --subject key:slug --grounding key:slug --span &#x27;…&#x27; --date YYYYMMDD</pre></td><td class="mono">6 records (3 edge, 3 faithfulness-pass)</td></tr><tr><td><span class="badge neu">L5</span></td><td><strong>Write &amp; refine the prose</strong><br><span class="muted">draft the synthesis one section at a time; the bored-reader test gates readability</span></td><td><pre class="cmd">the writing loop — AGENTS.md / skill-ledger-write → content/*.md</pre></td><td class="mono">—</td></tr><tr><td><span class="badge neu">—</span></td><td><strong>Curate the base</strong><br><span class="muted">ingest a source, save a good answer as a note, run a health-check</span></td><td><pre class="cmd">AGENTS.md / skill-ledger-curate</pre></td><td class="mono">—</td></tr></tbody></table><h3>Awaiting judgement</h3><p class="empty muted">Every supports/rebuts edge in this project carries a sealed judgement — nothing is awaiting review.</p><div class="hitl-note"><h4>Presentation vs production</h4><p>This export is static. Every action above shows the command to run (fill in the &lt;placeholders&gt;), which runs against the repository and the CLI and persists there — nothing typed on this page is captured. A production reviewer server would instead take a dispute or assessment through a form, seal it with <code>assess_record.py</code>, re-run the gates and CI, update the graph live, and manage signer identity and attestation.</p></div></section>
+
+<section id="outputs"><h2>Outputs — what it produces</h2>
+<div class="metrics"><div class="metric"><strong>6</strong><label>Documents</label></div><div class="metric"><strong>3</strong><label>Graph edges</label></div><div class="metric"><strong>0</strong><label>Unassessed edges</label></div><div class="metric"><strong>6</strong><label>Judgement records</label></div><div class="metric"><strong>0</strong><label>Faithfulness disputes</label></div><div class="metric"><strong>0</strong><label>Double-count findings</label></div></div>
+<section class="graph-section">
+      <p class="hint">Nodes are claims (fill colour = source). Edges are typed relations. Click a claim for its verbatim quote, the reviewer comments on it, and its provenance. A red ring marks a faithfulness-disputed claim; an amber ring marks a possible double-count; a dashed edge is an unassessed support/rebuttal. Drag to reposition, scroll to zoom, drag the background to pan.</p>
+      <div class="graph-controls">
+        <input id="search" type="search" placeholder="filter claims by text…" autocomplete="off" spellcheck="false">
+        <span id="qfilters" class="qfilters"></span>
+        <span class="legend" id="legend"></span>
+      </div>
+      <div class="graph-wrap">
+        <svg id="graph" role="img" aria-label="argument graph"></svg>
+        <aside id="detail" class="detail"><p class="empty">Click a claim to inspect its verbatim quote, the comments on it, and its provenance.</p></aside>
+      </div>
+    </section>
+<script id="ledger-data" type="application/json">{"nodes": [{"id": "daniel:market-hsm", "ledger": "daniel", "slug": "market-hsm", "quote": "NB: this is by far my biggest disagreement with Rootclaim.", "location": "\"First known outbreak is centred at HSM\"", "locator": {"doi": "", "pmcid": "", "url": "https://docs.google.com/document/d/1qzLC55jRfdS55oSqXJZTFItsvFsawWgNlgLxWqhCuyo/edit"}, "source": "Daniel (2024)", "qids": ["genomic-engineering", "market-evidence", "methodology", "prior-odds"], "kinds": [], "contested": false, "double_count": false, "resolved": true, "records": [], "annotations": []}, {"id": "stansifer:proximity", "ledger": "stansifer", "slug": "proximity", "quote": "The most important basis for this decision is the relative epidemiological proximity of the earliest indicators of covid to a plausible animal source rather than a potential laboratory source.", "location": "§1 (the decision)", "locator": {"doi": "", "pmcid": "", "url": "https://drive.google.com/file/d/1aHlhPd-16EOabzXhiajT5PBm3uVCAG3T/view"}, "source": "Stansifer (2023)", "qids": ["genomic-engineering", "market-evidence", "verdict"], "kinds": ["edge", "faithfulness-pass"], "contested": false, "double_count": false, "resolved": true, "records": [{"id": "daniel-supports-proximity-apt-pass", "kind": "faithfulness-pass", "subject": "stansifer:proximity", "span": "", "grounding": ["daniel:market-hsm"], "disputes": [], "reviews": ["daniel-supports-proximity-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "daniel-supports-proximity-apt", "kind": "edge", "subject": "stansifer:proximity", "span": "", "grounding": ["daniel:market-hsm"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}], "annotations": []}, {"id": "stansifer:verdict", "ledger": "stansifer", "slug": "verdict", "quote": "I find with high confidence that zoonotic spillover is the more likely origin of sars-cov-2.", "location": "§1 (the decision)", "locator": {"doi": "", "pmcid": "", "url": "https://drive.google.com/file/d/1aHlhPd-16EOabzXhiajT5PBm3uVCAG3T/view"}, "source": "Stansifer (2023)", "qids": ["genomic-engineering", "market-evidence", "verdict"], "kinds": ["edge", "faithfulness-pass"], "contested": false, "double_count": false, "resolved": true, "records": [{"id": "vantreuren-supports-verdict-apt-pass", "kind": "faithfulness-pass", "subject": "stansifer:verdict", "span": "", "grounding": ["van_treuren:superior-case"], "disputes": [], "reviews": ["vantreuren-supports-verdict-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "vantreuren-supports-verdict-apt", "kind": "edge", "subject": "stansifer:verdict", "span": "", "grounding": ["van_treuren:superior-case"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "weissman-rebuts-verdict-apt-pass", "kind": "faithfulness-pass", "subject": "stansifer:verdict", "span": "", "grounding": ["weissman:odds-favor-ll"], "disputes": [], "reviews": ["weissman-rebuts-verdict-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, {"id": "weissman-rebuts-verdict-apt", "kind": "edge", "subject": "stansifer:verdict", "span": "", "grounding": ["weissman:odds-favor-ll"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}], "annotations": []}, {"id": "van_treuren:superior-case", "ledger": "van_treuren", "slug": "superior-case", "quote": "I believe that Peter, for the zoonosis side, presented the superior case, and is the winner of the debate.", "location": "§1 (\"What did I decide?\")", "locator": {"doi": "", "pmcid": "", "url": "https://drive.google.com/file/d/1YhmkYB32RpGsXvQTsX4xZ0Yul1wiwh8Z/view"}, "source": "van Treuren (2024)", "qids": ["methodology", "verdict"], "kinds": [], "contested": false, "double_count": false, "resolved": true, "records": [], "annotations": []}, {"id": "weissman:odds-favor-ll", "ledger": "weissman", "slug": "odds-favor-ll", "quote": "the conclusion that the odds strongly favor LL just means that prior guesses that LL was highly improbable should be ignored in the future.", "location": "Conclusion", "locator": {"doi": "", "pmcid": "", "url": "https://michaelweissman.substack.com/p/an-inconvenient-probability-v50"}, "source": "Weissman (2024)", "qids": ["methodology", "prior-odds"], "kinds": [], "contested": false, "double_count": false, "resolved": true, "records": [], "annotations": []}], "edges": [{"source": "daniel:market-hsm", "target": "stansifer:proximity", "type": "supports", "assessed": true, "grounding": "market-hsm", "rec": null, "edge_record_id": "daniel-supports-proximity-apt", "from_ledger": "daniel", "line": 61, "target_resolved": true}, {"source": "van_treuren:superior-case", "target": "stansifer:verdict", "type": "supports", "assessed": true, "grounding": "superior-case", "rec": null, "edge_record_id": "vantreuren-supports-verdict-apt", "from_ledger": "van_treuren", "line": 43, "target_resolved": true}, {"source": "weissman:odds-favor-ll", "target": "stansifer:verdict", "type": "rebuts", "assessed": true, "grounding": "odds-favor-ll", "rec": null, "edge_record_id": "weissman-rebuts-verdict-apt", "from_ledger": "weissman", "line": 42, "target_resolved": true}], "sub_questions": ["genomic-engineering", "market-evidence", "methodology", "prior-odds", "verdict"], "double_count": [], "ledgers": ["daniel", "stansifer", "van_treuren", "weissman"], "sources": [{"key": "daniel", "paper": "Daniel (2024)", "title": "Daniel's Bayesian analysis of COVID origins", "doi": "", "pmcid": "", "url": "https://docs.google.com/document/d/1qzLC55jRfdS55oSqXJZTFItsvFsawWgNlgLxWqhCuyo/edit", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "b9c4eeec8eed56d0b0a9a8eed0b1e338c75f54007234613820b2ad4508815608", "source_version": "published"}, {"key": "stansifer", "paper": "Stansifer (2023)", "title": "Rootclaim covid-19 origins debate: Final decision", "doi": "", "pmcid": "", "url": "https://drive.google.com/file/d/1aHlhPd-16EOabzXhiajT5PBm3uVCAG3T/view", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "a9cc82bd01153345fe6a41edf894fa27de77c80c385f0388c18d99f26111494c", "source_version": "published"}, {"key": "van_treuren", "paper": "van Treuren (2024)", "title": "Rootclaim covid-19 origins debate: judge's written decision", "doi": "", "pmcid": "", "url": "https://drive.google.com/file/d/1YhmkYB32RpGsXvQTsX4xZ0Yul1wiwh8Z/view", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "f42b80522f1c4ea4115eba4ad73b86dc7a9ec0a09d2f9fd69223b4f8e2dde13f", "source_version": "published"}, {"key": "weissman", "paper": "Weissman (2024)", "title": "An Inconvenient Probability v5.6 — Bayesian analysis of the probable origins of Covid", "doi": "", "pmcid": "", "url": "https://michaelweissman.substack.com/p/an-inconvenient-probability-v50", "verified_verdict": "pass", "verified_date": "20260614", "body_sha256": "a05c99c889fef99209a298601063ba3b76172ccfcd4ef4452ff69c13d4f04f00", "source_version": "published"}], "records_index": {"daniel-supports-proximity-apt-pass": {"id": "daniel-supports-proximity-apt-pass", "kind": "faithfulness-pass", "subject": "stansifer:proximity", "span": "", "grounding": ["daniel:market-hsm"], "disputes": [], "reviews": ["daniel-supports-proximity-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "daniel-supports-proximity-apt": {"id": "daniel-supports-proximity-apt", "kind": "edge", "subject": "stansifer:proximity", "span": "", "grounding": ["daniel:market-hsm"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "vantreuren-supports-verdict-apt-pass": {"id": "vantreuren-supports-verdict-apt-pass", "kind": "faithfulness-pass", "subject": "stansifer:verdict", "span": "", "grounding": ["van_treuren:superior-case"], "disputes": [], "reviews": ["vantreuren-supports-verdict-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "vantreuren-supports-verdict-apt": {"id": "vantreuren-supports-verdict-apt", "kind": "edge", "subject": "stansifer:verdict", "span": "", "grounding": ["van_treuren:superior-case"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "weissman-rebuts-verdict-apt-pass": {"id": "weissman-rebuts-verdict-apt-pass", "kind": "faithfulness-pass", "subject": "stansifer:verdict", "span": "", "grounding": ["weissman:odds-favor-ll"], "disputes": [], "reviews": ["weissman-rebuts-verdict-apt"], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}, "weissman-rebuts-verdict-apt": {"id": "weissman-rebuts-verdict-apt", "kind": "edge", "subject": "stansifer:verdict", "span": "", "grounding": ["weissman:odds-favor-ll"], "disputes": [], "reviews": [], "assessor": "56687218+Vasquomw21@users.noreply.github.com", "date": "20260615"}}, "awaiting": [], "case": {"title": "the Rootclaim COVID-origins debate", "questions": [{"qid": "verdict", "text": "How did the debate's judges adjudicate lab-leak vs zoonosis?"}, {"qid": "market-evidence", "text": "Does the early-case / market spatial evidence favour zoonotic origin?"}, {"qid": "genomic-engineering", "text": "Does the genome (the furin cleavage site) indicate engineering?"}, {"qid": "prior-odds", "text": "What prior / base rate should anchor the question?"}, {"qid": "methodology", "text": "Is Rootclaim's strict-Bayesian method reliable for a question like this?"}], "verdict": ""}}</script>
+<script>
+
+(function () {
+  var data = JSON.parse(document.getElementById('ledger-data').textContent);
+  var svg = document.getElementById('graph');
+  if (!svg) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = 1000, H = 580;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function cssVar(name, fallback) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+  var EDGE_VARS = { supports: '--e-supports', rebuts: '--e-rebuts', qualifies: '--e-qualifies',
+    'depends-on': '--e-depends', refines: '--e-neutral', restates: '--e-neutral',
+    'duplicate-of': '--e-neutral', supersedes: '--e-supersedes' };
+  function edgeColour(t) { return cssVar(EDGE_VARS[t] || '--e-neutral', '#6b7785'); }
+  function ledgerHue(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360; return h; }
+  function ledgerColour(l) { return 'hsl(' + ledgerHue(l) + ', 55%, 55%)'; }
+
+  var recIndex = data.records_index || {};
+
+  // --- model ---
+  var nodes = data.nodes.map(function (n, i) {
+    var a = 2 * Math.PI * i / Math.max(1, data.nodes.length);
+    var R = Math.min(W, H) * 0.34;
+    return Object.assign({}, n, { x: W / 2 + R * Math.cos(a), y: H / 2 + R * Math.sin(a),
+      vx: 0, vy: 0, fixed: false });
+  });
+  var byId = {}; nodes.forEach(function (n) { byId[n.id] = n; });
+  var links = data.edges.filter(function (e) { return byId[e.source] && byId[e.target]; })
+    .map(function (e) { return Object.assign({}, e, { s: byId[e.source], t: byId[e.target] }); });
+  var adj = {}; nodes.forEach(function (n) { adj[n.id] = {}; });
+  links.forEach(function (l) { adj[l.s.id][l.t.id] = 1; adj[l.t.id][l.s.id] = 1; });
+
+  // --- defs: one arrowhead marker per edge colour ---
+  var defs = document.createElementNS(NS, 'defs');
+  var colours = {}; links.forEach(function (l) { colours[edgeColour(l.type)] = 1; });
+  Object.keys(colours).forEach(function (col) {
+    var m = document.createElementNS(NS, 'marker');
+    m.setAttribute('id', 'arw-' + col.replace(/[^a-z0-9]/gi, ''));
+    m.setAttribute('viewBox', '0 0 10 10'); m.setAttribute('refX', '9'); m.setAttribute('refY', '5');
+    m.setAttribute('markerWidth', '7'); m.setAttribute('markerHeight', '7'); m.setAttribute('orient', 'auto-start-reverse');
+    var p = document.createElementNS(NS, 'path'); p.setAttribute('d', 'M0,0 L10,5 L0,10 z'); p.setAttribute('fill', col);
+    m.appendChild(p); defs.appendChild(m);
+  });
+  svg.appendChild(defs);
+
+  var scene = document.createElementNS(NS, 'g'); svg.appendChild(scene);
+  var linkLayer = document.createElementNS(NS, 'g'); scene.appendChild(linkLayer);
+  var nodeLayer = document.createElementNS(NS, 'g'); scene.appendChild(nodeLayer);
+
+  // --- elements ---
+  links.forEach(function (l) {
+    var col = edgeColour(l.type);
+    l.el = document.createElementNS(NS, 'line');
+    l.el.setAttribute('stroke', col);
+    l.el.setAttribute('stroke-width', '1.7');
+    l.el.setAttribute('marker-end', 'url(#arw-' + col.replace(/[^a-z0-9]/gi, '') + ')');
+    if (l.type === 'rebuts') l.el.setAttribute('stroke-dasharray', '6 4');
+    if (l.assessed === false) { l.el.setAttribute('stroke-dasharray', '2 4'); l.el.setAttribute('opacity', '0.7'); }
+    var ttl = document.createElementNS(NS, 'title');
+    ttl.textContent = l.type + (l.assessed === false ? ' (unassessed)' : '');
+    l.el.appendChild(ttl);
+    linkLayer.appendChild(l.el);
+  });
+  nodes.forEach(function (n) {
+    n.g = document.createElementNS(NS, 'g'); n.g.setAttribute('class', 'node'); n.g.style.cursor = 'pointer';
+    n.c = document.createElementNS(NS, 'circle');
+    n.c.setAttribute('r', '10');
+    n.c.setAttribute('fill', n.resolved ? ledgerColour(n.ledger) : '#cfd6de');
+    n.c.setAttribute('stroke', n.contested ? cssVar('--bad', '#c0392b') : (n.double_count ? cssVar('--warn', '#b8860b') : cssVar('--line', '#33414d')));
+    n.c.setAttribute('stroke-width', (n.contested || n.double_count) ? '3' : '1.2');
+    var ttl = document.createElementNS(NS, 'title'); ttl.textContent = n.id; n.c.appendChild(ttl);
+    n.t = document.createElementNS(NS, 'text'); n.t.setAttribute('class', 'node-label');
+    n.t.setAttribute('x', '13'); n.t.setAttribute('y', '4'); n.t.textContent = n.slug || n.id;
+    n.g.appendChild(n.c); n.g.appendChild(n.t); nodeLayer.appendChild(n.g);
+    n.g.addEventListener('pointerdown', function (ev) { startDrag(ev, n); });
+  });
+
+  // --- force simulation ---
+  var alpha = 1.0;
+  function step() {
+    var i, j, a, b, dx, dy, d2, d, f;
+    for (i = 0; i < nodes.length; i++) {
+      a = nodes[i];
+      for (j = i + 1; j < nodes.length; j++) {
+        b = nodes[j];
+        dx = a.x - b.x; dy = a.y - b.y; d2 = dx * dx + dy * dy || 0.01; d = Math.sqrt(d2);
+        f = 9000 / d2; var ux = dx / d, uy = dy / d;
+        a.vx += ux * f; a.vy += uy * f; b.vx -= ux * f; b.vy -= uy * f;
+      }
+    }
+    links.forEach(function (l) {
+      dx = l.t.x - l.s.x; dy = l.t.y - l.s.y; d = Math.sqrt(dx * dx + dy * dy) || 0.01;
+      f = (d - 150) * 0.05; var ux = dx / d, uy = dy / d;
+      l.s.vx += ux * f; l.s.vy += uy * f; l.t.vx -= ux * f; l.t.vy -= uy * f;
+    });
+    nodes.forEach(function (n) {
+      n.vx += (W / 2 - n.x) * 0.004; n.vy += (H / 2 - n.y) * 0.004;
+      if (n.fixed) { n.vx = 0; n.vy = 0; return; }
+      n.vx *= 0.86; n.vy *= 0.86;
+      n.x += n.vx * alpha; n.y += n.vy * alpha;
+      n.x = Math.max(16, Math.min(W - 16, n.x)); n.y = Math.max(16, Math.min(H - 16, n.y));
+    });
+    render();
+  }
+  function render() {
+    links.forEach(function (l) {
+      l.el.setAttribute('x1', l.s.x); l.el.setAttribute('y1', l.s.y);
+      l.el.setAttribute('x2', l.t.x); l.el.setAttribute('y2', l.t.y);
+    });
+    nodes.forEach(function (n) { n.g.setAttribute('transform', 'translate(' + n.x + ',' + n.y + ')'); });
+  }
+  var ticks = 0, fitted = false, LIMIT = reduce ? 120 : 600;
+  function loop() {
+    step(); ticks++;
+    alpha = Math.max(0.02, alpha * 0.992);
+    if (ticks < LIMIT) requestAnimationFrame(loop);
+    else if (!fitted) { fitView(); fitted = true; }
+  }
+  loop();
+
+  // --- pan / zoom (transform on the scene group) ---
+  var tx = 0, ty = 0, k = 1;
+  function applyTransform() { scene.setAttribute('transform', 'translate(' + tx + ',' + ty + ') scale(' + k + ')'); }
+  function fitView() {
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    nodes.forEach(function (n) { minX = Math.min(minX, n.x); maxX = Math.max(maxX, n.x); minY = Math.min(minY, n.y); maxY = Math.max(maxY, n.y); });
+    if (!isFinite(minX)) return;
+    var pad = 70, gw = Math.max(1, maxX - minX + pad * 2), gh = Math.max(1, maxY - minY + pad * 2);
+    k = Math.max(0.3, Math.min(1.4, Math.min(W / gw, H / gh)));
+    tx = (W - (minX + maxX) * k) / 2; ty = (H - (minY + maxY) * k) / 2; applyTransform();
+  }
+  function ptr(ev) { var r = svg.getBoundingClientRect(); return { x: (ev.clientX - r.left) * W / r.width, y: (ev.clientY - r.top) * H / r.height }; }
+  svg.addEventListener('wheel', function (ev) {
+    ev.preventDefault();
+    var p = ptr(ev), s = ev.deltaY < 0 ? 1.1 : 1 / 1.1, nk = Math.max(0.3, Math.min(4, k * s));
+    tx = p.x - (p.x - tx) * (nk / k); ty = p.y - (p.y - ty) * (nk / k); k = nk; applyTransform();
+  }, { passive: false });
+
+  // Click-vs-drag is decided here, in the pointer handlers, NOT via the derived
+  // `click` event: setting pointer capture for the drag makes some browsers route
+  // click to the SVG, so a node click would otherwise deselect. A pointerup that
+  // never moved past the threshold IS a click → select; a moved one is a drag.
+  var drag = null, pan = null, MOVE = 4;
+  function startDrag(ev, n) { ev.preventDefault(); ev.stopPropagation(); drag = { n: n, x0: ev.clientX, y0: ev.clientY, moved: false }; svg.setPointerCapture(ev.pointerId); }
+  svg.addEventListener('pointerdown', function (ev) { if (!drag) { pan = { x: ev.clientX, y: ev.clientY, tx: tx, ty: ty, moved: false }; svg.setPointerCapture(ev.pointerId); } });
+  svg.addEventListener('pointermove', function (ev) {
+    if (drag) {
+      if (!drag.moved && Math.abs(ev.clientX - drag.x0) + Math.abs(ev.clientY - drag.y0) > MOVE) { drag.moved = true; drag.n.fixed = true; }
+      if (drag.moved) { var p = ptr(ev); drag.n.x = (p.x - tx) / k; drag.n.y = (p.y - ty) / k; render(); alpha = Math.max(alpha, 0.25); }
+    } else if (pan) {
+      if (Math.abs(ev.clientX - pan.x) + Math.abs(ev.clientY - pan.y) > MOVE) pan.moved = true;
+      var r = svg.getBoundingClientRect(); tx = pan.tx + (ev.clientX - pan.x) * W / r.width; ty = pan.ty + (ev.clientY - pan.y) * H / r.height; applyTransform();
+    }
+  });
+  function endPtr() {
+    if (drag) {
+      if (!drag.moved) select(drag.n);                 // a click → inspect the claim
+      else if (ticks >= LIMIT) { ticks = Math.max(0, LIMIT - 200); loop(); }
+    } else if (pan && !pan.moved) { select(null); }    // a background click → deselect
+    drag = null; pan = null;
+  }
+  svg.addEventListener('pointerup', endPtr);
+  svg.addEventListener('pointercancel', endPtr);
+
+  // --- detail panel (the annotated exhibit) ---
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function locatorHtml(loc) {
+    if (!loc) return '';
+    if (loc.doi) return '<a href="https://doi.org/' + esc(loc.doi) + '" target="_blank" rel="noopener" class="mono">doi:' + esc(loc.doi) + '</a>';
+    if (loc.pmcid) { var id = String(loc.pmcid).replace(/^PMC/i, ''); return '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC' + esc(id) + '/" target="_blank" rel="noopener" class="mono">PMC' + esc(id) + '</a>'; }
+    if (loc.url) return '<a href="' + esc(loc.url) + '" target="_blank" rel="noopener" class="mono">source</a>';
+    return '';
+  }
+  function highlightQuote(q, anns) {
+    var out = esc(q);
+    (anns || []).forEach(function (a) {
+      if (a.type === 'rhetorical' && a.span) {
+        var s = esc(a.span);
+        out = out.split(s).join('<mark class="flagged">' + s + '</mark>');
+      }
+    });
+    return out;
+  }
+  var detail = document.getElementById('detail');
+  function focusNeighborhood(n) {
+    nodes.forEach(function (m) {
+      var near = !n || m === n || adj[n.id][m.id];
+      m.g.setAttribute('opacity', near ? '1' : '0.15');
+    });
+    links.forEach(function (l) {
+      var on = !n || l.s.id === n.id || l.t.id === n.id;
+      l.el.setAttribute('opacity', on ? (l.assessed === false ? '0.7' : '1') : '0.08');
+    });
+  }
+  function select(n) {
+    nodes.forEach(function (m) { m.c.setAttribute('stroke-width', (m === n) ? '4' : ((m.contested || m.double_count) ? '3' : '1.2')); });
+    focusNeighborhood(n);
+    if (!n) { detail.innerHTML = '<p class="empty">Click a claim to inspect its verbatim quote, the comments on it, and its provenance.</p>'; return; }
+    var h = '<h3>' + esc(n.slug) + '</h3>';
+    h += '<div class="sub">' + esc(n.source || n.ledger) + '</div>';
+    h += n.quote ? '<blockquote>&ldquo;' + highlightQuote(n.quote, n.annotations) + '&rdquo;</blockquote>'
+                 : '<p class="empty">No verbatim quote resolved for this node.</p>';
+    if (n.location) h += '<div class="loc">Location: ' + esc(n.location) + '</div>';
+    var lh = locatorHtml(n.locator); if (lh) h += '<div class="loc">Source: ' + lh + '</div>';
+    var badges = '';
+    if (n.contested) badges += '<span class="badge bad">faithfulness-disputed</span>';
+    if (n.double_count) badges += '<span class="badge warn">possible double-count</span>';
+    if (badges) h += '<div>' + badges + '</div>';
+    // reviewer comments (the in-band prose)
+    (n.annotations || []).forEach(function (a) {
+      if (!a.note && !a.span) return;
+      var cls = a.type === 'rhetorical' ? 'comment rhetorical' : 'comment';
+      var label = { rhetorical: 'Rhetorical', correlated: 'Shared premise', crux: 'Crux', status: 'Status' }[a.type] || a.type;
+      var span = a.span ? '&ldquo;' + esc(a.span) + '&rdquo; — ' : '';
+      var rec = a.rec ? ' <a class="rec" data-rec="' + esc(a.rec) + '">[' + esc(a.rec) + ']</a>' : '';
+      h += '<div class="' + cls + '"><strong>' + esc(label) + '.</strong> ' + span + esc(a.note) + rec + '</div>';
+    });
+    // sealed judgement records on this claim
+    (n.records || []).forEach(function (r) {
+      var thread = '';
+      if (r.disputes && r.disputes.length) thread = ' disputes ' + r.disputes.map(function (d) { return '<a class="rec" data-rec="' + esc(d) + '">' + esc(d) + '</a>'; }).join(', ');
+      else if (r.reviews && r.reviews.length) thread = ' reviews ' + r.reviews.map(function (d) { return '<a class="rec" data-rec="' + esc(d) + '">' + esc(d) + '</a>'; }).join(', ');
+      h += '<div class="comment"><span class="badge ok">' + esc(r.kind) + '</span> <span class="rec">' + esc(r.id) + '</span>' + thread + '</div>';
+    });
+    var touch = links.filter(function (l) { return l.s.id === n.id || l.t.id === n.id; });
+    if (touch.length) {
+      h += '<p style="margin:12px 0 4px;font-weight:650;">Relations</p><ul class="edges">';
+      touch.forEach(function (l) {
+        var other = (l.s.id === n.id) ? l.t : l.s;
+        var dir = (l.s.id === n.id) ? '&rarr;' : '&larr;';
+        var grd = l.grounding ? ' <span class="rec">(grounded by #' + esc(l.grounding) + ')</span>' : '';
+        h += '<li><span class="etag ' + esc(l.type) + '">' + esc(l.type) + '</span> ' + dir +
+             ' <a data-goto="' + esc(other.id) + '">' + esc(other.slug) + '</a>' +
+             (l.assessed === false ? ' <em class="muted">(unassessed)</em>' : '') + grd + '</li>';
+      });
+      h += '</ul>';
+    }
+    detail.innerHTML = h;
+  }
+  // expose Board navigation so a jump-link anywhere (Metrics, Docs, the exhibit
+  // itself) can select a claim here. The delegated click handler lives in the app
+  // chrome; these just do the selection and report whether the id resolved.
+  window.__ledgerGoto = function (id) { if (byId[id]) { select(byId[id]); return true; } return false; };
+  window.__ledgerRec = function (rec) {
+    if (rec && recIndex[rec] && byId[recIndex[rec].subject]) { select(byId[recIndex[rec].subject]); return true; }
+    return false;
+  };
+
+  // --- sub-question filters + search ---
+  var activeQ = null, searchTerm = '';
+  function dimmed(n) {
+    if (activeQ && (n.qids || []).indexOf(activeQ) < 0) return true;
+    if (searchTerm && (n.id + ' ' + (n.quote || '')).toLowerCase().indexOf(searchTerm) < 0) return true;
+    return false;
+  }
+  function applyFilter() {
+    nodes.forEach(function (n) { n.g.setAttribute('opacity', dimmed(n) ? '0.12' : '1'); });
+    links.forEach(function (l) { l.el.setAttribute('opacity', (dimmed(l.s) || dimmed(l.t)) ? '0.06' : (l.assessed === false ? '0.7' : '1')); });
+  }
+  var qbox = document.getElementById('qfilters');
+  function mkChip(label, q) {
+    var el = document.createElement('span'); el.className = 'chip' + (q === activeQ ? ' active' : ''); el.textContent = label;
+    el.addEventListener('click', function () { activeQ = (activeQ === q) ? null : q; Array.prototype.forEach.call(qbox.children, function (ch, i) { ch.className = 'chip' + ((i === 0 ? null : data.sub_questions[i - 1]) === activeQ ? ' active' : ''); }); applyFilter(); });
+    return el;
+  }
+  if (data.sub_questions.length) {
+    qbox.appendChild(mkChip('all', null));
+    data.sub_questions.forEach(function (q) { qbox.appendChild(mkChip(q, q)); });
+  }
+  var searchBox = document.getElementById('search');
+  if (searchBox) searchBox.addEventListener('input', function (ev) { searchTerm = ev.target.value.trim().toLowerCase(); applyFilter(); });
+
+  // --- legend (edge types + ring meanings) ---
+  var legend = document.getElementById('legend');
+  [['supports', 'supports'], ['rebuts', 'rebuts'], ['qualifies', 'qualifies'], ['depends-on', 'depends-on']].forEach(function (p) {
+    var s = document.createElement('span'); s.innerHTML = '<i style="border-top-color:' + edgeColour(p[0]) + (p[0] === 'rebuts' ? ';border-top-style:dashed' : '') + '"></i>' + p[1]; legend.appendChild(s);
+  });
+  var r1 = document.createElement('span'); r1.innerHTML = '<span class="ring" style="border-color:' + cssVar('--bad', '#c0392b') + '"></span>disputed'; legend.appendChild(r1);
+  var r2 = document.createElement('span'); r2.innerHTML = '<span class="ring" style="border-color:' + cssVar('--warn', '#b8860b') + '"></span>double-count'; legend.appendChild(r2);
+})();
+
+</script>
+<ul class="outlinks"><li><a href="inquiry.html">Inquiry — sub-questions &amp; cruxes</a></li><li><a href="assessments.html">Assessment records</a></li></ul></section>
+
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

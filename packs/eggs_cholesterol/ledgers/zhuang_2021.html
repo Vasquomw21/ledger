@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhuang et al. (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Zhuang et al. (2021)</h1><table class="fm"><tr><th>Paper</th><td>Zhuang et al. (2021)</td></tr><tr><th>Title</th><td>Egg and cholesterol consumption and mortality: the NIH-AARP Diet and Health Study</td></tr><tr><th>Version</th><td>published (PLoS Med 2021, open access)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1371/journal.pmed.1003508" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body ead726e9336c…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Zhuang et al. (2021)</h1>
+<p>US population-based prospective cohort (NIH-AARP Diet and Health Study) examining egg and cholesterol intake against all-cause, CVD, and cause-specific mortality. An independent cohort — distinct from NHANES, WHI, and the 6-cohort pool — so it is genuine non-overlapping evidence.</p>
+<h2>Claim 1: study population / data source</h2>
+<blockquote>&quot;we assessed the associations of egg and dietary cholesterol intake with all-cause and cause-specific mortality in the NIH-AARP Diet and Health Study&quot;</blockquote>
+<p><strong>ID:</strong> cohort-nih-aarp<br><strong>Location:</strong> Methods<br><strong>Grep command used:</strong> <code>grep &quot;in the NIH-AARP Diet and Health Study&quot; extracted/zhuang_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<h2>Claim 2: eggs and cholesterol linked to higher mortality</h2>
+<blockquote>&quot;In this study, intakes of eggs and cholesterol were associated with higher all-cause, CVD, and cancer mortality.&quot;</blockquote>
+<p><strong>ID:</strong> egg-cholesterol-higher-mortality<br><strong>Location:</strong> Abstract (Conclusions)<br><strong>Grep command used:</strong> <code>grep &quot;intakes of eggs and cholesterol were associated with higher all-cause, CVD, and cancer mortality&quot; extracted/zhuang_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Supports:</strong> <a href="zhao_2022.html">zhao_2022:harmful-mortality</a> (grounded by #egg-cholesterol-higher-mortality)</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

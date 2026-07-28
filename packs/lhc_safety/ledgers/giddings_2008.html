@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giddings &amp; Mangano (2008) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Giddings &amp; Mangano (2008)</h1><table class="fm"><tr><th>Paper</th><td>Giddings &amp; Mangano (2008)</td></tr><tr><th>Title</th><td>Astrophysical implications of hypothetical stable TeV-scale black holes</td></tr><tr><th>Version</th><td>arXiv:0806.3381v2 (Phys. Rev. D 78, 035009)</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1103/PhysRevD.78.035009" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 44f204a4f801…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Giddings &amp; Mangano (2008)</h1>
+<p>Each quote was read from the arXiv PDF and grep-verified against the extracted text. This is<br>the detailed astrophysical analysis that <em>grounds</em> the LSAG conclusion for the hypothetical<br>stable-black-hole case — the white-dwarf / neutron-star bound is the crux of the sub-question.</p>
+<h2>Claim 1: the white-dwarf / neutron-star bound (the crux)</h2>
+<blockquote>&quot;black holes produced by cosmic rays impinging on much denser white dwarfs and neutron stars would then catalyze their decay on timescales incompatible with their known lifetimes&quot;</blockquote>
+<p><strong>ID:</strong> astro-bound<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;white dwarfs and neutron stars&quot; extracted/giddings_2008.txt</code><br><strong>Addresses:</strong> lhc-bh-risk<br><strong>Supports:</strong> <a href="lsag_2008.html">lsag_2008:stable-bh-no-danger</a> (grounded by #astro-bound) <a class="recref" href="../assessments.html#rec-giddings-supports-stable-apt">giddings-supports-stable-apt</a><br><strong>Crux-of:</strong> lhc-bh-risk (grounded by #astro-bound) [if-resolved: whether a hypothetically stable TeV black hole could accrete dangerously before the Earth&#x27;s natural lifetime]<br><strong>Correlated-with:</strong> <a href="lsag_2008.html">lsag_2008:cosmic-ray-safety</a> (grounded by #astro-bound) [shared premise: the stability of dense astronomical bodies under cosmic-ray bombardment — LSAG&#x27;s review rests on this same analysis]</p>
+<p>---</p>
+<h2>Claim 2: no basis for concern (the conclusion)</h2>
+<blockquote>&quot;this study finds no basis for concerns that TeV-scale black holes from the LHC could pose a risk to Earth on time scales shorter than the Earth&#x27;s natural lifetime&quot;</blockquote>
+<p><strong>ID:</strong> no-basis-concern<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;no basis for concerns&quot; extracted/giddings_2008.txt</code><br><strong>Supports:</strong> <a href="lsag_2008.html">lsag_2008:no-associated-risks</a> (grounded by #no-basis-concern) <a class="recref" href="../assessments.html#rec-giddings-supports-norisk-apt">giddings-supports-norisk-apt</a></p>
+<p>---</p>
+<h2>Claim 3: the categorical &quot;no risk whatsoever&quot; framing</h2>
+<blockquote>&quot;there is no risk of any significance whatsoever from such black holes&quot;</blockquote>
+<p><strong>ID:</strong> no-risk-whatsoever<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;no risk of any significance&quot; extracted/giddings_2008.txt</code><br><strong>Assess-rhetorical:</strong> &quot;no risk of any significance whatsoever&quot; — asserts a categorical certainty that an accretion bound, conditional on specific TeV-gravity models, cannot strictly carry; the paper&#x27;s own load-bearing finding is the weaker &quot;no basis for concerns&quot; (grounded by #no-risk-whatsoever) <a class="recref" href="../assessments.html#rec-giddings-whatsoever">giddings-whatsoever</a></p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

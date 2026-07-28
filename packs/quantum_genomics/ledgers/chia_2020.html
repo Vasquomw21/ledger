@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nai-Hui Chia, András Gilyén, Tongyang Li, Han-Hsuan Lin, Ewin Tang &amp; Chunhao Wang (2020) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Nai-Hui Chia, András Gilyén, Tongyang Li, Han-Hsuan Lin, Ewin Tang &amp; Chunhao Wang (2020)</h1><table class="fm"><tr><th>Paper</th><td>Nai-Hui Chia, András Gilyén, Tongyang Li, Han-Hsuan Lin, Ewin Tang &amp; Chunhao Wang (2020)</td></tr><tr><th>Title</th><td>Sampling-based sublinear low-rank matrix arithmetic framework for dequantizing quantum machine learning</td></tr><tr><th>Version</th><td>J. ACM 69(5) (2022); STOC 2020; arXiv:1910.06151</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1145/3549524" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 2cdc9ad12744…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Chia et al. (2020), &quot;Sampling-based sublinear low-rank matrix arithmetic framework for dequantizing quantum machine learning&quot;</h1>
+<p>The keystone unification of dequantization — shows Tang 2019 was not a one-off. Quotes read from<br>the downloaded full text (arXiv:1910.06151) and confirmed verbatim against<br><code>literature/extracted/chia_2020.txt</code>.</p>
+<h2>Claim 1: In the QRAM input model, quantum SVT (which generalises most quantum linear algebra) yields no exponential speed-up</h2>
+<blockquote>&quot;Our results give compelling evidence that in the corresponding QRAM data structure input model, quantum SVT does not yield exponential quantum speedups.&quot;</blockquote>
+<p><strong>ID:</strong> svt-no-exponential-speedup<br><strong>Location:</strong> Abstract.<br><strong>Addresses:</strong> speedup-robustness<br><strong>Supports:</strong> <a href="maurizio_2025.html">maurizio_2025:no-qml-real-world-speedup</a> (grounded by #svt-no-exponential-speedup) <a class="recref" href="../assessments.html#rec-chia-supports-noqml-apt">chia-supports-noqml-apt</a><br><strong>Correlated-with:</strong> <a href="tang_2019.html">tang_2019:no-exponential-speedup</a> (grounded by #svt-no-exponential-speedup) [shared: Chia et al. generalise Tang&#x27;s sampling-based dequantisation to quantum singular-value transformation — the same method family, so their agreement is not two independent results]</p>
+<p>---</p>
+<h2>Claim 2: Dequantization spans the QML landscape, not just recommendation systems</h2>
+<blockquote>&quot;our classical SVT framework recovers and often improves the dequantization results on recommendation systems, principal component analysis, supervised clustering, support vector machines, low-rank regression, and semidefinite program solving.&quot;</blockquote>
+<p><strong>ID:</strong> dequantization-breadth<br><strong>Location:</strong> Abstract. This is the breadth behind the <code>20260603_hhl_linear_systems</code> dequantization caveat — but see <code>gharibian_2022</code> for its limit.<br><strong>Addresses:</strong> speedup-robustness</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

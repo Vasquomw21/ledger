@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godos et al. (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Godos et al. (2021)</h1><table class="fm"><tr><th>Paper</th><td>Godos et al. (2021)</td></tr><tr><th>Title</th><td>Egg consumption and cardiovascular risk: a dose–response meta-analysis of prospective cohort studies</td></tr><tr><th>Version</th><td>published (Eur J Nutr 2021, open access CC-BY)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1007/s00394-020-02345-7" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body b5552bb8f91c…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Godos et al. (2021)</h1>
+<p>Each quote was read from the PMC HTML and grep-verified against the extracted text. A dose–response<br>meta-analysis that <strong>explicitly de-duplicates overlapping cohorts</strong> and reaches a hedged conclusion —<br>one of the two methodological controls for the cohort-overlap finding.</p>
+<h2>Claim 1: studies on the same cohort were de-duplicated (one dataset kept per cohort)</h2>
+<blockquote>&quot;If more than one study was conducted on the same cohort, only the dataset including the larger number of individuals, the longest follow-up, or the most comprehensive data&quot;</blockquote>
+<p><strong>ID:</strong> dedup-method<br><strong>Location:</strong> Methods — study selection / inclusion criteria<br><strong>Grep command used:</strong> <code>grep &quot;same cohort&quot; extracted/godos_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<p>---</p>
+<h2>Claim 2: no conclusive evidence on the role of egg in CVD risk</h2>
+<blockquote>&quot;There is no conclusive evidence on the role of egg in CVD risk&quot;</blockquote>
+<p><strong>ID:</strong> no-conclusive-evidence<br><strong>Location:</strong> Abstract (Conclusion)<br><strong>Grep command used:</strong> <code>grep &quot;no conclusive evidence&quot; extracted/godos_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

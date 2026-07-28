@@ -1,0 +1,293 @@
+{
+  "addresses": [
+    {
+      "field": "addresses",
+      "ledger": "cern_faq",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "addresses",
+      "ledger": "cern_faq",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "addresses",
+      "ledger": "giddings_2008",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "crux-of",
+      "ledger": "giddings_2008",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "addresses",
+      "ledger": "koch_2009",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "addresses",
+      "ledger": "koch_2009",
+      "qid": "arg-structure"
+    },
+    {
+      "field": "addresses",
+      "ledger": "la602_1946",
+      "qid": "arg-structure"
+    },
+    {
+      "field": "addresses",
+      "ledger": "la602_1946",
+      "qid": "arg-structure"
+    },
+    {
+      "field": "addresses",
+      "ledger": "lsag_2008",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "crux-of",
+      "ledger": "lsag_2008",
+      "qid": "lhc-bh-risk"
+    },
+    {
+      "field": "addresses",
+      "ledger": "plaga_2008",
+      "qid": "lhc-bh-risk"
+    }
+  ],
+  "assessments": [
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_2008:astro-bound"
+      ],
+      "id": "astro-bound-crux",
+      "kind": "crux-of",
+      "reviews": [],
+      "subject": "giddings_2008:astro-bound"
+    },
+    {
+      "disputes": [
+        "giddings-supports-stable-apt"
+      ],
+      "grounding": [
+        "giddings_2008:astro-bound"
+      ],
+      "id": "astro-bound-faithfulness",
+      "kind": "faithfulness",
+      "reviews": [],
+      "subject": "lsag_2008:stable-bh-no-danger"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "cern_faq:perfectly-safe"
+      ],
+      "id": "cern-perfectly-safe",
+      "kind": "rhetorical",
+      "reviews": [],
+      "subject": "cern_faq:perfectly-safe"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_2008:no-basis-concern"
+      ],
+      "id": "giddings-supports-norisk-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "giddings-supports-norisk-apt"
+      ],
+      "subject": "lsag_2008:no-associated-risks"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_2008:no-basis-concern"
+      ],
+      "id": "giddings-supports-norisk-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "lsag_2008:no-associated-risks"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_2008:astro-bound"
+      ],
+      "id": "giddings-supports-stable-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "lsag_2008:stable-bh-no-danger"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_2008:no-risk-whatsoever"
+      ],
+      "id": "giddings-whatsoever",
+      "kind": "rhetorical",
+      "reviews": [],
+      "subject": "giddings_2008:no-risk-whatsoever"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "koch_2009:independent-argument",
+        "giddings_2008:astro-bound"
+      ],
+      "id": "koch-giddings-correlated",
+      "kind": "correlated-with",
+      "reviews": [],
+      "subject": "koch_2009:independent-argument"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "koch_2009:independent-argument"
+      ],
+      "id": "koch-supports-norisk-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "koch-supports-norisk-apt"
+      ],
+      "subject": "lsag_2008:no-associated-risks"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "koch_2009:independent-argument"
+      ],
+      "id": "koch-supports-norisk-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "lsag_2008:no-associated-risks"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "plaga_2008:evades-exclusion"
+      ],
+      "id": "plaga-rebuts-astro-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "plaga-rebuts-astro-apt"
+      ],
+      "subject": "giddings_2008:astro-bound"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "plaga_2008:evades-exclusion"
+      ],
+      "id": "plaga-rebuts-astro-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "giddings_2008:astro-bound"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_reply_2008:scenario-inconsistent"
+      ],
+      "id": "reply-rebuts-plaga-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "reply-rebuts-plaga-apt"
+      ],
+      "subject": "plaga_2008:harmful-scenario"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "giddings_reply_2008:scenario-inconsistent"
+      ],
+      "id": "reply-rebuts-plaga-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "plaga_2008:harmful-scenario"
+    }
+  ],
+  "edges": [
+    {
+      "from_ledger": "giddings_2008",
+      "grounding": "astro-bound",
+      "line": 32,
+      "rec": "giddings-supports-stable-apt",
+      "source": "giddings_2008:astro-bound",
+      "target": "lsag_2008:stable-bh-no-danger",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "giddings_2008",
+      "grounding": "no-basis-concern",
+      "line": 45,
+      "rec": "giddings-supports-norisk-apt",
+      "source": "giddings_2008:no-basis-concern",
+      "target": "lsag_2008:no-associated-risks",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "giddings_reply_2008",
+      "grounding": "scenario-inconsistent",
+      "line": 30,
+      "rec": "reply-rebuts-plaga-apt",
+      "source": "giddings_reply_2008:scenario-inconsistent",
+      "target": "plaga_2008:harmful-scenario",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "koch_2009",
+      "grounding": "independent-argument",
+      "line": 34,
+      "rec": "koch-supports-norisk-apt",
+      "source": "koch_2009:independent-argument",
+      "target": "lsag_2008:no-associated-risks",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "plaga_2008",
+      "grounding": "evades-exclusion",
+      "line": 41,
+      "rec": "plaga-rebuts-astro-apt",
+      "source": "plaga_2008:evades-exclusion",
+      "target": "giddings_2008:astro-bound",
+      "target_resolved": true,
+      "type": "rebuts"
+    }
+  ],
+  "findings": {
+    "double_count": [
+      {
+        "a": "giddings_2008",
+        "b": "koch_2009",
+        "basis": "Koch claims independence, and the *mechanism* differs (accretion thermodynamics + escape velocity, not cosmic-ray-catalysed stellar decay), but it cites Giddings and rests on the SAME white-dwarf / neutron-star survival evidence — so it is not a fully independent confirmation; the degree is judged in an assessment record",
+        "kind": "shared-evidence",
+        "sealed_record": "koch-giddings-correlated",
+        "target": "lsag_2008:no-associated-risks"
+      }
+    ],
+    "superseded": []
+  },
+  "nodes": [
+    "cern_faq:perfectly-safe",
+    "giddings_2008:astro-bound",
+    "giddings_2008:no-basis-concern",
+    "giddings_2008:no-risk-whatsoever",
+    "giddings_reply_2008:scenario-inconsistent",
+    "koch_2009:independent-argument",
+    "lsag_2008:no-associated-risks",
+    "lsag_2008:stable-bh-no-danger",
+    "plaga_2008:evades-exclusion",
+    "plaga_2008:harmful-scenario"
+  ],
+  "sub_questions": [
+    "arg-structure",
+    "lhc-bh-risk"
+  ]
+}

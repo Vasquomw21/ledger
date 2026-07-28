@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andersen et al. (2020) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Andersen et al. (2020)</h1><table class="fm"><tr><th>Paper</th><td>Andersen et al. (2020)</td></tr><tr><th>Title</th><td>The proximal origin of SARS-CoV-2</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1038/s41591-020-0820-9" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body df7236e2f719…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Andersen et al. (2020)</h1>
+<p>Each quote was read from the downloaded PMC HTML, grepped against the extracted<br>text, and confirmed in context. This is the natural-origin anchor for the<br>furin-cleavage-site (FCS) sub-question.</p>
+<h2>Claim 1: SARS-CoV-2 is not a laboratory construct</h2>
+<blockquote>&quot;Our analyses clearly show that SARS-CoV-2 is not a laboratory construct or a purposefully manipulated virus.&quot;</blockquote>
+<p><strong>ID:</strong> not-laboratory-construct<br><strong>Location:</strong> Abstract / opening summary<br><strong>Grep command used:</strong> <code>grep &quot;laboratory construct&quot; extracted/andersen_2020.txt</code></p>
+<p>---</p>
+<h2>Claim 2: SARS-CoV-2 is not derived from a known virus backbone</h2>
+<blockquote>&quot;Furthermore, if genetic manipulation had been performed, one of the several reverse-genetic systems available for betacoronaviruses would probably have been used&quot;</blockquote>
+<blockquote>&quot;However, the genetic data irrefutably show that SARS-CoV-2 is not derived from any previously used virus backbone&quot;</blockquote>
+<p><strong>ID:</strong> not-from-known-backbone<br><strong>Location:</strong> &quot;Theories of SARS-CoV-2 origins&quot; section<br><strong>Grep command used:</strong> <code>grep &quot;virus backbone&quot; extracted/andersen_2020.txt</code><br><strong>Assess-rhetorical:</strong> &quot;irrefutably show&quot; — asserts a certainty an absence-of-known-backbone argument cannot carry; the data are consistent with, not proof against, undocumented engineering (grounded by #not-from-known-backbone) <a class="recref" href="../assessments.html#rec-andersen-irrefutably">andersen-irrefutably</a></p>
+<p>---</p>
+<h2>Claim 3: a polybasic (furin) cleavage site can arise by natural evolution</h2>
+<blockquote>&quot;the polybasic cleavage site can arise by a natural evolutionary process&quot;</blockquote>
+<p><strong>ID:</strong> fcs-natural-process<br><strong>Location:</strong> &quot;Theories of SARS-CoV-2 origins&quot; section<br><strong>Grep command used:</strong> <code>grep &quot;natural evolutionary process&quot; extracted/andersen_2020.txt</code><br><strong>Addresses:</strong> fcs-engineering<br><strong>Rebuts:</strong> <a href="segreto_2021.html">segreto_2021:fcs-implies-engineering</a> (grounded by #fcs-natural-process)<br><strong>Crux-of:</strong> fcs-engineering (grounded by #fcs-natural-process) [if-resolved: whether FCS apparent rarity implies design rather than under-sampling]</p>
+<p>---</p>
+<h2>Claim 4: the FCS and its O-linked glycans are unique to SARS-CoV-2 among lineage B</h2>
+<blockquote>&quot;Both the polybasic cleavage site and the three adjacent predicted O-linked glycans are unique to SARS-CoV-2 and were not previously seen in lineage B betacoronaviruses.&quot;</blockquote>
+<p><strong>ID:</strong> fcs-unique-to-sars2<br><strong>Location:</strong> &quot;Notable features of the SARS-CoV-2 genome&quot; section<br><strong>Grep command used:</strong> <code>grep &quot;unique to SARS-CoV-2&quot; extracted/andersen_2020.txt</code></p>
+<p>---</p>
+<h2>Claim 5: no laboratory-based scenario is considered plausible</h2>
+<blockquote>&quot;we do not believe that any type of laboratory-based scenario is plausible&quot;</blockquote>
+<p><strong>ID:</strong> no-lab-scenario<br><strong>Location:</strong> &quot;Theories of SARS-CoV-2 origins&quot; section<br><strong>Grep command used:</strong> <code>grep &quot;laboratory-based scenario&quot; extracted/andersen_2020.txt</code></p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>
