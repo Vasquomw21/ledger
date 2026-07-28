@@ -85,6 +85,27 @@ def synthesis_mode(config: dict[str, str]) -> str:
     return raw if raw in ("off", "warn", "required") else "off"
 
 
+# A double-quoted span is the SOURCE speaking, not the author — the same reason a `> "..."`
+# blockquote is skipped, in the shape the cases actually use (a quoted phrase mid-sentence).
+QUOTE_CHARS = '"“”'
+
+
+def unquoted(line: str, open_quote: bool = False) -> tuple[str, bool]:
+    """The line with source-quoted spans blanked (length preserved), and whether a quote is
+    still open at its end. Criticising someone's certainty language means restating it; the
+    critic must not be flagged for the quote. A quoted sentence often wraps across lines, so
+    the caller carries the state — and resets it at a blank line, which bounds an unbalanced
+    quote to its own paragraph instead of silencing the rest of the file."""
+    out = []
+    for ch in line:
+        if ch in QUOTE_CHARS:
+            open_quote = not open_quote
+            out.append(" ")
+        else:
+            out.append(" " if open_quote else ch)
+    return "".join(out), open_quote
+
+
 def has_anchor(line: str) -> bool:
     """A line is anchored if it points at a checkable object or marks itself as judgement."""
     if "`" in line or "[[" in line or "](" in line:
@@ -101,12 +122,14 @@ def flagged_lines(path: Path) -> list[tuple[int, str, str]]:
 
     Skips frontmatter, fenced code, headings, HTML comments, and blockquotes — a superlative
     inside a verbatim source quote (`> "...no risk whatsoever"`) is the SOURCE's rhetoric, the
-    rhetorical-assessment layer's concern, not the author's synthesis claim.
+    rhetorical-assessment layer's concern, not the author's synthesis claim. The same holds for
+    an inline quoted span, so those are blanked before the watchlist runs.
     """
     out: list[tuple[int, str, str]] = []
     in_frontmatter = False
     in_code = False
     in_comment = False
+    open_quote = False
     for i, raw in enumerate(path.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
         line = raw.strip()
         if i == 1 and line == "---":
@@ -127,12 +150,16 @@ def flagged_lines(path: Path) -> list[tuple[int, str, str]]:
             if "-->" in line:
                 in_comment = False
             continue
-        if not line or line.startswith("#") or line.startswith(">"):
+        if not line:
+            open_quote = False
             continue
+        if line.startswith("#") or line.startswith(">"):
+            continue
+        claim, open_quote = unquoted(line, open_quote)
         if has_anchor(line):
             continue
         for cat, rx in WATCH_RE.items():
-            if rx.search(line):
+            if rx.search(claim):
                 out.append((i, cat, raw.strip()))
                 break
     return out
