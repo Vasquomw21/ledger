@@ -92,8 +92,26 @@ def test_guide_nav_rewritten_prose_intact(bundle):
     guide = (dest / bs.GUIDE).read_text()
     assert "](packs/covid_origins/index.html)" in guide   # case link -> pack page
     assert "](cases/" not in guide                         # no repo-only case links
-    # a sentence of prose survives verbatim
-    assert "the claimed speed-up turns on a single contested result" in guide
+
+
+def test_index_links_to_a_rendered_guide(bundle):
+    """A link straight at the .md shows a reader Markdown source: no browser
+    renders it, and GitHub Pages serves it as text."""
+    dest, _ = bundle
+    index = (dest / "index.html").read_text()
+    assert f'href="{bs.GUIDE_HTML}"' in index
+    assert f'href="{bs.GUIDE}"' not in index
+
+
+def test_rendered_guide_is_html_and_carries_the_guides_links(bundle):
+    dest, _ = bundle
+    html = (dest / bs.GUIDE_HTML).read_text()
+    assert html.startswith("<!doctype html>")
+    assert "<h1>" in html and "# Ledger" not in html      # rendered, not escaped source
+    assert 'href="packs/covid_origins/index.html"' in html
+    assert 'href="index.html"' in html                    # a way back to the bundle
+    # a sentence of prose survives rendering verbatim
+    assert "the claimed speed-up turns on a single contested result" in html
 
 
 def test_audit_pack_and_untracked_work_untouched(bundle):

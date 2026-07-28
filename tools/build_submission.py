@@ -31,6 +31,7 @@ import corpus_manifest
 import judge_dashboard
 import ledger_cli
 import ledger_doctor
+import md_render
 
 # Bundle order is showcase-first; the rest follow the guide's ordering.
 SHOWCASE = "covid_origins"
@@ -56,6 +57,7 @@ CASE_META = {
 }
 
 GUIDE = "EVALUATOR_GUIDE.md"
+GUIDE_HTML = "EVALUATOR_GUIDE.html"
 MANIFEST = "release-manifest.json"
 CHECKSUMS = "checksums.sha256"
 
@@ -73,6 +75,7 @@ _REMOTE_ASSET_RE = re.compile(
 
 _ATTR_URL_RE = re.compile(r'(?:href|src)\s*=\s*["\']([^"\']+)["\']', re.I)
 _MD_LINK_RE = re.compile(r'\[[^\]]*\]\(([^)]+)\)')
+_MD_LINK_PARTS_RE = re.compile(r'\[([^\]]*)\]\(([^)\s]+)\)')
 _SCHEME_RE = re.compile(r'^[a-z][a-z0-9+.-]*:', re.I)
 
 
@@ -137,6 +140,64 @@ def _stage_guide(repo_root: Path, staging: Path) -> None:
 
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", _keep_or_unlink, text)
     (staging / GUIDE).write_text(text, encoding="utf-8")
+    # No browser renders Markdown, so a link straight at the .md shows a reader
+    # its source. The rendered page is built from the SAME rewritten text, so the
+    # two carry identical links and the unlinking above applies to both.
+    html = md_render.render_markdown(text, frontmatter="drop")
+    (staging / GUIDE_HTML).write_text(
+        _GUIDE_TEMPLATE.format(body=_link_bundle_targets(html, staging)),
+        encoding="utf-8")
+
+
+def _link_bundle_targets(html: str, staging: Path) -> str:
+    """Anchor the relative links md_render leaves as literal `[label](target)`.
+
+    md_render linkifies absolute URLs only, so a pack page can never grow a
+    dangling cross-link. The bundle is the one place that knows which relative
+    targets it contains, so it resolves them here — and only when the file is
+    present, which keeps the internal-link gate satisfied by construction.
+    """
+    def _anchor(m: re.Match) -> str:
+        label, target = m.group(1), m.group(2)
+        rel = target.split("#", 1)[0].split("?", 1)[0]
+        if _is_external(target) or not (staging / rel).exists():
+            return label
+        return f'<a href="{target}">{label}</a>'
+
+    return _MD_LINK_PARTS_RE.sub(_anchor, html)
+
+
+_GUIDE_TEMPLATE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledger — evaluator guide</title>
+<style>
+  :root {{ color-scheme: light dark; }}
+  body {{ font: 16px/1.65 system-ui, -apple-system, sans-serif;
+         max-width: 46rem; margin: 3rem auto; padding: 0 1.2rem; }}
+  h1 {{ font-size: 1.6rem; }}
+  h2 {{ font-size: 1.25rem; margin-top: 2.4rem; }}
+  h3 {{ font-size: 1.05rem; }}
+  pre {{ overflow-x: auto; padding: 0.8rem; border-radius: 4px; background: #f4f4f4; }}
+  table {{ border-collapse: collapse; display: block; overflow-x: auto; }}
+  th, td {{ border: 1px solid #ccc; padding: 0.35rem 0.6rem; text-align: left; }}
+  blockquote {{ margin: 1rem 0; padding: 0 0 0 1rem; border-left: 3px solid #ccc;
+                color: #555; }}
+  a.back {{ display: inline-block; margin-bottom: 1.5rem; }}
+  @media (prefers-color-scheme: dark) {{
+    pre {{ background: #222; }}
+    th, td {{ border-color: #444; }}
+    blockquote {{ border-color: #444; color: #aaa; }} }}
+</style>
+</head>
+<body>
+<p><a class="back" href="index.html">&larr; Bundle index</a></p>
+{body}
+</body>
+</html>
+"""
 
 
 _INDEX_TEMPLATE = """<!doctype html>
@@ -168,7 +229,7 @@ recommended case, then read the guide.</p>
 <ul class="cases">
 {cards}
 </ul>
-<p><a class="guide" href="EVALUATOR_GUIDE.md">Read the evaluator guide &rarr;</a></p>
+<p><a class="guide" href="EVALUATOR_GUIDE.html">Read the evaluator guide &rarr;</a></p>
 </body>
 </html>
 """
