@@ -79,6 +79,14 @@ STAMP_KEYS = ("source_sha256", "extract_sha256", "body_sha256", "verifier_versio
               "verified_verdict", "verified_date")
 FRONTMATTER_LINE_RE = re.compile(r"^([A-Za-z0-9_]+):\s*(.*?)\s*$")
 
+# Never add to STAMP_FIELDS and never bump VERIFIER_VERSION to mark it: a ledger
+# stamped before this existed has no sidecar and cannot get one once its
+# git-ignored corpus is gone, so either would fail it permanently. Absent = unproven.
+EXTRACT_SOURCE_SUFFIX = ".source.sha256"
+EXTRACT_SOURCE_KEY = "extract_source_sha256"
+
+HEX64_RE = re.compile(r"^[0-9a-f]{64}$")
+
 # Source-identity fields (author-filled, per TEMPLATE.md): hashes prove the bytes
 # are unchanged, but not that they are the INTENDED paper — identity does. Under
 # provenance: required, every ledger must name its source file, its version, the
@@ -328,6 +336,22 @@ def ledger_source_path(ledger_path: Path, repo_root: Path) -> Path | None:
     return (repo_root / rel) if rel else None
 
 
+def extract_source_sidecar(extract_path: Path) -> Path:
+    """The provenance sidecar beside an extract: extracted/<key>.source.sha256."""
+    return extract_path.with_suffix("").with_name(
+        extract_path.stem + EXTRACT_SOURCE_SUFFIX)
+
+
+def read_extract_source(extract_path: Path) -> str | None:
+    """The sha256 the extract was built from, or None if absent/malformed.
+    Reads the first token only: the sidecar's trailing name is diagnostic."""
+    sidecar = extract_source_sidecar(extract_path)
+    if not sidecar.is_file():
+        return None
+    first = sidecar.read_text(encoding="utf-8", errors="ignore").split()
+    return first[0].lower() if first and HEX64_RE.match(first[0].lower()) else None
+
+
 def stamp_ledger(ledger_path: Path, extract_path: Path, source_path: Path,
                  verdict: str, today: str | None = None) -> dict[str, str]:
     """Compute the binding fields and write them into the ledger frontmatter.
@@ -341,6 +365,11 @@ def stamp_ledger(ledger_path: Path, extract_path: Path, source_path: Path,
         "verified_verdict": verdict,
         "verified_date": today or dt.date.today().strftime("%Y%m%d"),
     }
+    # Never default this to source_sha256 when the sidecar is absent — that
+    # fabricates the binding instead of recording it.
+    bound = read_extract_source(extract_path)
+    if bound:
+        kv[EXTRACT_SOURCE_KEY] = bound
     upsert_frontmatter(ledger_path, kv)
     return kv
 
@@ -424,6 +453,37 @@ def write_run_record(ledger_path: Path, stamp_kv: dict[str, str],
     return rec_path
 
 
+def binding_problems(fm: dict[str, str], key: str) -> list[str]:
+    """Did the extract come from the source the ledger names? ([] = bound, or
+    absent). Corpus-free: both fields are committed frontmatter. Catches a stale,
+    wrong-version or substituted extract — not forgery, since an author writing
+    both fields by hand agrees with themselves (that is attestation's job)."""
+    bound = fm.get(EXTRACT_SOURCE_KEY, "")
+    if not bound:
+        return []
+    if not HEX64_RE.match(bound):
+        return [f"{key}: {EXTRACT_SOURCE_KEY} is not a 64-hex sha256"]
+    if bound != fm.get("source_sha256", ""):
+        return [f"{key}: extract is not bound to this source — it was built from "
+                f"{bound[:12]}… but the ledger's source hashes to "
+                f"{fm.get('source_sha256', '<unset>')[:12]}…; re-extract from the "
+                "cited file and re-run --stamp"]
+    return []
+
+
+def unbound_keys(claims_dir: Path) -> list[str]:
+    """Stamped ledgers whose extract is tied to no source, sorted. Reportable,
+    not a failure: they predate the sidecar and need their corpus to gain one."""
+    out = []
+    for ledger in sorted(Path(claims_dir).glob("*.md")):
+        if ledger.stem == "TEMPLATE":
+            continue
+        fm = read_frontmatter(ledger)
+        if fm.get("source_sha256") and not fm.get(EXTRACT_SOURCE_KEY):
+            out.append(ledger.stem)
+    return out
+
+
 def check_binding(ledger_path: Path, extract_path: Path,
                   source_path: Path | None,
                   require_identity: bool = False) -> list[str]:
@@ -443,6 +503,7 @@ def check_binding(ledger_path: Path, extract_path: Path,
     if extract_path.exists() and sha256_file(extract_path) != fm["extract_sha256"]:
         problems.append(f"{key}: extract_sha256 stale — extracted/{key}.txt "
                         "changed since the stamp; re-run --stamp")
+    problems += binding_problems(fm, key)
     if source_path and source_path.exists() and sha256_file(source_path) != fm["source_sha256"]:
         problems.append(f"{key}: source_sha256 stale — the source file changed "
                         "since the stamp; re-run --stamp")

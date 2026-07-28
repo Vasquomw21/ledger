@@ -22,16 +22,15 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 # helpers so this corpus-free attestor recomputes body_sha256 identically, plus
 # the run-record schema (digest + dir name) so the two read one definition.
 sys.path.insert(0, str(REPO_ROOT / "literature"))
-from verify_quotes import (FRONTMATTER_LINE_RE, RUN_DIR_NAME,  # noqa: E402
-                           VERIFIER_VERSION, identity_problems, ledger_body,
-                           read_frontmatter, run_record_digest, sha256_file,
-                           sha256_text)
+from verify_quotes import (FRONTMATTER_LINE_RE, HEX64_RE,  # noqa: E402
+                           RUN_DIR_NAME, VERIFIER_VERSION, binding_problems,
+                           identity_problems, ledger_body, read_frontmatter,
+                           run_record_digest, sha256_file, sha256_text)
 
 CLAIMS_DIR = REPO_ROOT / "literature" / "verified_claims"
 
 STAMP_FIELDS = ("source_sha256", "extract_sha256", "body_sha256",
                 "verifier_version", "verified_verdict", "verified_date")
-HEX64_RE = re.compile(r"^[0-9a-f]{64}$")
 
 
 def log_info(msg: str) -> None:
@@ -66,6 +65,7 @@ def stamp_problems(fm: dict[str, str], key: str) -> list[str]:
     if version.isdigit() and int(version) < int(VERIFIER_VERSION):
         problems.append(f"{key}: verifier_version {version} predates current "
                         f"{VERIFIER_VERSION} — re-verify and re-run --stamp")
+    problems += binding_problems(fm, key)
     return problems
 
 

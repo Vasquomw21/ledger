@@ -8,12 +8,13 @@ source_version: "published (JAMA 2019; PMC author manuscript)"
 file: "literature/zhong_2019.html"
 retrieved: "20260613"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "caf8ef7582dd89ad35f8ca71fdc6e50579c86a75a0db9ac39a7959a291c6e6c5"
+source_sha256: "35c7202169629d86a200137891a73bf697b449a3de4d76cfb5aab1e1c8a233ff"
 extract_sha256: "31f7d3a8e8b8c864217f41dafd5c5aa36f80cff36a974f6150b51fb61995d701"
 body_sha256: "1cae3e0f735472bbf6427ba9afa3f78731fac40b8597215726000a295dcf7b45"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "35c7202169629d86a200137891a73bf697b449a3de4d76cfb5aab1e1c8a233ff"
 ---
 
 # Verified Claims — Zhong et al. (2019)

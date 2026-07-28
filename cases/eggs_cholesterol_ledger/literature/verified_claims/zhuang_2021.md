@@ -8,12 +8,13 @@ source_version: "published (PLoS Med 2021, open access)"
 file: "literature/zhuang_2021.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "cca5cbfe25e1186e6283a1fbc26f74994df6d5f45a4216a29c2e30c811a61861"
+source_sha256: "3a3fc2ad8440757803d7c07ca38f346d208b2d48d5d83431e1fc693aed5ead6c"
 extract_sha256: "e3bb210cd26ad7139f351727ba6b6f972df32b1ff3e03a1af4dbef5a6574e599"
 body_sha256: "ead726e9336c5fb431821792e3154dcdaef8770d69cf2bbbf1e1239ab4a23981"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "3a3fc2ad8440757803d7c07ca38f346d208b2d48d5d83431e1fc693aed5ead6c"
 ---
 
 # Verified Claims — Zhuang et al. (2021)

@@ -12,7 +12,8 @@ extract_sha256: "dae17f6d6a9ca303ec61ce36dc5efceaefe322cb4d116710fbf86c794ffc290
 body_sha256: "9c89dacd2add25b02cc8f80f1c69d7a5d6d62c596fca6847cb27e5c2d77f1ef3"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260615"
+verified_date: "20260717"
+extract_source_sha256: "a6284a7b2aaf4af88973eb027f14d229691489783305fba2860c1f794535ecf0"
 ---
 
 # Verified Claims — Gidney & Ekerå (2021), "How to factor 2048-bit RSA…"

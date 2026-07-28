@@ -1,6 +1,6 @@
 {
   "body_sha256": "1cae3e0f735472bbf6427ba9afa3f78731fac40b8597215726000a295dcf7b45",
-  "command": "cases/eggs_cholesterol_ledger/literature/verify_quotes.py --stamp --provenance required",
+  "command": "literature/verify_quotes.py --stamp",
   "doi": "10.1001/jama.2019.1572",
   "extract_sha256": "31f7d3a8e8b8c864217f41dafd5c5aa36f80cff36a974f6150b51fb61995d701",
   "extract_tool": "extract_text.py",
@@ -9,12 +9,12 @@
   "host_user": "56687218+Vasquomw21@users.noreply.github.com",
   "key": "zhong_2019",
   "pmcid": "PMC6439941",
-  "record_sha256": "82c83e65206df9f8fb31bbb27b01884b5e26ec3da96576670272590b26f8a5b8",
+  "record_sha256": "daad4983674a17460a24561465e7876ddad1337ff9feb6cd11af738a6b08beef",
   "retrieved": "20260613",
-  "source_sha256": "caf8ef7582dd89ad35f8ca71fdc6e50579c86a75a0db9ac39a7959a291c6e6c5",
+  "source_sha256": "35c7202169629d86a200137891a73bf697b449a3de4d76cfb5aab1e1c8a233ff",
   "transcript_sha256": "ca3b7a407fdf35e437ab692e236d726c106a70060668c679e33b2fcc3d274f61",
   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6439941/",
-  "verified_date": "20260614",
+  "verified_date": "20260717",
   "verified_verdict": "pass",
   "verifier_version": "2"
 }

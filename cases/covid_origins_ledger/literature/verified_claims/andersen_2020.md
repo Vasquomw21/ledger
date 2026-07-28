@@ -13,7 +13,8 @@ extract_sha256: "1cacda4735368fcd0ca655b8a3c5fc2e2875e180ce1529be9f4c756058a2483
 body_sha256: "df7236e2f7194089dd50650fa6ab26f258fbadea3f9253c258738afa5b44ce03"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "a916f055010de149f7b2945528c92ffb66e1d1e5f869727f93fe614588abc3c1"
 ---
 
 # Verified Claims — Andersen et al. (2020)

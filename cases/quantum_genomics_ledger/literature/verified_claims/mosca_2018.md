@@ -12,7 +12,8 @@ extract_sha256: "b041b32e4e9566417ec17c28f85e6d735fb1d5b62c8e40a8457db342e54c4cd
 body_sha256: "f74347de1d111e11aa544c29e3e7dcd0afe17134d14c029585c97fc44900ab26"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260615"
+verified_date: "20260717"
+extract_source_sha256: "6752a95b970fd0f762967689a8eff0da741078b88dd714c82fee5b027762bdbd"
 ---
 
 # Verified Claims — Mosca (2018), "Cybersecurity in an era with quantum computers"

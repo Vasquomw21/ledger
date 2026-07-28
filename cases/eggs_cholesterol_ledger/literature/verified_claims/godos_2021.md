@@ -8,12 +8,13 @@ source_version: "published (Eur J Nutr 2021, open access CC-BY)"
 file: "literature/godos_2021.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "210a81d9a040b9ea774c9d40dd9d684985b87eef17ebd0c5033402b32332b7ba"
+source_sha256: "66a7708f6c775e7b257ed37a3883390b30b4a049e5c4f46bcf517e2660ba065a"
 extract_sha256: "74c94e13d2c0576edbf11dfa98208b5d5241c859f8489809c5797a822533b479"
 body_sha256: "b5552bb8f91ce0fd115efabde30d7a7e8052d257981ffb19231184a854dbda4b"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "66a7708f6c775e7b257ed37a3883390b30b4a049e5c4f46bcf517e2660ba065a"
 ---
 
 # Verified Claims — Godos et al. (2021)

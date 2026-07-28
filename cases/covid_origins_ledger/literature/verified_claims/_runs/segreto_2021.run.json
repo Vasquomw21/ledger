@@ -9,12 +9,12 @@
   "host_user": "56687218+Vasquomw21@users.noreply.github.com",
   "key": "segreto_2021",
   "pmcid": "PMC7744920",
-  "record_sha256": "042d4eb1710acbb203f6145e7bf19917dc72e0c0f9adafec06370ee0c98c11a0",
+  "record_sha256": "b6a91a13076c164f8de11cd09d9dccd49f05fa273ef90613b723b5988b1c450d",
   "retrieved": "20260613",
   "source_sha256": "9652d815423ce5ffce6579914d406ae3f46346858eca13ac99e6470c26871a11",
   "transcript_sha256": "597cca1434d661fdf9261945c9c2b852d5d009f535892eafe0a1eb1e977e3ecc",
   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7744920/",
-  "verified_date": "20260614",
+  "verified_date": "20260717",
   "verified_verdict": "pass",
   "verifier_version": "2"
 }

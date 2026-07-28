@@ -6,12 +6,13 @@ source_version: "published"
 file: "literature/goodjudgment.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "af61e1301f9aa7a22c3032902a22577ef30fb9e728c077ccb6a96ccfb8f31b7c"
-extract_sha256: "38c3f995fab7dfdfa48ec49b65c97825b03cad08b71e230f37398d41fb02b483"
+source_sha256: "87c1a52445f1b45d522d86a3b88c77af8ca36e45b4d60a6f8b50ba63f043327f"
+extract_sha256: "7166e62261693c6efb65bae8f9b3617abc88ebce1f95855810463fb3fac9fce7"
 body_sha256: "35736daa81bd819c3aaffa76cadcf5e21fa0ad7aeb0e819262dfbe2cd5a48f26"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "87c1a52445f1b45d522d86a3b88c77af8ca36e45b4d60a6f8b50ba63f043327f"
 ---
 
 # Verified Claims — Good Judgment (2024)

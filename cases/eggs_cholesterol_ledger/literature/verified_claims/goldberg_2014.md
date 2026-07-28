@@ -8,12 +8,13 @@ source_version: "published (Atherosclerosis 2014)"
 file: "literature/goldberg_2014.html"
 retrieved: "20260614"
 verified_by: "Ledger pipeline (Claude)"
-source_sha256: "2dbc684ba4c0a30bf28ad7924caf952270e7bc3c87771908ddc0320fc5731ac0"
+source_sha256: "aec88c3b95298b92de492343283d50a1c98a058eb7a9c7959fbdc98d57e82ba4"
 extract_sha256: "5efd94122dde98ee8e6a7903bbeb88813268c3a6f08a229f3d7177fb78573942"
 body_sha256: "00e9194ed21a306eaed157bb1dfe6552b7ecbe00b3edb1ad5462f6538de6e4de"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "aec88c3b95298b92de492343283d50a1c98a058eb7a9c7959fbdc98d57e82ba4"
 ---
 
 # Verified Claims — Goldberg et al. (2014)

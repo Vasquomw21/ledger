@@ -47,10 +47,10 @@ case, that it makes the argument's **dependency structure** legible in a way the
 
 The brief asked, for this case, to *probe the argument for its dependencies and weakest points*. The
 baseline answers "is it safe?" well; it does not answer "what does the safety rest on, and where is
-it conditional?" The Ledger artefact does, and **none of it requires trusting the model**: the quotes
-are verbatim on disk, the disjunction is in the graph (`tools/analyze_graph.py`), the double-count is
-derived by code, the contested crux is a resolvable edge, the categorical framing is pinned to sealed
-records. We **do not claim** the structural point itself is a discovery — *that the Hawking arm is not
+it conditional?" The Ledger artefact does, and **none of it asks you to trust the model's reading**:
+the quotes are verbatim on disk, the disjunction is in the graph (`tools/analyze_graph.py`), a
+declared dependence carries its consequences through that graph by code, the contested crux is a
+resolvable edge, the categorical framing is pinned to tamper-evident records. We **do not claim** the structural point itself is a discovery — *that the Hawking arm is not
 load-bearing and the worst case rests on the conditional bound* is stated in the primary sources'
 own framing (Giddings & Mangano's title; the LSAG abstract's two-tier "if some were stable…"). The
 uplift is narrower and honest: Ledger makes that known-but-popularly-flattened dependency

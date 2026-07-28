@@ -53,6 +53,11 @@ A ledger is a Markdown file whose claims are `## Claim` blocks. The minimum a co
 - `**ID:**` gives the stable slug. A claim with no `**ID:**` is addressable only by ordinal `cN`.
 - Frontmatter carries the provenance stamp (source/extract/body sha256, verdict, locator) — see the
   run-record schema for the same fields in JSON.
+- `extract_source_sha256` is OPTIONAL: the sha256 of the bytes the extract was built from. Present,
+  it must equal `source_sha256` — that is what ties the quoted text to the named source rather than
+  to the extract alone, and it is checkable without the corpus. Absent, the binding is simply
+  unproven; a consumer must not read its absence as a failure, since a ledger stamped before this
+  field existed cannot acquire one without its original source bytes.
 
 ## 3. Claim-graph edge grammar
 

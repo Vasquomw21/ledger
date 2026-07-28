@@ -3,7 +3,13 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 KIT_TOOLS = REPO_ROOT / "tools"
+KIT_LITERATURE = REPO_ROOT / "literature"
 CASES_DIR = REPO_ROOT / "cases"
+
+# The intake scripts are kernel too — each case runs its OWN copy, so a kit-only
+# fix leaves five cases enforcing the older rules. Only the scripts are vendored;
+# the corpus they build is git-ignored and never travels.
+VENDORED_LITERATURE = ("build_register.py", "extract_text.py", "verify_quotes.py")
 
 FULL_KERNEL_CASES = {
     "covid_debate_ledger",
@@ -52,6 +58,20 @@ def test_full_kernel_cases_carry_every_kit_tool():
     missing = {case: sorted(expected - {t.name for t in _kernel(case)})
                for case in sorted(FULL_KERNEL_CASES)}
     assert not any(missing.values()), {k: v for k, v in missing.items() if v}
+
+
+def test_full_kernel_cases_match_root_literature():
+    drifted = []
+    for case in sorted(FULL_KERNEL_CASES):
+        for name in VENDORED_LITERATURE:
+            root, here = KIT_LITERATURE / name, CASES_DIR / case / "literature" / name
+            rel = here.relative_to(REPO_ROOT)
+            if not here.is_file():
+                drifted.append(f"{rel}: missing — `cp literature/{name} {rel}`")
+            elif root.read_bytes() != here.read_bytes():
+                drifted.append(f"{rel}: differs from literature/{name} — "
+                               f"`cp literature/{name} {rel}`")
+    assert not drifted, drifted
 
 
 def test_content_only_cases_vendor_no_kernel():

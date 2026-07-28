@@ -12,7 +12,8 @@ extract_sha256: "11094db3937d81c37f9644b751d65b520a2ac3d4de038518c07472bad1b56c2
 body_sha256: "86c000be0b1e78e6ce0c2d081669a090cea8117f8c7dcf92bf4606c9f8e7bf4e"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "56cc6616fa3478be4eb1c9fecd9169222d8c385728f2a07b506bb91c4c3a47fe"
 ---
 
 # Verified Claims — Temmam et al. (2022)

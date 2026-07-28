@@ -13,7 +13,8 @@ extract_sha256: "41ecce69e239abf076f9e7cd5fe32e7ac1169c90a8621ec54ee7593059b0759
 body_sha256: "3ed6a633fe9785751dc7acad16e02b5892fcaff254c5e5f1af97ac8c7f3990c6"
 verifier_version: "2"
 verified_verdict: "pass"
-verified_date: "20260614"
+verified_date: "20260717"
+extract_source_sha256: "9652d815423ce5ffce6579914d406ae3f46346858eca13ac99e6470c26871a11"
 ---
 
 # Verified Claims — Segreto & Deigin (2021)
