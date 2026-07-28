@@ -87,6 +87,10 @@ class DestinationExists(SubmissionError):
     pass
 
 
+class UnpublishableRef(SubmissionError):
+    """A --from-ref that cannot honestly back a published bundle."""
+
+
 class GateFailure(SubmissionError):
     def __init__(self, problems, staging=None):
         self.problems = list(problems)
@@ -98,10 +102,69 @@ def _case_root(repo_root: Path, name: str) -> Path:
     return repo_root / "cases" / f"{name}_ledger"
 
 
+def _git(repo_root: Path, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(["git", *args], cwd=str(repo_root),
+                          capture_output=True, text=True)
+
+
 def _git_commit(repo_root: Path) -> str:
-    out = subprocess.run(["git", "rev-parse", "HEAD"], cwd=str(repo_root),
-                         capture_output=True, text=True)
-    return out.stdout.strip() if out.returncode == 0 else "unknown"
+    """The commit the bundle claims, suffixed `-dirty` when the tree carries
+    uncommitted work.
+
+    The builder reads a working TREE while the manifest names a COMMIT, so on an
+    unclean tree a bare sha would assert provenance for content that never
+    shipped. The suffix keeps the claim honest without blocking a local build;
+    --from-ref removes the gap entirely by building from an export.
+    """
+    out = _git(repo_root, "rev-parse", "HEAD")
+    if out.returncode != 0:
+        return "unknown"
+    commit = out.stdout.strip()
+    status = _git(repo_root, "status", "--porcelain")
+    dirty = status.returncode == 0 and status.stdout.strip()
+    return f"{commit}-dirty" if dirty else commit
+
+
+def _resolve_publishable_ref(repo_root: Path, ref: str) -> str:
+    """The commit `ref` names, once it is established a reader could fetch it.
+
+    A published bundle stamps a commit the reader is invited to check, so a ref
+    that exists only in this clone would name an unreachable object. Reachability
+    is read from the remote-tracking refs, which is as far as a local check can
+    honestly go: it proves the commit was pushed at last fetch, not that the
+    remote still carries it.
+    """
+    out = _git(repo_root, "rev-parse", f"{ref}^{{commit}}")
+    if out.returncode != 0:
+        raise UnpublishableRef(f"unknown ref: {ref}")
+    commit = out.stdout.strip()
+    remotes = _git(repo_root, "branch", "-r", "--contains", commit)
+    if remotes.returncode != 0 or not remotes.stdout.strip():
+        raise UnpublishableRef(
+            f"{ref} ({commit[:12]}) is on no remote-tracking branch — a reader "
+            f"could not fetch the commit the bundle would claim; push it first")
+    return commit
+
+
+def _export_ref(repo_root: Path, ref: str, dest: Path) -> None:
+    """Extract `ref` into `dest` via git archive.
+
+    The working tree is never read, so uncommitted or stashed work cannot reach a
+    published bundle — the same reason build_pristine.sh exports rather than
+    clones.
+    """
+    dest.mkdir(parents=True, exist_ok=True)
+    archive = subprocess.run(["git", "archive", "--format=tar", ref],
+                             cwd=str(repo_root), capture_output=True)
+    if archive.returncode != 0:
+        raise UnpublishableRef(
+            f"could not export {ref}: {archive.stderr.decode(errors='ignore').strip()}")
+    unpack = subprocess.run(["tar", "-x", "-C", str(dest)], input=archive.stdout,
+                            capture_output=True)
+    if unpack.returncode != 0:
+        raise UnpublishableRef(
+            f"could not unpack the export of {ref}: "
+            f"{unpack.stderr.decode(errors='ignore').strip()}")
 
 
 def _stage_packs(repo_root: Path, staging: Path) -> dict:
@@ -359,7 +422,7 @@ def _verify_checksums(bundle: Path) -> list:
     return problems
 
 
-def build_submission(repo_root, dest) -> dict:
+def build_submission(repo_root, dest, from_ref: str | None = None) -> dict:
     repo_root = Path(repo_root).resolve()
     dest = Path(dest).resolve()
     if dest.exists():
@@ -367,6 +430,25 @@ def build_submission(repo_root, dest) -> dict:
             f"destination exists: {dest} — remove it yourself; this tool never "
             f"overwrites or clears a destination")
     dest.parent.mkdir(parents=True, exist_ok=True)
+
+    export: tempfile.TemporaryDirectory | None = None
+    if from_ref is not None:
+        commit = _resolve_publishable_ref(repo_root, from_ref)
+        export = tempfile.TemporaryDirectory(prefix="ledger-export-")
+        _export_ref(repo_root, from_ref, Path(export.name))
+        source_root = Path(export.name)
+    else:
+        commit = _git_commit(repo_root)
+        source_root = repo_root
+
+    try:
+        return _build(source_root, dest, commit)
+    finally:
+        if export is not None:
+            export.cleanup()
+
+
+def _build(repo_root: Path, dest: Path, commit: str) -> dict:
     staging = Path(tempfile.mkdtemp(dir=str(dest.parent),
                                     prefix=f".{dest.name}.staging-"))
 
@@ -381,7 +463,6 @@ def build_submission(repo_root, dest) -> dict:
     if problems:
         raise GateFailure(problems, staging=staging)
 
-    commit = _git_commit(repo_root)
     _write_manifest(staging, commit, levels, _profiles(repo_root))
     _write_checksums(staging)
 
@@ -399,10 +480,18 @@ def main(argv=None) -> int:
     ap.add_argument("repo_root", nargs="?", default=str(REPO))
     ap.add_argument("--out", required=True, help="destination bundle directory "
                     "(must not already exist)")
+    ap.add_argument("--from-ref", default=None, metavar="REF",
+                    help="build from an export of REF (a tag or branch) instead "
+                         "of the working tree — required for a bundle you "
+                         "publish, since it is what stops uncommitted work "
+                         "reaching it")
     args = ap.parse_args(argv)
     try:
-        summary = build_submission(args.repo_root, args.out)
+        summary = build_submission(args.repo_root, args.out, args.from_ref)
     except DestinationExists as e:
+        print(f"[ERROR] {e}", file=sys.stderr)
+        return 2
+    except UnpublishableRef as e:
         print(f"[ERROR] {e}", file=sys.stderr)
         return 2
     except GateFailure as e:
@@ -415,7 +504,16 @@ def main(argv=None) -> int:
                   file=sys.stderr)
         return 1
     print(f"[INFO] bundle published: {summary['dest']}")
-    print(f"[INFO] {summary['files']} files, commit {summary['commit'][:12]}")
+    source = args.from_ref or "working tree"
+    # Abbreviate the sha, never the `-dirty` marker: it is the one part of the
+    # line a reader must not lose.
+    sha, _, mark = summary["commit"].partition("-")
+    shown = f"{sha[:12]}-{mark}" if mark else sha[:12]
+    print(f"[INFO] {summary['files']} files, commit {shown} (from {source})")
+    if summary["commit"].endswith("-dirty"):
+        print("[WARNING] built from a tree with uncommitted changes — the "
+              "manifest records this and the bundle must not be published; "
+              "rebuild with --from-ref", file=sys.stderr)
     print(f"[INFO] ceilings: {summary['levels']}")
     return 0
 
