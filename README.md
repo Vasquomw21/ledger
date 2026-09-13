@@ -117,3 +117,9 @@ I later found Andrej Karpathy had described the same compounding-knowledge patte
 different things: I built around verification, where his lets the model summarise freely; his had
 the flywheel mine lacked — low-friction ingest. That ingest now sits on the verification spine as
 `skill-ledger-curate`: it cannot invent, and a human approves its output.
+
+## Licence
+
+The kit is [Apache-2.0](LICENSE); the case content under `cases/` is
+[CC BY 4.0](LICENSES/CC-BY-4.0.txt). Quotations from published works stay with their authors and
+are licensed by neither. [LICENSING.md](LICENSING.md) says which files fall under which licence.
