@@ -9,6 +9,9 @@ Ledger does not establish that the sources are complete, the reasoning is sound,
 is true. When the source files are unavailable, it attests the committed proof rather than
 re-checking the bytes.
 
+> **Website:** [vasquomw21.github.io/ledger](https://vasquomw21.github.io/ledger/) — what Ledger
+> does, and the five worked cases in your browser with nothing to install.
+>
 > **Evaluating rather than using it?** [`DEMO.md`](DEMO.md) is the audit path: a one-command
 > read-only tour, five worked cases, and the trust boundary.
 
