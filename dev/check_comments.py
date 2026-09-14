@@ -47,8 +47,7 @@ PATTERNS = (
 # that policed them could never be edited. Skipped here rather than by each caller, so
 # pre-commit, pytest and the write-time hook cannot disagree about the scope.
 SELF_REFERENTIAL = ("dev/check_comments.py",
-                    "tests/test_comment_discipline.py",
-                    ".claude/hooks/check-self-narration.sh")
+                    "tests/test_comment_discipline.py")
 
 
 def exempt(path) -> bool:
