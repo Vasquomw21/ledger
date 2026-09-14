@@ -1,0 +1,266 @@
+{
+  "addresses": [
+    {
+      "field": "addresses",
+      "ledger": "andersen_2020",
+      "qid": "fcs-engineering"
+    },
+    {
+      "field": "crux-of",
+      "ledger": "andersen_2020",
+      "qid": "fcs-engineering"
+    },
+    {
+      "field": "addresses",
+      "ledger": "pekar_2022",
+      "qid": "origin-locus"
+    },
+    {
+      "field": "addresses",
+      "ledger": "pekar_2022",
+      "qid": "origin-locus"
+    },
+    {
+      "field": "addresses",
+      "ledger": "segreto_2021",
+      "qid": "fcs-engineering"
+    },
+    {
+      "field": "addresses",
+      "ledger": "temmam_2022",
+      "qid": "fcs-engineering"
+    },
+    {
+      "field": "addresses",
+      "ledger": "temmam_2022",
+      "qid": "origin-locus"
+    },
+    {
+      "field": "addresses",
+      "ledger": "worobey_2022",
+      "qid": "origin-locus"
+    },
+    {
+      "field": "addresses",
+      "ledger": "worobey_2022",
+      "qid": "origin-locus"
+    },
+    {
+      "field": "addresses",
+      "ledger": "worobey_2022",
+      "qid": "origin-locus"
+    }
+  ],
+  "assessments": [
+    {
+      "disputes": [],
+      "grounding": [
+        "andersen_2020:not-from-known-backbone"
+      ],
+      "id": "andersen-irrefutably",
+      "kind": "rhetorical",
+      "reviews": [],
+      "subject": "andersen_2020:not-from-known-backbone"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "andersen_2020:fcs-natural-process"
+      ],
+      "id": "andersen-rebuts-segreto-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "andersen-rebuts-segreto-apt"
+      ],
+      "subject": "segreto_2021:fcs-implies-engineering"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "andersen_2020:fcs-natural-process"
+      ],
+      "id": "andersen-rebuts-segreto-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "segreto_2021:fcs-implies-engineering"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "pekar_2022:multiple-introductions"
+      ],
+      "id": "pekar-supports-nolab-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "pekar-supports-nolab-apt"
+      ],
+      "subject": "andersen_2020:no-lab-scenario"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "pekar_2022:multiple-introductions"
+      ],
+      "id": "pekar-supports-nolab-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "andersen_2020:no-lab-scenario"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "segreto_2021:mutagenesis-no-trace"
+      ],
+      "id": "segreto-rebuts-andersen-backbone-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "segreto-rebuts-andersen-backbone-apt"
+      ],
+      "subject": "andersen_2020:not-from-known-backbone"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "segreto_2021:mutagenesis-no-trace"
+      ],
+      "id": "segreto-rebuts-andersen-backbone-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "andersen_2020:not-from-known-backbone"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "temmam_2022:banal-infectious-humans"
+      ],
+      "id": "temmam-supports-nolab-apt-pass",
+      "kind": "faithfulness-pass",
+      "reviews": [
+        "temmam-supports-nolab-apt"
+      ],
+      "subject": "andersen_2020:no-lab-scenario"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "temmam_2022:banal-infectious-humans"
+      ],
+      "id": "temmam-supports-nolab-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "andersen_2020:no-lab-scenario"
+    },
+    {
+      "disputes": [
+        "worobey-supports-nolab-apt"
+      ],
+      "grounding": [
+        "worobey_2022:market-early-epicenter"
+      ],
+      "id": "worobey-faithfulness",
+      "kind": "faithfulness",
+      "reviews": [],
+      "subject": "andersen_2020:no-lab-scenario"
+    },
+    {
+      "disputes": [],
+      "grounding": [
+        "worobey_2022:market-early-epicenter"
+      ],
+      "id": "worobey-supports-nolab-apt",
+      "kind": "edge",
+      "reviews": [],
+      "subject": "andersen_2020:no-lab-scenario"
+    }
+  ],
+  "edges": [
+    {
+      "from_ledger": "andersen_2020",
+      "grounding": "fcs-natural-process",
+      "line": 57,
+      "rec": null,
+      "source": "andersen_2020:fcs-natural-process",
+      "target": "segreto_2021:fcs-implies-engineering",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "pekar_2022",
+      "grounding": "multiple-introductions",
+      "line": 45,
+      "rec": "pekar-supports-nolab-apt",
+      "source": "pekar_2022:multiple-introductions",
+      "target": "andersen_2020:no-lab-scenario",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "segreto_2021",
+      "grounding": "mutagenesis-no-trace",
+      "line": 65,
+      "rec": null,
+      "source": "segreto_2021:mutagenesis-no-trace",
+      "target": "andersen_2020:not-from-known-backbone",
+      "target_resolved": true,
+      "type": "rebuts"
+    },
+    {
+      "from_ledger": "temmam_2022",
+      "grounding": "no-fcs-in-relatives",
+      "line": 34,
+      "rec": null,
+      "source": "temmam_2022:no-fcs-in-relatives",
+      "target": "andersen_2020:fcs-natural-process",
+      "target_resolved": true,
+      "type": "qualifies"
+    },
+    {
+      "from_ledger": "temmam_2022",
+      "grounding": "banal-infectious-humans",
+      "line": 46,
+      "rec": null,
+      "source": "temmam_2022:banal-infectious-humans",
+      "target": "andersen_2020:no-lab-scenario",
+      "target_resolved": true,
+      "type": "supports"
+    },
+    {
+      "from_ledger": "worobey_2022",
+      "grounding": "market-early-epicenter",
+      "line": 34,
+      "rec": "worobey-supports-nolab-apt",
+      "source": "worobey_2022:market-early-epicenter",
+      "target": "andersen_2020:no-lab-scenario",
+      "target_resolved": true,
+      "type": "supports"
+    }
+  ],
+  "findings": {
+    "double_count": [
+      {
+        "a": "pekar_2022",
+        "b": "worobey_2022",
+        "basis": "",
+        "kind": "other-declared-dependence",
+        "sealed_record": null,
+        "target": "andersen_2020:no-lab-scenario"
+      }
+    ],
+    "superseded": []
+  },
+  "nodes": [
+    "andersen_2020:fcs-natural-process",
+    "andersen_2020:no-lab-scenario",
+    "andersen_2020:not-from-known-backbone",
+    "pekar_2022:multiple-introductions",
+    "segreto_2021:fcs-implies-engineering",
+    "segreto_2021:mutagenesis-no-trace",
+    "temmam_2022:banal-infectious-humans",
+    "temmam_2022:no-fcs-in-relatives",
+    "worobey_2022:market-early-epicenter"
+  ],
+  "sub_questions": [
+    "fcs-engineering",
+    "origin-locus"
+  ]
+}

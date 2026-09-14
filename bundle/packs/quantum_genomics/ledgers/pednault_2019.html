@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edwin Pednault, John A. Gunnels, Giacomo Nannicini, Lior Horesh &amp; Robert Wisnieff (IBM) (2019) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Edwin Pednault, John A. Gunnels, Giacomo Nannicini, Lior Horesh &amp; Robert Wisnieff (IBM) (2019)</h1><table class="fm"><tr><th>Paper</th><td>Edwin Pednault, John A. Gunnels, Giacomo Nannicini, Lior Horesh &amp; Robert Wisnieff (IBM) (2019)</td></tr><tr><th>Title</th><td>Leveraging Secondary Storage to Simulate Deep 54-qubit Sycamore Circuits</td></tr><tr><th>Version</th><td>arXiv:1910.09534 (IBM T.J. Watson Research Center)</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.48550/arXiv.1910.09534" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 96ee2db24b29…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Pednault et al. (IBM, 2019), &quot;Leveraging Secondary Storage to Simulate Deep 54-qubit Sycamore Circuits&quot;</h1>
+<p>The IBM contestation of Arute et al. (2019)&#x27;s classical-runtime estimate. Quotes read<br>from the downloaded full text (arXiv:1910.09534) and confirmed verbatim against<br><code>literature/extracted/pednault_2019.txt</code>. This is the source for the statement that<br>Google&#x27;s &quot;10,000 years&quot; classical estimate was contested.</p>
+<h2>Claim 1: The rebuttal — the same task is classically simulable &quot;in a matter of days&quot;, not 10,000 years</h2>
+<blockquote>&quot;Our analysis shows that on the Summit supercomputer at Oak Ridge National Laboratories, such circuits can be simulated with high fidelity to arbitrary depth in a matter of days, outputting all the amplitudes.&quot;</blockquote>
+<p><strong>ID:</strong> rebuttal-days-not-years<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness<br><strong>Rebuts:</strong> <a href="arute_2019.html">arute_2019:200s-vs-10000-years</a> (grounded by #rebuttal-days-not-years) <a class="recref" href="../assessments.html#rec-pednault-rebuts-supremacy-apt">pednault-rebuts-supremacy-apt</a></p>
+<p>---</p>
+<h2>Claim 2: The quantified estimate — approximately 2.5 days for the 53-qubit Sycamore circuit</h2>
+<blockquote>&quot;for 20 cycles of the entanglement pattern ABCDCDAB, which is specifically designed to challenge classical simulation algorithms, we estimate that the computations would take approximately two and a half days.&quot;</blockquote>
+<blockquote>&quot;we obtain an overall estimate of 2.55 days to compute all 2⁵³ amplitudes of a 20-cycle, 53-qubit, Sycamore ABCDCDAB circuit with all amplitudes stored on disk, and 5.80 days for the corresponding 54-qubit circuit.&quot;</blockquote>
+<p><strong>ID:</strong> quantified-2.55-days<br><strong>Location:</strong> §1 Introduction; §&quot;performance model&quot; (Tabs. 1 and 2)<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 3: Honest caveat — the estimate was modelled, not executed (and it does MORE than Google&#x27;s task)</h2>
+<blockquote>&quot;While we did not carry out these computations, we provide a detailed description of the proposed simulation strategy as well as the time estimation methodology, which is based on published results and on internal benchmarks.&quot;</blockquote>
+<p><strong>ID:</strong> modelled-not-executed-caveat<br><strong>Location:</strong> §1 Introduction. NB: the classical task here outputs <em>all amplitudes</em> with high fidelity — a strictly harder task than Google&#x27;s noisy sampling — so the two runtimes are not a like-for-like comparison; this nuance must be stated in the review.<br><strong>Addresses:</strong> speedup-robustness</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

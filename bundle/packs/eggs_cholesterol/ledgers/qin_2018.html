@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qin et al. (2018) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Qin et al. (2018)</h1><table class="fm"><tr><th>Paper</th><td>Qin et al. (2018)</td></tr><tr><th>Title</th><td>Associations of egg consumption with cardiovascular disease in a cohort study of 0.5 million Chinese adults (China Kadoorie Biobank)</td></tr><tr><th>Version</th><td>published (Heart 2018, open access)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1136/heartjnl-2017-312651" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 38e23a8cc333…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Qin et al. (2018)</h1>
+<p>A single independent cohort (the China Kadoorie Biobank, general Chinese adults) reporting that a<br>moderate level of egg consumption was inversely associated with cardiovascular disease.</p>
+<h2>Claim 1: study cohort / population</h2>
+<blockquote>&quot;This prospective cohort study of the general Chinese population demonstrated a significantly inverse association of egg consumption with CVD, ischaemic heart disease, haemorrhagic stroke, ischaemic stroke, as well as major coronary events.&quot;</blockquote>
+<p><strong>ID:</strong> cohort-kadoorie<br><strong>Location:</strong> Methods<br><strong>Grep command used:</strong> <code>grep &quot;general Chinese population demonstrated a significantly inverse association&quot; extracted/qin_2018.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<h2>Claim 2: moderate egg consumption inversely associated with CVD</h2>
+<blockquote>&quot;Among Chinese adults, a moderate level of egg consumption (up to &lt;1 egg/day) was significantly associated with lower risk of CVD, largely independent of other risk factors.&quot;</blockquote>
+<p><strong>ID:</strong> eggs-inverse-cvd-kadoorie<br><strong>Location:</strong> Abstract (Conclusions)<br><strong>Grep command used:</strong> <code>grep &quot;was significantly associated with lower risk of CVD, largely independent of other risk factors.&quot; extracted/qin_2018.txt</code><br><strong>Addresses:</strong> eggs-cvd</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

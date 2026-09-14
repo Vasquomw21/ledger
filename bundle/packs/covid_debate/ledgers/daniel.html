@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel (2024) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Daniel (2024)</h1><table class="fm"><tr><th>Paper</th><td>Daniel (2024)</td></tr><tr><th>Title</th><td>Daniel&#x27;s Bayesian analysis of COVID origins</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://docs.google.com/document/d/1qzLC55jRfdS55oSqXJZTFItsvFsawWgNlgLxWqhCuyo/edit" target="_blank" rel="noopener">source</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body b9c4eeec8eed…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Daniel (2024)</h1>
+<p>A spectator&#x27;s Bayesian write-up of the debate (the Google Doc Alexander links). Extracted under<br>the <code>probabilistic-analysis</code> source-type (named (hypothesis, probability) estimates). The<br>zoonosis-leaning counterpart to Weissman&#x27;s lab-leak analysis. <strong>Locus:</strong> lines bind each claim to<br>a unit in <code>literature/units/daniel.units.json</code> (the committed coordinate system).</p>
+<h2>Claim 1: the posterior — ~96% zoonosis</h2>
+<blockquote>&quot;I get 96% zoonosis (not 98% as in an early tweet).&quot;</blockquote>
+<p><strong>ID:</strong> zoonosis-posterior<br><strong>Locus:</strong> p2<br><strong>Location:</strong> tl;dr<br><strong>Grep command used:</strong> <code>grep &quot;I get 96% zoonosis&quot; extracted/daniel.txt</code><br><strong>Addresses:</strong> prior-odds</p>
+<p>---</p>
+<h2>Claim 2: the prior favours lab leak slightly before evidence</h2>
+<blockquote>&quot;So p(lab leak in Wuhan in 2020) = 1 / (4 <em> 6 </em> 100 * 2) = 1 / 5,000 So: prior ratio is 1:5&quot;</blockquote>
+<p><strong>ID:</strong> prior-ratio<br><strong>Location:</strong> Priors section<br><strong>Grep command used:</strong> <code>grep &quot;prior ratio is 1:5&quot; extracted/daniel.txt</code><br><strong>Addresses:</strong> prior-odds</p>
+<p>&lt;!-- No <strong>Locus:</strong> — this quote SPANS two enumerated units (the per-factor prior lines and the<br>&quot;So: prior ratio is 1:5&quot; summary are separate blocks in the manifest), so no single locus contains<br>it. An honest, visible limitation of the coordinate system: a cross-unit quote is left off the grid<br>rather than mis-addressed. --&gt;</p>
+<p>---</p>
+<h2>Claim 3: the market location is the biggest update, and the biggest disagreement</h2>
+<blockquote>&quot;NB: this is by far my biggest disagreement with Rootclaim.&quot;</blockquote>
+<p><strong>ID:</strong> market-hsm<br><strong>Locus:</strong> p14<br><strong>Location:</strong> &quot;First known outbreak is centred at HSM&quot;<br><strong>Grep command used:</strong> <code>grep &quot;by far my biggest disagreement with Rootclaim&quot; extracted/daniel.txt</code><br><strong>Addresses:</strong> market-evidence<br><strong>Supports:</strong> <a href="stansifer.html">stansifer:proximity</a> (grounded by #market-hsm)</p>
+<p>---</p>
+<h2>Claim 4: the furin cleavage site cuts only mildly toward lab leak</h2>
+<blockquote>&quot;FCS is great: you do expect messing around with cleavage sites under DEFUSE. But you also could see this in nature.&quot;</blockquote>
+<p><strong>ID:</strong> fcs-factor<br><strong>Locus:</strong> p38<br><strong>Location:</strong> &quot;FCS insert with CGGs&quot;<br><strong>Grep command used:</strong> <code>grep &quot;you do expect messing around with cleavage sites under DEFUSE&quot; extracted/daniel.txt</code><br><strong>Addresses:</strong> genomic-engineering</p>
+<p>---</p>
+<h2>Claim 5: the analyst&#x27;s own methodological caveat</h2>
+<blockquote>&quot;you should be aware that I haven’t actually read the primary literature here.&quot;</blockquote>
+<p><strong>ID:</strong> caveat-unread<br><strong>Locus:</strong> p3<br><strong>Location:</strong> Note (preamble)<br><strong>Grep command used:</strong> <code>grep &quot;haven.t actually read the primary literature here&quot; extracted/daniel.txt</code><br><strong>Addresses:</strong> methodology</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

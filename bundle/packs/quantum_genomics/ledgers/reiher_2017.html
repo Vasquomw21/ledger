@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markus Reiher, Nathan Wiebe, Krysta M. Svore, Dave Wecker &amp; Matthias Troyer (2017) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Markus Reiher, Nathan Wiebe, Krysta M. Svore, Dave Wecker &amp; Matthias Troyer (2017)</h1><table class="fm"><tr><th>Paper</th><td>Markus Reiher, Nathan Wiebe, Krysta M. Svore, Dave Wecker &amp; Matthias Troyer (2017)</td></tr><tr><th>Title</th><td>Elucidating Reaction Mechanisms on Quantum Computers</td></tr><tr><th>Version</th><td>arXiv:1605.03590; PNAS 114(29), 7555–7560</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1073/pnas.1619152114" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body ac6ee26c6119…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Reiher et al. (2017), &quot;Elucidating Reaction Mechanisms on Quantum Computers&quot;</h1>
+<p>The canonical resource-estimate paper for a <em>biologically meaningful</em> quantum-chemistry target:<br>the FeMo cofactor (FeMoco) of nitrogenase, the active site of biological nitrogen fixation.<br>Quotes read from the downloaded full text (arXiv:1605.03590) and confirmed verbatim against<br><code>literature/extracted/reiher_2017.txt</code> (ligature glyphs rendered as their true letters).</p>
+<h2>Claim 1: A quantum computer can elucidate a reaction mechanism intractable for classical simulation — nitrogenase/FeMoco as the worked example</h2>
+<blockquote>&quot;We show how a quantum computer can be employed to elucidate reaction mechanisms in complex chemical systems, using the open problem of biological nitrogen fixation in nitrogenase as an example.&quot;</blockquote>
+<p><strong>ID:</strong> elucidate-reaction-mechanism<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 2: The central demonstrated-in-resource-estimate claim — projected, not yet run on hardware</h2>
+<blockquote>&quot;While at present a quantitative understanding of chemical processes involving complex open-shell species such as FeMoco in biological nitrogen fixation remains beyond the capability of classical-computer simulations, our work shows that quantum computers used as accelerators to classical computers could be used to elucidate this mechanism using a manageable amount of memory and time.&quot;</blockquote>
+<p><strong>ID:</strong> classically-intractable-projected<br><strong>Location:</strong> Discussion. This is the central &quot;demonstrated-in-resource-estimate&quot; claim — projected, not yet run on hardware.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 3: The input is SMALL — a molecular active space of a few tens of orbitals (satisfies the small-data criterion)</h2>
+<blockquote>&quot;Structure 1 is for spin state S = 0 and charge +3 elementary charges with 54 electrons in 54 spatial orbitals.&quot;</blockquote>
+<p><strong>ID:</strong> small-active-space<br><strong>Location:</strong> Table I caption (a second FeMoco structure uses 65 electrons in 57 spatial orbitals). The entire classically-intractable calculation fits in an active space of order ~50 orbitals — the defining feature that makes quantum chemistry a <em>small-input</em> problem.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 4: Exact classical methods scale exponentially — why this is classically intractable</h2>
+<blockquote>&quot;CASSCF is traditionally implemented as an exact diagonalization method, which limits its applicability to 18 electrons in 18 (spatial) orbitals because of the steep scaling of many-electron basis states with the number of electrons and orbitals&quot;</blockquote>
+<p><strong>ID:</strong> exact-diagonalisation-scaling<br><strong>Location:</strong> Methods (exact-diagonalisation discussion)<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 5: Strongly correlated electrons are out of reach for classical ab initio methods</h2>
+<blockquote>&quot;On classical computers, molecules with much less than a hundred strongly correlated electrons are already out of reach for systematically improvable ab initio methods that could achieve the required accuracy.&quot;</blockquote>
+<p><strong>ID:</strong> classical-ab-initio-out-of-reach<br><strong>Location:</strong> Introduction<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 6: Resource estimate — feasible on a small quantum computer even with error-correction overhead</h2>
+<blockquote>&quot;Detailed resource estimates show that, even when taking into account the substantial overhead of quantum error correction, and the need to compile into discrete gate sets, the necessary computations can be performed in reasonable time on small quantum computers.&quot;</blockquote>
+<p><strong>ID:</strong> resource-estimate-feasible<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 7: Serial runtime estimate — under a year on a small number of logical qubits</h2>
+<blockquote>&quot;If all gates are executed in series then we estimate that the simulation will complete in under a year and use a small number of logical qubits.&quot;</blockquote>
+<p><strong>ID:</strong> serial-runtime-logical-qubits<br><strong>Location:</strong> Resource Estimates section. (Parallelisation trades qubits for wall-clock time; the serial estimate is ~hundreds of days on ~100+ logical qubits per Table I.) NB: these are <em>logical</em>-qubit counts assuming fault tolerance — far beyond NISQ hardware; the claim is projected feasibility, not a present capability.<br><strong>Addresses:</strong> qc-genomics-advantage</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worobey et al. (2022) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Worobey et al. (2022)</h1><table class="fm"><tr><th>Paper</th><td>Worobey et al. (2022)</td></tr><tr><th>Title</th><td>The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1126/science.abp8715" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 80033a6ecdcf…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Worobey et al. (2022)</h1>
+<p>Each quote was read from the downloaded PMC HTML and grepped against the extracted<br>text. This is the <strong>spatial-epidemiology</strong> anchor for the origin-locus sub-question<br>(zoonotic emergence at the market vs an introduced point source).</p>
+<h2>Claim 1: the Huanan market was the early epicenter; emergence via the live wildlife trade</h2>
+<blockquote>&quot;our results provide evidence that the Huanan market was the early epicenter of the COVID-19 pandemic and suggest that SARS-CoV-2 likely emerged from the live wildlife trade in China.&quot;</blockquote>
+<p><strong>ID:</strong> market-early-epicenter<br><strong>Location:</strong> Discussion / concluding summary<br><strong>Grep command used:</strong> <code>grep &quot;early epicenter of the COVID-19 pandemic&quot; extracted/worobey_2022.txt</code><br><strong>Addresses:</strong> origin-locus<br><strong>Supports:</strong> <a href="andersen_2020.html">andersen_2020:no-lab-scenario</a> (grounded by #market-early-epicenter) <a class="recref" href="../assessments.html#rec-worobey-supports-nolab-apt">worobey-supports-nolab-apt</a><br><strong>Correlated-with:</strong> <a href="pekar_2022.html">pekar_2022:multiple-introductions</a> (grounded by #market-early-epicenter)</p>
+<p>---</p>
+<h2>Claim 2: live susceptible mammals were sold at the market and spatially associated with positive samples</h2>
+<blockquote>&quot;live SARS-CoV-2 susceptible mammals were sold at the market in late 2019 and, within the market, SARS-CoV-2-positive environmental samples were spatially associated with vendors selling live mammals.&quot;</blockquote>
+<p><strong>ID:</strong> live-mammals-spatial<br><strong>Location:</strong> Abstract / Results summary<br><strong>Grep command used:</strong> <code>grep &quot;susceptible mammals were sold&quot; extracted/worobey_2022.txt</code><br><strong>Addresses:</strong> origin-locus</p>
+<p>---</p>
+<h2>Claim 3: the epicenter hypothesis is a spatial prediction about where early cases fall</h2>
+<blockquote>&quot;We hypothesized that if the Huanan market epicenter of the pandemic then early cases should fall not just unexpectedly near to it but should also be unexpectedly centered on it&quot;</blockquote>
+<p><strong>ID:</strong> epicenter-spatial-test<br><strong>Location:</strong> Results — spatial analysis<br><strong>Grep command used:</strong> <code>grep &quot;unexpectedly centered on it&quot; extracted/worobey_2022.txt</code><br><strong>Addresses:</strong> origin-locus</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

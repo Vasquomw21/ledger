@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurora Maurizio &amp; Guglielmo Mazzola (2025) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Aurora Maurizio &amp; Guglielmo Mazzola (2025)</h1><table class="fm"><tr><th>Paper</th><td>Aurora Maurizio &amp; Guglielmo Mazzola (2025)</td></tr><tr><th>Title</th><td>Quantum computing for genomics: conceptual challenges and practical perspectives</td></tr><tr><th>Version</th><td>arXiv:2507.04111v1; PRX Life 3, 047001</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1103/h49j-bsc6" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 04856b5aa9a0…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Maurizio &amp; Mazzola (2025), &quot;Quantum computing for genomics: conceptual challenges and practical perspectives&quot;</h1>
+<p>Quotes read from the arXiv full-text HTML (arXiv:2507.04111v1, the open-access version of<br>PRX Life 3, 047001) and confirmed verbatim against <code>literature/extracted/maurizio_2025.txt</code>.<br>This is the closest peer-reviewed analogue to our own genomics mapping: same remit (where a<br>quantum advantage is real for genomics), same method (a practicality test on speed-up class,<br>data-loading and classical baselines). It both corroborates our honest negatives and<br>identifies a near-term opportunity class our Layer 3 did not surface — small, hard discrete<br>optimisation. Drives the Gap-1 correction to <code>20260603_genomics_mapping_lit</code>.</p>
+<h2>Claim 1: The genuine near-term genomics opportunity is a narrow class of small, hard optimisation problems</h2>
+<blockquote>&quot;Given the competition from excellent classical approximate solvers, quantum computing could offer a speedup in the near future only for a specific subset of hard enough tasks in assembly, gene selection, and inference.&quot;</blockquote>
+<p><strong>ID:</strong> near-term-narrow-optimisation<br><strong>Location:</strong> Abstract / Conclusion (the paper&#x27;s central verdict). The condition — hard for classical methods <em>and</em> relatively few variables — is the same as our Layer-1 practicality test (<code>20260603_quantum_advantage</code>): small input + a hard structured problem.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 2: The condition is hard for classical methods AND relatively few variables</h2>
+<blockquote>&quot;These tasks need to be characterized by core optimization problems that are particularly challenging for classical methods while requiring relatively limited variables.&quot;</blockquote>
+<p><strong>ID:</strong> hard-and-few-variables<br><strong>Location:</strong> Abstract / Conclusion (the paper&#x27;s central verdict). The condition — hard for classical methods <em>and</em> relatively few variables — is the same as our Layer-1 practicality test (<code>20260603_quantum_advantage</code>): small input + a hard structured problem.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 3: Specific genomics optimisation problems are the candidate mappings</h2>
+<blockquote>&quot;Among these, we identify the following optimization problems: Max-Cut, Maximum Independent Set, Knapsack, and Quadratic Assignment Problems to be relevant for (or possibly connected to) genomics.&quot;</blockquote>
+<p><strong>ID:</strong> candidate-optimisation-mappings<br><strong>Location:</strong> Sect. IV (Optimization problems in genomics and quantum advantage).<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 4: Quantum-enhanced Markov chain can accelerate inference tasks</h2>
+<blockquote>&quot;the quantum-enhanced Markov chain algorithm, [ 150 ,  39 ] , a new quantum algorithm devised to speed up Monte Carlo simulations, can be beneficial for accelerating inference tasks.&quot;</blockquote>
+<p><strong>ID:</strong> quantum-markov-chain-inference<br><strong>Location:</strong> Sect. IV (Optimization problems in genomics and quantum advantage).<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 5: Gene selection maps to Maximum Independent Set</h2>
+<blockquote>&quot;Further, MIS has also been proposed in gene selection.&quot;</blockquote>
+<p><strong>ID:</strong> gene-selection-mis<br><strong>Location:</strong> Sect. IV (gene selection / panel design).<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 6: MIS framework selects maximally informative, non-overlapping genes</h2>
+<blockquote>&quot;one can use the MIS framework to select a subset of genes that are maximally informative and non-overlapping in their biological roles.&quot;</blockquote>
+<p><strong>ID:</strong> mis-informative-genes<br><strong>Location:</strong> Sect. IV (gene selection / panel design).<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 7: Haplotype phasing is determining the most likely phase configuration</h2>
+<blockquote>&quot;The optimization problem in haplotype phasing is determining the most likely phase configuration for each heterozygous variant along the chromosome.&quot;</blockquote>
+<p><strong>ID:</strong> haplotype-phasing-problem<br><strong>Location:</strong> Sect. IV (haplotype phasing). Exactly the shape our test rewards — small input (heterozygous sites only), exponential hardness, weak classical guarantees.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 8: Haplotype combinations grow exponentially with heterozygous sites</h2>
+<blockquote>&quot;the number of possible haplotype combinations grows exponentially with the number of heterozygous sites.&quot;</blockquote>
+<p><strong>ID:</strong> haplotype-exponential-growth<br><strong>Location:</strong> Sect. IV (haplotype phasing). Exactly the shape our test rewards — small input (heterozygous sites only), exponential hardness, weak classical guarantees.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 9: Data-loading remains the disqualifier for big-data genomics tasks</h2>
+<blockquote>&quot;Unfortunately, given that the genome data does not follow any deterministic pattern, the depth of the circuit needed to load the data cannot scale more favorably than&quot;</blockquote>
+<p><strong>ID:</strong> data-loading-disqualifier<br><strong>Location:</strong> Sect. III (Quantum search in genomics). Corroborates the data-loading verdict in <code>20260603_sequence_search</code> and <code>20260603_genomic_ml</code>.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 10: Gate-time realism — estimates suggest around 10 kHz</h2>
+<blockquote>&quot;The typical quantum gate frequency will depend on the architecture and error correction code implemented in the future, but estimates suggest around 10 kHz&quot;</blockquote>
+<p><strong>ID:</strong> gate-frequency-10khz<br><strong>Location:</strong> Sect. II.2 (Scaling advantage vs gate time) and the &quot;Myths&quot; appendix. A concrete quantitative basis for &quot;quadratic is not enough&quot; beyond Hoefler — strengthens Layer 1/2.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 11: Quantum gates cannot operate faster than their classical control electronics</h2>
+<blockquote>&quot;Quantum digital gates cannot operate faster than the classical electronics that controls them&quot;</blockquote>
+<p><strong>ID:</strong> gates-bounded-by-electronics<br><strong>Location:</strong> Sect. II.2 (Scaling advantage vs gate time) and the &quot;Myths&quot; appendix. A concrete quantitative basis for &quot;quadratic is not enough&quot; beyond Hoefler — strengthens Layer 1/2.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<h2>Claim 12: No quantum speed-up for ML on real-world data has been observed</h2>
+<blockquote>&quot;no quantum speed-up for machine learning on  real-world  datasets has been observed or even postulated. Any scalability advantages have only been demonstrated on artificial datasets.&quot;</blockquote>
+<p><strong>ID:</strong> no-qml-real-world-speedup<br><strong>Location:</strong> Sect. V (Quantum Machine Learning). Corroborates <code>20260603_genomic_ml</code>.<br><strong>Addresses:</strong> qc-genomics-advantage</p>
+<p>---</p>
+<blockquote><strong>Use in the white paper (Gap-1 correction):</strong> this peer-reviewed review confirms our honest<br>negatives (sequence search, QML, data-loading) and our practicality test, but adds a near-term<br>opportunity class we had landed as negative/data-bound: small, hard <em>discrete optimisation</em> —<br>haplotype phasing (Max-Cut), gene-panel selection (MIS/Knapsack), and inference/phylogenetics<br>(quantum-enhanced Monte Carlo). The honest verdict shifts from &quot;the only genomics opportunity is<br>fault-tolerant biomolecular chemistry&quot; to &quot;...plus a NISQ-era discrete-optimisation niche on small,<br>classically-hard instances — candidate, not demonstrated.&quot; Feeds <code>20260603_genomics_mapping_lit</code>,<br><code>20260603_variant_calling_popgen</code> and <code>20260603_sequence_search</code>.</blockquote></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

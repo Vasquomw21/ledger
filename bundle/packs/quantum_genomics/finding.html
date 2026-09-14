@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headline finding — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="index.html">← index</a></p><h1>Headline finding</h1><h1>Finding — quantum computing for genomics</h1>
+<p>The framing-agnostic structural read-out of the corpus, reproducible from the committed ledgers via<br><code>ledger graph</code> (the typed edges + derived double-count) and <code>ledger inspect analysis</code> (the load-bearing<br>claims and dependency closure). It reports what the machinery makes auditable, with the honest<br>boundary stated. The judgement layer behind it is in <code>speedup_assessment</code>.</p>
+<h2>The question</h2>
+<p>Across three sub-questions (<code>inquiry</code>): is there a genuine quantum advantage for genomics/biology<br>(Q1), do the claimed &quot;exponential speedups&quot; survive their caveats and dequantisation (Q2, the<br>load-bearing one), and is the cryptographic threat to genomic data present and permanent (Q3)?</p>
+<h2>What the machinery surfaces (Q2 — the speedup is one contested joint, not a broad front)</h2>
+<p>A fluent survey states &quot;HHL gives an exponential speedup&quot; and moves on. The claim graph shows the<br>popular advantage case turning on a single contested claim and resting, by the proponent&#x27;s own<br>account, on one primitive:</p>
+<ul><li><strong>One crux, not many.</strong> <code><a href="ledgers/harrow_2009.html">harrow_2009:exponential-speedup</a></code> is marked the crux of speedup-robustness</li></ul>
+<p>(<code>hhl-speedup-crux</code>). Per <code><a href="ledgers/aaronson_2015.html">aaronson_2015:hhl-engine</a></code>, &quot;many of the subsequent quantum learning<br>algorithms extend HHL or use it as a subroutine&quot; — so the apparent breadth of QML-speedup results<br>is not independent breadth; it descends from the one primitive whose caveats are under test.</p>
+<ul><li><strong>The headline is qualified and rebutted.</strong> Aaronson qualifies it (<code>four-caveats-thesis</code>: the</li></ul>
+<p>speedup holds only under four caveats); Tang rebuts the general-classical version<br>(<code><a href="ledgers/tang_2019.html">tang_2019:no-exponential-speedup</a> → <a href="ledgers/harrow_2009.html">harrow_2009:exponential-over-classical</a></code>); the supremacy<br>demonstration is contested (<code><a href="ledgers/pednault_2019.html">pednault_2019:rebuttal-days-not-years</a> → <a href="ledgers/arute_2019.html">arute_2019:200s-vs-10000-years</a></code>).</p>
+<ul><li><strong>A non-independence the machinery flags — on the skeptic side.</strong> Tang, Chia, and Cerezo all</li></ul>
+<p>support &quot;no real-world QML speedup&quot; (<code><a href="ledgers/maurizio_2025.html">maurizio_2025:no-qml-real-world-speedup</a></code>), but the derived<br>double-count fires on <strong>Tang + Chia</strong> (Chia generalises Tang&#x27;s dequantisation method — one family,<br>counted twice) and <strong>not</strong> on Cerezo (an independent barren-plateau obstruction). The detector is<br>framing-agnostic: it flags a correlated pair on the <em>skeptical</em> conclusion, not the hyped one.</p>
+<ul><li><strong>A faithfulness limit, recorded.</strong> <code>tang-rebuts-hhl-faithfulness</code> disputes that Tang&#x27;s</li></ul>
+<p>algorithm-specific quote licenses a rebuttal of <em>every</em> HHL application; HHL for sparse,<br>well-conditioned systems is not dequantised by that result.</p>
+<h2>The honest answer on Q1 and Q3</h2>
+<ul><li><strong>Q1 — narrow and mostly projected.</strong> Quantum chemistry is the genuine candidate advantage</li></ul>
+<p>(<code>reiher_2017</code>, <code>babbush_2021</code>), but it is <em>projected</em>, conditional on fault-tolerant hardware that<br>does not yet exist (<code>chemistry-advantage-calibration</code>). Protein structure prediction — once floated<br>as a quantum target — was settled by classical machine learning instead (<code>jumper_2021</code>, with<br><code>baek_2021</code> corroborating, and flagged as not wholly independent of it). The near-term niche is<br>small classically-hard combinatorial sub-problems (<code>maurizio_2025</code>).</p>
+<ul><li><strong>Q3 — present and bounded.</strong> Shor&#x27;s algorithm breaks the public-key cryptography protecting</li></ul>
+<p>genomic data (<code>shor_1997</code>), and &quot;harvest-now, decrypt-later&quot; makes the threat present now for<br>long-lived data (<code>mosca_2018</code>). It is bounded by large resource requirements (<code>gidney_2021</code>) and by<br>standardised post-quantum defences that already exist (<code>nist_2024</code>) — the gap is migration, not<br>invention.</p>
+<h2>Honest boundary</h2>
+<p>This does not claim quantum computing is useless for biology: quantum chemistry is named as a real<br>projected advantage, and the cryptographic threat as real. It does not claim the machinery<br><em>discovered</em> the speedup caveats — those are Aaronson&#x27;s, Tang&#x27;s, and Chia&#x27;s own theses; what the<br>machinery adds is that the dependency of the advantage case on one contested primitive, and the<br>non-independence of the dequantisation evidence, become mechanically auditable rather than matters of<br>each reader&#x27;s trust. And it fires only the one double-count its corpus supports: the broader family<br>of HHL-descendant QML papers is a Known gap (<code>source_register.md</code>), so this is the auditable-overlap<br>result, not an overturning of the field&#x27;s verdict.</p>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

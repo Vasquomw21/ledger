@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aram W. Harrow, Avinatan Hassidim &amp; Seth Lloyd (2009) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Aram W. Harrow, Avinatan Hassidim &amp; Seth Lloyd (2009)</h1><table class="fm"><tr><th>Paper</th><td>Aram W. Harrow, Avinatan Hassidim &amp; Seth Lloyd (2009)</td></tr><tr><th>Title</th><td>Quantum algorithm for linear systems of equations</td></tr><tr><th>Version</th><td>arXiv:0811.3171; Phys. Rev. Lett. 103, 150502 (2009)</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1103/PhysRevLett.103.150502" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 9f2610d065b2…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Harrow, Hassidim &amp; Lloyd (2009), &quot;Quantum algorithm for linear systems of equations&quot;</h1>
+<p>The HHL primitive itself (its caveats are separately logged from Aaronson 2015). Quotes read<br>from the downloaded full text (arXiv:0811.3171) and confirmed verbatim against<br><code>literature/extracted/harrow_2009.txt</code>. Symbols rendered as their true characters.</p>
+<h2>Claim 1: The headline result — solve Ax=b in poly(log N) time, an exponential improvement</h2>
+<blockquote>&quot;Here, we exhibit a quantum algorithm for this task that runs in poly(log N, κ) time, an exponential improvement over the best classical algorithm.&quot;</blockquote>
+<p><strong>ID:</strong> exponential-speedup<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness<br><strong>Crux-of:</strong> speedup-robustness (grounded by #exponential-speedup) [if-resolved: whether an advertised exponential speedup survives the state-preparation, readout, and condition-number assumptions, compared against the best classical algorithm for the same restricted task]</p>
+<p>---</p>
+<h2>Claim 2: The runtime depends on the condition number κ and error ε</h2>
+<blockquote>&quot;our runtime will scale as κ² log(N)/ε, where ε is the additive error achieved in the output state |x⟩.&quot;</blockquote>
+<p><strong>ID:</strong> kappa-runtime<br><strong>Location:</strong> Introduction. The κ-dependence and sparsity assumptions are the caveats Aaronson (2015) expands on.<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 3: The crucial caveat — the output is a quantum state; you read out expectation values, not all of x</h2>
+<blockquote>&quot;Clearly, to read out all the components of x would require one to perform the procedure at least N times. However, often one is interested not in x itself, but in some expectation value ... we obtain an estimate of the expectation value ⟨x|M|x⟩&quot;</blockquote>
+<p><strong>ID:</strong> readout-expectation<br><strong>Location:</strong> Introduction<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 4: The explicit exponential-speed-up claim over classical matrix inversion</h2>
+<blockquote>&quot;we will prove that in fact any classical algorithm requires in general exponentially more time than our quantum algorithms to perform the same matrix inversion task.&quot;</blockquote>
+<p><strong>ID:</strong> exponential-over-classical<br><strong>Location:</strong> Introduction<br><strong>Addresses:</strong> speedup-robustness</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dehghan et al. (2020) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Dehghan et al. (2020)</h1><table class="fm"><tr><th>Paper</th><td>Dehghan et al. (2020)</td></tr><tr><th>Title</th><td>Association of egg intake with blood lipids, cardiovascular disease, and mortality in 177,000 people in 50 countries</td></tr><tr><th>Version</th><td>published (Am J Clin Nutr 2020; PMC author manuscript)</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1093/ajcn/nqz348" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 2ffd39f8c610…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Dehghan et al. (2020), PURE study</h1>
+<p>Each quote was read from the PMC HTML and grep-verified against the extracted text. A large<br>multinational (PURE) analysis finding no association — a second null-finding cohort that supports<br>the meta-analytic null and directly rebuts the positive-association cohort.</p>
+<h2>Claim 1: moderate egg intake is not associated with CVD or mortality</h2>
+<blockquote>&quot;we found that moderate egg intake (1/d) was not associated with an increased risk of mortality or major CVD&quot;</blockquote>
+<p><strong>ID:</strong> pure-no-association<br><strong>Location:</strong> Discussion (conclusion)<br><strong>Grep command used:</strong> <code>grep &quot;not associated with an increased risk of mortality or major CVD&quot; extracted/dehghan_2020.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Supports:</strong> <a href="drouin_2020.html">drouin_2020:no-association-overall</a> (grounded by #pure-no-association)<br><strong>Rebuts:</strong> <a href="zhong_2019.html">zhong_2019:cholesterol-eggs-harmful</a> (grounded by #pure-no-association)</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

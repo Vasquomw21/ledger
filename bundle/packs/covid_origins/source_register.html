@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source register — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="index.html">← index</a></p><h1>Source register</h1><table class="fm"><tr><th>last_updated</th><td>20260613</td></tr><tr><th>curator</th><td>van_songhai</td></tr><tr><th>status</th><td>active</td></tr></table>
+<h1>Source Register — COVID-19 origins (FCS + origin-locus sub-questions)</h1>
+<p>Records <em>why</em> each source is in the corpus and <em>how</em> it was found, names the viewpoints the<br>question space contains, and lists what is knowingly missing. The <code>selection_audit</code> gate (set<br><code>required</code> here) enforces that every stamped ledger is registered and that **no declared<br>position is left empty** — covered by a source or named under Known gaps. It does <em>not</em> prove<br>the position set is complete; that judgement is surfaced here and in semantic health, never<br>claimed as proven. The two known gaps below are the corpus&#x27;s incompleteness stated in the open.</p>
+<h2>Positions</h2>
+<p>The viewpoints across both sub-questions (FCS engineering, and origin-locus). Each must be<br>covered by a source below, or named under Known gaps.</p>
+<p><strong>Position:</strong> natural-origin — the genomic features, including the FCS, are consistent with<br>ordinary natural evolutionary processes; no laboratory scenario is needed to explain them.<br><strong>Position:</strong> lab-origin — the same features cannot exclude laboratory manipulation; the FCS&#x27;s<br>novelty is compatible with engineering that would leave no trace.<br><strong>Position:</strong> zoonotic-market — the early spatial and genomic evidence locates emergence at the<br>Huanan live-wildlife market via one or more natural spillovers, not an introduced point source.</p>
+<h2>Sources</h2>
+<p>One block per ingested source. <code><strong>Source:</strong></code> matches a <code>literature/verified_claims/&lt;key&gt;.md</code>.</p>
+<h3>Andersen et al. (2020)</h3>
+<p><strong>Source:</strong> andersen_2020<br><strong>Discovery:</strong> the case prompt; the canonical &quot;proximal origin&quot; analysis and the most-cited<br>natural-origin paper on SARS-CoV-2.<br><strong>Rationale:</strong> the natural-origin anchor for the FCS sub-question — states the features are<br>consistent with natural processes and that no laboratory scenario is plausible.<br><strong>Position:</strong> natural-origin<br><strong>Quality:</strong> peer-reviewed correspondence, Nature Medicine (2020).<br><strong>Addresses:</strong> fcs-engineering</p>
+<h3>Segreto &amp; Deigin (2021)</h3>
+<p><strong>Source:</strong> segreto_2021<br><strong>Discovery:</strong> citation-chase from the published responses engaging Andersen et al. (2020).<br><strong>Rationale:</strong> the most-cited published engineering-leaning counterpoint that engages the <em>same</em><br>FCS evidence — the symmetric other side of the crux.<br><strong>Position:</strong> lab-origin<br><strong>Quality:</strong> peer-reviewed hypothesis paper, BioEssays (2021).<br><strong>Addresses:</strong> fcs-engineering</p>
+<h3>Worobey et al. (2022)</h3>
+<p><strong>Source:</strong> worobey_2022<br><strong>Discovery:</strong> the eval named the market-epidemiology case as the missing zoonotic viewpoint;<br>the canonical spatial-epidemiology analysis of the earliest cases.<br><strong>Rationale:</strong> the spatial anchor for origin-locus — the earliest cases cluster on the Huanan<br>market, read as evidence of zoonotic emergence there.<br><strong>Position:</strong> zoonotic-market<br><strong>Quality:</strong> peer-reviewed research article, Science (2022).<br><strong>Addresses:</strong> origin-locus</p>
+<h3>Pekar et al. (2022)</h3>
+<p><strong>Source:</strong> pekar_2022<br><strong>Discovery:</strong> companion paper to Worobey et al. (2022) in the same issue; the molecular-clock<br>counterpart to the spatial analysis.<br><strong>Rationale:</strong> the molecular anchor for origin-locus — two early lineages imply at least two<br>separate zoonotic introductions, against a single point-source introduction.<br><strong>Position:</strong> zoonotic-market<br><strong>Quality:</strong> peer-reviewed research article, Science (2022).<br><strong>Addresses:</strong> origin-locus</p>
+<h3>Temmam et al. (2022)</h3>
+<p><strong>Source:</strong> temmam_2022<br><strong>Discovery:</strong> citation-chase for the closest sampled natural relatives bearing on FCS rarity.<br><strong>Rationale:</strong> the BANAL bat coronaviruses — closest relatives by RBD, infectious for human<br>cells, yet still carrying no furin cleavage site: a qualifier on the FCS crux and support for<br>natural-spillover plausibility.<br><strong>Position:</strong> natural-origin<br><strong>Quality:</strong> peer-reviewed research article, Nature (2022).<br><strong>Addresses:</strong> fcs-engineering</p>
+<h2>Known gaps</h2>
+<p>Viewpoints or sources known to exist but not yet ingested.</p>
+<p><strong>Gap:</strong> the intermediate host itself — no infected market animal was ever sampled; the<br>zoonotic-market case rests on spatial/genomic proxies, not a recovered animal reservoir.<br><strong>Gap:</strong> ascertainment bias — early case-finding was itself centred on the market, so the<br>&quot;epicenter&quot; signal may partly reflect <em>where testing looked</em>. This is the open methodological<br>counter to Worobey/Pekar and is the subject of the recorded faithfulness dispute; no source<br>quantifying the bias is yet ingested.<br><strong>Gap:</strong> lab-leak primary documents — grant and proposal materials (e.g. the DEFUSE proposal) are<br>not yet ingested as primary sources. They would bear on the means/opportunity side of the<br>engineering reading, which the current lab-origin source argues only from genomic structure.</p>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

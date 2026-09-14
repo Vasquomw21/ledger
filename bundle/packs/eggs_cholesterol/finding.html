@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headline finding — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="index.html">← index</a></p><h1>Headline finding</h1><table class="fm"><tr><th>curator</th><td>Vasquomw21</td></tr><tr><th>date</th><td>20260716</td></tr><tr><th>status</th><td>active</td></tr></table>
+<h1>Finding — cohort reuse and double-counting in the egg–CVD evidence base</h1>
+<p>Four meta-analyses of this literature re-analyse an overlapping set of primary cohorts, and three<br>possible-dependence warnings fire: two exact same-cohort pairs on the harmful side and one broader<br>overlapping-pool pair on the null. The detector operates on cohort relationships recorded from each<br>study&#x27;s methods, so it flags the harmful side&#x27;s WHI pair <a class="recref" href="assessments.html#rec-whi-double-count">whi-double-count</a> and six-US-cohort<br>pair <a class="recref" href="assessments.html#rec-sixus-double-count">sixus-double-count</a> alongside the null side&#x27;s overlapping pools. This does not overturn<br>the answer. It turns &quot;are these pooled studies independent?&quot; from a step the reader must trust each<br>author to have taken into a declaration that is written down, addressable, and open to challenge.<br>The dependence itself is read off each study&#x27;s methods by a human and recorded in the ledger; what<br>the machinery does is carry that declaration across the graph and show where it bites.</p>
+<p><strong>What this is.</strong> The framing-agnostic read-out of applying the Ledger machinery to a 16-source<br>egg/dietary-cholesterol–CVD corpus. We did not set out to prove eggs are safe or harmful; we<br>ingested the major syntheses and primary cohort studies, recorded each study&#x27;s underlying cohort<br>neutrally, and report what the double-count detector surfaces. The result is **reproducible by the<br>reader** — the counts are derived from running the tools over the committed ledgers, while source<br>claims remain verbatim quotations.</p>
+<h2>Reproduce it</h2>
+<pre><code>python3 tools/build_graph.py        # writes content/graph.json incl. findings.double_count
+python3 tools/analyze_graph.py      # prints the shared-premise / double-count findings
+python3 tools/check_structure.py --structure required   # 11 edges resolve + grounded</code></pre>
+<h2>What the machinery surfaces</h2>
+<ol><li><strong>The corpus rests on a handful of repeatedly-reused cohorts.</strong> Across the four meta-analyses</li></ol>
+<p>(<code>drouin_2020</code>, <code>zhao_2022</code>, <code>godos_2021</code>, <code>darooghegi_2022</code>) and the primaries, the same cohorts<br>recur — the Harvard NHS/HPFS family, the six harmonised US cohorts (<code><a href="ledgers/zhong_2019.html">zhong_2019:cohort-6us-pool</a></code><br>re-used by <code><a href="ledgers/zhong_2021.html">zhong_2021:cohort-6us-pool</a></code>), the Women&#x27;s Health Initiative (<code><a href="ledgers/sun_2021.html">sun_2021:cohort-whi</a></code> and<br><code><a href="ledgers/chen_2021.html">chen_2021:cohort-whi</a></code>), NHANES, NIH-AARP, KIHD, China Kadoorie. The &quot;independent&quot; syntheses<br>therefore re-analyse a largely overlapping set of primary data.</p>
+<ol><li><strong>Three possible-dependence warnings fire</strong> (<code>analyze_graph.py</code>), on <em>both</em> sides of the</li></ol>
+<p>question — the detector is framing-agnostic. The first two identify exact cohort reuse; the third<br>records a broader overlapping-pool relationship:</p>
+<ul><li><code>sun_2021</code> + <code>chen_2021</code> both support the harmful conclusion (<code><a href="ledgers/zhao_2022.html">zhao_2022:harmful-mortality</a></code>) yet</li></ul>
+<p>are the <strong>same WHI cohort</strong> <a class="recref" href="assessments.html#rec-whi-double-count">whi-double-count</a> — and a published meta-analysis<br>(Darooghegi 2022 #overlap-excluded) retained both, against its own stated method.</p>
+<ul><li><code>zhong_2019</code> + <code>zhong_2021</code> both support the harmful conclusion yet **re-analyse the same six US</li></ul>
+<p>cohorts** <a class="recref" href="assessments.html#rec-sixus-double-count">sixus-double-count</a>.</p>
+<ul><li><code>dehghan_2020</code> + <code>rong_2013</code> both support the null (<code><a href="ledgers/drouin_2020.html">drouin_2020:no-association-overall</a></code>) and</li></ul>
+<p>pool overlapping observational cohorts of the same design. This pair is declared correlated in<br>the ledgers and fires the same derived warning, but carries no sealed record of its own — the<br>two above do.</p>
+<p>Every supports/rebuts edge in this corpus has been adversarially reviewed and held — the aptness<br>of the WHI support <a class="recref" href="assessments.html#rec-sun-supports-zhao-apt-pass">sun-supports-zhao-apt-pass</a> and of the null&#x27;s<br><a class="recref" href="assessments.html#rec-dehghan-supports-drouin-apt-pass">dehghan-supports-drouin-apt-pass</a> alike. A double-count warns about <em>independence</em>, not<br>about whether either inference reads its source correctly.</p>
+<ol><li>**The meta-analyses differ in what the verified claims establish about de-duplication, alongside</li></ol>
+<p>different conclusion strength.** From each source&#x27;s own methods:</p>
+<ul><li>De-duplication reported → hedged: Godos (<code><a href="ledgers/godos_2021.html">godos_2021:dedup-method</a></code>) keeps one dataset per</li></ul>
+<p>cohort and concludes <code><a href="ledgers/godos_2021.html">godos_2021:no-conclusive-evidence</a></code>; Darooghegi<br>(<code><a href="ledgers/darooghegi_2022.html">darooghegi_2022:overlap-excluded</a></code>) names and removes HPFS/NHANES/CHNS duplicates and reaches<br>a threshold-dependent result (<code><a href="ledgers/darooghegi_2022.html">darooghegi_2022:harmful-above-threshold</a></code>).</p>
+<ul><li>Overlap handling unestablished here → confident: Drouin-Chartier</li></ul>
+<p>(<code><a href="ledgers/drouin_2020.html">drouin_2020:pooled-28-studies</a></code>) and Zhao<br>(<code><a href="ledgers/zhao_2022.html">zhao_2022:pooled-studies</a></code>) identify the studies they pool, but the verified claims do not<br>establish whether either checked for cohort overlap — that is unestablished here, not a<br>reported absence. Both reach <em>confident</em> conclusions in opposite directions<br>(<code><a href="ledgers/drouin_2020.html">drouin_2020:no-association-overall</a></code>; <code><a href="ledgers/zhao_2022.html">zhao_2022:harmful-mortality</a></code>).</p>
+<h2>What this finding is NOT</h2>
+<ul><li><strong>The cohort-overlap problem is not novel science.</strong> It is a known methodological hazard — indeed</li></ul>
+<p>two sources here (<code><a href="ledgers/godos_2021.html">godos_2021:dedup-method</a></code>, <code><a href="ledgers/darooghegi_2022.html">darooghegi_2022:overlap-excluded</a></code>) handle it<br>explicitly. The contribution is not the discovery; it is that the overlap each author found is<br><strong>written down, addressable, and auditable</strong> across a corpus, instead of living in prose a reader<br>must trust each author to have written.</p>
+<ul><li><strong>The confident null is not simply an artefact of double-counting.</strong> Drouin-Chartier handles its</li></ul>
+<p>single biggest overlap <em>correctly</em>: it <code><a href="ledgers/drouin_2020.html">drouin_2020:updates-hu-1999</a></code> by <strong>replacing</strong> the old NHS/HPFS<br>data rather than pooling both, so we do not claim its conclusion collapses. The double-counts the<br>machinery flags (WHI; six-US-cohort) are real but are a minority of the pooled evidence, and we do<br>not claim they reverse any pooled estimate — establishing that would need the effect sizes<br>re-pooled, which is out of scope here.</p>
+<ul><li>**What it does change is <em>confidence calibration</em>.** The apparent consilience of multiple</li></ul>
+<p>&quot;independent&quot; meta-analyses is weaker than it looks, because they re-analyse overlapping cohorts;<br>and the two confident conclusions come from analyses for which the verified claims do not establish<br>a de-duplication step. That is a hedged, structural observation, not a verdict on whether eggs<br>raise CVD risk.</p>
+<ul><li><strong>Coverage is partial.</strong> Several overlap specimens (Hu 1999; the KIHD pair; the CHNS pair) are</li></ul>
+<p>paywalled and recorded under <code>source_register.md</code> Known gaps, never stubbed — so the demonstration<br>rests on the clusters whose members are all open (WHI, six-US-cohort).</p>
+<h2>Bottom line</h2>
+<p>Applied without a thumb on the scale, the machinery turns &quot;are these pooled studies independent?&quot;<br>from a manual, trust-the-author step into a declared relationship anyone can address and dispute,<br>and the warnings it derives land on both sides of a contested question, including two exact<br>same-cohort reuse findings on the harmful side. The overlap is read from each study&#x27;s methods by a<br>human, not discovered by the tool; the tool is what makes that reading carry, and fail loudly if it<br>is wrong. It does <strong>not</strong> overturn the answer; it makes the evidence base&#x27;s dependence on a few<br>reused cohorts legible and contestable.</p>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

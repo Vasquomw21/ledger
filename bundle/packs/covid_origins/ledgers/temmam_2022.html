@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temmam et al. (2022) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Temmam et al. (2022)</h1><table class="fm"><tr><th>Paper</th><td>Temmam et al. (2022)</td></tr><tr><th>Title</th><td>Bat coronaviruses related to SARS-CoV-2 and infectious for human cells</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1038/s41586-022-04532-4" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 86c000be0b1e…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Temmam et al. (2022)</h1>
+<p>Each quote was read from the downloaded Nature HTML and grepped against the<br>extracted text. This is the <strong>closest-natural-relatives</strong> source: the BANAL bat<br>coronaviruses bear on the FCS-rarity crux (the nearest sampled relatives still<br>lack the cleavage site) and on natural-spillover plausibility.</p>
+<h2>Claim 1: none of the closest bat relatives carries a furin cleavage site</h2>
+<blockquote>&quot;None of these bat viruses contains a furin cleavage site in the spike protein.&quot;</blockquote>
+<p><strong>ID:</strong> no-fcs-in-relatives<br><strong>Location:</strong> Results / discussion of the BANAL spike<br><strong>Grep command used:</strong> <code>grep &quot;furin cleavage site in the spike protein&quot; extracted/temmam_2022.txt</code><br><strong>Addresses:</strong> fcs-engineering<br><strong>Qualifies:</strong> <a href="andersen_2020.html">andersen_2020:fcs-natural-process</a> (grounded by #no-fcs-in-relatives)</p>
+<p>---</p>
+<h2>Claim 2: BANAL bat viruses enter and replicate in human cells via hACE2</h2>
+<blockquote>&quot;mediate hACE2-dependent entry and replication in human cells&quot;</blockquote>
+<p><strong>ID:</strong> banal-infectious-humans<br><strong>Location:</strong> Results — hACE2 entry assays<br><strong>Grep command used:</strong> <code>grep &quot;hACE2-dependent entry and replication&quot; extracted/temmam_2022.txt</code><br><strong>Addresses:</strong> origin-locus<br><strong>Supports:</strong> <a href="andersen_2020.html">andersen_2020:no-lab-scenario</a> (grounded by #banal-infectious-humans)</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

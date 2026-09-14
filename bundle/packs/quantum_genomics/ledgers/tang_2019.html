@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ewin Tang (2019) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Ewin Tang (2019)</h1><table class="fm"><tr><th>Paper</th><td>Ewin Tang (2019)</td></tr><tr><th>Title</th><td>A quantum-inspired classical algorithm for recommendation systems</td></tr><tr><th>Version</th><td>STOC 2019; arXiv:1807.04271</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1145/3313276.3316310" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body f361f8d91523…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Tang (2019), &quot;A quantum-inspired classical algorithm for recommendation systems&quot;</h1>
+<p>Quotes read from the downloaded full-text PDF (arXiv:1807.04271v3) and confirmed<br>verbatim against <code>literature/extracted/tang_2019.txt</code>. This is the canonical<br>&quot;dequantization&quot; result: a classical algorithm matching a quantum-ML algorithm&#x27;s<br>performance, erasing its claimed exponential speedup.</p>
+<h2>Claim 1: A classical algorithm matches the quantum recommendation algorithm up to polynomial factors</h2>
+<blockquote>&quot;Our main result is an algorithm that, given an m × n matrix in a data structure supporting certain ℓ2-norm sampling operations, outputs an ℓ2-norm sample from a rank-k approximation of that matrix in time O(poly(k) log(mn)), only polynomially slower than the quantum algorithm.&quot;</blockquote>
+<p><strong>ID:</strong> classical-matches-quantum<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 2: Consequence — the quantum algorithm does NOT give an exponential speedup</h2>
+<blockquote>&quot;As a consequence, Kerenidis and Prakash&#x27;s algorithm does not in fact give an exponential speedup over classical algorithms.&quot;</blockquote>
+<p><strong>ID:</strong> no-exponential-speedup<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness<br><strong>Rebuts:</strong> <a href="harrow_2009.html">harrow_2009:exponential-over-classical</a> (grounded by #no-exponential-speedup) <a class="recref" href="../assessments.html#rec-tang-rebuts-hhl-apt">tang-rebuts-hhl-apt</a><br><strong>Supports:</strong> <a href="maurizio_2025.html">maurizio_2025:no-qml-real-world-speedup</a> (grounded by #no-exponential-speedup) <a class="recref" href="../assessments.html#rec-tang-supports-noqml-apt">tang-supports-noqml-apt</a></p>
+<p>---</p>
+<h2>Claim 3: This was considered one of the strongest candidates for an exponential quantum-ML speedup</h2>
+<blockquote>&quot;We give a classical analogue to Kerenidis and Prakash&#x27;s quantum recommendation system, previously believed to be one of the strongest candidates for provably exponential speedups in quantum machine learning.&quot;</blockquote>
+<p><strong>ID:</strong> strongest-candidate<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 4: The key insight — ℓ2-norm sampling plays the role of quantum superposition classically</h2>
+<blockquote>&quot;The main insight of this work is the use of simple routines to manipulate ℓ2-norm sampling distributions, which play the role of quantum superpositions in the classical setting.&quot;</blockquote>
+<p><strong>ID:</strong> l2-sampling-insight<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p>
+<p>---</p>
+<h2>Claim 5: A framework for fairly comparing quantum ML against classical ML</h2>
+<blockquote>&quot;This correspondence indicates a potentially fruitful framework for formally comparing quantum machine learning algorithms to classical machine learning algorithms.&quot;</blockquote>
+<p><strong>ID:</strong> comparison-framework<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> speedup-robustness</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

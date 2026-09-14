@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic-health review — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="index.html">← index</a></p><h1>Semantic-health review</h1><table class="fm"><tr><th>last_review</th><td>20260614</td></tr><tr><th>reviewer</th><td>van_songhai</td></tr></table>
+<h1>Semantic health</h1>
+<p>A mechanically-clean wiki can still be intellectually stale: contradictions<br>between notes, claims overtaken by newer sources, and gaps where a concept is<br>referenced but never grounded are NOT caught by the citation/provenance gates.<br>This file is the tracked record of the last semantic pass. <code>ledger_doctor</code> nudges<br>— non-fatally — when it is missing or its <code>last_review</code> is stale; it never blocks<br>a commit.</p>
+<p>Review of 20260614 covered all seven ledgers, the Q1/Q2 inquiry, the claim graph,<br>the four assessment records, and the calibration note (performed while building<br>the dependency structure: every claim read, every edge resolved, the double-count<br>checked by hand against the code).</p>
+<h2>Unresolved contradictions</h2>
+<p>_None unresolved._ The substantive tension — Plaga (2008) vs Giddings &amp; Mangano —<br>is <strong>captured, not open</strong>: <code><a href="ledgers/plaga_2008.html">plaga_2008:evades-exclusion</a></code> rebuts<br><code><a href="ledgers/giddings_2008.html">giddings_2008:astro-bound</a></code>, and <code><a href="ledgers/giddings_reply_2008.html">giddings_reply_2008:scenario-inconsistent</a></code><br>rebuts back. The exchange is recorded as edges, so the disagreement is navigable<br>rather than silently resolved or silently ignored.</p>
+<h2>Stale sources</h2>
+<p>The corpus is 2008–2009 (plus the 1946 precedent). The conclusion has not been<br>overturned since, but the <em>endorsement base</em> has grown (see Missing sources). No<br>ingested claim is contradicted by a newer source; none is marked stale.</p>
+<h2>Concept gaps</h2>
+<p>The <strong>Hawking-evaporation branch</strong> (<code><a href="ledgers/lsag_2008.html">lsag_2008:bh-hawking-decay</a></code>) is referenced as<br>one arm of the safety disjunction but is grounded only from the review&#x27;s own text,<br>not from Hawking (1975). This is deliberate and is the point of the Q2 finding (the<br>popularly-cited arm is theoretical/unobserved), but it remains a grounding gap —<br>tracked in the source register&#x27;s Known gaps.</p>
+<h2>Missing sources / perspectives</h2>
+<ul><li><strong>Hawking (1975)</strong> — the evaporation derivation; would let the graph carry the</li></ul>
+<p>Hawking arm from its origin.</p>
+<ul><li><strong>The LSAG sub-cases</strong> (strangelets, vacuum bubbles, magnetic monopoles) — the</li></ul>
+<p>review is a portfolio of sub-arguments; only the black-hole sub-case is modelled.</p>
+<ul><li><strong>Post-2011 endorsement / update layer</strong> — the captured baseline surfaces the</li></ul>
+<p>endorsing physics societies, Nobel-laureate statements, and later reviews that<br>this 2008–2009 corpus has not ingested. They strengthen the consensus but do not<br>change the dependency structure; named here so the breadth gap is visible.</p>
+<p>---</p>
+<p>_Mechanical gates being green does not mean the knowledge base is current; this<br>pass records the human read behind that claim for 20260614._</p>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

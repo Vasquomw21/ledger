@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peter W. Shor (1997) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Peter W. Shor (1997)</h1><table class="fm"><tr><th>Paper</th><td>Peter W. Shor (1997)</td></tr><tr><th>Title</th><td>Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer</td></tr><tr><th>Version</th><td>SIAM J. Comput. 26(5), 1484; arXiv:quant-ph/9508027</td></tr><tr><th>Retrieved</th><td>20260603</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1137/S0097539795293172" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 50bd4b9def7f…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Shor (1997), &quot;Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer&quot;</h1>
+<p>Quotes read from the downloaded full text (arXiv:quant-ph/9508027) and confirmed verbatim<br>against <code>literature/extracted/shor_1997.txt</code>. Ligature glyphs rendered as their true words.</p>
+<h2>Claim 1: Factoring and discrete log in polynomial time on a quantum computer</h2>
+<blockquote>&quot;These algorithms take a number of steps polynomial in the input size, e.g., the number of digits of the integer to be factored.&quot;</blockquote>
+<p><strong>ID:</strong> factoring-polynomial-time<br><strong>Location:</strong> Abstract<br><strong>Addresses:</strong> crypto-threat</p>
+<p>---</p>
+<h2>Claim 2: No classical polynomial-time algorithm is known (the exponential gap)</h2>
+<blockquote>&quot;Two number theory problems which have been studied extensively but for which no polynomial-time algorithms have yet been discovered are finding discrete logarithms and factoring integers.&quot;</blockquote>
+<p><strong>ID:</strong> no-classical-poly-algorithm<br><strong>Location:</strong> §1 (Introduction)<br><strong>Addresses:</strong> crypto-threat</p>
+<p>---</p>
+<h2>Claim 3: The cryptographic implication — breaks RSA public-key cryptography</h2>
+<blockquote>&quot;These problems are so widely believed to be hard that several cryptosystems based on their difficulty have been proposed, including the widely used RSA public key cryptosystem developed by Rivest, Shamir, and Adleman [1978].&quot;</blockquote>
+<p><strong>ID:</strong> breaks-rsa<br><strong>Location:</strong> §1 (Introduction). Directly underpins the &quot;harvest now, decrypt later&quot; data-sovereignty threat.<br><strong>Addresses:</strong> crypto-threat</p>
+<p>---</p>
+<h2>Claim 4: The mechanism — quantum Fourier transform / period finding</h2>
+<blockquote>&quot;we explain two subroutines that are used in our algorithms: reversible modular exponentiation ... and quantum Fourier transforms&quot;</blockquote>
+<p><strong>ID:</strong> quantum-fourier-mechanism<br><strong>Location:</strong> §1 (Introduction)<br><strong>Addresses:</strong> crypto-threat</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

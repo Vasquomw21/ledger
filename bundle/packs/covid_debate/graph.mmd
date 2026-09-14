@@ -1,0 +1,9 @@
+graph TD
+  n_daniel_market_hsm["daniel:market-hsm"]
+  n_stansifer_proximity["stansifer:proximity"]
+  n_stansifer_verdict["stansifer:verdict"]
+  n_van_treuren_superior_case["van_treuren:superior-case"]
+  n_weissman_odds_favor_ll["weissman:odds-favor-ll"]
+  n_daniel_market_hsm -->|supports| n_stansifer_proximity
+  n_van_treuren_superior_case -->|supports| n_stansifer_verdict
+  n_weissman_odds_favor_ll -.->|rebuts| n_stansifer_verdict

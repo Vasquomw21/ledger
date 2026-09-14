@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chen et al. (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Chen et al. (2021)</h1><table class="fm"><tr><th>Paper</th><td>Chen et al. (2021)</td></tr><tr><th>Title</th><td>Egg and dietary cholesterol intake and risk of all-cause, cardiovascular, and cancer mortality in the Women&#x27;s Health Initiative</td></tr><tr><th>Version</th><td>published (Am J Clin Nutr 2021)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1093/ajcn/nqaa353" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body eb1baa557718…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Chen et al. (2021)</h1>
+<p>A prospective cohort study of postmenopausal women in the Women&#x27;s Health Initiative (WHI), evaluating dietary cholesterol and egg intake in relation to incident cardiovascular disease and all-cause and cause-specific mortality.</p>
+<h2>Claim 1: study population / cohort</h2>
+<blockquote>&quot;We included 96,831 US postmenopausal women aged 50–79 y without known CVD or cancer during baseline enrollment (1993–1998) of the Women&#x27;s Health Initiative.&quot;</blockquote>
+<p><strong>ID:</strong> cohort-whi<br><strong>Location:</strong> Methods (study population)<br><strong>Grep command used:</strong> <code>grep &quot;without known CVD or cancer during baseline enrollment&quot; extracted/chen_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<h2>Claim 2: dietary cholesterol and egg intake associated with modestly elevated CVD and all-cause mortality risk</h2>
+<blockquote>&quot;Both higher dietary cholesterol intake and higher egg consumption appeared to be associated with modestly elevated risk of incident CVD and all-cause mortality in US postmenopausal women.&quot;</blockquote>
+<p><strong>ID:</strong> eggs-cholesterol-elevated-risk<br><strong>Location:</strong> Abstract (Conclusions)<br><strong>Grep command used:</strong> <code>grep &quot;appeared to be associated with modestly elevated risk of incident CVD&quot; extracted/chen_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Supports:</strong> <a href="zhao_2022.html">zhao_2022:harmful-mortality</a> (grounded by #eggs-cholesterol-elevated-risk)</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

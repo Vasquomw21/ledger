@@ -1,0 +1,20 @@
+graph TD
+  n_aaronson_2015_four_caveats_thesis["aaronson_2015:four-caveats-thesis"]
+  n_arute_2019_200s_vs_10000_years["arute_2019:200s-vs-10000-years"]
+  n_baek_2021_rosettafold_approaches_alphafold["baek_2021:rosettafold-approaches-alphafold"]
+  n_cerezo_2021_vqa_unproven_scaling["cerezo_2021:vqa-unproven-scaling"]
+  n_chia_2020_svt_no_exponential_speedup["chia_2020:svt-no-exponential-speedup"]
+  n_harrow_2009_exponential_over_classical["harrow_2009:exponential-over-classical"]
+  n_harrow_2009_exponential_speedup["harrow_2009:exponential-speedup"]
+  n_jumper_2021_casp14_accuracy_lead["jumper_2021:casp14-accuracy-lead"]
+  n_maurizio_2025_no_qml_real_world_speedup["maurizio_2025:no-qml-real-world-speedup"]
+  n_pednault_2019_rebuttal_days_not_years["pednault_2019:rebuttal-days-not-years"]
+  n_reiher_2017_classically_intractable_projected["reiher_2017:classically-intractable-projected"]
+  n_tang_2019_no_exponential_speedup["tang_2019:no-exponential-speedup"]
+  n_aaronson_2015_four_caveats_thesis -->|qualifies| n_harrow_2009_exponential_speedup
+  n_baek_2021_rosettafold_approaches_alphafold -->|supports| n_jumper_2021_casp14_accuracy_lead
+  n_cerezo_2021_vqa_unproven_scaling -->|supports| n_maurizio_2025_no_qml_real_world_speedup
+  n_chia_2020_svt_no_exponential_speedup -->|supports| n_maurizio_2025_no_qml_real_world_speedup
+  n_pednault_2019_rebuttal_days_not_years -.->|rebuts| n_arute_2019_200s_vs_10000_years
+  n_tang_2019_no_exponential_speedup -.->|rebuts| n_harrow_2009_exponential_over_classical
+  n_tang_2019_no_exponential_speedup -->|supports| n_maurizio_2025_no_qml_real_world_speedup

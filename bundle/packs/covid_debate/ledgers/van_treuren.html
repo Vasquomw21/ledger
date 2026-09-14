@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>van Treuren (2024) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>van Treuren (2024)</h1><table class="fm"><tr><th>Paper</th><td>van Treuren (2024)</td></tr><tr><th>Title</th><td>Rootclaim covid-19 origins debate: judge&#x27;s written decision</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://drive.google.com/file/d/1YhmkYB32RpGsXvQTsX4xZ0Yul1wiwh8Z/view" target="_blank" rel="noopener">source</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body f42b80522f1c…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — van Treuren (2024)</h1>
+<p>The second adjudicator&#x27;s voice. Will van Treuren, the other debate judge (a microbiologist),<br>also ruled for the zoonosis side. Extracted under the <code>adjudication</code> source-type. The source PDF<br>extracts with collapsed word-spacing, but <code>verify_quotes</code> strips whitespace before matching, so<br>the verbatim spans below (written with correct spacing, as authored) verify against the extract.</p>
+<h2>Claim 1: the ruling — zoonotic origin substantially more likely</h2>
+<blockquote>&quot;I find that SARS-CoV-2 is substantially more likely to be of zoonotic origin than a product of intentional engineering.&quot;</blockquote>
+<p><strong>ID:</strong> verdict<br><strong>Location:</strong> §1 (&quot;What did I decide?&quot;)<br><strong>Grep command used:</strong> <code>grep &quot;substantially more likely to be of zoonotic origin&quot; extracted/van_treuren.txt</code><br><strong>Addresses:</strong> verdict</p>
+<p>---</p>
+<h2>Claim 2: Peter (zoonosis) presented the superior case</h2>
+<blockquote>&quot;I believe that Peter, for the zoonosis side, presented the superior case, and is the winner of the debate.&quot;</blockquote>
+<p><strong>ID:</strong> superior-case<br><strong>Location:</strong> §1 (&quot;What did I decide?&quot;)<br><strong>Grep command used:</strong> <code>grep &quot;presented the superior case&quot; extracted/van_treuren.txt</code><br><strong>Addresses:</strong> verdict<br><strong>Supports:</strong> <a href="stansifer.html">stansifer:verdict</a> (grounded by #superior-case)</p>
+<p>---</p>
+<h2>Claim 3: the reason — internal inconsistency in the lab-leak case</h2>
+<blockquote>&quot;I ended up being more skeptical of the evidence that LL provided for two reasons. First, there were multiple instances of internal inconsistency.&quot;</blockquote>
+<p><strong>ID:</strong> ll-inconsistency<br><strong>Location:</strong> §2 (evidence assessment)<br><strong>Grep command used:</strong> <code>grep &quot;more skeptical of the evidence that LL provided&quot; extracted/van_treuren.txt</code><br><strong>Addresses:</strong> methodology</p>
+<p>---</p>
+<h2>Claim 4: the third section used the lab-leak side&#x27;s own Bayesian method</h2>
+<blockquote>&quot;Section 3 summarizes the evidence and arguments of each side through the Bayesian analysis method preferred by the LL side.&quot;</blockquote>
+<p><strong>ID:</strong> bayesian-section<br><strong>Location:</strong> Summary<br><strong>Grep command used:</strong> <code>grep &quot;Bayesian analysis method preferred by the LL side&quot; extracted/van_treuren.txt</code><br><strong>Addresses:</strong> methodology</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

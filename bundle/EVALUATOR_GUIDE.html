@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledger — evaluator guide</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.65 system-ui, -apple-system, sans-serif;
+         max-width: 46rem; margin: 3rem auto; padding: 0 1.2rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.4rem; }
+  h3 { font-size: 1.05rem; }
+  pre { overflow-x: auto; padding: 0.8rem; border-radius: 4px; background: #f4f4f4; }
+  table { border-collapse: collapse; display: block; overflow-x: auto; }
+  th, td { border: 1px solid #ccc; padding: 0.35rem 0.6rem; text-align: left; }
+  blockquote { margin: 1rem 0; padding: 0 0 0 1rem; border-left: 3px solid #ccc;
+                color: #555; }
+  a.back { display: inline-block; margin-bottom: 1.5rem; }
+  @media (prefers-color-scheme: dark) {
+    pre { background: #222; }
+    th, td { border-color: #444; }
+    blockquote { border-color: #444; color: #aaa; } }
+</style>
+</head>
+<body>
+<p><a class="back" href="index.html">&larr; Bundle index</a></p>
+<h1>Ledger — evaluator guide</h1>
+<h2>What Ledger is</h2>
+<p>Ledger is a research toolkit for people and AI working together. It keeps a growing knowledge base<br>tied to its evidence: every citation in gated, authored prose must point to a quotation checked<br>against the original source, while the claims, their connections, and human judgements remain<br>visible and reviewable.</p>
+<p>Ledger does not establish that the sources are complete, the reasoning is sound, or the conclusion<br>is true. When the source files are unavailable, it attests the committed proof rather than<br>re-checking the bytes.</p>
+<p>The guarantee is narrow and exact:</p>
+<blockquote>Ledger prevents a citation in gated, authored prose from pointing to a quotation that has not been<br>verified verbatim against its source. It does not prove that the source set is complete or the<br>interpretation correct; it makes those judgements explicit and reviewable.</blockquote>
+<p>That check is only as strong as the sources on the machine running it. On your own machine the script<br>re-reads the source files and re-proves every quote. In a fresh clone or in continuous integration<br>the source files are not shipped, so the system attests the stored proof rather than re-running it —<br>an audit trail, not an independent re-proof.</p>
+<h2>Start here</h2>
+<p>Start with the COVID-origins case. Open its pack — <code>packs/covid_origins/index.html</code> in the<br>submission bundle, or run <code>make demo DIR=cases/covid_origins_ledger</code> from a clone — and read the<br>finding on the first screen.</p>
+<p>The case shows how the machinery exposes a weak spot in an argument that looks strong. The claim most<br>other claims lean on is a statement of belief, not a result: Andersen and colleagues wrote that they<br>&quot;do not believe that any type of laboratory-based scenario is plausible.&quot; Ledger stores that exact<br>wording, so a reader can see that three supporting claims are aimed at a belief. One of the three is<br>formally disputed, and two more are marked as potentially correlated — so the apparent agreement of<br>three independent sources is weaker than it first looks.</p>
+<h2>Five-minute runnable path</h2>
+<p>You can run the whole thing from a fresh clone in about five minutes. It needs only Python 3.10 or<br>newer for the demo; the tests and the intake tools need a one-line <code>pip install</code>. From the repository<br>root:</p>
+<pre><code>python3 -m pytest -q                          # all tests pass
+python3 tools/ledger_doctor.py                # exit 0 on the empty starter kit
+python3 ledger_cli.py check                   # the applicable gates pass, exit 0
+make demo DIR=cases/covid_origins_ledger      # the guided tour, exit 0
+python3 ledger_cli.py pack cases/covid_origins_ledger --out /tmp/pack</code></pre>
+<p>Each command exits 0. <code>pytest</code> reports every test passing (a dated snapshot: 887 passed on<br>2026-07-16). The demo runs without the source files, so it confirms each stored proof rather than<br>re-reading the sources — the tour says so as it goes.</p>
+<h2>What to inspect</h2>
+<p>Inside the pack, follow one claim from the finding down to its evidence. The trail is the point of<br>the system: every step is a link you can click, and nothing between the finding and the source is<br>asserted without a stored quotation.</p>
+<p>The finding names one claim: Andersen&#x27;s &quot;no laboratory-based scenario is plausible.&quot; Click it and you<br>reach the stored quotation, shown character-for-character as it appears in the source, with the<br>SHA-256 stamp the verbatim check produced.</p>
+<p>One supporting inference is formally disputed. Worobey&#x27;s quotation locates where the earliest cases<br>clustered; the claim it is used to support is about how the virus arose. A sealed record marks that<br>gap between what the quote says and what it is used to prove. The dispute is recorded, not resolved —<br>Ledger shows the disagreement rather than settling it.</p>
+<p>Two of the three supporting claims may not be independent. Pekar&#x27;s claim is declared correlated with<br>Worobey&#x27;s, so the graph marks the pair with a possible-dependence warning. If two sources share<br>evidence, they may not be independent confirmations; the warning makes that possible dependence<br>visible.</p>
+<p>Not every inference is disputed. The third supporting claim, from Temmam, rests on a separate line of<br>evidence, and its use was adversarially reviewed and held.</p>
+<p>A separate record flags overstated certainty. Ledger marks Andersen&#x27;s phrase &quot;irrefutably show&quot; as<br>claiming more than an argument from the absence of a known backbone can support.</p>
+<p>One gate underwrites all of this. Where the source corpus is present — on your machine, as you write<br>and before each commit — the verbatim-quote check reads each source&#x27;s extracted text and confirms<br>every quotation, so a citation whose quotation does not match cannot pass. The extract records the<br>SHA-256 of the bytes it was built from, and the ledger&#x27;s stamp must agree with it, which is what ties<br>a quotation to the paper rather than to a text file beside it; 47 of this bundle&#x27;s 51 ledgers carry<br>that binding. The four that do not are living web documents — an archived FAQ, a shared document, two<br>blog posts — whose sources mutate, and they are reported as unbound rather than assumed sound. In a<br>clone without the sources, including<br>CI, the same shared checker attests the stored proof rather than re-reading the bytes. That gate is<br>the guarantee in the first section, doing its work on this case.</p>
+<h2>What remains human judgement</h2>
+<p>Four judgements stay with the reader.</p>
+<p>Whether the sources are the right ones is yours. Ledger makes the corpus and its declared gaps<br>auditable, but it cannot tell you what you never looked for.</p>
+<p>Whether a verbatim quote is used fairly is yours. Ledger shows every quote against the inference it<br>supports, but it does not settle whether the use is apt.</p>
+<p>Whether the argument follows is yours. The claim graph makes the structure explicit — what is<br>load-bearing, what rests on a single source — and stops there.</p>
+<p>What the answer is stays yours. Ledger surfaces these judgements; it does not decide them.</p>
+<h2>Other worked cases</h2>
+<p>The other four cases each show a different reason the system earns its keep. Each has a pack at<br><code>packs/&lt;name&gt;/</code> in the bundle, or generate one with <code>ledger pack cases/&lt;name&gt;_ledger --out &lt;dir&gt;</code>.</p>
+<ul><li><a href="packs/covid_origins/index.html">COVID-origins</a> — a belief presented as a result, one disputed</li></ul>
+<p>support, and two supporters marked as potentially correlated.</p>
+<ul><li><a href="packs/eggs_cholesterol/index.html">Eggs and cholesterol</a> — sixteen studies reduce to a handful of</li></ul>
+<p>reused patient cohorts, and the detector raises three possible-dependence warnings, on both sides<br>of the question.</p>
+<ul><li><a href="packs/lhc_safety/index.html">LHC safety</a> — the safety argument traced from its headline claim down</li></ul>
+<p>to the exact sentence and reply it rests on.</p>
+<ul><li><a href="packs/quantum_genomics/index.html">Quantum computing for genomics</a> — a subject outside the author&#x27;s</li></ul>
+<p>field, where the claimed speed-up turns on a single contested result, and the double-count detector<br>flags two of the sceptical sources as potentially dependent rather than independent.</p>
+<ul><li><a href="packs/covid_debate/index.html">COVID debate</a> — a recorded public debate with no authored finding,</li></ul>
+<p>shown as an empty interpretation layer, with the missing transcript declared as a gap rather than<br>papered over.</p>
+<h2>Method and architecture</h2>
+<p>If you want the machinery itself, hold three boundaries in mind. The low-level tools are the<br>enforcement layer — the gates that pass or fail. The <code>ledger</code> command is the researcher&#x27;s workflow<br>over those gates. The plain Markdown and JSON files are the interchange format, so the artefacts can<br>be read and rebuilt without any of Ledger&#x27;s own code.</p>
+<p>Read more: the authoring discipline (<code>AGENTS.md</code>), the interchange spec<br>(<code>spec/INTERCHANGE.md</code>), the five-layer trust model<br>(<code>docs/integrity_framework.md</code>), and the configuration reference<br>(<code>docs/configuration.md</code>).</p>
+<h2>Reproduction and limitations</h2>
+<p>The demo runs on Python 3.10 or newer with nothing installed; the tests and download tools need the<br>pip extras, and only the source-fetching toolchain needs conda. The raw sources are not shipped —<br>they are git-ignored — so a fresh clone re-proves nothing until you supply them. On the machine that<br>holds the sources the quotes are re-proved; everywhere else the stored proof is attested. A pack that<br>does not travel with its sources says &quot;Attested&quot;, never &quot;reproduced&quot;.</p>
+<p>Six limits are worth stating plainly. The comparison baselines in the cases were written by the same<br>author, not by an independent evaluator. The citation parser cannot yet tell apart two papers by the<br>same author in the same year (a &quot;Smith 2008a&quot; versus &quot;Smith 2008b&quot;). The source-coverage checks prove<br>that each source has a declared route into the corpus and that no side of a question is silently empty<br>— not that the corpus is complete or representative. Where two sources are marked as possibly<br>dependent, that dependence was read from each study&#x27;s methods by a person and written into the<br>ledger: the machinery carries the declaration across the graph and shows where it bites, but it does<br>not discover cohort overlap on its own. An assessment record is tamper-evident and self-consistent,<br>and its assessor and date are recorded as claimed — signing them is what the opt-in <code>attestation</code><br>posture adds, and it is off in these cases. And whether any inference is apt stays a human<br>judgement, assisted but not decided by the machinery.</p>
+</body>
+</html>

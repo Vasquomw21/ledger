@@ -1,0 +1,16 @@
+graph TD
+  n_cern_faq_perfectly_safe["cern_faq:perfectly-safe"]
+  n_giddings_2008_astro_bound["giddings_2008:astro-bound"]
+  n_giddings_2008_no_basis_concern["giddings_2008:no-basis-concern"]
+  n_giddings_2008_no_risk_whatsoever["giddings_2008:no-risk-whatsoever"]
+  n_giddings_reply_2008_scenario_inconsistent["giddings_reply_2008:scenario-inconsistent"]
+  n_koch_2009_independent_argument["koch_2009:independent-argument"]
+  n_lsag_2008_no_associated_risks["lsag_2008:no-associated-risks"]
+  n_lsag_2008_stable_bh_no_danger["lsag_2008:stable-bh-no-danger"]
+  n_plaga_2008_evades_exclusion["plaga_2008:evades-exclusion"]
+  n_plaga_2008_harmful_scenario["plaga_2008:harmful-scenario"]
+  n_giddings_2008_astro_bound -->|supports| n_lsag_2008_stable_bh_no_danger
+  n_giddings_2008_no_basis_concern -->|supports| n_lsag_2008_no_associated_risks
+  n_giddings_reply_2008_scenario_inconsistent -.->|rebuts| n_plaga_2008_harmful_scenario
+  n_koch_2009_independent_argument -->|supports| n_lsag_2008_no_associated_risks
+  n_plaga_2008_evades_exclusion -.->|rebuts| n_giddings_2008_astro_bound

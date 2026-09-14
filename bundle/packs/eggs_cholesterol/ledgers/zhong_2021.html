@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhong et al. (2021) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Zhong et al. (2021)</h1><table class="fm"><tr><th>Paper</th><td>Zhong et al. (2021)</td></tr><tr><th>Title</th><td>Associations of dietary cholesterol and egg consumption with cardiovascular disease and mortality: pooled US cohorts</td></tr><tr><th>Version</th><td>published (Int J Epidemiol 2021)</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1093/ije/dyaa205" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body b39a88341420…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Zhong et al. (2021)</h1>
+<p>A re-analysis of the same six harmonised US prospective cohorts as Zhong 2019, here framed as a substitution analysis of animal protein foods against incident CVD and all-cause mortality.</p>
+<h2>Claim 1: The analysis pools the same six harmonised US prospective cohorts (ARIC, CARDIA, CHS, FHS, FOS, MESA)</h2>
+<blockquote>&quot;These six cohort studies included the Atherosclerosis Risk in Communities (ARIC) Study, Coronary Artery Risk Development in Young Adults (CARDIA) Study, Cardiovascular Health Study (CHS), Framingham Heart Study (FHS), Framingham Offspring Study (FOS) and Multi-Ethnic Study of Atherosclerosis (MESA).&quot;</blockquote>
+<p><strong>ID:</strong> cohort-6us-pool<br><strong>Location:</strong> Methods, Study population<br><strong>Grep command used:</strong> <code>grep &quot;These six cohort studies included the Atherosclerosis Risk in Communities&quot; extracted/zhong_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd</p>
+<h2>Claim 2: Eggs are among the less-healthy protein sources; substituting them with plant foods or fish lowers CVD and mortality risk</h2>
+<blockquote>&quot;Nuts, whole grains, legumes and fish appeared to be healthier protein sources than eggs, processed meat, unprocessed red meat and poultry for preventing incident CVD and premature death.&quot;</blockquote>
+<p><strong>ID:</strong> eggs-less-healthy-substitution<br><strong>Location:</strong> Abstract, Conclusions<br><strong>Grep command used:</strong> <code>grep &quot;appeared to be healthier protein sources than eggs&quot; extracted/zhong_2021.txt</code><br><strong>Addresses:</strong> eggs-cvd<br><strong>Supports:</strong> <a href="zhao_2022.html">zhao_2022:harmful-mortality</a> (grounded by #eggs-less-healthy-substitution)<br><strong>Correlated-with:</strong> <a href="zhong_2019.html">zhong_2019:cholesterol-eggs-harmful</a> (grounded by #cohort-6us-pool) [shared: re-analyses the same six pooled US cohorts as Zhong 2019 — not an independent confirmation]</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

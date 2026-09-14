@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev &amp; Wiedemann, 2008) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev &amp; Wiedemann, 2008)</h1><table class="fm"><tr><th>Paper</th><td>LHC Safety Assessment Group (Ellis, Giudice, Mangano, Tkachev &amp; Wiedemann, 2008)</td></tr><tr><th>Title</th><td>Review of the Safety of LHC Collisions</td></tr><tr><th>Version</th><td>arXiv:0806.3414 (J. Phys. G 35, 115004)</td></tr><tr><th>Retrieved</th><td>20260613</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://doi.org/10.1088/0954-3899/35/11/115004" target="_blank" rel="noopener">doi</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body e35652ec1fdb…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — LHC Safety Assessment Group (2008)</h1>
+<p>Each quote was read from the arXiv PDF and grep-verified against the extracted text. This<br>is the official CERN safety review — the source that <em>performs the settling</em> of the LHC<br>black-hole-risk question.</p>
+<h2>Claim 1: the review finds no associated risks</h2>
+<blockquote>&quot;we study the possible production at the LHC of hypothetical objects such as vacuum bubbles, magnetic monopoles, microscopic black holes and strangelets, and find no associated risks.&quot;</blockquote>
+<p><strong>ID:</strong> no-associated-risks<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;no associated risks&quot; extracted/lsag_2008.txt</code><br><strong>Addresses:</strong> lhc-bh-risk<br><strong>Status:</strong> performed-settling</p>
+<p>---</p>
+<h2>Claim 2: the stability of astronomical bodies shows the collisions cannot be dangerous</h2>
+<blockquote>&quot;The stability of astronomical bodies indicates that such collisions cannot be dangerous.&quot;</blockquote>
+<p><strong>ID:</strong> cosmic-ray-safety<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;cannot be dangerous&quot; extracted/lsag_2008.txt</code></p>
+<p>---</p>
+<h2>Claim 3: any microscopic black holes are expected to decay by Hawking radiation</h2>
+<blockquote>&quot;Any microscopic black holes produced at the LHC are expected to decay by Hawking radiation before they reach the detector walls.&quot;</blockquote>
+<p><strong>ID:</strong> bh-hawking-decay<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;decay by Hawking radiation&quot; extracted/lsag_2008.txt</code></p>
+<p>---</p>
+<h2>Claim 4: even if stable, accretion is bounded so no conceivable danger</h2>
+<blockquote>&quot;The stability of astronomical bodies constrains strongly the possible rate of accretion by any such microscopic black holes, so that they present no conceivable danger.&quot;</blockquote>
+<p><strong>ID:</strong> stable-bh-no-danger<br><strong>Location:</strong> Abstract<br><strong>Grep command used:</strong> <code>grep &quot;no conceivable danger&quot; extracted/lsag_2008.txt</code><br><strong>Crux-of:</strong> lhc-bh-risk (grounded by #stable-bh-no-danger) [the LSAG review&#x27;s settling hinges here: the stable-black-hole accretion bound is the open crux its safety conclusion rests on]</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

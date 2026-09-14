@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konopinski, Marvin &amp; Teller (1946) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Konopinski, Marvin &amp; Teller (1946)</h1><table class="fm"><tr><th>Paper</th><td>Konopinski, Marvin &amp; Teller (1946)</td></tr><tr><th>Title</th><td>Ignition of the Atmosphere with Nuclear Bombs (LA-602)</td></tr><tr><th>Version</th><td>LA-602 (1946), declassified Los Alamos report; scanned typescript</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://blog.nuclearsecrecy.com/wp-content/uploads/2018/06/1946-LA-602-Konopinski-Marvin-Teller-Ignition-fo-the-Atmsophere.pdf" target="_blank" rel="noopener">source</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body 01ab17c5ed3b…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Konopinski, Marvin &amp; Teller, LA-602 (1946)</h1>
+<p>The competition&#x27;s LHC brief links LA-602 explicitly as the historical precedent: a prior<br><em>&quot;could this experiment destroy the world?&quot;</em> safety analysis (whether a nuclear detonation could<br>ignite the atmosphere). It is ingested here as a <strong>methodological precedent</strong>, not as physics<br>evidence about the LHC — so it carries no in-band edge to the LHC claims; the cross-case parallel is<br>drawn in an assessment record, where it belongs.</p>
+<blockquote><strong>Source quality note.</strong> The only available copy (the one the brief links) is a 1946 scanned<br>typescript with a poor OCR text layer. Per the quote-first rule, the quotes below are exactly the<br>spans that verify verbatim against the extracted text; where OCR mangled the surrounding words the<br>quote stops rather than reconstructing them. Claim 1&#x27;s sentence concludes &quot;…subject highly<br>desirable&quot; in the original, but those final words are OCR-degraded in this scan, so the<br>verifiable quote ends at &quot;on the&quot;. This is the honesty boundary working as designed: form is<br>guaranteed, degraded text is not silently repaired.</blockquote>
+<h2>Claim 1: the report flags its own argument as incomplete and calls for further work</h2>
+<blockquote>&quot;However, the complexity of the argument and the absence of satisfactory experimental foundations makes further work on the&quot;</blockquote>
+<p><strong>ID:</strong> further-work-desirable<br><strong>Location:</strong> §Conclusion (final paragraph)<br><strong>Grep command used:</strong> <code>grep &quot;absence of&quot; extracted/la602_1946.txt</code><br><strong>Addresses:</strong> arg-structure</p>
+<p>---</p>
+<h2>Claim 2: yet it reaches a reassuring bottom line — runaway ignition is not to be expected</h2>
+<blockquote>&quot;unreasonable to expect that the&quot;</blockquote>
+<p><strong>ID:</strong> ignition-unreasonable<br><strong>Location:</strong> §Conclusion (&quot;the arguments of this paper make it unreasonable to expect that the [N+N] reaction could propagate&quot;)<br><strong>Grep command used:</strong> <code>grep &quot;unreasonable to expect&quot; extracted/la602_1946.txt</code><br><strong>Addresses:</strong> arg-structure</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

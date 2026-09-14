@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weissman (2024) — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="../index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="../index.html#overview">Overview</a><a href="../index.html#inputs">Inputs</a><a href="../index.html#processes">Processes</a><a href="../index.html#hitl">Collaboration</a><a href="../index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="../index.html#inputs">← all documents</a></p><h1>Weissman (2024)</h1><table class="fm"><tr><th>Paper</th><td>Weissman (2024)</td></tr><tr><th>Title</th><td>An Inconvenient Probability v5.6 — Bayesian analysis of the probable origins of Covid</td></tr><tr><th>Version</th><td>published</td></tr><tr><th>Retrieved</th><td>20260614</td></tr><tr><th>Verified by</th><td>Ledger pipeline (Claude)</td></tr><tr><th>Source</th><td><a href="https://michaelweissman.substack.com/p/an-inconvenient-probability-v50" target="_blank" rel="noopener">source</a></td></tr><tr><th>Verification</th><td><span class="badge ok">pass</span> <span class="mono">body a05c99c889fe…</span></td></tr></table><section class="ledger-body"><h1>Verified Claims — Weissman (2024)</h1>
+<p>The lab-leak-leaning Bayesian voice. Michael Weissman&#x27;s &quot;An Inconvenient Probability&quot; reaches a<br>posterior strongly favouring laboratory origin — the symmetric counterpart to the zoonosis-leaning<br>analyses (Daniel, GoodJudgment). Extracted under the <code>probabilistic-analysis</code> source-type.</p>
+<h2>Claim 1: the posterior — point estimate strongly favours lab leak</h2>
+<blockquote>&quot;Combining that likelihood ratio with the point estimate of the prior logit would still give extreme odds, P(LL)/P(ZW) = ~66,000.&quot;</blockquote>
+<p><strong>ID:</strong> posterior-ll<br><strong>Location:</strong> Bottom-line odds<br><strong>Grep command used:</strong> <code>grep &quot;P(LL)/P(ZW) = ~66,000&quot; extracted/weissman.txt</code><br><strong>Addresses:</strong> prior-odds</p>
+<p>---</p>
+<h2>Claim 2: the qualitative conclusion — odds strongly favour LL</h2>
+<blockquote>&quot;the conclusion that the odds strongly favor LL just means that prior guesses that LL was highly improbable should be ignored in the future.&quot;</blockquote>
+<p><strong>ID:</strong> odds-favor-ll<br><strong>Location:</strong> Conclusion<br><strong>Grep command used:</strong> <code>grep &quot;the odds strongly favor LL&quot; extracted/weissman.txt</code><br><strong>Addresses:</strong> methodology<br><strong>Rebuts:</strong> <a href="stansifer.html">stansifer:verdict</a> (grounded by #odds-favor-ll)</p>
+<p>---</p>
+<h2>Claim 3: the prior — Wuhan location leaves the two origins comparable</h2>
+<blockquote>&quot;the start in Wuhan where the suspect lab work was concentrated left the two possibilities with comparable probabilities.&quot;</blockquote>
+<p><strong>ID:</strong> prior-comparable<br><strong>Location:</strong> Introduction<br><strong>Grep command used:</strong> <code>grep &quot;left the two possibilities with comparable probabilities&quot; extracted/weissman.txt</code><br><strong>Addresses:</strong> prior-odds</p></section>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

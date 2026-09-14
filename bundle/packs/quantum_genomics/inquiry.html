@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inquiry — sub-questions &amp; cruxes — Ledger</title>
+<script>try{var t=localStorage.getItem("ledger-pack-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="assets/ledger.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">Ledger · Judge Pack</a><span class="navlinks"><a href="index.html#overview">Overview</a><a href="index.html#inputs">Inputs</a><a href="index.html#processes">Processes</a><a href="index.html#hitl">Collaboration</a><a href="index.html#outputs">Outputs</a></span><button class="theme-toggle" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">&#9681;</button></nav>
+<main>
+<p class="back"><a href="index.html">← index</a></p><h1>Inquiry — sub-questions &amp; cruxes</h1><table class="fm"><tr><th>authored_by</th><td>ai</td></tr><tr><th>generated_by</th><td>claude</td></tr><tr><th>generated_date</th><td>20260615</td></tr><tr><th>reviewed_by</th><td></td></tr><tr><th>status</th><td>draft</td></tr></table>
+<h1>Inquiry — quantum computing for genomics</h1>
+<p>The question tree this knowledge base is organised around. Each sub-question declares a stable<br><code><strong>id:</strong></code>; claims opt in with <code><strong>Addresses:</strong> &lt;id&gt;</code>, and an assessment may mark one claim as the<br><code><strong>Crux-of:</strong></code> a sub-question. The framing-agnostic structural read-out across these sub-questions<br>is in <code>finding</code>.</p>
+<h2>Q1 — Is there a genuine quantum advantage for genomics and biology?</h2>
+<p><strong>id:</strong> qc-genomics-advantage<br><strong>parent:</strong> quantum-genomics</p>
+<p>The honest answer is mixed and depends on the problem. Simulating quantum chemistry — ground-state<br>energies of small molecules relevant to drug and enzyme design — is the credible medium-to-long-term<br>case, but it is positioned by its own proponents as <em>projected</em>, conditional on fault-tolerant<br>hardware (Reiher et al. 2017 #classically-intractable-projected;<br>Babbush et al. 2021 #quadratic-insufficient). Protein structure prediction, once floated as a<br>quantum target, has been settled by classical machine learning instead<br>(Jumper et al. 2021 #alphafold-atomic-accuracy, AlphaFold;<br>Baek et al. 2021 #rosettafold-approaches-alphafold). A narrower near-term candidate is small,<br>classically-hard combinatorial sub-problems in genomics<br>(Maurizio et al. 2025 #near-term-narrow-optimisation). Big-data steps — sequence search, variant calling, population<br>genetics — are bottlenecked on loading classical data into a quantum device, the same caveat that<br>governs Q2.</p>
+<p><strong>Positions.</strong> real-advantage (quantum chemistry, projected): Reiher 2017, Babbush 2021. overtaken<br>(protein folding solved classically): Jumper 2021, Baek 2021. near-term-niche (discrete optimisation):<br>Maurizio 2025. The framing rests on the speedup question below.</p>
+<h2>Q2 — Do the claimed &quot;exponential speedups&quot; survive their own caveats and dequantisation?</h2>
+<p><strong>id:</strong> speedup-robustness</p>
+<p>This is the load-bearing sub-question and the one the machinery is built to surface. Many<br>quantum-machine-learning speedup claims descend from one primitive — the HHL linear-systems algorithm<br>(Harrow, Hassidim &amp; Lloyd 2009 #exponential-speedup) — which advertises a logarithmic-time solve.<br>Aaronson (2015 #four-caveats-thesis) sets out four caveats (state preparation, readout, condition<br>number, comparison to the best classical algorithm), each of which can erase the speedup in<br>practice. The dequantisation results (Tang 2019 #classical-matches-quantum;<br>Chia et al. 2020 #svt-no-exponential-speedup) go further: for several flagship cases a classical<br>algorithm matches the quantum one once the input assumptions are made equal. Separately, a hardware<br>&quot;quantum supremacy&quot; demonstration (Arute et al. 2019 #experimental-supremacy-realization) was<br>contested by a classical-simulation rebuttal (Pednault et al. 2019 #rebuttal-days-not-years), and<br>variational NISQ approaches carry their own trainability caveat<br>(Cerezo et al. 2021 #barren-plateaus, barren plateaus).</p>
+<p><strong>The crux.</strong> Whether an advertised exponential speedup survives the state-preparation, readout, and<br>condition-number assumptions, compared against the best classical algorithm for the same restricted<br>task. Harrow 2009&#x27;s speedup claim is the crux node; Aaronson 2015 and Tang 2019 contest it.</p>
+<p><strong>Positions.</strong> speedup-real (under stated assumptions): Harrow 2009, Arute 2019. caveated-or-erased<br>(the assumptions bite): Aaronson 2015, Cerezo 2021. dequantised (classical matches it): Tang 2019,<br>Chia 2020, Pednault 2019.</p>
+<h2>Q3 — Is the cryptographic threat to genomic data present and permanent?</h2>
+<p><strong>id:</strong> crypto-threat</p>
+<p>Genomic data is maximally sensitive and effectively permanent, so its confidentiality horizon is<br>decades. Shor&#x27;s algorithm (Shor 1997 #breaks-rsa) breaks the public-key cryptography protecting it,<br>and the &quot;harvest-now, decrypt-later&quot; posture makes the threat present even before a<br>cryptographically-relevant machine exists (Mosca 2018 #harvest-now-decrypt-later). Resource<br>estimates put that machine years away and large (Gidney &amp; Ekerå 2021 #resource-estimate), and<br>standardised post-quantum replacements already exist (NIST 2024 #pqc-standardised, FIPS 203),<br>so the gap is migration, not invention.</p>
+<p><strong>Positions.</strong> threat-present (harvest-now): Shor 1997, Mosca 2018. threat-bounded (large resources,<br>defence exists): Gidney 2021, NIST 2024.</p>
+</main>
+<script>(function(){var root=document.documentElement,KEY="ledger-pack-theme";var b=document.getElementById("theme-toggle");if(!b)return;b.addEventListener("click",function(){var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);var next=dark?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem(KEY,next);}catch(e){}});})();</script>
+</body>
+</html>

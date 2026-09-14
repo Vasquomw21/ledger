@@ -1,0 +1,1 @@
+No source bytes ship in this bundle. Quotations are attested from the committed verification records; re-proof requires acquiring the sources. corpus-manifest.tsv triages each source's redistribution status; release-manifest.json records corpus.included = false.
