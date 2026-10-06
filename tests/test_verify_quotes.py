@@ -152,6 +152,15 @@ def test_extract_quotes_separates_notes(tmp_path):
     assert n_notes == 1
 
 
+def test_unclosed_quote_is_still_checked(tmp_path):
+    tally = ledger_verdict(
+        tmp_path,
+        '> "the trial found no difference between the two arms"\n'
+        '> "an invented sentence that the source never contains\n',
+        "the trial found no difference between the two arms")
+    assert tally["fail"] == 1
+
+
 def test_note_quoting_a_phrase_mid_line_is_not_a_quote(tmp_path):
     ledger = tmp_path / "smith_2020.md"
     ledger.write_text(

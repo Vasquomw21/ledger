@@ -274,12 +274,14 @@ def quote_text(body: str) -> str | None:
     None if the line is an editorial note. This is the one definition of the
     quote grammar; every parser that reads a ledger's quotes resolves through
     it, so the verifier and the tools that pin spans to quotes cannot read
-    the same line differently."""
+    the same line differently. A line that opens a quotation and never closes
+    it is still a quote, checked to the end of the line, so a missing closing
+    mark cannot turn quoted text into an unchecked note."""
     body = body.strip()
     idx = [i for i, ch in enumerate(body) if ch in DOUBLE_QUOTES]
-    if len(idx) >= 2 and idx[0] == 0:
-        return body[1:idx[-1]]
-    return None
+    if not idx or idx[0] != 0:
+        return None
+    return body[1:idx[-1]] if len(idx) >= 2 else body[1:]
 
 
 def check_ledger(key: str, ledger_path: Path,
