@@ -265,7 +265,7 @@ def strict_posture_gaps(config: dict[str, str]) -> list[tuple[str, str, str, str
         ("provenance", provenance_mode(config), "required",
          "every committed ledger must carry a fresh, valid provenance stamp"),
         ("structure_layer", structure_mode(config), "required",
-         "every claim-graph edge resolves to a grounded verbatim claim"),
+         "every claim-graph edge resolves to a grounded, quoted claim"),
         ("assessment_layer", assessment_mode(config), "required",
          "every judgement record is sealed, grounded, and bound to its claim"),
     ]

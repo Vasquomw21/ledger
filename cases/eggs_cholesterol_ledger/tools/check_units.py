@@ -2,9 +2,9 @@
 # The offline half of the coordinate-system guarantee (enumerate_units.py is the
 # write-time half). For every ledger claim that carries a **Locus:**, it attests
 # corpus-free that: (1) the locus resolves to a unit in the committed manifest
-# literature/units/<key>.units.json; (2) the claim's quote is a verbatim span
-# WITHIN that unit's text (norm-substring, the same normalisation as the verbatim
-# gate); (3) the manifest's seal is internally consistent and its source_sha256
+# literature/units/<key>.units.json; (2) the claim's quote is found
+# WITHIN that unit's text (norm-substring, the quote check's normalisation);
+# (3) the manifest's seal is internally consistent and its source_sha256
 # matches the ledger's stamp (three-way bind raw<->manifest<->ledger).
 #
 # This makes the claim's address mechanical (slug = locus) and its span bounded

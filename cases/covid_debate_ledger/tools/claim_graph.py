@@ -93,7 +93,7 @@ class Address:
 class Edge:
     """One in-band edge line, attributed to the ledger it was authored in.
     The source node is <originating_key>:<grounding> — the grounding claim IS the
-    verbatim quote where the relationship is asserted, so it is the natural source
+    quote where the relationship is asserted, so it is the natural source
     endpoint; the target is the claim the relationship points at. `rec` is the
     optional `[rec: <id>]` clause linking the edge to a judgement record (used by
     the edge_assessments coverage policy)."""

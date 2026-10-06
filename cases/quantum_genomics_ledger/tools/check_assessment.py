@@ -284,7 +284,7 @@ def record_problems(record: dict, claims_dir: Path) -> list[str]:
         problems.append(f"{rid}: body_sha256 stale — the subject claim was edited "
                         "after the judgement (re-run assess_record.py --reseal)")
     # A rhetorical OR faithfulness span must be a substring of its grounding
-    # claim's verbatim quote — the flag/challenge is pinned to real words.
+    # claim's quote — the flag/challenge is pinned to real words.
     if record["kind"] in ("rhetorical", "faithfulness") and record.get("span"):
         ground = record["grounding"][0] if record["grounding"] else record["subject"]
         addr = cg.parse_address(ground)

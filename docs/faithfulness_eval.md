@@ -30,7 +30,7 @@ the quote check normalises):
 python3 tools/faithfulness_eval.py --claims-dir cases/covid_origins_ledger/literature/verified_claims
 python3 tools/faithfulness_eval.py --claims-dir cases/lhc_safety_ledger/literature/verified_claims
 python3 tools/faithfulness_eval.py --claims-dir cases/eggs_cholesterol_ledger/literature/verified_claims
-# → re-proved 8 / 5 / 5 embedded quotes verbatim; 0 mismatches (18 total)
+# → found 8 / 5 / 5 embedded quotes in the ledgers; 0 mismatches (18 total)
 ```
 
 The out-of-context cases instantiate the recurring inflation patterns, each grounded in a genuine

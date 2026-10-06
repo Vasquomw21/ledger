@@ -1,5 +1,5 @@
 # === SCRIPT: Synthesis-claim gate — is every significance/superiority claim anchored? ===
-# The kit guards CLAIMS (verbatim quotes) but not the AUTHOR'S PROSE ABOUT the claims. The
+# The kit guards CLAIMS (checked quotes) but not the AUTHOR'S PROSE ABOUT the claims. The
 # failure mode: synthesis prose overclaims — "the one genuinely non-obvious result", "beats
 # a baseline", "saturated", "a fluent survey flattens" — significance/novelty/superiority
 # assertions pinned to nothing. Those are Layer 4-5 (validity/clarity) claims written with
@@ -121,7 +121,7 @@ def flagged_lines(path: Path) -> list[tuple[int, str, str]]:
     """Return (line_no, category, line) for each unanchored significance/superiority line.
 
     Skips frontmatter, fenced code, headings, HTML comments, and blockquotes — a superlative
-    inside a verbatim source quote (`> "...no risk whatsoever"`) is the SOURCE's rhetoric, the
+    inside a source quote (`> "...no risk whatsoever"`) is the SOURCE's rhetoric, the
     rhetorical-assessment layer's concern, not the author's synthesis claim. The same holds for
     an inline quoted span, so those are blanked before the watchlist runs.
     """

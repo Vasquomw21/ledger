@@ -75,7 +75,7 @@ INSPECT_BLURB = {
     "faithfulness": "does each quote warrant the edge it grounds? (worklist)",
     "graph": "the derived argument graph",
     "provenance": "ledgers carry their source identity + stamp",
-    "quotes": "verbatim re-proof of every quote against its source",
+    "quotes": "re-check every quote against its source (normalised; numbers exact)",
     "selection": "why each source is in the corpus; declared gaps",
     "source-flow": "each ledger's discovery/screening route in",
     "structure": "claim-graph edges resolve + are grounded",
@@ -157,7 +157,7 @@ class Step:
 STEPS = (
     Step("project health", "doctor", True, True, None, CorpusPolicy.NONE),
     Step("operator dashboard", "status", False, True, None, CorpusPolicy.NONE),
-    Step("verbatim quotes", "verify", True, True, None,
+    Step("quote check", "verify", True, True, None,
          CorpusPolicy.REQUIRED_FOR_EXISTING_LEDGERS),
     Step("provenance stamps", "manifest", True, True, "provenance", CorpusPolicy.NONE),
     Step("citation coverage", "citations", True, True, None,
@@ -415,7 +415,7 @@ def _count_warnings(stream: str) -> int:
 
 
 def _corpus_present(root: Path) -> bool:
-    """True if extracted source text is on disk, so verbatim re-proof is possible.
+    """True if extracted source text is on disk, so the quotes can be re-checked against it.
     A fresh clone or a vendored case ships the ledgers but not the git-ignored
     corpus, so the bytes cannot be re-hashed here — only the committed stamp can."""
     extracted = root / "literature" / "extracted"
@@ -552,7 +552,7 @@ def _demo(root: Path, args: list[str]) -> int:
     print("(read-only: the full commit-time gate set, then what the graph says)\n", flush=True)
     worst = 0
     for label, cmd, extra in DEMO_STEPS:
-        # Verbatim re-proof needs the git-ignored corpus. When ledgers exist but the
+        # Re-checking quotes needs the git-ignored corpus. When ledgers exist but the
         # corpus does not (a fresh clone or a vendored case), skip the byte re-proof and
         # note the honest local-vs-CI boundary — the stamp is attested by the dedicated
         # `provenance stamps` (manifest) step below, not shown here as a red FAIL.

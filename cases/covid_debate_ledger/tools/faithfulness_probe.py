@@ -1,6 +1,6 @@
 # === SCRIPT: Faithfulness probe — the adversarial-faithfulness worklist ===
 # Purpose: the read-only half of the adversarial-faithfulness mechanism. The
-#          verbatim gate proves a quote is real; it cannot prove the quote is used
+#          quote check proves a quote is in its source; it cannot prove the quote is used
 #          FAITHFULLY (a real sentence can be read out of context to "support" an
 #          inference it does not). This tool enumerates every supports/rebuts edge,
 #          shows the grounding quote each rests on and the inference it asserts, and

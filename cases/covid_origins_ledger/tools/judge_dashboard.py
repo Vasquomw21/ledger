@@ -4,7 +4,7 @@
 # trail visible in one page and lets a judge navigate it: the argument graph, the
 # full quote ledger, a dossier per source, the sealed judgement records, the
 # development documents it was built from (inquiry, finding, source trail, config —
-# rendered read-only), and the metrics. Every claim carries its verbatim quote (the
+# rendered read-only), and the metrics. Every claim carries its quote (the
 # FACT layer); every assessment
 # — the rhetorical flags, double-counts, faithfulness disputes — is surfaced as a
 # readable comment on the quote it judges (the MEASURE layer). Single file, inline
@@ -72,7 +72,7 @@ def _corpus_in_bundle(bundle_dir, stamped: list) -> bool:
 
 def verification_state(repo_root: Path, *, bundle_dir=None,
                        artefact: str = "export") -> dict:
-    """Two facts a single 'verified' badge conflates: whether a verbatim proof was
+    """Two facts a single 'verified' badge conflates: whether a quote check was
     performed and recorded for these ledgers, and whether THIS artefact carries the
     source bytes a reader needs to repeat it. They come apart — raw sources are
     git-ignored, so a fully verified project exports to a reader who cannot re-prove
@@ -433,7 +433,7 @@ def contest_command(target: str, source: str, edge_record_id: str, quote: str) -
 
 def graphview_payload(repo_root: Path) -> dict:
     """The enriched client-side model, shared by the single-file dashboard and the
-    judge pack's embedded graph. Every node carries its verbatim quote + locus +
+    judge pack's embedded graph. Every node carries its quote + locus +
     source locator (the FACT layer), the sealed judgement records that touch it,
     and the in-band rhetorical/premise comments (the MEASURE layer); every edge
     carries its grounding quote, the record that judged it apt, and whether it has
@@ -597,7 +597,7 @@ TRACE_AUTHORED = "authored reference"
 
 def evidence_trace(repo_root: Path) -> list[dict]:
     """Every claim a derived warning, a sealed record, or an authored finding puts in
-    question: its verbatim quote, every edge aimed at it, and the judgements on those
+    question: its quote, every edge aimed at it, and the judgements on those
     edges. Each entry carries WHY it appears.
 
     The subject set is the UNION of the three sources, so the trace stands without a
@@ -961,13 +961,13 @@ def _quotes_tab(payload: dict) -> str:
                 quote=_esc(n["quote"]), qchips=qchips or '<span class="muted">—</span>',
                 flags=_flag_badges(n) or '<span class="muted">—</span>'))
     if not rows:
-        return '<p class="empty">No verbatim quotes yet — this ledger has no claims.</p>'
+        return '<p class="empty">No quotes yet — this ledger has no claims.</p>'
     return (
         '<div class="toolbar"><input type="search" class="filter" data-target="quotes-table" '
         'placeholder="filter quotes by source or text…" autocomplete="off" spellcheck="false">'
-        f'<span class="muted">{len(rows)} verbatim quotes</span></div>'
+        f'<span class="muted">{len(rows)} quotes</span></div>'
         '<table class="ledger-table" id="quotes-table"><thead><tr>'
-        '<th>Source</th><th>Verbatim quote</th><th>Sub-question</th><th>Flags</th>'
+        '<th>Source</th><th>Quote</th><th>Sub-question</th><th>Flags</th>'
         '</tr></thead><tbody>' + "".join(rows) + '</tbody></table>')
 
 
@@ -1186,7 +1186,7 @@ def render_html(repo_root: Path) -> str:
     questions_html = f'<ul class="questions">{questions}</ul>' if questions else ""
     verdict_html = f'<p class="verdict">{_esc(case["verdict"])}</p>' if case["verdict"] else ""
     integrity = " · ".join([
-        f'<b>{c["ledgers"]}</b> sources', f'<b>{n_quotes}</b> verbatim quotes',
+        f'<b>{c["ledgers"]}</b> sources', f'<b>{n_quotes}</b> quotes',
         f'<b>{c["edges"]}</b> relations', f'<b>{n_flags}</b> flags',
     ])
     # One HTML file has no bundle to carry a corpus in, so the reader can never re-prove
@@ -1478,7 +1478,7 @@ __APPJS__
 # The graph section markup, reused by the single-file dashboard (Board tab) and the
 # judge bundle's Outputs page. The data + script are appended by graph_section_html.
 _GRAPH_SECTION = """<section class="graph-section">
-      <p class="hint">Nodes are claims (fill colour = source). Edges are typed relations. Click a claim for its verbatim quote, the reviewer comments on it, and its provenance. A red ring marks a faithfulness-disputed claim; an amber ring marks a possible double-count; a dashed edge is an unassessed support/rebuttal. Drag to reposition, scroll to zoom, drag the background to pan.</p>
+      <p class="hint">Nodes are claims (fill colour = source). Edges are typed relations. Click a claim for its quote, the reviewer comments on it, and its provenance. A red ring marks a faithfulness-disputed claim; an amber ring marks a possible double-count; a dashed edge is an unassessed support/rebuttal. Drag to reposition, scroll to zoom, drag the background to pan.</p>
       <div class="graph-controls">
         <input id="search" type="search" placeholder="filter claims by text…" autocomplete="off" spellcheck="false">
         <span id="qfilters" class="qfilters"></span>
@@ -1486,7 +1486,7 @@ _GRAPH_SECTION = """<section class="graph-section">
       </div>
       <div class="graph-wrap">
         <svg id="graph" role="img" aria-label="argument graph"></svg>
-        <aside id="detail" class="detail"><p class="empty">Click a claim to inspect its verbatim quote, the comments on it, and its provenance.</p></aside>
+        <aside id="detail" class="detail"><p class="empty">Click a claim to inspect its quote, the comments on it, and its provenance.</p></aside>
       </div>
     </section>"""
 
@@ -1740,11 +1740,11 @@ _GRAPH_JS = r"""
   function select(n) {
     nodes.forEach(function (m) { m.c.setAttribute('stroke-width', (m === n) ? '4' : ((m.contested || m.double_count) ? '3' : '1.2')); });
     focusNeighborhood(n);
-    if (!n) { detail.innerHTML = '<p class="empty">Click a claim to inspect its verbatim quote, the comments on it, and its provenance.</p>'; return; }
+    if (!n) { detail.innerHTML = '<p class="empty">Click a claim to inspect its quote, the comments on it, and its provenance.</p>'; return; }
     var h = '<h3>' + esc(n.slug) + '</h3>';
     h += '<div class="sub">' + esc(n.source || n.ledger) + '</div>';
     h += n.quote ? '<blockquote>&ldquo;' + highlightQuote(n.quote, n.annotations) + '&rdquo;</blockquote>'
-                 : '<p class="empty">No verbatim quote resolved for this node.</p>';
+                 : '<p class="empty">No quote resolved for this node.</p>';
     if (n.location) h += '<div class="loc">Location: ' + esc(n.location) + '</div>';
     var lh = locatorHtml(n.locator); if (lh) h += '<div class="loc">Source: ' + lh + '</div>';
     var badges = '';

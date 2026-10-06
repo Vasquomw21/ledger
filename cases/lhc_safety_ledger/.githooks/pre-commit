@@ -8,7 +8,7 @@
 # Activate once per clone:   git config core.hooksPath .githooks
 #
 # Thirteen checks, all blocking (a non-zero exit aborts the commit):
-#   1. verify_quotes.py      — every quote in a verified_claims/ ledger is verbatim
+#   1. verify_quotes.py      — every quote in a verified_claims/ ledger is found
 #      in its extracted source text, AND re-binds the provenance stamp (recompute
 #      source/extract sha256, compare). LOCAL only: needs the git-ignored corpus.
 #      Skipped (with a warning) when no extracted texts exist yet.
@@ -34,7 +34,7 @@
 #  10. check_source_flow.py  — (opt-in, source_flow:) every stamped ledger has a
 #      declared discovery/screening route in content/source_flow.md. No-op when off.
 #  11. check_units.py        — (opt-in, units_layer:) each located claim's quote is
-#      verbatim within its addressed source unit. No-op when off.
+#      found within its addressed source unit. No-op when off.
 #  12. check_synthesis.py    — (opt-in, synthesis_claims:) significance/superiority
 #      claims in synthesis prose are anchored or hedged (form, not truth). No-op when off.
 #  13. lint_wiki.py --strict — no dead wikilinks / orphan / uncatalogued notes.
@@ -71,7 +71,7 @@ if ls literature/extracted/*.txt >/dev/null 2>&1 \
   vq_flags=""
   [ "$strict" = "strict" ] && vq_flags="--strict"
   if ! python3 literature/verify_quotes.py $vq_flags; then
-    echo "[pre-commit] BLOCKED: a quote is not verbatim, or a configured project's corpus is absent." >&2
+    echo "[pre-commit] BLOCKED: a quote is not found in its source, or a configured project's corpus is absent." >&2
     echo "             Fix the ledger quote (do not reword to dodge the check), or rebuild the corpus." >&2
     fail=1
   fi

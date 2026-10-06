@@ -1,7 +1,8 @@
 # === SCRIPT: Data-driven quote verifier — ledgers are the source of truth ===
 # Purpose: mechanically confirm that every direct quote recorded in a
-#          literature/verified_claims/<key>.md ledger is verbatim present in that
-#          paper's extracted full text (literature/extracted/<key>.txt). This is
+#          literature/verified_claims/<key>.md ledger is present in that paper's
+#          extracted full text (literature/extracted/<key>.txt), under the
+#          normalised matching rules below. This is
 #          the LOCAL guard that the quote-first citation discipline is honoured;
 #          it needs the gitignored paper corpus, so it does NOT run in CI.
 #
@@ -17,7 +18,7 @@
 #     blockquotes are editorial notes (e.g. contestation pointers), reported as
 #     [NOTE] and skipped, not failed.
 #   - Each quote is split on ellipses (... / … / [...]) into the contiguous spans
-#     the author actually lifted from the source; each span must appear verbatim.
+#     the author actually lifted from the source; each span must be found in the source.
 #   - Stage 1 [PASS]  — full normalised match. norm() NFKD-decomposes before
 #     stripping to [a-z0-9], so a true-letter ledger quote ("first", "efficient")
 #     matches source typeset with ligature glyphs ("ﬁrst", "eﬃcient").
@@ -41,7 +42,7 @@
 #     "70" does not match inside "170" or "70.5".
 #
 # Provenance stamp: --stamp records each ledger's source/extract sha256 + verdict
-# in its frontmatter, so the local-only verbatim result becomes a committed
+# in its frontmatter, so the local-only quote-check result becomes a committed
 # record. The default run (pre-commit) re-computes and compares those hashes, so a
 # changed/missing/non-pass stamp is caught, per `provenance:` in ledger.config.md
 # (off | warn | required). CI can't re-prove it (corpus git-ignored);
@@ -78,7 +79,7 @@ VERIFIER_VERSION = "2"   # bump to mark older stamps as a prior verifier's;
 # Stamp keys, read/written as flat frontmatter scalars (no PyYAML in the kit).
 # body_sha256 hashes the ledger text below the frontmatter — the quotes
 # themselves — so a quote edited after stamping is caught corpus-free (CI
-# recomputes it from the committed ledger), not only by the local verbatim run.
+# recomputes it from the committed ledger), not only by the local quote check.
 STAMP_KEYS = ("source_sha256", "extract_sha256", "body_sha256", "verifier_version",
               "verified_verdict", "verified_date")
 FRONTMATTER_LINE_RE = re.compile(r"^([A-Za-z0-9_]+):\s*(.*?)\s*$")
@@ -703,7 +704,7 @@ def main(ledger_dir: Path = LEDGER_DIR,
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(
-        description="Verify ledger quotes are verbatim; stamp/bind provenance.")
+        description="Check ledger quotes against their sources; stamp/bind provenance.")
     ap.add_argument("--stamp", action="store_true",
                     help="compute + write source/extract sha256 + verdict into each "
                     "ledger's frontmatter (the explicit step; the git hook never mutates files)")
