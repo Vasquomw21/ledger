@@ -92,7 +92,7 @@ safety precedent (could a nuclear detonation ignite the atmosphere?).
 **Rationale:** a calibration analogue, not LHC physics — a prior "could this destroy the world?"
 analysis that reached a reassuring bottom line yet flagged its own incomplete foundations and called
 for further work. Ingested from a 1946 scanned typescript; the OCR-degraded tail is handled honestly
-(only verbatim-verifiable spans are quoted).
+(only spans the quote check can verify are quoted).
 **Position:** methodological-precedent
 **Quality:** declassified Los Alamos report (1946); cited for its stated conclusion and its
 self-flagged limitation, not as current physics.

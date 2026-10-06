@@ -57,7 +57,8 @@ source has a committed unit manifest (literature/units/<key>.units.json, emitted
 tools/enumerate_units.py), set **Locus:** to the manifest locus of the unit this
 claim was lifted from, and make **ID:** equal that locus — so the address is
 mechanical, not a chosen name. Under units_layer: required, tools/check_units.py
-then attests the quote is a verbatim span WITHIN that unit. Omit **Locus:** for a
+then attests the quote is found WITHIN that unit (normalised as the quote check
+normalises). Omit **Locus:** for a
 claim whose quote spans two units (left honestly off the grid). See
 spec/EXTRACTION.md §Coordinate addressing; **Location:** stays free-text. -->
 
@@ -70,7 +71,7 @@ a typed relationship to another claim, anywhere in the corpus, addressed as
 
 Edge types: supports · rebuts · depends-on · refines · qualifies · restates ·
 duplicate-of · supersedes. The `(grounded by #<slug>)` clause is MANDATORY and must
-name a claim IN THIS ledger — the verbatim quote where the relationship is asserted
+name a claim IN THIS ledger — the quote where the relationship is asserted
 (so an edge is grounded the way a claim is). check_structure.py checks both
 endpoints resolve; it does NOT (and cannot) check the quote truly rebuts/supports —
 that is the assessment layer's attested judgement, not a mechanical proof. A

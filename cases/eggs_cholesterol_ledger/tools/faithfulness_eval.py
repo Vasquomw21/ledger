@@ -1,20 +1,20 @@
 # === SCRIPT: faithfulness_eval — measure a detector's out-of-context hit-rate ===
-# Layer 1 (Fidelity) splits in two. "Is the quote verbatim?" is GUARANTEED by
-# verify_quotes. "Is the verbatim quote used IN CONTEXT, or stretched to support an
+# Layer 1 (Fidelity) splits in two. "Is the quote in its source?" is GUARANTEED by
+# verify_quotes. "Is the quote used IN CONTEXT, or stretched to support an
 # inference it does not warrant?" is the harder half — currently Assisted, never
 # measured (faithfulness_probe lists edges; a human/agent files disputes).
 #
 # This puts a NUMBER on that second half, the way repro.py put one on determinism.
 # It is a MEASUREMENT TOOL, NOT A GATE — no posture, no pre-commit/CI hook. It runs a
 # detector (the agent/human layer; the kit ships no model) over a small, hand-labelled
-# benchmark of real (verbatim quote -> inference) pairs and reports its confusion
+# benchmark of real (quote -> inference) pairs and reports its confusion
 # matrix + recall/specificity/precision/accuracy.
 #
 #   --emit-blind   prints {id, source, slug, quote, inference} WITHOUT the gold label
 #                  or rationale — the detector's input (it must not see the answer).
 #   --score V.jsonl  joins detector verdicts {id, verdict} with gold and scores them.
-#   --claims-dir D   re-proves each embedded quote verbatim against ledger D/<key>.md
-#                    (norm-substring, the same normalisation as the verbatim gate).
+#   --claims-dir D   finds each embedded quote in ledger D/<key>.md
+#                    (norm-substring, the quote check's normalisation).
 #
 # HONEST BOUNDARY: this measures A
 # DETECTOR on a SMALL hand-labelled benchmark — not a kit guarantee, not a property
@@ -38,7 +38,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "literature"))
-from verify_quotes import norm   # the verbatim gate's normalisation, reused verbatim
+from verify_quotes import norm   # the quote check's normalisation
 
 BENCH = REPO_ROOT / "spec" / "examples" / "faithfulness_bench.jsonl"
 
@@ -156,7 +156,7 @@ def score(bench: list[dict], verdicts: dict[str, str]) -> dict:
 
 
 def reprove(bench: list[dict], claims_dir: Path) -> tuple[list[str], list[str]]:
-    """Re-prove each embedded quote is a verbatim span of ledger <claims-dir>/<key>.md
+    """Find each embedded quote in ledger <claims-dir>/<key>.md
     (norm-substring). Returns (proved-ids, problems). A line whose ledger is absent is
     skipped, not failed — one dir holds one case's ledgers."""
     proved: list[str] = []
@@ -172,7 +172,7 @@ def reprove(bench: list[dict], claims_dir: Path) -> tuple[list[str], list[str]]:
         if norm(c["quote"]) in body:
             proved.append(c["id"])
         else:
-            problems.append(f"{c['id']}: quote not found verbatim in {ledger.name}")
+            problems.append(f"{c['id']}: quote not found in {ledger.name}")
     return proved, problems
 
 
@@ -204,7 +204,7 @@ def main(argv: list[str] | None = None) -> int:
         proved, problems = reprove(bench, Path(args.claims_dir))
         for p in problems:
             log_error(p)
-        log_info(f"re-proved {len(proved)} embedded quote(s) verbatim against "
+        log_info(f"found {len(proved)} embedded quote(s) in the ledgers in "
                  f"{args.claims_dir}; {len(problems)} mismatch(es)")
         if not args.score:
             return 2 if problems else 0

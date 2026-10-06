@@ -15,7 +15,7 @@ verbatim quotes and raw sources) and rebuilt to the current kit grammar so every
 
 Run the read-only tour from the kit: `make demo DIR=cases/quantum_genomics_ledger`.
 
-- **Quote-first fidelity.** Every claim traces to a verbatim, on-disk, mechanically-verified quote
+- **Quote-first fidelity.** Every claim traces to an on-disk quote mechanically checked against its source,
   from a primary source (arXiv preprints, peer-reviewed papers, NIST/CISA standards).
 - **The machinery finds structure, not just checks citations.** The apparent breadth of "quantum
   machine-learning speedup" results is shown to rest on a single caveated primitive (HHL); the

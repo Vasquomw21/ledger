@@ -1,7 +1,7 @@
 # Ledger
 
 A portable system for **source-faithful deep thinking in unfamiliar domains** — no cited
-claim reaches prose without a verbatim, on-disk, mechanically-verified quote from a primary
+claim reaches prose without an on-disk quote mechanically checked against its primary
 source. It does not prove the source set is complete or the interpretation correct; it makes
 those judgements explicit and reviewable.
 
@@ -17,13 +17,13 @@ We seem to have arrived at our systems by optimising for different
 things (compared below). 
 
 What sets Ledger apart is that it leaves nothing to trust: every claim
-that reaches prose is traceable to a verbatim quote from a primary source, enforced mechanically —
+that reaches prose is traceable to a quote checked against a primary source, enforced mechanically —
 not by the model's good intentions. Like a double-entry ledger, nothing is posted without a matching
 quoted entry.
 
 ## How Ledger relates to Karpathy's LLM Wiki
 
-I built Ledger around **verification**. Nothing reaches the page without a verbatim
+I built Ledger around **verification**. Nothing reaches the page without a
 quote saved on disk (`verified_claims/`), checked by a script (`verify_quotes.py`) and blocked by a
 hook if the quote is missing — so a confident invention cannot slip through. This was the spine from
 the start, and it is precisely the part Karpathy's wiki leaves to trust: his lets the model
@@ -47,7 +47,7 @@ literature/                  # intake — verify before you trust
   fetch_paper.sh             # download ladder: PMC / DOI / Unpaywall / OpenAlex / web
   build_register.py          # build the source register from disk + ledgers
   extract_text.py            # greppable text from PDF/HTML
-  verify_quotes.py           # check every cited quote is verbatim in the source
+  verify_quotes.py           # check every ledger quote is found in its source
   verified_claims/TEMPLATE.md
 content/                     # the knowledge base (starts empty)
   concept_notes/  literature_reviews/
@@ -84,20 +84,20 @@ by what each point can see:
 - **Write-time** — the Claude Code `PreToolUse` hook blocks a citation with no paper on disk and
   no verified-claims ledger as you write.
 - **Commit-time** — `.githooks/pre-commit` re-runs that coverage check, plus `verify_quotes.py`
-  (every ledger quote is *verbatim* in its source — needs the local corpus) and the wiki lint —
+  (every ledger quote is *found* in its source, case, spacing and punctuation ignored — needs the local corpus) and the wiki lint —
   whatever drives the edit (Claude Code, Codex via `AGENTS.md`, or hand-editing).
 - **Push-time** — CI re-checks citation→ledger coverage (`--no-corpus`: the corpus is git-ignored,
-  so paper-on-disk and the verbatim check can't run here), the wiki lint, the unit tests, and the
+  so paper-on-disk and the quote check can't run here), the wiki lint, the unit tests, and the
   no-raw-sources / ledger-shape contract.
 
-The verbatim guarantee is therefore local (it needs the sources); the *coverage* guarantee —
+The quote-check guarantee is therefore local (it needs the sources); the *coverage* guarantee —
 no citation without a committed ledger — holds everywhere, on any path. The gate does not depend
 on any one tool.
 
 **Provenance.** Each ledger's frontmatter carries a stamp — the sha256 of the source, of the
 extract, and of the ledger's own body (the quotes themselves), plus the verifier version, the
 verdict, and the date — written by `verify_quotes.py --stamp`. Because the stamp travels with the
-committed ledger, the verbatim result is no longer invisible outside one machine: pre-commit
+committed ledger, the quote-check result is no longer invisible outside one machine: pre-commit
 **re-binds** it (recomputes the hashes and compares — a changed source, a stale stamp, or a
 non-pass verdict blocks the commit), and CI **attests** it (`check_manifest.py` checks every
 committed ledger's stamp is well-formed and passing). CI can't re-prove the *source* bytes — the

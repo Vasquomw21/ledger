@@ -1,15 +1,16 @@
 # Faithfulness evaluation — putting a number on Layer-1 out-of-context use
 
 **What this is.** A *measurement*, not a gate. Layer 1 (Fidelity) has two halves. "Is the
-quote verbatim?" is **guaranteed** by `verify_quotes` (sha-bound, re-proved at every commit).
-"Is the verbatim quote used *in context*, or stretched to support an inference it does not
+quote in its source?" is **guaranteed** by `verify_quotes` (sha-bound, re-checked at every commit,
+under the rules in [`integrity_framework.md`](integrity_framework.md#how-the-quote-check-matches)).
+"Is the quote used *in context*, or stretched to support an inference it does not
 warrant?" is the harder half — until now **assisted but never measured** (`faithfulness_probe.py`
 lists every supports/rebuts edge and a human or agent files dispute records, but no number came
 out the other end).
 
 This harness puts a number on that second half, the way [`repro.py`](../tools/repro.py) put one on
 extraction determinism: a small, **class-balanced, hand-labelled benchmark** of real
-(verbatim quote → asserted inference) pairs, plus a scorer that runs a *blind* detector over it and
+(quote → asserted inference) pairs, plus a scorer that runs a *blind* detector over it and
 reports its confusion matrix and rates.
 
 It is **not a gate**: no posture, no pre-commit or CI step. The kit still ships no model — the
@@ -20,15 +21,16 @@ as `repro` measures convergence between two extraction runs.
 
 [`spec/examples/faithfulness_bench.jsonl`](../spec/examples/faithfulness_bench.jsonl) — 18 cases,
 **9 out-of-context** (the misuse we want to catch — the positive class) and **9 apt** (faithful
-controls). Each line carries the source key, the claim slug, the **verbatim quote**, the asserted
+controls). Each line carries the source key, the claim slug, the **quote**, the asserted
 **inference**, the **gold label**, and a **rationale**. Every quote is drawn from the three
-vendored cases' real ledgers and re-proves verbatim against them:
+vendored cases' real ledgers, and the harness confirms each is still found in them (normalised as
+the quote check normalises):
 
 ```
 python3 tools/faithfulness_eval.py --claims-dir cases/covid_origins_ledger/literature/verified_claims
 python3 tools/faithfulness_eval.py --claims-dir cases/lhc_safety_ledger/literature/verified_claims
 python3 tools/faithfulness_eval.py --claims-dir cases/eggs_cholesterol_ledger/literature/verified_claims
-# → re-proved 8 / 5 / 5 embedded quotes verbatim; 0 mismatches (18 total)
+# → found 8 / 5 / 5 embedded quotes in the ledgers; 0 mismatches (18 total)
 ```
 
 The out-of-context cases instantiate the recurring inflation patterns, each grounded in a genuine
@@ -112,6 +114,6 @@ The discipline the synthesis gate enforces on case prose applies here by hand:
 
 In [`integrity_framework.md`](integrity_framework.md) and [`DEMO.md`](../DEMO.md) §4, Layer-1
 out-of-context use moves from **Assisted** (a worklist a human works through) to **Measured
-(Assisted)** — the same status `repro` gives extraction determinism: a number with its residual, rather than an assertion. The verbatim half stays **Guaranteed**; aptness
+(Assisted)** — the same status `repro` gives extraction determinism: a number with its residual, rather than an assertion. The quote-check half stays **Guaranteed**; aptness
 of the *inference* (Layer 4) stays **Judged**. This harness does not touch either — it measures how
 well a detector polices the seam between them.

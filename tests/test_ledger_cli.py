@@ -237,7 +237,7 @@ def test_demo_steps_keep_their_legacy_shape():
     assert lc.DEMO_STEPS == [
         ("project health", "doctor", []),
         ("operator dashboard", "status", []),
-        ("verbatim quotes", "verify", []),
+        ("quote check", "verify", []),
         ("provenance stamps", "manifest", []),
         ("citation coverage", "citations", ["__content__"]),
         ("claim-graph structure", "structure", []),
@@ -378,10 +378,10 @@ def test_absent_corpus_blocks_a_strict_project(project, green, monkeypatch, caps
     green()
     assert lc.main(["check", str(project(ledgers=["a_2020"], corpus=False))]) == 1
     out = capsys.readouterr().out
-    assert "unproved" in out and "verbatim quotes" in out
+    assert "unproved" in out and "quote check" in out
 
 
-def test_verbatim_gate_runs_when_corpus_is_present(project, green, monkeypatch):
+def test_quote_check_runs_when_corpus_is_present(project, green, monkeypatch):
     monkeypatch.setattr(lc, "_is_strict", lambda config, root: True)
     calls = green()
     assert lc.main(["check", str(project(ledgers=["a_2020"], corpus=True))]) == 0

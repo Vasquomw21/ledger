@@ -18,7 +18,7 @@ from pathlib import Path
 from check_citations import parse_config
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-# The verbatim verifier owns the stamp schema; import its version + body-hash
+# The quote verifier owns the stamp schema; import its version + body-hash
 # helpers so this corpus-free attestor recomputes body_sha256 identically, plus
 # the run-record schema (digest + dir name) so the two read one definition.
 sys.path.insert(0, str(REPO_ROOT / "literature"))

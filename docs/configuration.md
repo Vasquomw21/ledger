@@ -266,9 +266,9 @@ git-ignored.
 
 - **write-time** — `.claude/hooks/verify-citations.sh` blocks an unverified citation as you write.
   It sees one file, not the project, so it runs the coverage check alone.
-- **commit-time** — `.githooks/pre-commit` runs the full set, including the verbatim re-proof
+- **commit-time** — `.githooks/pre-commit` runs the full set, including the quote check
   against the sources on disk (activate once per clone: `git config core.hooksPath .githooks`).
-- **push-time** — CI runs the same set minus the verbatim check: with no corpus to re-hash it
+- **push-time** — CI runs the same set minus the quote check: with no corpus to re-hash it
   attests each committed stamp instead — auditable attestation, not independent proof.
 
 See [DEMO.md](../DEMO.md) for that boundary in full.

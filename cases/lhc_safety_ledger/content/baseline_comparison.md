@@ -28,7 +28,7 @@ Ledger cell points to a mechanically-checkable object in this repo, not a promis
 
 | What the reader can do | Web-research baseline | Ledger artefact |
 |---|---|---|
-| **Re-check any claim to source** | No — the argument is paraphrased; you trust the summary or re-read the papers | **Yes** — every claim is a stamped verbatim quote; `ledger verify` re-proves the bytes on disk (locally) |
+| **Re-check any claim to source** | No — the argument is paraphrased; you trust the summary or re-read the papers | **Yes** — every claim is a stamped quote; `ledger verify` re-checks it against the bytes on disk (locally) |
 | **See which arm is load-bearing** | Presents Hawking + cosmic-ray as "two main pillars", additively, as if mutually reinforcing | **Yes** — Q2 (`arg-structure`) + the graph show a **disjunction**: Hawking (`lsag_2008:bh-hawking-decay`) is an *isolated node* (theoretical, unobserved, grounds nothing), so the worst-case arm rests **entirely** on the conditional `giddings_2008:astro-bound` crux |
 | **See that the "independent" confirmations aren't** | Lists LSAG, Giddings, Koch and societies as a stack of endorsements | **Yes** — the derived **double-count finding fires**: Koch (which says "we independently present" a safety argument) shares Giddings' white-dwarf/neutron-star evidence base; record `koch-giddings-correlated` judges it not a fully independent confirmation |
 | **Find the exact inference under challenge** | Does not mention that any step is contested | **Yes** — `plaga_2008:evades-exclusion` **rebuts** `giddings_2008:astro-bound`; the reply rebuts back. The crux is shown as contested-then-answered, not silently settled |
@@ -48,7 +48,7 @@ case, that it makes the argument's **dependency structure** legible in a way the
 The brief asked, for this case, to *probe the argument for its dependencies and weakest points*. The
 baseline answers "is it safe?" well; it does not answer "what does the safety rest on, and where is
 it conditional?" The Ledger artefact does, and **none of it asks you to trust the model's reading**:
-the quotes are verbatim on disk, the disjunction is in the graph (`tools/analyze_graph.py`), a
+the quotes are checked against the sources on disk, the disjunction is in the graph (`tools/analyze_graph.py`), a
 declared dependence carries its consequences through that graph by code, the contested crux is a
 resolvable edge, the categorical framing is pinned to tamper-evident records. We **do not claim** the structural point itself is a discovery — *that the Hawking arm is not
 load-bearing and the worst case rests on the conditional bound* is stated in the primary sources'

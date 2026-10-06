@@ -11,7 +11,7 @@ The artefacts:
 
 | Artefact | Where | Schema | What it is |
 |---|---|---|---|
-| **Claim ledger** | `literature/verified_claims/<key>.md` | (Markdown grammar, §1–§2 below) | one source's verbatim quotes, each with a stable claim id; the atom |
+| **Claim ledger** | `literature/verified_claims/<key>.md` | (Markdown grammar, §1–§2 below) | one source's quotes, each with a stable claim id; the atom |
 | **Claim-graph edge** | in-band lines in a ledger | (grammar, §3) | a typed, grounded claim-to-claim relationship |
 | **Assessment record** | `content/assessments/_records/<id>.assess.json` | `schemas/assessment_record.schema.json` | a sealed, quote-grounded judgement |
 | **Run-record** | `literature/verified_claims/_runs/<key>.run.json` | `schemas/run_record.schema.json` | an auditable verification attestation |
@@ -42,14 +42,18 @@ A ledger is a Markdown file whose claims are `## Claim` blocks. The minimum a co
 ```markdown
 ## Claim 1: short summary
 
-> "the verbatim quote, exactly as in the source"
+> "the quote, as it appears in the source"
 
 **ID:** some-stable-slug
 **Location:** Section 3.2
 ```
 
-- The `> "…"` blockquote carries the **verbatim** quote (the text between the first and last
-  double-quote on the quote line(s)). This is what the verbatim gate checks against the source.
+- A blockquote line whose text opens with a double quote is a **quote line**; the quote is the
+  text from that mark to the last double quote on the line, or to the end of the line when there is
+  no closing mark. Any other blockquote line is an editorial note, including one that quotes a
+  phrase mid-line. The quote check (`verify_quotes.py`) checks each quote against the source under
+  the rules in [`docs/integrity_framework.md`](../docs/integrity_framework.md#how-the-quote-check-matches):
+  case, spacing and punctuation are ignored; numbers must match exactly.
 - `**ID:**` gives the stable slug. A claim with no `**ID:**` is addressable only by ordinal `cN`.
 - Frontmatter carries the provenance stamp (source/extract/body sha256, verdict, locator) — see the
   run-record schema for the same fields in JSON.

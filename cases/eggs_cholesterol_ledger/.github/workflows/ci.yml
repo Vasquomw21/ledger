@@ -2,7 +2,7 @@ name: ledger-ci
 
 # Fresh-clone contract: runs on every push/PR with NO paper corpus (it is
 # git-ignored), so it checks only what is safe and possible without the raw
-# sources. The verbatim quote verification (verify_quotes.py) needs the corpus
+# sources. The quote check (verify_quotes.py) needs the corpus
 # and runs LOCALLY via the .githooks/pre-commit hook, not here.
 
 on:
@@ -29,7 +29,7 @@ jobs:
 
       # Layer 2 of the quote-first gate runs here because verified_claims/
       # ledgers ARE committed; Layer 1 (paper on disk) needs the git-ignored
-      # corpus, hence --no-corpus. The verbatim check stays local (pre-commit).
+      # corpus, hence --no-corpus. The quote check stays local (pre-commit).
       - name: Citation coverage (every prose cite has a ledger)
         run: python3 tools/check_citations.py content --no-corpus
 
@@ -77,7 +77,7 @@ jobs:
         run: python3 tools/check_source_flow.py
 
       # Unit-manifest attestation (units_layer). When on, every located claim's quote
-      # must be a verbatim span within its addressed unit in the committed manifest.
+      # must be found within its addressed unit in the committed manifest.
       # Corpus-free (the manifest carries the unit text); no-op when off (the default).
       - name: Unit manifests (quote-within-unit; units_layer)
         run: python3 tools/check_units.py

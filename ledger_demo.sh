@@ -6,7 +6,7 @@
 #   ./ledger_demo.sh cases/covid_origins_ledger   # tour a vendored configured case
 #
 # It runs the full commit-time gate set read-only — project health, the dashboard, the
-# verbatim-quote check (corpus-gated), the provenance / citation / structure / assessment
+# quote check (corpus-gated), the provenance / citation / structure / assessment
 # gates, the opt-in coverage / attestation / selection / source-flow / unit / synthesis
 # gates, and wiki health — then the Mermaid graph, validity analysis, and faithfulness
 # worklist. It changes nothing and is safe to run anywhere.

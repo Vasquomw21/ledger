@@ -21,9 +21,9 @@ make demo DIR=cases/covid_origins_ledger      # or lhc_safety_ledger / eggs_chol
 ```
 
 The raw corpus is git-ignored everywhere (it keeps repos lean and avoids committing copyrighted full
-text), so the demo's verbatim step here **attests** each ledger's committed stamp + body-hash — the
+text), so the demo's quote-check step here **attests** each ledger's committed stamp + body-hash — the
 same check CI runs on a fresh clone (§4 trust boundary in [`../DEMO.md`](../DEMO.md)). Rebuild a
-case's corpus with its `literature/fetch_paper.sh` to re-prove quotes byte-for-byte.
+case's corpus with its `literature/fetch_paper.sh` to re-check the quotes against the source bytes.
 
 ## The baseline files
 

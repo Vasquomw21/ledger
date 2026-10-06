@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-# Reuse the verbatim verifier's normalisation + body hash so a unit's identity
+# Reuse the quote verifier's normalisation + body hash so a unit's identity
 # and the quote-within-unit check share ONE definition of "same text".
 sys.path.insert(0, str(REPO_ROOT / "literature"))
 from verify_quotes import norm, sha256_text  # noqa: E402

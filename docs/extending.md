@@ -22,7 +22,7 @@ What is kernel, and the evidence it is domain-neutral (file-level diff across tw
 | `literature/check.sh` | pre-download register lookup | 1-line diff (a path in an error string) |
 | `literature/build_register.py` | source register from disk + ledgers | 2-hunk diff, both path-portability refactors |
 | `literature/extract_text.py` | greppable text from PDF/HTML | self-locating; zero domain terms |
-| `literature/verify_quotes.py` | mechanical verbatim-quote verifier | self-locating; zero domain terms |
+| `literature/verify_quotes.py` | mechanical quote verifier (normalised matching, exact numbers) | self-locating; zero domain terms |
 | `.claude/hooks/verify-citations.sh` | block prose citing an undownloaded/unquoted source | resolves `literature/` relative to its own location, so it travels to any clone |
 | `tools/*` gates | the enforcement layer (coverage, provenance, structure, assessment, …) | self-locating (`parents[1]`); posture-driven, no subject terms |
 | schema-file templates | the three-file split, as blank templates | structure invariant, content is skin |
@@ -66,7 +66,7 @@ both of them write.
    # c. read + grep the text, then hand-write literature/verified_claims/KEY.md — the
    #    > "…" quotes with section/page refs (copy TEMPLATE.md; set its `file:` frontmatter
    #    to literature/KEY.html so --stamp can locate the source)
-   # d. bind the provenance stamp: source/extract/body sha256 + verbatim verdict
+   # d. bind the provenance stamp: source/extract/body sha256 + check verdict
    python3 literature/verify_quotes.py --stamp
    ```
 

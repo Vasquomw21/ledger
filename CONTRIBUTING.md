@@ -16,5 +16,5 @@ to its source, as the verified-claims files do.
 
 Before opening a pull request, run `make test` (after `make venv`) and activate the commit gate
 once per clone with `git config core.hooksPath .githooks`. The pre-commit hook runs the same gates
-as CI. It also checks that every quotation in a verified-claims file matches its source verbatim,
-which CI cannot do because the source papers are not in the repository.
+as CI. It also checks every quotation in a verified-claims file against its source, under the
+rules in `docs/integrity_framework.md` ("How the quote check matches"), which CI cannot do because the source papers are not in the repository.

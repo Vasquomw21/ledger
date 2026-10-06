@@ -34,7 +34,7 @@ to a mechanically-checkable object in this repo, not a promise.
 
 | What the reader can do | Deep-research baseline | Ledger artefact |
 |---|---|---|
-| **Re-check any figure to source** (~4 km clustering, p=0.004, "~3 infections at tMRCA", "60 → 4") | No — sources are linked, but the *numbers* are the model's paraphrase; you must trust it or re-read every paper by hand | **Yes** — every claim is a stamped verbatim quote; `ledger verify` re-proves the bytes on disk |
+| **Re-check any figure to source** (~4 km clustering, p=0.004, "~3 infections at tMRCA", "60 → 4") | No — sources are linked, but the *numbers* are the model's paraphrase; you must trust it or re-read every paper by hand | **Yes** — every claim is a stamped quote; `ledger verify` re-checks it against the bytes on disk |
 | **See that the two key papers are not independent** | Partial — it raises ascertainment bias *and* calls the evidence "multiple independent data types," but never reconciles the two, so the shared dependency stays invisible | **Yes** — Worobey and Pekar are a `Correlated-with` edge; the derived **double-count finding fires** on `andersen_2020:no-lab-scenario`, flagging "two independent pillars" as over-counting |
 | **Find the exact inference under challenge** | Prose caveats, not attached to any specific claim | **Yes** — a sealed `faithfulness` dispute pins the challenge to the verbatim span *"the Huanan market was the early epicenter"* and to the specific edge it contests |
 | **Inherit a confidence with its reasons** | Qualitative ("moderate-to-high"), discounts in prose | **Yes** — a calibration record: inside view 0.9 → 0.7, the two discounts named (unmodelled ascertainment bias; shared-data correlation) |
@@ -54,7 +54,7 @@ things.)
 ## D. The uplift, and why it survives the baseline being good
 
 The table's last row read with the first is the point: **the Ledger artefact does not ask you to
-trust the model's reading of the sources.** The quotes are verbatim on disk; the correlation is a
+trust the model's reading of the sources.** The quotes are checked against the sources on disk; the correlation is a
 human's declaration, recorded where it can be addressed and disputed, and its consequences across
 the graph are derived by code; the dispute record is tamper-evident and re-judgeable. The baseline
 asks a reader to trust its reading of twelve sources; the Ledger artefact hands the reader the

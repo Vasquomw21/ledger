@@ -180,7 +180,7 @@ def _infographic(state: dict) -> str:
     stages = [
         ("Primary sources", "papers, reports, debates", "input",
          "the corpus a curator selects", ""),
-        ("Ingestion", "fetch · verbatim-quote gate · stamp", "good",
+        ("Ingestion", "fetch · quote check · stamp", "good",
          "machine-guaranteed" if reproducible else "verified upstream",
          "guaranteed" if reproducible else "attested"),
         ("Structure", "typed claim graph (edges)", "good",
@@ -217,9 +217,9 @@ def _infographic(state: dict) -> str:
         'fill="#9aa6b2"/></marker></defs>'
         + "".join(arrows) + "".join(boxes)
         + '<text x="12" y="166" class="ig-note">The machine guarantees the facts where the '
-        'pipeline runs (verbatim quotes, content stamps, structural resolution); the human '
-        'supplies the contestable judgement — and others with different beliefs can pick up '
-        'where one left off.</text>'
+        'pipeline runs (quotes found in their sources, content stamps, structural '
+        'resolution); the human supplies the contestable judgement — and others with '
+        'different beliefs can pick up where one left off.</text>'
         + "</svg>")
 
 
@@ -357,7 +357,7 @@ def _trace_page(trace: list[dict], keys: list[str], case: str,
         node = item["node"] or {}
         quote = (f'<blockquote class="subject">&ldquo;{_esc(node.get("quote", ""))}&rdquo;</blockquote>'
                  if node.get("quote") else
-                 '<p class="muted">No verbatim quote resolved for this claim.</p>')
+                 '<p class="muted">No quote resolved for this claim.</p>')
         locus = " · ".join(filter(None, [_esc(node.get("source", "")),
                                          _esc(node.get("location", ""))]))
         warnings = "".join(
@@ -385,7 +385,7 @@ def _trace_page(trace: list[dict], keys: list[str], case: str,
     return _page(f"Evidence trace — {case}", f"""
 <header class="hero"><h1>Evidence trace</h1><div class="case">{_esc(case)}</div></header>
 <p>Every claim a derived warning, a sealed record, or {finding_ref} puts in question — with its
-verbatim quotation, everything aimed at it, and how each inference was judged. Each address here
+quotation, everything aimed at it, and how each inference was judged. Each address here
 resolved against the gates before this page was built.</p>
 {"".join(blocks)}
 <p class="boundary"><strong>The boundary:</strong> Ledger displays these judgements; it does not
@@ -529,9 +529,10 @@ def _hitl_map(repo_root: Path, payload: dict, model: dict) -> str:
              'update the graph live, and manage signer identity and attestation.</p></div>')
 
     return (
-        '<p>The machine guarantees the <em>facts</em> (verbatim quotes, content stamps, structural '
-        'resolution). A human supplies the <em>judgement</em> — which sources matter, which '
-        'inferences are apt, which moves are rhetorical — sealed and contestable. '
+        '<p>The machine guarantees the <em>facts</em> (quotes found in their sources, '
+        'content stamps, structural resolution). A human supplies the <em>judgement</em> '
+        '— which sources matter, which inferences are apt, which moves are rhetorical — '
+        'sealed and contestable. '
         f'<strong>Sealed so far by:</strong> <span class="mono">{_esc(who)}</span>.</p>'
         f'<h3>Where a human judges, comments, and builds</h3>{band1}'
         f'<h3>Awaiting judgement</h3>{band2}'
@@ -542,9 +543,9 @@ QUOTE_MEANING = {
     "empty": "No sources are ingested yet, so there is no quote to check.",
     "unverified": "At least one ledger's verification record is missing or no longer "
                   "matches its source — read the note above before trusting a quote.",
-    "attested": "Each quote was proved verbatim against its source when the ledger was "
+    "attested": "Each quote was found in its source when the ledger was "
                 "stamped. That record travels; the source bytes do not.",
-    "reproducible": "Each quote re-proves byte-for-byte against the source corpus "
+    "reproducible": "Each quote re-checks against the hash-matched source corpus "
                     "shipped alongside.",
 }
 _BADGE_CLASS = {"Guaranteed": "ok", "Attested": "neu", "Unverified": "bad", "None": "neu"}
@@ -555,7 +556,7 @@ def _trust_table(state: dict) -> str:
     hands, what was verified upstream and only attested here, and what is a human's
     judgement. Only the first is checkable from the bundle alone, so only the first may
     read as a guarantee while the corpus is absent."""
-    quotes = ("Verbatim quotes", state["quote_badge"], _BADGE_CLASS[state["quote_badge"]],
+    quotes = ("Quotes found in source", state["quote_badge"], _BADGE_CLASS[state["quote_badge"]],
               QUOTE_MEANING[state["level"]])
     rows = [
         ("Graph structure", "Enforced here", "ok",
@@ -668,7 +669,7 @@ def _index(repo_root: Path, claims_dir: Path, keys: list[str], config: dict,
 
 <section id="overview"><h2>Overview</h2>
 <p>This is a navigable read of a contested question. Each claim below is a
-<strong>verbatim quote</strong> carrying the record of its proof against a primary source; the
+<strong>quote</strong> carrying the record of its check against a primary source; the
 relationships between claims form an argument graph; and a human's tamper-evident, contestable
 judgement sits on top. Start here, then follow <a href="#inputs">Inputs</a> →
 <a href="#processes">Processes</a> → <a href="#outputs">Outputs</a>. This page <em>shows the trail
@@ -690,12 +691,12 @@ and the trust boundary; it does not adjudicate the truth.</em></p>
 
 <section id="inputs"><h2>Inputs — the corpus</h2>
 <p class="muted">The primary sources ingested for this question. Each row opens the rendered ledger:
-its provenance, stamps, and every verbatim claim.{_trail_sentence(present)}</p>
+its provenance, stamps, and every quoted claim.{_trail_sentence(present)}</p>
 {_docs_table(repo_root, claims_dir, keys)}</section>
 
 <section id="processes"><h2>Processes — how it is built</h2>
 <p>Each source travels one pipeline: <strong>check</strong> (already on disk?) →
-<strong>fetch</strong> → <strong>verify</strong> (every quote proved byte-for-byte against the
+<strong>fetch</strong> → <strong>verify</strong> (every quote found in the
 fetched source) → <strong>stamp</strong> (hashes bound) → <strong>structure</strong> (typed edges
 resolve cross-ledger) → <strong>assess</strong> (human judgement, sealed). The verify step runs
 where the corpus lives — in the project, at every commit.</p>

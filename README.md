@@ -18,14 +18,18 @@ re-checking the bytes.
 ## What it guarantees
 
 > Ledger prevents a citation in gated, authored prose from pointing to a quotation that has not
-> been verified verbatim against its source. It does not prove that the source set is complete or
-> the interpretation correct; it makes those judgements explicit and reviewable.
+> been checked against its source. It does not prove that the source set is complete or the
+> interpretation correct; it makes those judgements explicit and reviewable.
 
 Before citing a source you save its quotes to a ledger on disk
-(`literature/verified_claims/<key>.md`). A script extracts the source's text, confirms each quote
-character for character against it, and stamps the ledger with the SHA-256 of the source, the
-extract, the quotes, and the source bytes the extract was built from — so the quotation is tied to
-the paper itself, not merely to a text file sitting beside it. Only then does a citation pass — and
+(`literature/verified_claims/<key>.md`). A script extracts the source's text and checks each quote
+against it, ignoring case, spacing and punctuation. A passage that contains a number must match
+exactly, and the number must end where the source's does; every quote needs at least one passage of
+25 or more letters and digits that is found
+([how the check works](docs/integrity_framework.md#how-the-quote-check-matches)). The script then
+stamps the ledger with the SHA-256 of the source, the extract, the quotes, and the source bytes the
+extract was built from — so the quotation is tied to the paper itself, not merely to a text file
+sitting beside it. Only then does a citation pass — and
 a cite can name the claim it rests on, `(Smith 2020 #the-slug)`, so "right paper, wrong claim" fails
 too.
 
@@ -44,16 +48,21 @@ The mechanical part is narrow on purpose; everything above it is scoped, not pro
 - **Not completeness.** Whether your sources are the right ones, or whether you missed the
   literature that would change your mind, is a judgement. Ledger makes the corpus and its declared
   gaps auditable; it cannot tell you what you never looked for.
-- **Not context.** A quote can be verbatim and still be used in a way its author would reject.
+- **Not character identity.** Case, spacing and punctuation are ignored, so a quote can differ
+  from its source in those and still pass. The check does not confirm that the parts of a quote
+  joined by an ellipsis appear in the source in that order, and it does not tell a number from the
+  minus sign, range dash or spaced thousands separator beside it.
+- **Not context.** A quote can match its source and still be used in a way its author would reject.
   Ledger surfaces every quote against the inference it grounds, and ships a benchmark to measure
   detection — but does not settle aptness.
 - **Not the conclusion.** Whether your argument follows is yours. The claim graph makes the
   structure explicit — what is load-bearing, what rests on one source, where two "independent"
   sources share a premise — and stops there.
-- **Not in CI.** The verbatim check needs the sources, which are git-ignored. Locally it re-proves
-  the bytes; CI attests the committed stamp — auditable attestation, not independent proof.
+- **Not in CI.** The quote check needs the sources, which are git-ignored. Locally it re-runs the
+  check and re-hashes the bytes; CI attests the committed stamp — auditable attestation, not
+  independent proof.
 
-Freedom from fabrication is a claim about layer 1 only. The rest is graded confidence:
+The quote check guards layer 1 only. The rest is graded confidence:
 [`docs/integrity_framework.md`](docs/integrity_framework.md) lays out all five layers.
 
 ## Try it in five minutes

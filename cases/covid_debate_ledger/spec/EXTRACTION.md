@@ -5,7 +5,7 @@ base into Ledger claim ledgers (the Markdown grammar of `INTERCHANGE.md` §2), *
 and without fabrication**. `INTERCHANGE.md` specifies the *output*; this specifies the *process* that
 produces it. Any agent — or a person — can run it, and two runs converge.
 
-The problem it solves: the verbatim gate (`verify_quotes.py`) guarantees no claim is *fabricated*, but
+The problem it solves: the quote check (`verify_quotes.py`) guarantees each quoted passage is found in its source, but
 *which* spans become claims has been ad-hoc judgement — not reproducible, not portable across corpus
 types. This method makes selection a defined procedure anchored to two fixed coordinates, so a second
 run (or a second person, with different beliefs) picks up where the first left off.
@@ -59,10 +59,10 @@ not the frontmatter.
    is a candidate with a **locus** (its structural address).
 4. **Filter** (Anchor B) — keep a candidate iff it bears on a declared `**id:**` sub-question; drop the
    rest (out of scope, not wrong).
-5. **Lift** — copy the **verbatim** span into a `> "…"` blockquote; derive `**ID:**` from the locus
+5. **Lift** — copy the span **exactly** into a `> "…"` blockquote; derive `**ID:**` from the locus
    (§Slug); set `**Location:**` to the locus; add `**Addresses:** <qid>`; route to the ledger named by
    the row's attribution (**one ledger per voice**).
-6. **Verify** — run `verify_quotes.py`; a span that is not verbatim is dropped or re-lifted, **never
+6. **Verify** — run `verify_quotes.py`; a span that fails the check is dropped or re-lifted, **never
    paraphrased**. Fidelity is the existing guarantee; this method adds selection only.
 7. **Propose, don't apply** — present the ledgers for human approval; the write-time hook, pre-commit,
    and CI are the mechanical floor.
@@ -99,7 +99,7 @@ judgement. `tools/repro.py` (`ledger repro <run-A>/ <run-B>/`) measures converge
 over the same source:
 
 - **selection agreement** — Jaccard over the lifted **spans** (each normalised the way the
-  verbatim gate normalises), keyed by voice. This is the naming-INDEPENDENT measure: did both runs
+  quote check normalises), keyed by voice. This is the naming-INDEPENDENT measure: did both runs
   lift the same span, regardless of the slug each chose for it?
 - **claim-set agreement** — Jaccard over the derived `**ID:**` slugs. This adds the slug-naming
   layer on top of selection, so it can *under*-count (same span, different slug) AND *over*-count
@@ -134,7 +134,8 @@ span to quote). The fix makes the address **mechanical** by giving each source a
   self-tests this). It emits the candidate *universe* only; it never applies keep/drop.
 - **Address by locus**: a claim carries `**Locus:** <locus>` and its `**ID:**` *is* that locus. The
   slug is no longer chosen — collapsing the slug-naming layer to zero.
-- **Bound span**: the quote must be a verbatim span *within* the addressed unit. `tools/check_units.py`
+- **Bound span**: the quote must be found *within* the addressed unit, normalised as the quote
+  check normalises. `tools/check_units.py`
   (posture `units_layer: off|warn|required`, default off) attests this **offline** against the
   committed manifest (the raw source is git-ignored, so the manifest carries the unit text). Span
   choice is thus decoupled from identity: a different pithy quote of the same unit is the same claim.
@@ -162,7 +163,7 @@ raw bytes — the same local-vs-CI boundary as the provenance stamp.
 
 ## What this does NOT change
 
-Fidelity is `verify_quotes.py`, untouched: every span is lifted verbatim and gate-checked; nothing is
+Fidelity is `verify_quotes.py`, untouched: every span is lifted exactly and checked against the source; nothing is
 summarised or composed. This adds selection, not a second fidelity path. Determinism is bounded and
 measured, not identity. The method guarantees *form and provenance* and names the judgement it
 cannot mechanise (`INTERCHANGE.md` §8).

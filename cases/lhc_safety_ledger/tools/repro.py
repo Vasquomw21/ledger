@@ -46,14 +46,14 @@ def _jaccard(a: set[str], b: set[str]) -> float:
     return len(a & b) / len(union) if union else 1.0
 
 
-# A blockquote line in a ledger claim: `> "the verbatim span"`.
+# A blockquote line in a ledger claim: `> "the quoted span"`.
 _QUOTE_LINE = re.compile(r"^\s*>\s?(.*)$")
 # A claim's coordinate address, when the source has a committed unit manifest.
 _LOCUS_LINE = re.compile(r"^\*\*Locus:\*\*\s*([\w-]+)", re.M)
 
 
 def _norm_quote(s: str) -> str:
-    """Normalise a quote the way the verbatim gate does — NFKD-decompose, casefold,
+    """Normalise a quote the way the quote check does — NFKD-decompose, casefold,
     drop every non-alphanumeric (so spacing, punctuation, ligatures, and smart quotes
     don't matter). Two runs that lifted the SAME span normalise identically."""
     return re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKD", s).casefold())
