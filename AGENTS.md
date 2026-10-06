@@ -28,7 +28,8 @@ If `ledger.config.md` is absent: reader = "an expert in the field, reading tired
    what each point can see: a write-time hook (Claude Code) and `.githooks/pre-commit` and CI all run
    `tools/check_citations.py` — every cited paper has a committed ledger (the *coverage* guarantee,
    which holds on any path); `.githooks/pre-commit` additionally runs `literature/verify_quotes.py`
-   to prove each ledger quote is *verbatim* in its source (the verbatim guarantee — local only, as it
+   to check each ledger quote against its source (the quote check — case, spacing and punctuation
+   ignored, numbers exact; see `docs/integrity_framework.md`. Local only, as it
    needs the git-ignored corpus; CI cannot run it). A paywalled or inaccessible source → STOP and ask
    the user to fetch it; never write a stub to get past the check.
 2. **Human-in-the-loop.** Propose a paragraph-level diff, wait for explicit approval, then apply.
@@ -151,7 +152,8 @@ same bar as authored prose. Nothing compounds that has not been verified.
   claims per `spec/EXTRACTION.md`**: pick the source-type row, enumerate the source's own structural
   units, keep those bearing on an `inquiry.md` sub-question, and lift each verbatim span into a `> "…"`
   with a locus-derived `**ID:**`, `**Location:**`, and `**Addresses:**` — one ledger per voice. Verify
-  (`build_register.py` → `verify_quotes.py`); a non-verbatim span is dropped, never paraphrased. Two
+  (`build_register.py` → `verify_quotes.py`); a span that fails the check is dropped, never
+  paraphrased. Two
   runs should converge (`ledger repro`). Locate the notes it bears on
   (grep `crosswalk.md` + `content/`). Propose propagation, citing only verified quotes and flagging
   contradictions explicitly — never silently overwrite. Apply prose via the writing loop. Bookkeep:
@@ -188,7 +190,7 @@ same bar as authored prose. Nothing compounds that has not been verified.
 
 `literature/` — `check.sh` (already on disk?) · `fetch_paper.sh` (PMC / DOI / Unpaywall / OpenAlex /
 web) · `verified_claims/<key>.md` (the quote ledger) · `build_register.py` (index) ·
-`extract_text.py` + `verify_quotes.py` (verbatim proof). `content/` — `concept_notes/`,
+`extract_text.py` + `verify_quotes.py` (quote check). `content/` — `concept_notes/`,
 `literature_reviews/`, `crosswalk.md` (the index), `content/log.md` (activity log),
 `_ledger/skin_rules.md` (the skin). `tools/lint_wiki.py` — mechanical wiki health-check.
 

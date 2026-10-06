@@ -44,8 +44,9 @@ are progressively matters of judgement.
 
 ## Detectability levels
 
-- **Guarantee** — mechanical and deterministic; the failure cannot pass. (e.g. a fabricated quote
-  is blocked by `verify_quotes.py`.)
+- **Guarantee** — mechanical and deterministic; the failure cannot pass. (e.g. a quote that is not
+  in its source is blocked by `verify_quotes.py`, under the
+  [matching rules below](#how-the-quote-check-matches).)
 - **Structural** — code catches a structural proxy but not the meaning. (e.g. an orphan wikilink
   is found; whether the missing link *should* exist is not judged.)
 - **Assisted** — an LLM / semantic pass surfaces candidates; detection probability is below one and
@@ -71,7 +72,7 @@ are progressively matters of judgement.
 ## What the matrix exposes
 
 - **One hard guarantee exists, at the bottom layer.** Even there it covers only
-  *fabrication*. A verbatim quote of a strawman that the source then demolishes passes the gate
+  *fabrication*. A correctly quoted strawman that the source then demolishes passes the gate
   cleanly — the words are real, the use is not. That is the honest ceiling of "no fabricated
   citations": it certifies the words were said, not that they were used faithfully. Claim-ID
   granularity narrows this (a cite binds to a specific quoted claim, so it can no longer point at a
@@ -98,7 +99,7 @@ are progressively matters of judgement.
 
 - **The standalone tool is layer 1.** Unbundling the gate isolates the one cell that is a guarantee. Its narrow claim is
   *no fabricated citations*, with the out-of-context caveat. The shared coverage
-  checker (`tools/check_citations.py`) runs that gate at all three enforcement points; the verbatim
+  checker (`tools/check_citations.py`) runs that gate at all three enforcement points; the quote
   check (`verify_quotes.py`) is digit-strict; numeric citation styles are detected-and-warned, not
   silently passed.
 - **The wiki and curation machinery are Ledger's layer 2–3 instruments**, and the authoring
@@ -112,8 +113,9 @@ are progressively matters of judgement.
 
 Against the map:
 
-- **Guarantees:** no claim reaches gated, authored prose carrying a quotation that is not
-  verbatim in a primary source on disk (layer 1, fabrication). `gated_paths` declares that scope;
+- **Guarantees:** no claim reaches gated, authored prose carrying a quotation that the quote check
+  did not find in a primary source on disk (layer 1, fabrication), under the
+  [matching rules below](#how-the-quote-check-matches). `gated_paths` declares that scope;
   archived third-party material, such as a captured model transcript, is not gated.
 - **Assists:** surfacing missing notes, broken or absent connections, contradictions, and stale
   claims for a human to confirm (layers 2–3); the adversarial-faithfulness worklist + dispute
@@ -125,3 +127,34 @@ Against the map:
   the evidence assembled (layer 4).
 
 Only layer-1 fabrication is mechanically prevented. The rest is graded confidence.
+
+## How the quote check matches
+
+`literature/verify_quotes.py` compares each quote in a ledger with the text extracted from its
+source. A quote line is a blockquote that opens with a double quotation mark; any other blockquote
+line is an editorial note and is not checked. A quote is split at each ellipsis into passages, and
+each passage is checked on its own.
+
+- **Normalised comparison.** Both sides are lower-cased, typographic ligatures are expanded (ﬁ →
+  fi), and everything except letters and digits is removed. A passage therefore passes if its
+  letters and digits occur, in order and unbroken, in the source.
+- **Numbers.** A passage that contains a digit must match exactly, with no fallback, and a number
+  at either end of the passage must end where the source's number ends: `70` does not match inside
+  `170` or `70.5`.
+- **Fallbacks for passages without digits.** If the exact comparison fails, the passage may still
+  pass on letters alone (`PASS*`), or with mathematical notation removed when the extractor has
+  dropped it (`PASS~`). Each fallback is recorded as such in the run output.
+- **Short passages.** A passage of fewer than 25 letters and digits must be found, but it is not
+  counted as verified, because a short string can occur by chance (`SKIP`). Every quote needs at
+  least one verified passage, and a ledger with no quotes fails.
+
+What it does not check:
+
+- **Character identity.** Case, spacing and punctuation can differ from the source.
+- **Order across an ellipsis.** The passages of one quote are each found, but not necessarily in
+  that order in the source.
+- **Signs and separators beside a number.** A minus sign, range dash or spaced thousands separator
+  next to a number is removed before matching, so a quoted `70` matches a source's `-70`, and
+  `10–20` and `1020` match each other.
+- **Glyph-only passages.** A passage with no letters or digits (e.g. `ε`) is not checked when it
+  sits beside a verified passage.

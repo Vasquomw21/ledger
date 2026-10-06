@@ -98,7 +98,8 @@ attestation_signers: .ledger/allowed_signers
 # Unit-manifest (coordinate-system) gate. off (default — opt-in) · warn · required.
 # When on, every ledger claim carrying a **Locus:** must resolve to a unit in the
 # committed literature/units/<key>.units.json manifest (tools/enumerate_units.py),
-# and its quote must be a verbatim span WITHIN that unit (tools/check_units.py) —
+# and its quote must be found WITHIN that unit, normalised as the quote check
+# normalises (tools/check_units.py) —
 # making the claim address mechanical (slug = locus) and the span bounded. Opt-in
 # and NOT in the strict set, so a configured project is not forced to adopt it; a
 # fully_enumerable=false (coarse PDF) manifest downgrades any required finding to a

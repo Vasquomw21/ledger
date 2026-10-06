@@ -14,11 +14,13 @@ re-checking the bytes.
 The guarantee is narrow and exact:
 
 > Ledger prevents a citation in gated, authored prose from pointing to a quotation that has not been
-> verified verbatim against its source. It does not prove that the source set is complete or the
+> checked against its source. It does not prove that the source set is complete or the
 > interpretation correct; it makes those judgements explicit and reviewable.
 
-That check is only as strong as the sources on the machine running it. On your own machine the script
-re-reads the source files and re-proves every quote. In a fresh clone or in continuous integration
+The check ignores case, spacing and punctuation, and holds numbers to an exact match; its full rules
+and limits are in [`docs/integrity_framework.md`](docs/integrity_framework.md#how-the-quote-check-matches).
+It is only as strong as the sources on the machine running it. On your own machine the script
+re-reads the source files and re-checks every quote. In a fresh clone or in continuous integration
 the source files are not shipped, so the system attests the stored proof rather than re-running it —
 an audit trail, not an independent re-proof.
 
@@ -60,8 +62,7 @@ the system: every step is a link you can click, and nothing between the finding 
 asserted without a stored quotation.
 
 The finding names one claim: Andersen's "no laboratory-based scenario is plausible." Click it and you
-reach the stored quotation, shown character-for-character as it appears in the source, with the
-SHA-256 stamp the verbatim check produced.
+reach the stored quotation, with the SHA-256 stamp the quote check produced.
 
 One supporting inference is formally disputed. Worobey's quotation locates where the earliest cases
 clustered; the claim it is used to support is about how the virus arose. A sealed record marks that
@@ -80,8 +81,8 @@ A separate record flags overstated certainty. Ledger marks Andersen's phrase "ir
 claiming more than an argument from the absence of a known backbone can support.
 
 One gate underwrites all of this. Where the source corpus is present — on your machine, as you write
-and before each commit — the verbatim-quote check reads each source's extracted text and confirms
-every quotation, so a citation whose quotation does not match cannot pass. The extract records the
+and before each commit — the quote check reads each source's extracted text and checks every
+quotation, so a citation whose quotation does not match cannot pass. The extract records the
 SHA-256 of the bytes it was built from, and the ledger's stamp must agree with it, which is what ties
 a quotation to the paper rather than to a text file beside it; 47 of this bundle's 51 ledgers carry
 that binding. The four that do not are living web documents — an archived FAQ, a shared document, two
@@ -97,7 +98,7 @@ Four judgements stay with the reader.
 Whether the sources are the right ones is yours. Ledger makes the corpus and its declared gaps
 auditable, but it cannot tell you what you never looked for.
 
-Whether a verbatim quote is used fairly is yours. Ledger shows every quote against the inference it
+Whether a correctly quoted passage is used fairly is yours. Ledger shows every quote against the inference it
 supports, but it does not settle whether the use is apt.
 
 Whether the argument follows is yours. The claim graph makes the structure explicit — what is
