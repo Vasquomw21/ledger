@@ -6,10 +6,21 @@ import verify_quotes as vq
 
 
 def classify(span, source):
-    """Run classify_span against a source string, pre-computing the three
-    normalised haystacks exactly as check_ledger does."""
-    return vq.classify_span(span, vq.norm(source), vq.letters(source),
-                            vq.mathless(source))
+    """Run classify_span against a source string, pre-computing the
+    normalised haystacks and position map exactly as check_ledger does."""
+    hay, positions = vq.norm_with_positions(source)
+    return vq.classify_span(span, hay, vq.letters(source),
+                            vq.mathless(source), source, positions)
+
+
+def ledger_verdict(tmp_path, quote_lines, source):
+    """Tally for a one-ledger corpus whose ledger holds `quote_lines`."""
+    extracted = tmp_path / "extracted"
+    extracted.mkdir()
+    (extracted / "smith_2020.txt").write_text(source, encoding="utf-8")
+    ledger = tmp_path / "smith_2020.md"
+    ledger.write_text(quote_lines, encoding="utf-8")
+    return vq.check_ledger("smith_2020", ledger, extracted)
 
 
 # --- classify_span: the PASS tiers and the digit guard ---
@@ -64,15 +75,68 @@ def test_short_span_absent_fails():
 
 
 def test_short_span_absent_fails_the_ledger(tmp_path):
-    extracted = tmp_path / "extracted"
-    extracted.mkdir()
-    (extracted / "smith_2020.txt").write_text(
-        "the trial found no difference between the two arms", encoding="utf-8")
-    ledger = tmp_path / "smith_2020.md"
-    ledger.write_text('> "vaccines are unsafe"\n', encoding="utf-8")
-    tally = vq.check_ledger("smith_2020", ledger, extracted)
+    tally = ledger_verdict(tmp_path, '> "vaccines are unsafe"\n',
+                           "the trial found no difference between the two arms")
     assert tally["fail"] == 1
     assert vq.verdict_for(tally) != "pass"
+
+
+def test_quote_of_only_short_present_fragments_fails(tmp_path):
+    tally = ledger_verdict(tmp_path, '> "the trial … two arms"\n',
+                           "the trial found no difference between the two arms")
+    assert tally["skip"] == 2
+    assert vq.verdict_for(tally) != "pass"
+
+
+def test_short_fragment_beside_a_verified_span_passes(tmp_path):
+    tally = ledger_verdict(
+        tmp_path, '> "the trial found no difference … two arms"\n',
+        "the trial found no difference between the two arms")
+    assert vq.verdict_for(tally) == "pass"
+
+
+def test_quote_that_normalises_to_nothing_fails(tmp_path):
+    tally = ledger_verdict(tmp_path, '> "ε"\n', "any source text at all")
+    assert vq.verdict_for(tally) != "pass"
+
+
+def test_ledger_with_no_quotes_fails(tmp_path):
+    tally = ledger_verdict(tmp_path, "> an editorial note only\n",
+                           "any source text at all")
+    assert vq.verdict_for(tally) != "pass"
+
+
+# --- whole numbers: normalisation must not let a number match inside another ---
+
+def test_norm_with_positions_matches_norm():
+    src = "The ﬁrst Eﬃcient result: p = 0.004, n=1,200 (95% CI) — Größe"
+    hay, positions = vq.norm_with_positions(src)
+    assert hay == vq.norm(src)
+    assert len(positions) == len(hay)
+
+
+def test_number_inside_larger_number_fails():
+    src = "rates rose by 170% in the treated cohort over the study period"
+    assert classify("70% in the treated cohort over the study", src) == "FAIL"
+
+
+def test_short_number_inside_larger_number_fails():
+    assert classify("70%", "rates rose by 170% overall") == "FAIL"
+
+
+def test_number_cut_before_its_decimals_fails():
+    src = "in the cohort infection rates fell by 70.5 percent across the arm"
+    assert classify("in the cohort infection rates fell by 70", src) == "FAIL"
+
+
+def test_number_followed_by_punctuation_and_a_number_passes():
+    src = "in the cohort infection rates fell by 70%, 12 patients withdrew"
+    assert classify("in the cohort infection rates fell by 70", src) == "PASS"
+
+
+def test_number_at_end_of_sentence_passes():
+    src = "in the cohort infection rates fell by 70. Later work disagreed."
+    assert classify("in the cohort infection rates fell by 70", src) == "PASS"
 
 
 # --- extract_quotes: quoted vs editorial blockquotes ---
@@ -82,6 +146,17 @@ def test_extract_quotes_separates_notes(tmp_path):
     ledger.write_text(
         '> "a verbatim quoted claim from the paper"\n'
         "> an editorial note with no quotation marks\n",
+        encoding="utf-8")
+    quotes, n_notes = vq.extract_quotes(ledger)
+    assert quotes == ["a verbatim quoted claim from the paper"]
+    assert n_notes == 1
+
+
+def test_note_quoting_a_phrase_mid_line_is_not_a_quote(tmp_path):
+    ledger = tmp_path / "smith_2020.md"
+    ledger.write_text(
+        '> "a verbatim quoted claim from the paper"\n'
+        '> the verdict shifts from "one reading" to "another reading"\n',
         encoding="utf-8")
     quotes, n_notes = vq.extract_quotes(ledger)
     assert quotes == ["a verbatim quoted claim from the paper"]

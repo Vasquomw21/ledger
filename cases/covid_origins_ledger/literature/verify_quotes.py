@@ -35,7 +35,10 @@
 #     exponential growth rate" vs source "double exponential rate").
 #   - Spans shorter than MIN_SEGMENT_CHARS (normalised) must still appear in the
 #     normalised source or FAIL; when present they are reported as SKIP, not
-#     PASS, because a short string can match by chance.
+#     PASS, because a short string can match by chance. A quote with no
+#     verified span (all short or empty) FAILs, as does a ledger with no quotes.
+#   - A number at either end of a span must end where the source number ends:
+#     "70" does not match inside "170" or "70.5".
 #
 # Provenance stamp: --stamp records each ledger's source/extract sha256 + verdict
 # in its frontmatter, so the local-only verbatim result becomes a committed
@@ -148,6 +151,52 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", decomposed)
 
 
+def norm_with_positions(s: str) -> tuple[str, list[int]]:
+    """norm(s), plus the index in s of the character each output character
+    came from. Decomposing and casefolding one character at a time gives the
+    same string as norm(), since NFKD only reorders combining marks, and those
+    are stripped."""
+    out: list[str] = []
+    positions: list[int] = []
+    for i, ch in enumerate(s):
+        for c in unicodedata.normalize("NFKD", ch).casefold():
+            if "a" <= c <= "z" or "0" <= c <= "9":
+                out.append(c)
+                positions.append(i)
+    return "".join(out), positions
+
+
+def _number_continues(raw: str, i: int, step: int) -> bool:
+    """True if the number whose edge digit is raw[i] goes on in direction
+    `step`: another digit, or a decimal/thousands separator then a digit."""
+    j = i + step
+    if not 0 <= j < len(raw):
+        return False
+    if raw[j].isdigit():
+        return True
+    k = j + step
+    return raw[j] in ".," and 0 <= k < len(raw) and raw[k].isdigit()
+
+
+def _found(needle: str, hay: str, raw: str | None,
+           positions: list[int] | None) -> bool:
+    """Is needle in hay? Normalisation strips word boundaries, so a needle
+    that starts or ends with a digit could match inside a longer number
+    ("70" in "170", "70.5"). With the raw text and position map, such a hit
+    counts only where the source number ends where the quoted one does."""
+    if raw is None or positions is None or not (
+            needle[0].isdigit() or needle[-1].isdigit()):
+        return needle in hay
+    start = hay.find(needle)
+    while start != -1:
+        first, last = positions[start], positions[start + len(needle) - 1]
+        if not (needle[0].isdigit() and _number_continues(raw, first, -1)) and \
+                not (needle[-1].isdigit() and _number_continues(raw, last, 1)):
+            return True
+        start = hay.find(needle, start + 1)
+    return False
+
+
 def letters(s: str) -> str:
     """Like norm() but also drops digits — leaves lowercase letters only."""
     return re.sub(r"[0-9]", "", norm(s))
@@ -163,7 +212,9 @@ def mathless(s: str) -> str:
     return letters(no_glyphs)
 
 
-def classify_span(span: str, hay: str, hay_letters: str, hay_mathless: str) -> str:
+def classify_span(span: str, hay: str, hay_letters: str, hay_mathless: str,
+                  raw: str | None = None,
+                  positions: list[int] | None = None) -> str:
     """Verdict for one contiguous quote span: PASS / PASS* / PASS~ / FAIL /
     SKIP (too short to assert, but present in the source) / EMPTY (nothing
     left after normalisation).
@@ -175,13 +226,16 @@ def classify_span(span: str, hay: str, hay_letters: str, hay_mathless: str) -> s
 
     A short span is matched by chance too easily for a hit to count as a
     PASS, but a miss is still a miss: absent from the source, it FAILs, so a
-    short invented quote cannot pass by being skipped."""
+    short invented quote cannot pass by being skipped.
+
+    Given `raw` and `positions` (from norm_with_positions), a number at either
+    end of the span must not continue in the source (see _found)."""
     needle = norm(span)
     if not needle:
         return "EMPTY"
     if len(needle) < MIN_SEGMENT_CHARS:
-        return "SKIP" if needle in hay else "FAIL"
-    if needle in hay:
+        return "SKIP" if _found(needle, hay, raw, positions) else "FAIL"
+    if _found(needle, hay, raw, positions):
         return "PASS"
     if re.search(r"\d", span):
         return "FAIL"
@@ -194,9 +248,10 @@ def classify_span(span: str, hay: str, hay_letters: str, hay_mathless: str) -> s
 
 
 def extract_quotes(ledger_path: Path) -> tuple[list[str], int]:
-    """Return (quotes, n_notes). A quote = the text between the first and last
-    double-quote on a blockquote line. Blockquote lines with no double-quote are
-    editorial notes (counted, not returned)."""
+    """Return (quotes, n_notes). A quote line is a blockquote whose text opens
+    with a double-quote; the quote is the text between that and the last
+    double-quote on the line. Any other blockquote line is an editorial note
+    (counted, not returned), including a note that quotes a phrase mid-line."""
     quotes: list[str] = []
     n_notes = 0
     for line in ledger_path.read_text(encoding="utf-8").splitlines():
@@ -206,12 +261,25 @@ def extract_quotes(ledger_path: Path) -> tuple[list[str], int]:
         body = BLOCKQUOTE_RE.match(stripped).group(1).strip()
         if not body:
             continue
-        idx = [i for i, ch in enumerate(body) if ch in DOUBLE_QUOTES]
-        if len(idx) >= 2 and idx[-1] > idx[0]:
-            quotes.append(body[idx[0] + 1:idx[-1]])
-        else:
+        quote = quote_text(body)
+        if quote is None:
             n_notes += 1
+        else:
+            quotes.append(quote)
     return quotes, n_notes
+
+
+def quote_text(body: str) -> str | None:
+    """The quotation carried by one blockquote line's text (">" removed), or
+    None if the line is an editorial note. This is the one definition of the
+    quote grammar; every parser that reads a ledger's quotes resolves through
+    it, so the verifier and the tools that pin spans to quotes cannot read
+    the same line differently."""
+    body = body.strip()
+    idx = [i for i, ch in enumerate(body) if ch in DOUBLE_QUOTES]
+    if len(idx) >= 2 and idx[0] == 0:
+        return body[1:idx[-1]]
+    return None
 
 
 def check_ledger(key: str, ledger_path: Path,
@@ -236,27 +304,39 @@ def check_ledger(key: str, ledger_path: Path,
         return tally
 
     raw = extract_path.read_text(encoding="utf-8")
-    hay, hay_letters, hay_mathless = norm(raw), letters(raw), mathless(raw)
+    hay, positions = norm_with_positions(raw)
+    hay_letters, hay_mathless = letters(raw), mathless(raw)
     quotes, n_notes = extract_quotes(ledger_path)
     tally["notes"] = n_notes
     if n_notes:
         emit(f"  [NOTE] {n_notes} unquoted blockquote line(s) skipped (editorial)")
     if not quotes:
-        emit("  [WARNING] no quoted blockquotes found in ledger")
+        emit("  [FAIL]  no quoted blockquotes in ledger: nothing to verify")
+        tally["fail"] += 1
 
     labels = {"PASS": ("pass", "[PASS]  "),
               "PASS*": ("pass_star", "[PASS*] (letters-only fallback) "),
               "PASS~": ("pass_tilde", "[PASS~] (maths not grep-verified) "),
               "FAIL": ("fail", "[FAIL]  "),
               "SKIP": ("skip", "[SKIP]  (too short to assert; found) ")}
+    # A quote passes only if some span was actually verified; one made only of
+    # short or empty spans would otherwise pass without any check that counts.
     for quote in quotes:
+        verified = failed = False
         for span in ELLIPSIS_RE.split(quote):
-            verdict = classify_span(span, hay, hay_letters, hay_mathless)
+            verdict = classify_span(span, hay, hay_letters, hay_mathless,
+                                    raw, positions)
             if verdict == "EMPTY":
                 continue
+            verified = verified or verdict.startswith("PASS")
+            failed = failed or verdict == "FAIL"
             counter, label = labels[verdict]
             tally[counter] += 1
             emit(f"  {label}{span.strip()[:66]}")
+        if not verified and not failed:
+            tally["fail"] += 1
+            emit(f"  [FAIL]  (nothing verifiable: spans short or empty) "
+                 f"{quote.strip()[:40]}")
     print()
     return tally
 

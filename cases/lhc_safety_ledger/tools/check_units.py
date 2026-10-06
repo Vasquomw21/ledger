@@ -31,14 +31,13 @@ from enumerate_units import manifest_digest
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "literature"))
 sys.path.insert(0, str(REPO_ROOT / "tools"))
-from verify_quotes import norm, read_frontmatter  # noqa: E402
+from verify_quotes import norm, quote_text, read_frontmatter  # noqa: E402
 from ledger_md import claim_blocks  # noqa: E402
 
 CLAIMS_DIR = REPO_ROOT / "literature" / "verified_claims"
 UNITS_DIR = REPO_ROOT / "literature" / "units"
 
 LOCUS_RE = re.compile(r"^\*\*Locus:\*\*\s*([\w-]+)", re.M)
-DOUBLE_QUOTES = "\"“”"
 
 
 def log_info(msg: str) -> None:
@@ -60,16 +59,14 @@ def units_mode(config: dict[str, str]) -> str:
 
 
 def _block_quote(block: str) -> str | None:
-    """First blockquote span in a claim block (text between first/last double-quote
-    on a `>` line), or None."""
+    """First quotation in a claim block (see verify_quotes.quote_text), or None."""
     for line in block.splitlines():
         s = line.lstrip()
         if not s.startswith(">"):
             continue
-        body = s[1:].strip()
-        idx = [i for i, ch in enumerate(body) if ch in DOUBLE_QUOTES]
-        if len(idx) >= 2 and idx[-1] > idx[0]:
-            return body[idx[0] + 1:idx[-1]]
+        quote = quote_text(s[1:])
+        if quote is not None:
+            return quote
     return None
 
 

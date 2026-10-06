@@ -34,6 +34,8 @@ from check_citations import ledger_claim_id_sets
 from ledger_md import claim_blocks
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO_ROOT / "literature"))
+from verify_quotes import quote_text  # noqa: E402
 CLAIMS_DIR = REPO_ROOT / "literature" / "verified_claims"
 
 # The taxonomy is deliberately small — taxonomy bloat is both a generalisability
@@ -168,7 +170,6 @@ def iter_edges(claims_dir: Path) -> Iterator[Edge]:
 
 CLAIM_HEADER_RE = re.compile(r"^##\s+claim\b", re.IGNORECASE)
 _ID_LINE_RE = re.compile(r"^\*\*ID:\*\*\s*([\w-]+)", re.IGNORECASE)
-_DOUBLE_QUOTES = '"“”'
 
 
 def claim_body(ledger_path: Path, slug: str) -> str | None:
@@ -199,9 +200,9 @@ def claim_aliases(ledger_path: Path, slug: str) -> set[str]:
 
 
 def claim_quote(ledger_path: Path, slug: str) -> str:
-    """The verbatim quote text of a claim — the content between the first and last
-    double-quote on its `> "…"` blockquote lines, space-joined. "" if the claim or
-    a quote is absent. Used to pin a rhetorical-assessment span to a real quote."""
+    """The quote text of a claim — each `> "…"` line's quotation (see
+    verify_quotes.quote_text), space-joined. "" if the claim or a quote is
+    absent. Used to pin a rhetorical-assessment span to a real quote."""
     body = claim_body(ledger_path, slug)
     if body is None:
         return ""
@@ -210,9 +211,9 @@ def claim_quote(ledger_path: Path, slug: str) -> str:
         stripped = line.lstrip()
         if not stripped.startswith(">"):
             continue
-        idx = [i for i, ch in enumerate(stripped) if ch in _DOUBLE_QUOTES]
-        if len(idx) >= 2 and idx[-1] > idx[0]:
-            quotes.append(stripped[idx[0] + 1:idx[-1]])
+        quote = quote_text(stripped[1:])
+        if quote is not None:
+            quotes.append(quote)
     return " ".join(quotes)
 
 
