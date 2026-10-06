@@ -55,8 +55,24 @@ def test_digit_exact_still_passes():
     assert classify("infection rates fell by 90% across the treated", src) == "PASS"
 
 
-def test_short_span_skipped():
-    assert classify("too short", "irrelevant source text here") == "SKIP"
+def test_short_span_present_is_skipped():
+    assert classify("too short", "a span that is too short to assert") == "SKIP"
+
+
+def test_short_span_absent_fails():
+    assert classify("vaccines are unsafe", "irrelevant source text here") == "FAIL"
+
+
+def test_short_span_absent_fails_the_ledger(tmp_path):
+    extracted = tmp_path / "extracted"
+    extracted.mkdir()
+    (extracted / "smith_2020.txt").write_text(
+        "the trial found no difference between the two arms", encoding="utf-8")
+    ledger = tmp_path / "smith_2020.md"
+    ledger.write_text('> "vaccines are unsafe"\n', encoding="utf-8")
+    tally = vq.check_ledger("smith_2020", ledger, extracted)
+    assert tally["fail"] == 1
+    assert vq.verdict_for(tally) != "pass"
 
 
 # --- extract_quotes: quoted vs editorial blockquotes ---

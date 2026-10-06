@@ -33,8 +33,9 @@
 #     letters-only; the maths itself is NOT grep-verified for that span.
 #   - A genuine paraphrase still FAILs every stage (e.g. ledger "double
 #     exponential growth rate" vs source "double exponential rate").
-#   - Spans shorter than MIN_SEGMENT_CHARS (normalised) are skipped (reported) to
-#     avoid trivial substring matches from maths-only fragments.
+#   - Spans shorter than MIN_SEGMENT_CHARS (normalised) must still appear in the
+#     normalised source or FAIL; when present they are reported as SKIP, not
+#     PASS, because a short string can match by chance.
 #
 # Provenance stamp: --stamp records each ledger's source/extract sha256 + verdict
 # in its frontmatter, so the local-only verbatim result becomes a committed
@@ -164,15 +165,22 @@ def mathless(s: str) -> str:
 
 def classify_span(span: str, hay: str, hay_letters: str, hay_mathless: str) -> str:
     """Verdict for one contiguous quote span: PASS / PASS* / PASS~ / FAIL /
-    SKIP (too short to assert) / EMPTY (nothing left after normalisation).
+    SKIP (too short to assert, but present in the source) / EMPTY (nothing
+    left after normalisation).
 
     A span containing a digit must match Stage 1 exactly or FAIL — the
     letters-only / maths fallbacks drop digits from both sides, so they are
     reserved for digit-free spans (this is the gate against a quote whose
-    numbers differ from the source)."""
+    numbers differ from the source).
+
+    A short span is matched by chance too easily for a hit to count as a
+    PASS, but a miss is still a miss: absent from the source, it FAILs, so a
+    short invented quote cannot pass by being skipped."""
     needle = norm(span)
+    if not needle:
+        return "EMPTY"
     if len(needle) < MIN_SEGMENT_CHARS:
-        return "SKIP" if needle else "EMPTY"
+        return "SKIP" if needle in hay else "FAIL"
     if needle in hay:
         return "PASS"
     if re.search(r"\d", span):
@@ -240,7 +248,7 @@ def check_ledger(key: str, ledger_path: Path,
               "PASS*": ("pass_star", "[PASS*] (letters-only fallback) "),
               "PASS~": ("pass_tilde", "[PASS~] (maths not grep-verified) "),
               "FAIL": ("fail", "[FAIL]  "),
-              "SKIP": ("skip", "[SKIP]  (too short) ")}
+              "SKIP": ("skip", "[SKIP]  (too short to assert; found) ")}
     for quote in quotes:
         for span in ELLIPSIS_RE.split(quote):
             verdict = classify_span(span, hay, hay_letters, hay_mathless)
